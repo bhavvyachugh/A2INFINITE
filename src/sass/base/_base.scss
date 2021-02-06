@@ -39,6 +39,11 @@ html {
 	src: url(../../../Fonts/Open_Sans/OpenSans-Regular.ttf);
 }
 
+@font-face {
+	font-family: open-sans-light;
+	src: url(../../../Fonts/Open_Sans/OpenSans-Light.ttf);
+}
+
 .body {
 	background-image: linear-gradient(
 		to right bottom,
