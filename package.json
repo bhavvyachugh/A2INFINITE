@@ -4,11 +4,11 @@
 	"description": "A website where you can get more than 30,000 worksheets and quizes for your child",
 	"main": "index.js",
 	"scripts": {
-		"watch:sass": "node-sass sass/index.scss css/index.css -w",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/index.css -o css/index.css ",
-		"compress:css": "node-sass css/index.css css/index.css --output-style compressed",
-		"compile:sass": "node-sass sass/index.scss css/index.css",
-		"build:css": "npm-run-all compile:sass compress:css prefix:css"
+		"watch:sass": "node-sass src/sass/index.scss src/css/index.css -w",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/css/index.css -o src/css/index.css ",
+		"compress:css": "node-sass src/css/index.css src/css/index.css --output-style compressed",
+		"compile:sass": "node-sass src/sass/index.scss src/css/index.css",
+		"build:css": "npm-run-all compile:sass prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",
 	"license": "ISC",
