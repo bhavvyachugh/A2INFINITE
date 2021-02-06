@@ -12,8 +12,8 @@
 	--color-grey-light-5: #dedcdc;
 
 	--color-grey-dark-1: #333;
-	--color-grey-dark-1: #777;
-	--color-grey-dark-1: #999;
+	--color-grey-dark-2: #777;
+	--color-grey-dark-3: #999;
 
 	--box-shadow-1: 0 2rem 8rem 1rem rgba(0, 0, 0, 0.4);
 }
@@ -29,16 +29,33 @@ html {
 	box-sizing: inherit;
 }
 
+@font-face {
+	font-family: lato;
+	src: url(../../../Fonts/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+	font-family: open-sans;
+	src: url(../../../Fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
 .body {
 	background-image: linear-gradient(
 		to right bottom,
 		var(--color-primary-light),
 		var(--color-primary-dark)
 	);
-	padding: 4rem 5rem;
+	background-repeat: no-repeat;
+	//TODO: Remove height
+	height: 100rem;
+	font-family: open-sans, lato;
 }
 
 .container {
 	background-color: #fff;
+	margin: 6rem;
 	box-shadow: var(--box-shadow-1);
+	//TODO: Remove height
+	height: 75rem;
+	background-color: var(--color-grey-light-1);
 }
