@@ -147,6 +147,13 @@
     animation: moveInUp linear 0.5s;
     animation-delay: 0.1s; }
 
+.library-container__box {
+  display: flex; }
+  .library-container__box--content {
+    background-color: var(--color-grey-light-1); }
+  .library-container__box--content-icon-text {
+    display: flex; }
+
 :root,
 :root::before,
 :root::after {

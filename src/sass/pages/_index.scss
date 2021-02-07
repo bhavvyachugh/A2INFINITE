@@ -108,3 +108,17 @@
 		animation-delay: 0.1s;
 	}
 }
+
+.library-container {
+	&__box {
+		display: flex;
+
+		&--content {
+			background-color: var(--color-grey-light-1);
+		}
+
+		&--content-icon-text {
+			display: flex;
+		}
+	}
+}
