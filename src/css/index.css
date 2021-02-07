@@ -102,17 +102,19 @@ html {
   font-family: open-sans-light;
   src: url(../../../Fonts/Open_Sans/OpenSans-Light.ttf); }
 
+@font-face {
+  font-family: open-sans-bold;
+  src: url(../../../Fonts/Open_Sans/OpenSans-Bold.ttf); }
+
 .body {
   background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
   background-repeat: no-repeat;
-  height: 100rem;
   font-family: open-sans, lato; }
 
 .container {
   background-color: #fff;
   margin: 6rem;
   box-shadow: var(--box-shadow-1);
-  height: 75rem;
   background-color: var(--color-grey-light-1); }
 
 .content {
@@ -168,5 +170,49 @@ html {
   text-align: center;
   font-family: open-sans-light; }
 
-main {
-  height: 66rem; }
+.main {
+  flex: 1; }
+
+.welcome {
+  background-image: url("../../../Images/Background/Main_Welcome_home.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60rem;
+  position: relative; }
+  .welcome__heading {
+    font-size: 4rem !important;
+    font-weight: 100; }
+  .welcome__para {
+    font-family: open-sans-bold;
+    font-size: 2rem;
+    display: inline-block;
+    width: 31rem;
+    position: absolute;
+    top: 13rem;
+    left: 7rem; }
+  .welcome__btn {
+    position: absolute;
+    top: 26rem;
+    left: 11rem; }
+
+.heading-primary {
+  font-size: 3rem;
+  font-family: open-sans-light;
+  text-align: center; }
+
+.btn-primary,
+.btn-primary:visited {
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  padding: 1.5rem 4rem;
+  background-image: linear-gradient(to right bottom, var(--color-grey-light-1), var(--color-grey-light-5));
+  transition: all 0.1s; }
+  .btn-primary:hover,
+  .btn-primary:visited:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.3rem); }
+  .btn-primary:active,
+  .btn-primary:visited:active {
+    transform: translateY(-0.1rem); }

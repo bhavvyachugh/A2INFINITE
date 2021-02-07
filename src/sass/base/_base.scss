@@ -44,6 +44,11 @@ html {
 	src: url(../../../Fonts/Open_Sans/OpenSans-Light.ttf);
 }
 
+@font-face {
+	font-family: open-sans-bold;
+	src: url(../../../Fonts/Open_Sans/OpenSans-Bold.ttf);
+}
+
 .body {
 	background-image: linear-gradient(
 		to right bottom,
@@ -51,8 +56,6 @@ html {
 		var(--color-primary-dark)
 	);
 	background-repeat: no-repeat;
-	//TODO: Remove height
-	height: 100rem;
 	font-family: open-sans, lato;
 }
 
@@ -60,7 +63,5 @@ html {
 	background-color: #fff;
 	margin: 6rem;
 	box-shadow: var(--box-shadow-1);
-	//TODO: Remove height
-	height: 75rem;
 	background-color: var(--color-grey-light-1);
 }

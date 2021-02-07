@@ -1,0 +1,23 @@
+.btn-primary,
+.btn-primary:visited {
+	border-radius: 1rem;
+	border: none;
+	outline: none;
+	font-size: 2rem;
+	padding: 1.5rem 4rem;
+	background-image: linear-gradient(
+		to right bottom,
+		var(--color-grey-light-1),
+		var(--color-grey-light-5)
+	);
+	transition: all 0.1s;
+
+	&:hover {
+		box-shadow: 0 1rem 2rem rgba(#000, 0.1);
+		transform: translateY(-0.3rem);
+	}
+
+	&:active {
+		transform: translateY(-0.1rem);
+	}
+}

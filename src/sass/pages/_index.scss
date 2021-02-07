@@ -72,7 +72,35 @@
 	font-family: open-sans-light;
 }
 
-main {
-	//TODO: Remove this just for testing
-	height: 66rem;
+.main {
+	flex: 1;
+}
+
+.welcome {
+	background-image: url('../../../Images/Background/Main_Welcome_home.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 60rem;
+	position: relative;
+
+	&__heading {
+		font-size: 4rem !important;
+		font-weight: 100;
+	}
+
+	&__para {
+		font-family: open-sans-bold;
+		font-size: 2rem;
+		display: inline-block;
+		width: 31rem;
+		position: absolute;
+		top: 13rem;
+		left: 7rem;
+	}
+
+	&__btn {
+		position: absolute;
+		top: 26rem;
+		left: 11rem;
+	}
 }
