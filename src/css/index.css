@@ -76,7 +76,7 @@
   justify-content: space-between; }
 
 .side-nav {
-  font-size: 1.4rem;
+  font-size: 2rem;
   list-style: none;
   margin-top: 3.5rem;
   padding: 0;
@@ -125,7 +125,7 @@
   background-image: url("../../../Images/Background/Main_Welcome_home.jpg");
   background-size: cover;
   background-position: center;
-  height: 60rem;
+  height: 66rem;
   position: relative; }
   .welcome__heading {
     font-size: 4rem !important;
@@ -147,12 +147,42 @@
     animation: moveInUp linear 0.5s;
     animation-delay: 0.1s; }
 
-.library-container__box {
-  display: flex; }
-  .library-container__box--content {
-    background-color: var(--color-grey-light-1); }
-  .library-container__box--content-icon-text {
-    display: flex; }
+.library-container {
+  display: flex;
+  justify-content: space-around; }
+  .library-container__icon {
+    height: 10rem;
+    width: 10rem;
+    margin-right: -2rem; }
+  .library-container__box {
+    background-color: var(--color-grey-light-1);
+    text-align: center;
+    padding: 4rem 11rem;
+    border-radius: 1rem;
+    flex: 0 0 20rem;
+    align-items: center;
+    justify-content: center; }
+    .library-container__box--icon-text {
+      display: flex;
+      align-items: center; }
+    .library-container__box--para-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+  .library-container__heading {
+    color: var(--color-grey-dark-2); }
+  .library-container__link {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .library-container__link:hover {
+      color: #000; }
+  .library-container__para {
+    font-size: 1.5rem;
+    font-family: open-sans; }
 
 :root,
 :root::before,
@@ -203,8 +233,7 @@ html {
 .container {
   background-color: #fff;
   margin: 6rem;
-  box-shadow: var(--box-shadow-1);
-  background-color: var(--color-grey-light-1); }
+  box-shadow: var(--box-shadow-1); }
 
 .heading-primary {
   font-size: 3rem;
@@ -216,6 +245,9 @@ html {
   font-family: open-sans-light;
   text-align: center;
   font-weight: 200; }
+
+.heading-tertiary {
+  font-size: 2rem; }
 
 @keyframes moveInLeft {
   0% {
