@@ -65,58 +65,6 @@
     .user-nav__user-name:hover {
       text-decoration: underline; }
 
-:root,
-:root::before,
-:root::after {
-  --color-primary: #eb2f64;
-  --color-primary-light: #ff3366;
-  --color-primary-dark: #ba265d;
-  --color-grey-light-1: #faf9f9;
-  --color-grey-light-2: #f4f2f2;
-  --color-grey-light-3: #f0eeee;
-  --color-grey-light-4: #f4f2f2;
-  --color-grey-light-5: #dedcdc;
-  --color-grey-dark-1: #333;
-  --color-grey-dark-2: #777;
-  --color-grey-dark-3: #999;
-  --box-shadow-1: 0 2rem 8rem 1rem rgba(0, 0, 0, 0.4); }
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box; }
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit; }
-
-@font-face {
-  font-family: lato;
-  src: url(../../../Fonts/Lato/Lato-Black.ttf); }
-
-@font-face {
-  font-family: open-sans;
-  src: url(../../../Fonts/Open_Sans/OpenSans-Regular.ttf); }
-
-@font-face {
-  font-family: open-sans-light;
-  src: url(../../../Fonts/Open_Sans/OpenSans-Light.ttf); }
-
-@font-face {
-  font-family: open-sans-bold;
-  src: url(../../../Fonts/Open_Sans/OpenSans-Bold.ttf); }
-
-.body {
-  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
-  background-repeat: no-repeat;
-  font-family: open-sans, lato; }
-
-.container {
-  background-color: #fff;
-  margin: 6rem;
-  box-shadow: var(--box-shadow-1);
-  background-color: var(--color-grey-light-1); }
-
 .content {
   display: flex; }
 
@@ -181,7 +129,8 @@ html {
   position: relative; }
   .welcome__heading {
     font-size: 4rem !important;
-    font-weight: 100; }
+    font-weight: 100;
+    animation: moveInLeft linear 0.5s; }
   .welcome__para {
     font-family: open-sans-bold;
     font-size: 2rem;
@@ -189,18 +138,104 @@ html {
     width: 31rem;
     position: absolute;
     top: 13rem;
-    left: 7rem; }
+    left: 7rem;
+    animation: moveInRight linear 0.5s; }
   .welcome__btn {
     position: absolute;
     top: 26rem;
-    left: 11rem; }
+    left: 11rem;
+    animation: moveInUp linear 0.5s;
+    animation-delay: 0.1s; }
+
+:root,
+:root::before,
+:root::after {
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #ba265d;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #f4f2f2;
+  --color-grey-light-5: #dedcdc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+  --box-shadow-1: 0 2rem 8rem 1rem rgba(0, 0, 0, 0.4); }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+@font-face {
+  font-family: lato;
+  src: url(../../../Fonts/Lato/Lato-Black.ttf); }
+
+@font-face {
+  font-family: open-sans;
+  src: url(../../../Fonts/Open_Sans/OpenSans-Regular.ttf); }
+
+@font-face {
+  font-family: open-sans-light;
+  src: url(../../../Fonts/Open_Sans/OpenSans-Light.ttf); }
+
+@font-face {
+  font-family: open-sans-bold;
+  src: url(../../../Fonts/Open_Sans/OpenSans-Bold.ttf); }
+
+.body {
+  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+  background-repeat: no-repeat;
+  font-family: open-sans, lato; }
+
+.container {
+  background-color: #fff;
+  margin: 6rem;
+  box-shadow: var(--box-shadow-1);
+  background-color: var(--color-grey-light-1); }
 
 .heading-primary {
   font-size: 3rem;
   font-family: open-sans-light;
   text-align: center; }
 
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(40rem); }
+  80% {
+    transform: translateX(-3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20rem); }
+  80% {
+    transform: translateX(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem); }
+  80% {
+    transform: translateY(-3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
 .btn-primary,
+.btn-primary:link,
 .btn-primary:visited {
   border-radius: 1rem;
   border: none;
@@ -210,9 +245,11 @@ html {
   background-image: linear-gradient(to right bottom, var(--color-grey-light-1), var(--color-grey-light-5));
   transition: all 0.1s; }
   .btn-primary:hover,
+  .btn-primary:link:hover,
   .btn-primary:visited:hover {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
     transform: translateY(-0.3rem); }
   .btn-primary:active,
+  .btn-primary:link:active,
   .btn-primary:visited:active {
     transform: translateY(-0.1rem); }
