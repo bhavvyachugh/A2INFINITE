@@ -24,7 +24,7 @@
     font-family: inherit;
     padding: 1rem 2rem;
     transition: all 0.1s;
-    font-size: 2rem; }
+    font-size: 1.5rem; }
     .search__input::placeholder {
       font-family: inherit;
       color: var(--color-grey-dark-2); }
