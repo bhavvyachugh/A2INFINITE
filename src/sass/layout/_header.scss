@@ -92,3 +92,27 @@
 		}
 	}
 }
+
+/* ------------------------------- button Nav ------------------------------- */
+.btn-nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__btn {
+		outline: none;
+		border: none;
+		margin: 0 1rem;
+		padding: 1rem 3rem;
+		border-radius: 0.5rem;
+		background-color: rgba(#ffcc66, 0.95);
+		transition: all 0.1s;
+		color: var(--color-grey-dark-1);
+		cursor: pointer;
+		font-size: 1.25rem;
+
+		&:hover {
+			color: var(--color-primary-light);
+		}
+	}
+}

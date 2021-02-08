@@ -12,6 +12,7 @@
 		var(--color-grey-light-5)
 	);
 	transition: all 0.1s;
+	cursor: pointer;
 
 	&:hover {
 		box-shadow: 0 1rem 2rem rgba(#000, 0.1);
