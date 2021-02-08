@@ -277,7 +277,8 @@ html {
 .body {
   background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
   background-repeat: no-repeat;
-  font-family: open-sans, lato; }
+  font-family: open-sans, lato;
+  position: relative; }
 
 .container {
   background-color: #fff;
@@ -340,6 +341,9 @@ html {
 .u-margin-top-large-minus {
   margin-top: -5rem; }
 
+.u-margin-top-minus {
+  margin-top: -1rem; }
+
 .u-border-bottom {
   border-bottom: 1px solid var(--color-grey-light-2); }
 
@@ -363,3 +367,60 @@ html {
   .btn-primary:link:active,
   .btn-primary:visited:active {
     transform: translateY(-0.1rem); }
+
+.form-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(0.5rem);
+  z-index: 100; }
+
+.login-form {
+  background-color: var(--color-grey-light-3);
+  padding: 2rem 2rem;
+  width: 70rem;
+  border-radius: 1rem;
+  text-align: center;
+  position: relative; }
+  .login-form__input {
+    display: block;
+    width: 90%;
+    outline: none;
+    border: none;
+    background-color: var(--color-grey-light-5);
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem; }
+  .login-form__checkbox-link {
+    display: flex;
+    justify-content: space-between; }
+  .login-form__checkbox-container {
+    display: flex;
+    align-items: center; }
+  .login-form__link-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+  .login-form__link {
+    border: none;
+    outline: none;
+    text-decoration: underline;
+    cursor: pointer; }
+    .login-form__link:hover {
+      color: var(--color-primary); }
+  .login-form__cross {
+    position: absolute;
+    top: 1rem;
+    right: 2rem; }
+  .login-form__cross-span {
+    font-size: 2rem;
+    cursor: pointer; }

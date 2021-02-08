@@ -179,6 +179,9 @@
 					</footer>
 				</main>
 			</div>
+
+			<!-- ----------------------------- login form ------------------------------ -->
+
 			<div class="form-container">
 				<form action="#" class="login-form">
 					<h1 class="heading-primary">Welcome Back</h1>
@@ -189,7 +192,7 @@
 						required
 					/>
 					<input
-						type="text"
+						type="password"
 						placeholder="Password"
 						class="login-form__input"
 						required
@@ -201,13 +204,18 @@
 						</div>
 
 						<div class="login-form__link-container">
-							<h3 class="login-form__heading">Don't Have Account</h3>
-							<button class="login-form__link">Sign-up &rarr;</button>
+							<h3 class="login-form__heading">Don't Have Account!</h3>
+							<button class="login-form__link u-margin-top-minus">
+								Sign-up &rarr;
+							</button>
 						</div>
 					</div>
-					<button type="submit" class="login-form__submit">
+					<button type="submit" class="login-form__submit btn-primary">
 						Log In &rarr;
 					</button>
+					<div class="login-form__cross">
+						<span class="login-form__cross-span">&#10006;</span>
+					</div>
 				</form>
 			</div>
 		</div>
