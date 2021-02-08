@@ -182,30 +182,30 @@
 
 			<!-- ----------------------------- login form ------------------------------ -->
 
-			<div class="form-container">
-				<form action="#" class="login-form">
+			<div class="form-container u-invisible">
+				<form action="#" class="form-overlay">
 					<h1 class="heading-primary">Welcome Back</h1>
 					<input
 						type="text"
 						placeholder="User Name/Email"
-						class="login-form__input"
+						class="form-overlay__input"
 						required
 					/>
 					<input
 						type="password"
 						placeholder="Password"
-						class="login-form__input"
+						class="form-overlay__input"
 						required
 					/>
-					<div class="login-form__checkbox-link">
-						<div class="login-form__checkbox-container">
+					<div class="form-overlay__checkbox-link">
+						<div class="form-overlay__checkbox-container">
 							<input type="checkbox" />
-							<h3 class="login-form__heading">Remember Me</h3>
+							<h3 class="form-overlay__heading">Remember Me</h3>
 						</div>
 
-						<div class="login-form__link-container">
-							<h3 class="login-form__heading">Don't Have Account!</h3>
-							<button class="login-form__link u-margin-top-minus">
+						<div class="form-overlay__link-container">
+							<h3 class="form-overlay__heading">Don't Have Account!</h3>
+							<button class="form-overlay__link u-margin-top-minus">
 								Sign-up &rarr;
 							</button>
 						</div>
@@ -213,8 +213,65 @@
 					<button type="submit" class="login-form__submit btn-primary">
 						Log In &rarr;
 					</button>
-					<div class="login-form__cross">
-						<span class="login-form__cross-span">&#10006;</span>
+					<div class="form-overlay__cross">
+						<span class="form-overlay__cross-span">&#10006;</span>
+					</div>
+				</form>
+			</div>
+
+			<!-- ---------------------------- Sign-up form ----------------------------- -->
+
+			<div class="form-container u-invisible">
+				<form action="#" class="form-overlay">
+					<h1 class="heading-primary">We Are Glad To See You Here</h1>
+					<input
+						type="text"
+						placeholder="User Name"
+						class="form-overlay__input"
+						required
+					/>
+					<input
+						type="text"
+						placeholder="School Name"
+						class="form-overlay__input"
+						required
+					/>
+					<input
+						type="email"
+						placeholder="Email"
+						class="form-overlay__input"
+						required
+					/>
+					<input
+						type="password"
+						placeholder="Password"
+						class="form-overlay__input"
+						required
+					/>
+					<input
+						type="password"
+						placeholder="Confirm Password"
+						class="form-overlay__input"
+						required
+					/>
+					<div class="form-overlay__checkbox-link">
+						<div class="form-overlay__checkbox-container">
+							<input type="checkbox" />
+							<h3 class="form-overlay__heading">Remember Me</h3>
+						</div>
+
+						<div class="form-overlay__link-container">
+							<h3 class="form-overlay__heading">Already Have Account!</h3>
+							<button class="form-overlay__link u-margin-top-minus">
+								Login &rarr;
+							</button>
+						</div>
+					</div>
+					<button type="submit" class="form-overlay__submit btn-primary">
+						Sign-up &rarr;
+					</button>
+					<div class="form-overlay__cross">
+						<span class="form-overlay__cross-span">&#10006;</span>
 					</div>
 				</form>
 			</div>

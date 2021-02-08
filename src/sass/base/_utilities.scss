@@ -13,3 +13,9 @@
 .u-border-bottom {
 	border-bottom: 1px solid var(--color-grey-light-2);
 }
+
+.u-invisible {
+	display: none !important;
+	opacity: 0;
+	visibility: hidden;
+}
