@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-between;
   height: 9rem;
-  background-color: #fff;
-  border-bottom: 1px solid var(--color-grey-light-2); }
+  background-color: #fff; }
 
 /* ---------------------------------- logo ---------------------------------- */
 .logo {
@@ -196,6 +195,25 @@
     height: 30rem;
     width: 30rem; }
 
+.footer {
+  background-image: url("../../../Images/Background/Footer_home.jpg");
+  background-size: 40rem;
+  background-position: 50rem;
+  background-repeat: no-repeat;
+  height: 40rem;
+  position: relative; }
+  .footer__heading {
+    position: absolute;
+    top: 6rem;
+    left: 4rem;
+    font-size: 5rem !important;
+    font-family: open-sans-light !important;
+    font-weight: 100; }
+  .footer__btn {
+    position: absolute;
+    top: 20rem;
+    left: 8rem; }
+
 :root,
 :root::before,
 :root::after {
@@ -247,13 +265,18 @@ html {
   margin: 6rem;
   box-shadow: var(--box-shadow-1); }
 
+.hr {
+  height: 1px;
+  border: none;
+  background-color: var(--color-grey-light-5); }
+
 .heading-primary {
   font-size: 3rem;
   font-family: open-sans-light;
   text-align: center; }
 
 .heading-secondary {
-  font-size: 3rem;
+  font-size: 4rem;
   font-family: open-sans-light;
   text-align: center;
   font-weight: 200; }
@@ -297,6 +320,9 @@ html {
 
 .u-margin-top-large-minus {
   margin-top: -5rem; }
+
+.u-border-bottom {
+  border-bottom: 1px solid var(--color-grey-light-2); }
 
 .btn-primary,
 .btn-primary:link,

@@ -179,3 +179,27 @@
 		width: 30rem;
 	}
 }
+
+.footer {
+	background-image: url('../../../Images/Background/Footer_home.jpg');
+	background-size: 40rem;
+	background-position: 50rem;
+	background-repeat: no-repeat;
+	height: 40rem;
+	position: relative;
+
+	&__heading {
+		position: absolute;
+		top: 6rem;
+		left: 4rem;
+		font-size: 5rem !important;
+		font-family: open-sans-light !important;
+		font-weight: 100;
+	}
+
+	&__btn {
+		position: absolute;
+		top: 20rem;
+		left: 8rem;
+	}
+}
