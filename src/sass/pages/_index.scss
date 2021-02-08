@@ -2,6 +2,8 @@
 	display: flex;
 }
 
+/* --------------------------------- sidebar -------------------------------- */
+
 .sidebar {
 	background-color: #ffcc66;
 	flex: 0 0 18%;
@@ -13,7 +15,6 @@
 .side-nav {
 	font-size: 2rem;
 	list-style: none;
-	margin-top: 3.5rem;
 	padding: 0;
 	align-items: center;
 	justify-content: center;
@@ -76,11 +77,13 @@
 	flex: 1;
 }
 
+/* --------------------------------- welcome -------------------------------- */
+
 .welcome {
 	background-image: url('../../../Images/Background/Main_Welcome_home.jpg');
 	background-size: cover;
 	background-position: center;
-	height: 66rem;
+	height: 60rem;
 	position: relative;
 
 	&__heading {
@@ -108,6 +111,8 @@
 		animation-delay: 0.1s;
 	}
 }
+
+/* --------------------------------- library -------------------------------- */
 
 .library-container {
 	display: flex;
@@ -160,5 +165,17 @@
 	&__para {
 		font-size: 1.5rem;
 		font-family: open-sans;
+	}
+}
+
+/* -------------------------------- community ------------------------------- */
+.community {
+	margin-top: 3rem;
+	display: flex;
+	justify-content: space-around;
+
+	&__image {
+		height: 30rem;
+		width: 30rem;
 	}
 }

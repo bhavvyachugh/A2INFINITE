@@ -19,7 +19,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 50rem;
+	width: 55rem;
 
 	&__input {
 		flex: 0 0 90%;
@@ -30,6 +30,7 @@
 		font-family: inherit;
 		padding: 1rem 2rem;
 		transition: all 0.1s;
+		font-size: 2rem;
 
 		&::placeholder {
 			font-family: inherit;
@@ -78,7 +79,7 @@
 		height: 5rem;
 		width: 5rem;
 		border-radius: 50%;
-		margin-right: 2rem;
+		margin-right: 1rem;
 	}
 
 	&__user-name {
