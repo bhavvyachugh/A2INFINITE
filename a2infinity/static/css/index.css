@@ -106,7 +106,7 @@
     .side-nav__item:not(:last-child) {
       margin-bottom: 0.5rem; }
   .side-nav__item::before {
-    content: '';
+    content: "";
     height: 100%;
     width: 3px;
     position: absolute;
