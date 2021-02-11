@@ -106,7 +106,7 @@
     .side-nav__item:not(:last-child) {
       margin-bottom: 0.5rem; }
   .side-nav__item::before {
-    content: '';
+    content: "";
     height: 100%;
     width: 3px;
     position: absolute;
@@ -142,7 +142,7 @@
 
 /* --------------------------------- welcome -------------------------------- */
 .welcome {
-  background-image: url("../../../Images/Background/Main_Welcome_home.jpg");
+  background-image: url("/static/Images/Background/Main_Welcome_home.jpg");
   background-size: cover;
   background-position: center;
   height: 60rem;
@@ -215,7 +215,7 @@
     width: 30rem; }
 
 .footer {
-  background-image: url("../../../Images/Background/Footer_home.jpg");
+  background-image: url("/static/Images/Background/Footer_home.jpg");
   background-size: 40rem;
   background-position: 50rem;
   background-repeat: no-repeat;
@@ -260,19 +260,19 @@ html {
 
 @font-face {
   font-family: lato;
-  src: url(../../../Fonts/Lato/Lato-Black.ttf); }
+  src: url(/static/Fonts/Lato/Lato-Black.ttf); }
 
 @font-face {
   font-family: open-sans;
-  src: url(../../../Fonts/Open_Sans/OpenSans-Regular.ttf); }
+  src: url(/static/Fonts/Open_Sans/OpenSans-Regular.ttf); }
 
 @font-face {
   font-family: open-sans-light;
-  src: url(../../../Fonts/Open_Sans/OpenSans-Light.ttf); }
+  src: url(/static/Fonts/Open_Sans/OpenSans-Light.ttf); }
 
 @font-face {
   font-family: open-sans-bold;
-  src: url(../../../Fonts/Open_Sans/OpenSans-Bold.ttf); }
+  src: url(/static/Fonts/Open_Sans/OpenSans-Bold.ttf); }
 
 .body {
   background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));

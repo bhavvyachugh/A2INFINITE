@@ -74,33 +74,36 @@
 /* --------------------------------- welcome -------------------------------- */
 
 .welcome {
-    background-image: url("/static/Images/Background/Main_Welcome_home.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 60rem;
-    position: relative;
-    &__heading {
-        font-size: 4rem !important;
-        font-weight: 100;
-        animation: moveInLeft linear 0.5s;
-    }
-    &__para {
-        font-family: open-sans-bold;
-        font-size: 2rem;
-        display: inline-block;
-        width: 31rem;
-        position: absolute;
-        top: 13rem;
-        left: 7rem;
-        animation: moveInRight linear 0.5s;
-    }
-    &__btn {
-        position: absolute;
-        top: 26rem;
-        left: 11rem;
-        animation: moveInUp linear 0.5s;
-        animation-delay: 0.1s;
-    }
+	background-image: url('/static/Images/Background/Main_Welcome_home.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 60rem;
+	position: relative;
+
+	&__heading {
+		font-size: 4rem !important;
+		font-weight: 100;
+		animation: moveInLeft linear 0.5s;
+	}
+
+	&__para {
+		font-family: open-sans-bold;
+		font-size: 2rem;
+		display: inline-block;
+		width: 31rem;
+		position: absolute;
+		top: 13rem;
+		left: 7rem;
+		animation: moveInRight linear 0.5s;
+	}
+
+	&__btn {
+		position: absolute;
+		top: 26rem;
+		left: 11rem;
+		animation: moveInUp linear 0.5s;
+		animation-delay: 0.1s;
+	}
 }
 
 
@@ -166,23 +169,25 @@
 }
 
 .footer {
-    background-image: url("../../../Images/Background/Footer_home.jpg");
-    background-size: 40rem;
-    background-position: 50rem;
-    background-repeat: no-repeat;
-    height: 40rem;
-    position: relative;
-    &__heading {
-        position: absolute;
-        top: 6rem;
-        left: 4rem;
-        font-size: 5rem !important;
-        font-family: open-sans-light !important;
-        font-weight: 100;
-    }
-    &__btn {
-        position: absolute;
-        top: 20rem;
-        left: 8rem;
-    }
+	background-image: url('/static/Images/Background/Footer_home.jpg');
+	background-size: 40rem;
+	background-position: 50rem;
+	background-repeat: no-repeat;
+	height: 40rem;
+	position: relative;
+
+	&__heading {
+		position: absolute;
+		top: 6rem;
+		left: 4rem;
+		font-size: 5rem !important;
+		font-family: open-sans-light !important;
+		font-weight: 100;
+	}
+
+	&__btn {
+		position: absolute;
+		top: 20rem;
+		left: 8rem;
+	}
 }
