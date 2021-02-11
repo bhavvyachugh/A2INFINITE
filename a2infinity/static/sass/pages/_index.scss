@@ -80,7 +80,7 @@
 /* --------------------------------- welcome -------------------------------- */
 
 .welcome {
-	background-image: url('../../../Images/Background/Main_Welcome_home.jpg');
+	background-image: url('/static/Images/Background/Main_Welcome_home.jpg');
 	background-size: cover;
 	background-position: center;
 	height: 60rem;
@@ -181,7 +181,7 @@
 }
 
 .footer {
-	background-image: url('../../../Images/Background/Footer_home.jpg');
+	background-image: url('/static/Images/Background/Footer_home.jpg');
 	background-size: 40rem;
 	background-position: 50rem;
 	background-repeat: no-repeat;
