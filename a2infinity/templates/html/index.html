@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A2INFINITE</title>
     <!-- --------------------------------- Css --------------------------------- -->
-    <link rel="stylesheet" href="/static/css/index.css" />
-    <script src="/static/js/index.js" defer></script>
+    <link rel="stylesheet" href="/static/index.css" />
+    <script src="/static/index.js" defer></script>
 </head>
 
 <body class="body">
@@ -16,7 +16,7 @@
         <!-- ------------------------------- header -------------------------------- -->
 
         <header class="header u-border-bottom">
-            <a href="/templates/html/index.html">
+            <a href="/templates/index.html">
                 <img src="/static/Images/logo/logo_transparent.png" alt="logo" class="logo" />
             </a>
 
@@ -32,18 +32,21 @@
             </form>
 
             <!-- <nav class="user-nav">
-					<div class="user-nav__user">
-						<img
-							src="../../Images/Ayush.jpg"
-							alt="user photo"
-							class="user-nav__user-photo"
-						/>
-						<span class="user-nav__user-name">Ayush</span>
-					</div>
-				</nav> -->
+                <div class="user-nav__user">
+                    <img src="../../Images/Ayush.jpg" alt="user photo" class="user-nav__user-photo" />
+                    <span class="user-nav__user-name">Ayush</span>
+                </div>
+            </nav> -->
             <nav class="btn-nav">
+                {% if user.is_authenticated %}
+                <nav class="user-nav">
+                    <div class="user-nav__user">
+                        <span class="user-nav__user-name">{{request.user}}</span>
+                    </div>
+                </nav>
+                {% else %}
                 <button class="btn-nav__login btn-nav__btn">Login &rarr;</button>
-                <button class="btn-nav__signup btn-nav__btn">Sign-up &rarr;</button>
+                <button class="btn-nav__signup btn-nav__btn">Sign-up &rarr;</button> {% endif %}
             </nav>
         </header>
 
@@ -164,10 +167,12 @@
         <!-- ----------------------------- login form ------------------------------ -->
 
         <div class="form-container login-form-container u-invisible">
-            <form action="#" class="form-overlay">
+            <form action="/login" method="POST" class="form-overlay">
+                {% csrf_token %}
+
                 <h1 class="heading-primary">Welcome Back</h1>
-                <input type="text" placeholder="User Name/Email" class="form-overlay__input" required />
-                <input type="password" placeholder="Password" class="form-overlay__input" required />
+                <input type="text" placeholder="User Name/Email" class="form-overlay__input" required id="loginusername" name="loginusername" />
+                <input type="password" placeholder="Password" class="form-overlay__input" required id="loginpassword" name="loginpassword" />
                 <div class="form-overlay__checkbox-link">
                     <div class="form-overlay__checkbox-container">
                         <input type="checkbox" />
@@ -193,13 +198,14 @@
         <!-- ---------------------------- Sign-up form ----------------------------- -->
 
         <div class="form-container signup-form-container u-invisible">
-            <form action="#" class="form-overlay">
+            <form action="/signup" method="POST" class="form-overlay">
+                {% csrf_token %}
                 <h1 class="heading-primary">We Are Glad To See You Here</h1>
-                <input type="text" placeholder="User Name" class="form-overlay__input" required />
-                <input type="text" placeholder="School Name" class="form-overlay__input" required />
-                <input type="email" placeholder="Email" class="form-overlay__input" required />
-                <input type="password" placeholder="Password" class="form-overlay__input" required />
-                <input type="password" placeholder="Confirm Password" class="form-overlay__input" required />
+                <input type="text" placeholder="User Name" class="form-overlay__input" required id="username" name="username" />
+                <input type="text" placeholder="School Name" class="form-overlay__input" required id="school" name="school" />
+                <input type="email" placeholder="Email" class="form-overlay__input" required id="email" name="email" />
+                <input type="password" placeholder="Password" class="form-overlay__input" required id="pass1" name="pass1" />
+                <input type="password" placeholder="Confirm Password" class="form-overlay__input" required id="pass2" name="pass2" />
                 <div class="form-overlay__checkbox-link">
                     <div class="form-overlay__checkbox-container">
                         <input type="checkbox" />
