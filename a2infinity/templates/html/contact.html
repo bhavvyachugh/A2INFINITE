@@ -1,1 +1,55 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contact-us | A2INFINITE</title>
+
+		<!-- ------------------------------- favicon ------------------------------- -->
+		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+
+		<!-- --------------------------------- css --------------------------------- -->
+		<link rel="stylesheet" href="/static/css/contact.css" />
+	</head>
+	<body class="body">
+		<div class="container">
+			<h1 class="heading-primary heading u-margin-top-minus">Contact us</h1>
+			<form action="#" class="form u-margin-top-minus">
+				<label class="form__label" for="name">Full Name :-</label>
+				<input
+					class="form__input"
+					type="text"
+					name="name"
+					id="name"
+					placeholder="Full Name"
+				/>
+				<label class="form__label" for="email">Email :-</label>
+				<input
+					class="form__input"
+					type="email"
+					name="email"
+					id="email"
+					placeholder="Email"
+				/>
+				<label class="form__label" for="phone">Phone :-</label>
+				<input
+					class="form__input"
+					type="number"
+					name="phone"
+					id="phone"
+					placeholder="Phone"
+				/>
+				<textarea
+					class="form__textarea u-margin-top"
+					name="textarea"
+					id="textarea"
+					cols="30"
+					placeholder="Describe Your Issue"
+					rows="10"
+				></textarea>
+				<button type="submit" class="btn-primary form__btn">Submit</button>
+			</form>
+		</div>
+	</body>
+</html>

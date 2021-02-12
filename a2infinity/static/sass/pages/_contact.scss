@@ -1,0 +1,49 @@
+.body {
+	height: 89.5vh;
+}
+
+.container {
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem 0;
+}
+
+.heading {
+	font-size: 4rem;
+	font-weight: 200;
+	color: var(--color-grey-dark-2);
+}
+
+.form {
+	&__label {
+		font-size: 1.3rem;
+		color: var(--color-grey-dark-1);
+		margin-left: 1rem;
+	}
+
+	&__input {
+		display: block;
+		width: 90rem;
+		outline: none;
+		border: none;
+		background-color: var(--color-grey-light-4);
+		font-size: 2rem;
+		font-family: open-sans;
+		padding: 0.5rem 2rem;
+		border-radius: 1rem;
+	}
+
+	&__textarea {
+		outline: none;
+		border: 1px solid var(--color-grey-light-5);
+		padding: 0.5rem 1rem;
+	}
+
+	&__btn {
+		display: block;
+		margin: 0 auto;
+	}
+}
