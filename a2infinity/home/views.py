@@ -2,6 +2,8 @@ from django.shortcuts import render, HttpResponse,redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate,login ,logout
 from django.contrib.auth.models import User
+from home.models import Contact
+from 
 # from blog.models import Post
 
 # Create your views here.
