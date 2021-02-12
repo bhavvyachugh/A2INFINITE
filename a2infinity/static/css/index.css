@@ -70,19 +70,6 @@
   display: flex;
   align-items: center;
   justify-content: center; }
-  .btn-nav__btn {
-    outline: none;
-    border: none;
-    margin: 0 1rem;
-    padding: 1rem 3rem;
-    border-radius: 0.5rem;
-    background-color: rgba(255, 204, 102, 0.95);
-    transition: all 0.1s;
-    color: var(--color-grey-dark-1);
-    cursor: pointer;
-    font-size: 1.25rem; }
-    .btn-nav__btn:hover {
-      color: var(--color-primary-light); }
 
 .content {
   display: flex; }
@@ -371,6 +358,20 @@ html {
   .btn-primary:link:active,
   .btn-primary:visited:active {
     transform: translateY(-0.1rem); }
+
+.btn-secondary {
+  outline: none;
+  border: none;
+  margin: 0 1rem;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 204, 102, 0.95);
+  transition: all 0.1s;
+  color: var(--color-grey-dark-1);
+  cursor: pointer;
+  font-size: 1.25rem; }
+  .btn-secondary:hover {
+    color: var(--color-primary-light); }
 
 .form-container {
   height: 100vh;

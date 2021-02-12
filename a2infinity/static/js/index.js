@@ -41,11 +41,12 @@ function showHideLogin() {
 
 loginBtn.addEventListener('click', showLoginForm);
 signupBtn.addEventListener('click', showSighupForm);
+
 crossLogin.addEventListener('click', hideLoginForm);
-crossLogin.addEventListener('click', hideSignupForm);
-crossSignup.addEventListener('click', hideLoginForm);
 crossSignup.addEventListener('click', hideSignupForm);
+
 welcomeBtn.addEventListener('click', showSighupForm);
 footerBtn.addEventListener('click', showSighupForm);
+
 formOverlayLinkLogin.addEventListener('click', showHideSignup);
 formOverlayLinkSignup.addEventListener('click', showHideLogin);
