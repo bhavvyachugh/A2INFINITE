@@ -12,13 +12,27 @@
 		<!-- --------------------------------- Css --------------------------------- -->
 		<link rel="stylesheet" href="/static/css/index.css" />
 	</head>
-
 	<body class="body">
 		<div class="container">
 			<!-- ------------------------------- header -------------------------------- -->
-
+			{% if messages %} {% for message in messages %}
+			<div
+				class="alert alert-{{ message.tags }} alert-dismissible fade show my-0"
+				role="alert"
+			>
+				<strong>{{ message }}</strong>
+				<button
+					type="button"
+					class="close"
+					data-dismiss="alert"
+					aria-label="Close"
+				>
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			{% endfor %} {% endif %}
 			<header class="header u-border-bottom">
-				<a href="/">
+				<a href="/templates/index.html">
 					<img
 						src="/static/Images/logo/logo_transparent.png"
 						alt="logo"

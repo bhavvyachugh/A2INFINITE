@@ -39,6 +39,7 @@ def handleLogin(request):
     if request.method == 'POST':
         loginusername = request.POST['loginusername']
         loginpassword = request.POST['loginpassword']
+        
 
         user = authenticate(username=loginusername, password=loginpassword)
         
