@@ -11,28 +11,26 @@
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 		<!-- --------------------------------- Css --------------------------------- -->
 		<link rel="stylesheet" href="/static/css/index.css" />
+
+		<!-- ----------------------------- javascript ------------------------------ -->
+		{% if user.is_authenticated %}
+		<script type="text/javascript" src="/static/js/logout.js" defer></script>
+		{% else %}
+		<script type="text/javascript" src="/static/js/index.js" defer></script>
+		{% endif %}
 	</head>
+
 	<body class="body">
 		<div class="container">
 			<!-- ------------------------------- header -------------------------------- -->
 			{% if messages %} {% for message in messages %}
-			<div
-				class="alert alert-{{ message.tags }} alert-dismissible fade show my-0"
-				role="alert"
-			>
-				<strong>{{ message }}</strong>
-				<button
-					type="button"
-					class="close"
-					data-dismiss="alert"
-					aria-label="Close"
-				>
-					<span aria-hidden="true">&times;</span>
-				</button>
+			<div class="alert alert-{{message}}">
+				<strong>{{message}}</strong>
+				<span class="alert__cross">&#10006;</span>
 			</div>
 			{% endfor %} {% endif %}
 			<header class="header u-border-bottom">
-				<a href="/templates/index.html">
+				<a href="/">
 					<img
 						src="/static/Images/logo/logo_transparent.png"
 						alt="logo"
@@ -74,7 +72,6 @@
 
 			<div class="content">
 				<!-- ------------------------------- sidebar ------------------------------- -->
-
 				<nav class="sidebar">
 					<ul class="side-nav u-margin-top-large">
 						<li class="side-nav__item">
@@ -339,9 +336,4 @@
 			</div>
 		</div>
 	</body>
-	{% if user.is_authenticated %}
-	<script type="text/javascript" src="/static/js/logout.js"></script>
-	{% else %}
-	<script type="text/javascript" src="/static/js/index.js"></script>
-	{% endif %}
 </html>

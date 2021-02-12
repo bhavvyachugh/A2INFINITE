@@ -23,7 +23,7 @@ def handleSignup(request):
         myuser = User.objects.create_user(username, email, pass1)
         myuser.school = school
         myuser.save()
-        messages.success(request, "Your account has been created")
+        messages.success(request, "Your account has been created successfully")
         return redirect('home')
 
         #Password confirmation
@@ -45,7 +45,7 @@ def handleLogin(request):
         
     if user is not None:
         login(request, user)
-        messages.success(request, "Successfully Loged in")
+        messages.success(request, "Successfully Loged-in")
         return redirect('home')
         
 
@@ -63,6 +63,6 @@ def handleLogin(request):
 
 def handleLogout(request):
     logout(request)
-    messages.success(request, "Successfully Loged out")
+    messages.success(request, "Successfully Logged-out")
     return redirect('home')
     return HttpResponse('logout')                
