@@ -11,7 +11,6 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request,"index.html")
 
-
 def handleSignup(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -65,4 +64,7 @@ def handleLogout(request):
     logout(request)
     messages.success(request, "Successfully Logged-out")
     return redirect('home')
-    return HttpResponse('logout')                
+    return HttpResponse('logout')
+
+def contact(request):
+   return render(request,"contact.html")

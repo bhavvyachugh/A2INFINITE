@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"watch:sass": "node-sass a2infinity/static/sass/index.scss a2infinity/static/css/index.css -w",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/css/index.css -o src/css/index.css ",
-		"compress:css": "node-sass src/css/index.css src/css/index.css --output-style compressed",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  a2infinity/static/css/index.css -o  a2infinity/static/css/index.css ",
+		"compress:css": "node-sass a2infinity/static/css/index.css a2infinity/static/css/index.css --output-style compressed",
 		"compile:sass": "node-sass src/sass/index.scss src/css/index.css",
 		"build:css": "npm-run-all compile:sass prefix:css compress:css"
 	},
@@ -16,7 +16,7 @@
 		"autoprefixer": "^10.2.4",
 		"node-sass": "^5.0.0",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.2.5",
+		"postcss": "^8.2.6",
 		"postcss-cli": "^8.3.1"
 	}
 }
