@@ -76,11 +76,20 @@ html {
 .u-margin-top {
   margin-top: 2rem; }
 
+.u-margin-top-small {
+  margin-top: 1rem; }
+
 .u-margin-top-large-minus {
   margin-top: -5rem; }
 
+.u-margin-top-medium-minus {
+  margin-top: -2rem; }
+
 .u-margin-top-minus {
   margin-top: -1rem; }
+
+.u-margin-bottom {
+  margin-bottom: 1rem; }
 
 .u-border-bottom {
   border-bottom: 1px solid var(--color-grey-light-2); }
@@ -90,10 +99,10 @@ html {
   transition: all 2s; }
 
 .body {
-  height: 89.5vh; }
+  height: 100vh; }
 
 .container {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,34 +110,36 @@ html {
   padding: 2rem 0; }
 
 .heading {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 200;
   color: var(--color-grey-dark-2); }
 
-.form__label {
-  font-size: 1.3rem;
-  color: var(--color-grey-dark-1);
-  margin-left: 1rem; }
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .form__input {
+    display: block;
+    width: 80rem;
+    outline: none;
+    border: none;
+    background-color: var(--color-grey-light-4);
+    font-size: 2rem;
+    font-family: open-sans;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    margin-top: 1rem; }
+  .form__textarea {
+    display: inline-block;
+    outline: none;
+    border: 1px solid var(--color-grey-light-5);
+    padding: 0.5rem 1rem; }
+  .form__btn {
+    display: block;
+    margin: 0 auto; }
 
-.form__input {
-  display: block;
-  width: 90rem;
-  outline: none;
-  border: none;
-  background-color: var(--color-grey-light-4);
-  font-size: 2rem;
-  font-family: open-sans;
-  padding: 0.5rem 2rem;
-  border-radius: 1rem; }
-
-.form__textarea {
-  outline: none;
-  border: 1px solid var(--color-grey-light-5);
-  padding: 0.5rem 1rem; }
-
-.form__btn {
-  display: block;
-  margin: 0 auto; }
+.alert {
+  width: 100% !important; }
 
 .btn-primary,
 .btn-primary:link,
@@ -164,3 +175,25 @@ html {
   font-size: 1.25rem; }
   .btn-secondary:hover {
     color: var(--color-primary-light); }
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-family: open-sans-light; }
+  .alert__cross {
+    cursor: pointer; }
+
+.Loged-in {
+  background-color: rgba(153, 247, 153, 0.412);
+  color: #155724; }
+
+.Logged-out {
+  background-color: #f9a4a4;
+  color: #5f0000; }
+
+.successfully {
+  background-color: #ffffb9;
+  color: #7d7d01; }
