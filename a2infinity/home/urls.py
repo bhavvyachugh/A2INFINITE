@@ -9,6 +9,8 @@ urlpatterns = [
     path('login', views.handleLogin, name="handleLogin"),
     path('logout', views.handleLogout, name="handleLogout"),
     path("contact", views.contact, name='contact'), 
+    path("class_worksheet", views.class_worksheet, name='class_worksheet'), 
+
    
     
 ]

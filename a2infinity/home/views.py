@@ -81,3 +81,5 @@ def contact(request):
         messages.success(request, 'Your message has been sent !')
     return render(request, 'contact.html')
  
+def class_worksheet(request):
+    return render(request,"class_worksheet.html")
