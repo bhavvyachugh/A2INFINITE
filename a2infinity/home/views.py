@@ -3,7 +3,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login ,logout
 from django.contrib.auth.models import User
 from home.models import Contact
-from 
+from datetime import datetime
+
 # from blog.models import Post
 
 # Create your views here.
