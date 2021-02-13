@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"watch:sass": "node-sass a2infinity/static/sass/contact.scss a2infinity/static/css/contact.css -w",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  a2infinity/static/css/index.css -o  a2infinity/static/css/index.css ",
-		"compress:css": "node-sass a2infinity/static/css/index.css a2infinity/static/css/index.css --output-style compressed",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  a2infinity/static/css/contact.css -o  a2infinity/static/css/contact.css ",
+		"compress:css": "node-sass a2infinity/static/css/contact.css a2infinity/static/css/contact.css --output-style compressed",
 		"compile:sass": "node-sass src/sass/index.scss src/css/index.css",
 		"build:css": "npm-run-all compile:sass prefix:css compress:css"
 	},
