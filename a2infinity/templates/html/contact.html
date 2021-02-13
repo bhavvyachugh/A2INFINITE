@@ -11,6 +11,9 @@
 
 		<!-- --------------------------------- css --------------------------------- -->
 		<link rel="stylesheet" href="/static/css/contact.css" />
+
+		<!-- --------------------------------- js ---------------------------------- -->
+		<script src="/static/js/contact.js" defer></script>
 	</head>
 
 	<body class="body">
@@ -18,7 +21,7 @@
 			{% if messages %} {% for message in messages %}
 			<div class="alert Loged-in u-margin-top-medium-minus">
 				<strong>{{ message }}</strong>
-				<span>&#10006;</span>
+				<span class="alert__cross">&#10006;</span>
 			</div>
 			{% endfor %} {% endif %} {% block body %} {% endblock body %}
 			<h1 class="heading-primary heading u-margin-top-small">Contact us</h1>
@@ -52,6 +55,7 @@
 					cols="30"
 					placeholder="Describe Your Issue"
 					rows="10"
+					required
 				></textarea>
 				<button type="submit" class="btn-primary form__btn">Submit</button>
 			</form>
