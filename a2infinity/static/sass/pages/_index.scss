@@ -139,16 +139,7 @@
     &__heading {
         color: var(--color-grey-dark-2);
     }
-    &__link {
-        font-size: 1.5rem;
-        color: var(--color-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &:hover {
-            color: #000;
-        }
-    }
+    
     &__para {
         font-size: 1.5rem;
         font-family: open-sans;

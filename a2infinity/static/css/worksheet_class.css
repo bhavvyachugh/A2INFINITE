@@ -71,6 +71,7 @@
   align-items: center;
   justify-content: center; }
 
+/* --------------------------------- navbar --------------------------------- */
 .nav-bar {
   display: flex;
   background-color: var(--color-grey-dark-1); }
@@ -106,6 +107,17 @@
     width: 100%;
     height: 100%; }
 
+/* ----------------------------- class-container ---------------------------- */
+.class-container {
+  background-color: var(--color-grey-light-2); }
+  .class-container__img-hed {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .class-container__img {
+    height: 7rem;
+    width: 11rem; }
+
 .btn-primary,
 .btn-primary:link,
 .btn-primary:visited {
@@ -140,6 +152,15 @@
   font-size: 1.25rem; }
   .btn-secondary:hover {
     color: var(--color-primary-light); }
+
+.btn-tertiary {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .btn-tertiary:hover {
+    color: #000; }
 
 .alert {
   display: flex;

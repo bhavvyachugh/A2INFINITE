@@ -24,7 +24,10 @@
 	}
 }
 
-.btn-secondary {
+.btn-secondary,
+.btn-secondary:active,
+.btn-secondary:visited,
+.btn-secondary:link {
 	outline: none;
 	border: none;
 	margin: 0 1rem;
@@ -39,5 +42,20 @@
 
 	&:hover {
 		color: var(--color-primary-light);
+	}
+}
+
+.btn-tertiary,
+.btn-tertiary:active,
+.btn-tertiary:link,
+.btn-tertiary:visited {
+	font-size: 1.5rem;
+	color: var(--color-primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		color: #000;
 	}
 }
