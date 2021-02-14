@@ -5,10 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"watch:sass": "node-sass a2infinity/static/sass/worksheet_class.scss a2infinity/static/css/worksheet_class.css -w",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  a2infinity/static/css/contact.css -o  a2infinity/static/css/contact.css ",
-		"compress:css": "node-sass a2infinity/static/css/contact.css a2infinity/static/css/contact.css --output-style compressed",
-		"compile:sass": "node-sass src/sass/index.scss src/css/index.css",
-		"build:css": "npm-run-all compile:sass prefix:css compress:css"
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  a2infinity/static/css/worksheet_class.css -o  a2infinity/static/css/worksheet_class.css ",
+		"compress:css": "node-sass a2infinity/static/css/worksheet_class.css a2infinity/static/css/worksheet_class.css --output-style compressed",
+		"build:css": "npm-run-all  prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",
 	"license": "ISC",
