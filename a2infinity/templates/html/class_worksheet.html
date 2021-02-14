@@ -49,12 +49,6 @@
 					</button>
 				</form>
 
-				<!-- <nav class="user-nav">
-                <div class="user-nav__user">
-                    <img src="../../Images/Ayush.jpg" alt="user photo" class="user-nav__user-photo" />
-                    <span class="user-nav__user-name">Ayush</span>
-                </div>
-            </nav> -->
 				<nav class="btn-nav">
 					{% if user.is_authenticated %}
 					<nav class="user-nav">
@@ -68,21 +62,36 @@
 					<button class="btn-nav__signup btn-secondary">Sign-up &rarr;</button>
 					{% endif %}
 				</nav>
-
-				<nav class="nav-bar">
-					<ul class="list">
-						<li class="list__item">
-							<a href="#" class="list__link">Quiz</a>
-						</li>
-						<li class="list__item">
-							<a href="#" class="list__link">Plans</a>
-						</li>
-						<li class="list__item">
-							<a href="#" class="list__link">contact us</a>
-						</li>
-					</ul>
-				</nav>
 			</header>
+
+			<nav class="nav-bar">
+				<ul class="list">
+					<li class="list__item">
+						<a href="#" class="list__link">Quiz</a>
+					</li>
+					<li class="list__item">
+						<a href="#" class="list__link">Plans</a>
+					</li>
+					<li class="list__item">
+						<a href="#" class="list__link">Contact us</a>
+					</li>
+				</ul>
+			</nav>
+
+			<main class="main">
+				<section class="img-section"></section>
+				<div class="img-container">
+					<img
+						src="/static/Images/Background/class_with_text.png"
+						alt="Choose Your Class"
+						class="img-container__image"
+					/>
+				</div>
+            
+            <section class="class-section">
+               
+            </section>
+			</main>
 
 			<!-- ----------------------------------------------------------------------- -->
 			<!-- ------------------------------ overlays ------------------------------- -->
