@@ -10,6 +10,8 @@ urlpatterns = [
     path('logout', views.handleLogout, name="handleLogout"),
     path("contact", views.contact, name='contact'), 
     path("class_worksheet", views.class_worksheet, name='class_worksheet'), 
+    path("subject_class_3_worksheet", views.subject_class_3_worksheet, name='subject_class-3_worksheet'), 
+
 
    
     
