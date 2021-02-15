@@ -85,5 +85,5 @@ def class_worksheet(request):
     return render(request,"class_worksheet.html")
     
  
-def subject_class_3_worksheet(request):
-    return render(request,"subject_class_3_worksheet.html")    
+def subject_class_2_worksheet(request):
+    return render(request,"subject_class_2_worksheet.html")    
