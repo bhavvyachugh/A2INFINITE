@@ -33,44 +33,19 @@
 	background-color: var(--color-grey-light-2);
 	text-align: center;
 	padding: 2rem;
-	width: 37%;
-	margin: 2rem;
+	width: 26%;
+	margin: 2rem 5rem;
 
 	&__img-hed {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		position: relative;
+		justify-content: space-evenly;
 	}
 
 	&__img {
 		height: 7rem;
 		width: 11rem;
 		margin-right: -3rem;
-
-		&--1 {
-			position: absolute;
-			left: 9.5rem;
-			top: -0.5rem;
-		}
-
-		&--2 {
-			position: absolute;
-			left: 8rem;
-			top: -0.8rem;
-		}
-
-		&--3 {
-			position: absolute;
-			left: 9rem;
-			top: -0.9rem;
-		}
-
-		&--4 {
-			position: absolute;
-			left: 9rem;
-			top: -0.5rem;
-		}
 	}
 
 	&__para {
@@ -78,7 +53,7 @@
 	}
 
 	&__heading {
-		margin-right: 3rem;
+		margin-right: 7rem;
 		font-size: 2rem;
 	}
 }

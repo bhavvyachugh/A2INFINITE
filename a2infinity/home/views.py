@@ -87,3 +87,6 @@ def class_worksheet(request):
  
 def subject_class_2_worksheet(request):
     return render(request,"subject_class_2_worksheet.html")    
+    
+def subject_class_1_worksheet(request):
+    return render(request,"subject_class_1_worksheet.html")    

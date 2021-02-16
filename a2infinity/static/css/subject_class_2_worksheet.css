@@ -354,35 +354,18 @@ html {
   background-color: var(--color-grey-light-2);
   text-align: center;
   padding: 2rem;
-  width: 37%;
-  margin: 2rem; }
+  width: 26%;
+  margin: 2rem 5rem; }
   .subject-container__img-hed {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative; }
+    justify-content: space-evenly; }
   .subject-container__img {
     height: 7rem;
     width: 11rem;
     margin-right: -3rem; }
-    .subject-container__img--1 {
-      position: absolute;
-      left: 9.5rem;
-      top: -0.5rem; }
-    .subject-container__img--2 {
-      position: absolute;
-      left: 8rem;
-      top: -0.8rem; }
-    .subject-container__img--3 {
-      position: absolute;
-      left: 9rem;
-      top: -0.9rem; }
-    .subject-container__img--4 {
-      position: absolute;
-      left: 9rem;
-      top: -0.5rem; }
   .subject-container__para {
     font-size: 1.5rem; }
   .subject-container__heading {
-    margin-right: 3rem;
+    margin-right: 7rem;
     font-size: 2rem; }

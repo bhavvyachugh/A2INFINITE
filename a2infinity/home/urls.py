@@ -11,6 +11,8 @@ urlpatterns = [
     path("contact", views.contact, name='contact'), 
     path("class_worksheet", views.class_worksheet, name='class_worksheet'), 
     path("subject_class_2_worksheet", views.subject_class_2_worksheet, name='subject_class_2_worksheet'), 
+    path("subject_class_1_worksheet", views.subject_class_1_worksheet, name='subject_class_1_worksheet'), 
+
 
 
    
