@@ -1,0 +1,10 @@
+.footer {
+	background-color: var(--color-grey-dark-1);
+	color: #fff;
+	padding: 0.1rem;
+
+	&__heading {
+		font-size: 2rem !important;
+		font-weight: 200;
+	}
+}
