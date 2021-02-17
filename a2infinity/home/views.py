@@ -96,3 +96,6 @@ def subject_class_ukg_worksheet(request):
     
 def subject_class_lkg_worksheet(request):
     return render(request,"subject_class_lkg_worksheet.html")    
+    
+def subject_class_nursery_worksheet(request):
+    return render(request,"subject_class_nursery_worksheet.html")    
