@@ -326,6 +326,14 @@ html {
       color: var(--color-primary);
       border-bottom: 1px solid var(--color-primary); }
 
+.footer {
+  background-color: var(--color-grey-dark-1);
+  color: #fff;
+  padding: 0.1rem; }
+  .footer__heading {
+    font-size: 2rem !important;
+    font-weight: 200; }
+
 .main {
   display: flex;
   align-items: center;
