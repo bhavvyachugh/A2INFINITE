@@ -303,3 +303,55 @@ html {
     .list__link:hover {
       color: var(--color-primary);
       border-bottom: 1px solid var(--color-primary); }
+
+.footer {
+  background-color: var(--color-grey-dark-1);
+  color: #fff;
+  padding: 0.1rem; }
+  .footer__heading {
+    font-size: 2rem !important;
+    font-weight: 200; }
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.img-section {
+  width: 100%; }
+
+.img-container {
+  width: 100%;
+  height: 55rem;
+  background-color: var(--color-grey-light-1); }
+  .img-container__image {
+    width: 100%;
+    height: 100%; }
+
+/* ----------------------------- class-container ---------------------------- */
+.subject-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.subject-container {
+  background-color: var(--color-grey-light-2);
+  text-align: center;
+  padding: 2rem;
+  width: 26%;
+  margin: 3rem 4rem; }
+  .subject-container__img-hed {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+  .subject-container__img {
+    height: 7rem;
+    width: 11rem;
+    margin-right: -3rem; }
+  .subject-container__para {
+    font-size: 1.5rem; }
+  .subject-container__heading {
+    margin-right: 7rem;
+    font-size: 2rem; }

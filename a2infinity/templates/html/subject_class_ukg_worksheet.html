@@ -23,5 +23,145 @@
 		></script>
 		{% endif %}
 	</head>
-	<body></body>
+	<body class="body">
+		<div class="container">
+			<!-- ------------------------------- header -------------------------------- -->
+			{% if messages %} {% for message in messages %}
+			<div class="alert alert-{{message}}">
+				<strong>{{message}}</strong>
+				<span class="alert__cross">&#10006;</span>
+			</div>
+			{% endfor %} {% endif %}
+			<header class="header u-border-bottom">
+				<a href="/">
+					<img
+						src="/static/Images/logo/logo_transparent.png"
+						alt="logo"
+						class="logo"
+					/>
+				</a>
+
+				<form action="#" class="search">
+					<input type="text" placeholder="Search" class="search__input" />
+					<button class="search__button">
+						<svg class="search__icon">
+							<use
+								xlink:href="/static/Images/Icons/sprite.svg#icon-search"
+							></use>
+						</svg>
+					</button>
+				</form>
+
+				<nav class="btn-nav">
+					{% if user.is_authenticated %}
+					<nav class="user-nav">
+						<div class="user-nav__user">
+							<span class="user-nav__user-name">{{request.user}}</span>
+							<button class="btn-nav__logout btn-secondary">Logout</button>
+						</div>
+					</nav>
+					{% else %}
+					<button class="btn-nav__login btn-secondary">Login &rarr;</button>
+					<button class="btn-nav__signup btn-secondary">Sign-up &rarr;</button>
+					{% endif %}
+				</nav>
+			</header>
+
+			<!-- ------------------------------- nav bar ------------------------------- -->
+
+			<nav class="nav-bar">
+				<ul class="list">
+					<li class="list__item">
+						<a href="#" class="list__link">Quiz</a>
+					</li>
+					<li class="list__item">
+						<a href="#" class="list__link">Plans</a>
+					</li>
+					<li class="list__item">
+						<a href="/contact" class="list__link">Contact us</a>
+					</li>
+				</ul>
+			</nav>
+
+			<main class="main">
+				<!-- ---------------------------- img container ---------------------------- -->
+
+				<section class="img-section">
+					<div class="img-container">
+						<img
+							src="/static/Images/Background/subject_with_text.png"
+							alt="Choose Your Subject"
+							class="img-container__image"
+						/>
+					</div>
+				</section>
+
+				<!-- --------------------------- subject section --------------------------- -->
+
+				<!-- TODO: Change Para-->
+
+				<section class="subject-section">
+					<div class="subject-container">
+						<div class="subject-container__img-hed">
+							<img
+								src="/static/Images/Illustrations/subject_english.png"
+								alt="english logo"
+								class="subject-container__img"
+							/>
+							<h3 class="heading-tertiary subject-container__heading">
+								English
+							</h3>
+						</div>
+						<div class="subject-container__para-link">
+							<p class="subject-container__para">
+								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
+								More
+							</p>
+							<a href="#" class="btn-tertiary">Next &rarr;</a>
+						</div>
+					</div>
+					<div class="subject-container">
+						<div class="subject-container__img-hed">
+							<img
+								src="/static/Images/Illustrations/subject_maths.png"
+								alt="english logo"
+								class="subject-container__img"
+							/>
+							<h3 class="heading-tertiary subject-container__heading">Maths</h3>
+						</div>
+						<div class="subject-container__para-link">
+							<p class="subject-container__para">
+								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
+								More
+							</p>
+							<a href="#" class="btn-tertiary">Next &rarr;</a>
+						</div>
+					</div>
+					<div class="subject-container">
+						<div class="subject-container__img-hed">
+							<img
+								src="/static/Images/Illustrations/subject_hindi.png"
+								alt="english logo"
+								class="subject-container__img"
+							/>
+							<h3 class="heading-tertiary subject-container__heading">Hindi</h3>
+						</div>
+						<div class="subject-container__para-link">
+							<p class="subject-container__para">
+								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
+								More
+							</p>
+							<a href="#" class="btn-tertiary">Next &rarr;</a>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<footer class="footer">
+				<h3 class="heading-tertiary footer__heading">
+					Copyright &copy; A2INFINITE
+				</h3>
+			</footer>
+		</div>
+	</body>
 </html>
