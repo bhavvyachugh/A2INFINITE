@@ -100,5 +100,5 @@ def subject_class_lkg_worksheet(request):
 def subject_class_nursery_worksheet(request):
     return render(request,"subject_class_nursery_worksheet.html")    
     
-def topic_class_lkg_worksheet(request):
-    return render(request,"topic_class_lkg_worksheet.html")    
+def topic_class_lkg_english_worksheet(request):
+    return render(request,"topic_class_lkg_english_worksheet.html")    

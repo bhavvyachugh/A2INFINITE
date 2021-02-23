@@ -15,6 +15,6 @@ urlpatterns = [
     path("subject_class_ukg_worksheet", views.subject_class_ukg_worksheet, name='subject_class_ukg_worksheet'), 
     path("subject_class_lkg_worksheet", views.subject_class_lkg_worksheet, name='subject_class_lkg_worksheet'), 
     path("subject_class_nursery_worksheet", views.subject_class_nursery_worksheet, name='subject_class_nursery_worksheet'), 
-    path("topic_class_lkg_worksheet", views.topic_class_lkg_worksheet, name='topic_class_lkg_worksheet'), 
+    path("topic_class_lkg_english_worksheet", views.topic_class_lkg_english_worksheet, name='topic_class_lkg_worksheet'), 
     
 ]
