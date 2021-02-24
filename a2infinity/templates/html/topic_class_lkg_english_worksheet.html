@@ -25,6 +25,7 @@
 			defer
 		></script>
 		{% endif %}
+		<script type="text/javascript" src="/static/js/topic.js" defer></script>
 	</head>
 	<body class="body">
 		<div class="container">
@@ -101,22 +102,74 @@
 
 				<section class="section-topics">
 					<ul class="section-topics__list">
-						<li class="section-topics__list-items">
+						<li
+							class="section-topics__list-items section-topics__list-items--nonDropdown"
+						>
 							<img
 								class="section-topics__list-items__icon"
 								src="/static/Images/Icons/list arrow icon.png"
 								alt="list-icon"
 							/>
-							<h3 class="section-topics__list-items__heading">Alphabets</h3>
+							<h3
+								class="section-topics__list-items__heading nonDropdownHeading"
+							>
+								Alphabets
+							</h3>
 						</li>
 
-						<li class="section-topics__list-items">
+						<li
+							class="section-topics__list-items section-topics__list-items--dropdown"
+						>
 							<img
 								class="section-topics__list-items__icon"
 								src="/static/Images/Icons/list arrow icon.png"
 								alt="list-icon"
 							/>
-							<h3 class="section-topics__list-items__heading">Sounds</h3>
+							<h3 class="section-topics__list-items__heading dropdownHeading">
+								Sounds
+							</h3>
+							<ol class="section-topics__list-items__dropdown-list">
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										A Sound
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										E Sound
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										I Sound
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										O Sound
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										U Sound
+									</a>
+								</li>
+							</ol>
 						</li>
 					</ul>
 				</section>
