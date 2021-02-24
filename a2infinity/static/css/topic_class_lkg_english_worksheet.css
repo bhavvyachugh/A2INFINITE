@@ -311,3 +311,41 @@ html {
     .list__link:hover {
       color: var(--color-primary);
       border-bottom: 1px solid var(--color-primary); }
+
+/* --------------------------------- heading -------------------------------- */
+.section-headings__heading {
+  color: var(--color-grey-dark-2);
+  font-size: 3.5rem;
+  margin-bottom: 0; }
+
+.section-headings__para {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 1.5rem 20rem;
+  color: var(--color-grey-dark-1); }
+
+/* --------------------------------- topics --------------------------------- */
+.section-topics__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .section-topics__list-items {
+    display: flex;
+    font-size: 3rem;
+    font-family: open-sans-light;
+    font-weight: 100;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.5s; }
+    .section-topics__list-items__heading {
+      font-weight: 100;
+      margin-left: 0.5rem; }
+      .section-topics__list-items__heading:hover {
+        color: var(--color-primary-dark); }
+    .section-topics__list-items__icon {
+      height: 2rem;
+      width: 2rem; }
+      .section-topics__list-items__icon:hover {
+        fill: var(--color-grey-dark-1); }

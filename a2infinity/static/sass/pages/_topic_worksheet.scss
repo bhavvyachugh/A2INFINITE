@@ -1,0 +1,55 @@
+/* --------------------------------- heading -------------------------------- */
+
+.section-headings {
+	&__heading {
+		color: var(--color-grey-dark-2);
+		font-size: 3.5rem;
+		margin-bottom: 0;
+	}
+
+	&__para {
+		text-align: center;
+		font-size: 1.6rem;
+		margin: 1.5rem 20rem;
+		color: var(--color-grey-dark-1);
+	}
+}
+
+/* --------------------------------- topics --------------------------------- */
+.section-topics {
+	&__list {
+		list-style: none;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+
+		&-items {
+			display: flex;
+			font-size: 3rem;
+			font-family: open-sans-light;
+			font-weight: 100;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: color 0.5s;
+
+			&__heading {
+				font-weight: 100;
+				margin-left: 0.5rem;
+
+				&:hover {
+					color: var(--color-primary-dark);
+				}
+			}
+
+			&__icon {
+				height: 2rem;
+				width: 2rem;
+
+				&:hover {
+					fill: var(--color-grey-dark-1);
+				}
+			}
+		}
+	}
+}
