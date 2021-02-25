@@ -98,6 +98,9 @@ html {
   display: none !important;
   transition: all 2s; }
 
+.u-rotate-90 {
+  transform: rotate(90deg); }
+
 .btn-primary,
 .btn-primary:link,
 .btn-primary:visited {
@@ -336,7 +339,8 @@ html {
     font-weight: 100;
     cursor: pointer;
     margin: 0 15rem;
-    position: relative; }
+    position: relative;
+    /* -------------------------------- dropdown -------------------------------- */ }
     .section-topics__list-items__heading {
       font-weight: 100;
       margin-left: 0.5rem; }
@@ -350,7 +354,13 @@ html {
       left: -2rem; }
     .section-topics__list-items__dropdown-list {
       display: none;
-      font-size: 2rem; }
+      opacity: 0;
+      font-size: 2rem;
+      margin-top: -2rem;
+      margin-left: -2rem; }
       .section-topics__list-items__dropdown-list-item__link {
         text-decoration: none;
         color: var(--color-grey-dark-1); }
+        .section-topics__list-items__dropdown-list-item__link:hover {
+          color: var(--color-primary);
+          font-weight: 700; }
