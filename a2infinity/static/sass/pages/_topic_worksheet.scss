@@ -52,10 +52,11 @@
 
 			&__dropdown-list {
 				display: none;
-				opacity: 0;
 				font-size: 2rem;
 				margin-top: -2rem;
 				margin-left: -2rem;
+				transition: all 0.5s;
+				opacity: 0;
 
 				&-item__link {
 					text-decoration: none;

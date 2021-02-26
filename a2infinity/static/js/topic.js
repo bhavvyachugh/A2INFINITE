@@ -15,6 +15,7 @@ dropdownHeading.addEventListener('mouseover', () => {
 	dropdownOl.style.opacity = '1';
 	nonDropdownHeading.style.height = '19rem';
    listIcon.classList.add('u-rotate-90');
+   dropdownOl.style.animation = 'showDropdownMenu 1s forwards'
 });
 
 dropdownListItem.addEventListener('mouseleave', () => {
