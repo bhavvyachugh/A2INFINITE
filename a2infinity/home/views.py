@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate,login ,logout
 from django.contrib.auth.models import User
 from home.models import Contact
 from datetime import datetime
+import razorpay
+from django.views.decorators.csrf import csrf_exempt
 
 # from blog.models import Post
 
@@ -98,4 +100,21 @@ def subject_class_lkg_worksheet(request):
     return render(request,"subject_class_lkg_worksheet.html")    
     
 def subject_class_nursery_worksheet(request):
-    return render(request,"subject_class_nursery_worksheet.html")    
+    return render(request, "subject_class_nursery_worksheet.html")
+    
+
+def payment(request):
+    if request.method == 'POST':
+        amount = 50000
+        order_currency = 'INR'
+        client = razorpay.Client(
+            auth=('rzp_test_Ac2g1pJT7D9c69', 'd87OjvZuXZMT6FppcevvzxXU'))
+
+        payment = client.order.create({'amount':amount, 'currency':currency,'payment_capture': '1'})   
+    
+   
+    return render(request, "payment.html")
+    
+@csrf_exempt    
+def success(request):
+    return render(request, "success.html")    
