@@ -99,3 +99,6 @@ def subject_class_lkg_worksheet(request):
     
 def subject_class_nursery_worksheet(request):
     return render(request,"subject_class_nursery_worksheet.html")    
+
+def plans(request):
+    return render(request,"plans.html")    
