@@ -15,8 +15,12 @@ urlpatterns = [
     path("subject_class_ukg_worksheet", views.subject_class_ukg_worksheet, name='subject_class_ukg_worksheet'), 
     path("subject_class_lkg_worksheet", views.subject_class_lkg_worksheet, name='subject_class_lkg_worksheet'), 
     path("subject_class_nursery_worksheet", views.subject_class_nursery_worksheet, name='subject_class_nursery_worksheet'), 
+<<<<<<< HEAD
     path("topic_class_lkg_english_worksheet", views.topic_class_lkg_english_worksheet, name='topic_class_lkg_worksheet'), 
     path("a_sound_lkg_english_worksheet", views.a_sound_lkg_english_worksheet, name='a_sound_lkg_english_worksheet'), 
+=======
+    path("plans", views.plans, name='plans'), 
+>>>>>>> 604ac142e3c82dfd007576c9fcfcee5c0e6f257a
 
     
 ]

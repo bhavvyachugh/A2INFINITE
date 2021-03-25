@@ -99,6 +99,7 @@ def subject_class_lkg_worksheet(request):
     
 def subject_class_nursery_worksheet(request):
     return render(request,"subject_class_nursery_worksheet.html")    
+<<<<<<< HEAD
     
 def topic_class_lkg_english_worksheet(request):
     return render(request, "topic_class_lkg_english_worksheet.html")
@@ -107,3 +108,8 @@ def a_sound_lkg_english_worksheet(request):
     return render(request,"a_sound_lkg_english_worksheet.html")        
     
     
+=======
+
+def plans(request):
+    return render(request,"plans.html")    
+>>>>>>> 604ac142e3c82dfd007576c9fcfcee5c0e6f257a
