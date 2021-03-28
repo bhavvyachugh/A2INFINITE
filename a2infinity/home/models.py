@@ -12,3 +12,10 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
     
+
+class Sheet(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="Sheet/images", default="")
+    
+    def __str__(self):
+        return self.name                      

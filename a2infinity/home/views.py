@@ -3,9 +3,11 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login ,logout
 from django.contrib.auth.models import User
 from home.models import Contact
+from home.models import Sheet
 from datetime import datetime
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
+from django.db.models import Q
 
 # from blog.models import Post
 
@@ -83,6 +85,12 @@ def contact(request):
         messages.success(request, 'Your message has been sent !')
     return render(request, 'contact.html')
  
+def sheet(request):
+    sheet = Sheet.objects.all()
+    return render(request,'sheet.html', {'sheet' : sheet})
+
+
+
 def class_worksheet(request):
     return render(request,"class_worksheet.html")
     
@@ -131,4 +139,22 @@ def payment(request):
     
 @csrf_exempt    
 def success(request):
-    return render(request, "success.html")    
+    return render(request, "success.html")   
+
+
+def search(request):
+    if request.method == 'POST':
+        searchh = request.POST['search']
+
+        if searchh:
+            match = Sheet.objects.filter(Q(name__icontains=searchh) |
+                                        Q(image__icontains=searchh))
+
+
+            if match:
+                return render(request, 'search.html', {'search': match})
+            else:
+                messages.error(request, 'no result found')
+        else:
+            return HttpResponseRedirect('/search')
+    return render(request,'search.html')  

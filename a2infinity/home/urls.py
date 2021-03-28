@@ -25,5 +25,7 @@ urlpatterns = [
     path("subject_class_nursery_worksheet", views.subject_class_nursery_worksheet, name='subject_class_nursery_worksheet'),
     path("payment", views.payment, name='payment'), 
     path("success", views.success, name='success'), 
+    path("sheet", views.sheet, name='sheet'),
+    path("search", views.search, name='search'), 
  
 ]
