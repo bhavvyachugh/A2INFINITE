@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2INFINITE | Search</title>
+
+    <!-- ------------------------------- favicon ------------------------------- -->
+
+    <link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+    <!-- --------------------------------- Css --------------------------------- -->
+    <link rel="stylesheet" href="/static/css/search.css" />
+
+    <!-- ----------------------------- javascript ------------------------------ -->
+    {% if user.is_authenticated %}
+    <script type="text/javascript" src="/static/js/logout.js" defer></script>
+    {% else %}
+    <script type="text/javascript" src="/static/js/sign_in_sign_up.js" defer></script>
+    {% endif %}
+</head>
+<style>
+    figure {
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+</style>
+
+<body class="body">
+    <div class="container">
+        <header class="header u-border-bottom">
+            <a href="/">
+                <img src="/static/Images/logo/logo_transparent.png" alt="logo" class="logo" />
+            </a>
+
+            <form method="POST" action="search" class="search">
+                {% csrf_token %}
+                <input type="text" placeholder="Search" class="search__input" name="search" id="search" />
+                <button class="search__button">
+            <svg class="search__icon">
+              <use
+                xlink:href="/static/Images/Icons/sprite.svg#icon-search"
+              ></use>
+            </svg>
+          </button>
+            </form>
+
+            <!-- <nav class="user-nav">
+                <div class="user-nav__user">
+                    <img src="../../Images/Ayush.jpg" alt="user photo" class="user-nav__user-photo" />
+                    <span class="user-nav__user-name">Ayush</span>
+                </div>
+            </nav> -->
+            <nav class="btn-nav">
+                {% if user.is_authenticated %}
+                <nav class="user-nav">
+                    <div class="user-nav__user">
+                        <span class="user-nav__user-name">{{request.user}}</span>
+                        <button class="btn-nav__logout btn-secondary">Logout</button>
+                    </div>
+                </nav>
+                {% else %}
+                <button class="btn-nav__login btn-secondary">Login &rarr;</button>
+                <button class="btn-nav__signup btn-secondary">Sign-up &rarr;</button> {% endif %}
+            </nav>
+        </header>
+
+        <!-- ------------------------------- nav bar ------------------------------- -->
+
+        <nav class="nav-bar">
+            <ul class="list">
+                <li class="list__item">
+                    <a href="#" class="list__link">Quiz</a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="list__link">Plans</a>
+                </li>
+                <li class="list__item">
+                    <a href="/contact" class="list__link">Contact us</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- ------------------------------- main ------------------------------- -->
+
+        <main class="main">
+            <form method="post" action="" class="search">
+                {% csrf_token %}
+                <!-- <input type="text" placeholder="Search" class="search__input" name="search" id="search" /> -->
+                <!-- <button class="search__button"> -->
+                <!-- <svg class="search__icon">
+              <use
+                xlink:href="/static/Images/Icons/sprite.svg#icon-search"
+              ></use>
+            </svg> -->
+                </button>
+            </form>
+
+            <div>
+                {% if messages %}
+                <ul class="messages">
+                    {% for k in messages %}
+                    <li style="color:red">{{ k }}</li>
+                    {%endfor%}
+                </ul>
+                {%endif%}
+            </div>
+            <div style="color :blue">
+                {%if search%} {%for k in search%}
+                <table border="0px" width="300px">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <figure>
+                                <a href="{{k.image}}"><button onclick="file.print()">Print this page</button><img src="{{k.image}}" width="200" height="200" /></a>
+                            </figure>
+                        </td>
+
+
+                    </tr>
+
+
+
+                </table>
+                <hr> {%endfor%} {%endif%}
+            </div>
+        </main>
+
+        <!-- ------------------------------- footer ------------------------------- -->
+
+
+        <footer class=" footer ">
+            <h3 class="heading-tertiary footer__heading ">
+                Copyright &copy; A2INFINITE
+            </h3>
+        </footer>
+
+        <!-- ----------------------------------------------------------------------- -->
+        <!-- ------------------------------ overlays ------------------------------- -->
+        <!-- ----------------------------------------------------------------------- -->
+
+        <!-- ----------------------------- login form ------------------------------ -->
+
+        <div class="form-container login-form-container u-invisible ">
+            <form action="/login " method="POST " class="form-overlay ">
+                {% csrf_token %}
+
+                <h1 class="heading-primary ">Welcome Back</h1>
+                <input type="text " placeholder="User Name " class="form-overlay__input " required id="loginusername " name="loginusername " />
+                <input type="password " placeholder="Password " class="form-overlay__input " required id="loginpassword " name="loginpassword " />
+                <div class="form-overlay__checkbox-link ">
+                    <div class="form-overlay__checkbox-container ">
+                        <input type="checkbox " />
+                        <h3 class="form-overlay__heading ">Remember Me</h3>
+                    </div>
+
+                    <div class="form-overlay__link-container ">
+                        <h3 class="form-overlay__heading ">Don't Have Account!</h3>
+                        <button class="form-overlay__link form-overlay__link-signup u-margin-top-minus ">
+                Sign-up &rarr;
+              </button>
+                    </div>
+                </div>
+                <button type="submit " class="login-form__submit btn-primary ">
+            Log In &rarr;
+          </button>
+                <div class="form-overlay__cross cross-login ">
+                    <span class="form-overlay__cross-span ">&#10006;</span>
+                </div>
+            </form>
+        </div>
+
+        <!-- ---------------------------- Sign-up form ----------------------------- -->
+
+        <div class="form-container signup-form-container u-invisible ">
+            <form action="/signup " method="POST " class="form-overlay ">
+                {% csrf_token %}
+                <h1 class="heading-primary ">We Are Glad To See You Here</h1>
+                <input type="text " placeholder="User Name " class="form-overlay__input " required id="username " name="username " />
+                <input type="text " placeholder="School Name " class="form-overlay__input " required id="school " name="school " />
+                <input type="email " placeholder="Email " class="form-overlay__input " required id="email " name="email " />
+                <input type="number " name="phone " id="phone " placeholder="Mobile " class="form-overlay__input " required />
+                <input type="password " placeholder="Password " class="form-overlay__input " required id="pass1 " name="pass1 " />
+                <input type="password " placeholder="Confirm Password " class="form-overlay__input " required id="pass2 " name="pass2 " />
+                <div class="form-overlay__checkbox-link ">
+                    <div class="form-overlay__checkbox-container ">
+                        <input type="checkbox " />
+                        <h3 class="form-overlay__heading ">Remember Me</h3>
+                    </div>
+
+                    <div class="form-overlay__link-container ">
+                        <h3 class="form-overlay__heading ">Already Have Account!</h3>
+                        <button class="form-overlay__link form-overlay__link-login u-margin-top-minus ">
+                Login &rarr;
+              </button>
+                    </div>
+                </div>
+                <button type="submit " class="form-overlay__submit btn-primary ">
+            Sign-up &rarr;
+          </button>
+                <div class="form-overlay__cross cross-signup ">
+                    <span class="form-overlay__cross-span ">&#10006;</span>
+                </div>
+            </form>
+        </div>
+
+        <!-- --------------------------- logout warning ---------------------------- -->
+        <div class="form-container logout-form-container u-invisible ">
+            <div class="form-overlay ">
+                <h1 class="heading-primary u-margin-top-minus ">
+                    Are You Sure To Logout ?
+                </h1>
+                <a href="/logout " class="btn-secondary ">Yes</a>
+                <button class="logout-no btn-secondary ">No</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

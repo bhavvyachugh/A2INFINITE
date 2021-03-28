@@ -35,15 +35,16 @@
                 <img src="/static/Images/logo/logo_transparent.png" alt="logo" class="logo" />
             </a>
 
-            <form action="#" class="search">
-                <input type="text" placeholder="Search" class="search__input" />
-                <button class="search__button">
-						<svg class="search__icon">
-							<use
-								xlink:href="/static/Images/Icons/sprite.svg#icon-search"
-							></use>
-						</svg>
-					</button>
+            <form method="POST" action="search" class="search">
+                {% csrf_token %}
+                <input type="text" placeholder="Search" class="search__input" name="search" id="search" />
+                <button class="search__button" type="submit">
+            <svg class="search__icon">
+              <use
+                xlink:href="/static/Images/Icons/sprite.svg#icon-search"
+              ></use>
+            </svg>
+          </button>
             </form>
 
             <!-- <nav class="user-nav">
@@ -52,99 +53,93 @@
                     <span class="user-nav__user-name">Ayush</span>
                 </div>
             </nav> -->
-				<nav class="btn-nav">
-					{% if user.is_authenticated %}
-					<nav class="user-nav">
-						<div class="user-nav__user">
-							<span class="user-nav__user-name">{{request.user}}</span>
-							<button class="btn-nav__logout btn-secondary">Logout</button>
-						</div>
-					</nav>
-					{% else %}
-					<button class="btn-nav__login btn-secondary">Login &rarr;</button>
-					<button class="btn-nav__signup btn-secondary">Sign-up &rarr;</button>
-					{% endif %}
-				</nav>
-			</header>
+            <nav class="btn-nav">
+                {% if user.is_authenticated %}
+                <nav class="user-nav">
+                    <div class="user-nav__user">
+                        <span class="user-nav__user-name">{{request.user}}</span>
+                        <button class="btn-nav__logout btn-secondary">Logout</button>
+                    </div>
+                </nav>
+                {% else %}
+                <button class="btn-nav__login btn-secondary">Login &rarr;</button>
+                <button class="btn-nav__signup btn-secondary">Sign-up &rarr;</button> {% endif %}
+            </nav>
+        </header>
 
-			<div class="content">
-				<!-- ------------------------------- sidebar ------------------------------- -->
-				<nav class="sidebar">
-					<ul class="side-nav u-margin-top-large">
-						<li class="side-nav__item">
-							<a href="/class_worksheet" class="side-nav__link">Worksheets</a>
-						</li>
-						<li class="side-nav__item">
-							<a href="#" class="side-nav__link">Quiz</a>
-						</li>
-						<li class="side-nav__item">
-							<a href="/plans" class="side-nav__link">Plans</a>
-						</li>
-						<li class="side-nav__item">
-							<a href="/contact" class="side-nav__link">Contact-us</a>
-						</li>
-					</ul>
-					<div class="copyright">
-						<h3>Copyright &copy; A2INFINITE 2021</h3>
-					</div>
-				</nav>
+        <div class="content">
+            <!-- ------------------------------- sidebar ------------------------------- -->
+            <nav class="sidebar">
+                <ul class="side-nav u-margin-top-large">
+                    <li class="side-nav__item">
+                        <a href="/class_worksheet" class="side-nav__link">Worksheets</a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">Quiz</a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">Plans</a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="/contact" class="side-nav__link">Contact-us</a>
+                    </li>
+                </ul>
+                <div class="copyright">
+                    <h3>Copyright &copy; A2INFINITE 2021</h3>
+                </div>
+            </nav>
 
-				<main class="main">
-					<section class="welcome">
-						<h1 class="welcome__heading heading-primary">
-							Discover A Limitless World Of Learning
-						</h1>
-						<p class="welcome__para">
-							Join now for more than 20,000 Practice Worksheets and Quiz
-						</p>
-						<button class="btn-primary welcome__btn">Get Started &rarr;</button>
-					</section>
+            <main class="main">
+                <section class="welcome">
+                    <h1 class="welcome__heading heading-primary">
+                        Discover A Limitless World Of Learning
+                    </h1>
+                    <p class="welcome__para">
+                        Join now for more than 20,000 Practice Worksheets and Quiz
+                    </p>
+                    <button class="btn-primary welcome__btn">Get Started &rarr;</button>
+                </section>
 
-					<hr class="hr u-margin-top-large" />
+                <hr class="hr u-margin-top-large" />
 
-					<!-- ------------------------------- library ------------------------------- -->
+                <!-- ------------------------------- library ------------------------------- -->
 
-					<section class="library">
-						<h1 class="heading-secondary">Our Library</h1>
+                <section class="library">
+                    <h1 class="heading-secondary">Our Library</h1>
 
-						<div class="library-container">
-							<div class="library-container__box">
-								<div class="library-container__box--icon-text">
-									<img
-										src="/static/Images/Icons/worksheet.png"
-										alt="file icon"
-										class="library-container__icon"
-									/>
-									<h3 class="heading-tertiary library-container__heading">
-										Sheet
-									</h3>
-								</div>
-								<div class="library-container__box--para-link">
-									<p class="library-container__para">
-										We’ve got a worksheet for every topic!
-									</p>
-									<a href="/class_worksheet" class="btn-tertiary"
-										>Explore &rarr;</a
-									>
-								</div>
-							</div>
+                    <div class="library-container">
+                        <div class="library-container__box">
+                            <div class="library-container__box--icon-text">
+                                <img src="/static/Images/Icons/worksheet.png" alt="file icon" class="library-container__icon" />
+                                <h3 class="heading-tertiary library-container__heading">
+                                    Sheet
+                                </h3>
+                            </div>
+                            <div class="library-container__box--para-link">
+                                <p class="library-container__para">
+                                    We’ve got a worksheet for every topic!
+                                </p>
+                                <a href="/class_worksheet" class="btn-tertiary">Explore &rarr;</a
+                  >
+                </div>
+              </div>
 
-							<div class="library-container__box">
-								<div class="library-container__box--icon-text">
-									<img
-										src="/static/Images/Icons/quiz.png"
-										alt="quiz icon"
-										class="library-container__icon"
-									/>
-									<h3 class="heading-tertiary library-container__heading">
-										Quiz
-									</h3>
-								</div>
-								<div class="library-container__box--para-link">
-									<p class="library-container__para">
-										Check your child’s Prepration with our great quizes
-									</p>
-									<a href="#" class="btn-tertiary">Explore &rarr;</a>
+              <div class="library-container__box">
+                <div class="library-container__box--icon-text">
+                  <img
+                    src="/static/Images/Icons/quiz.png"
+                    alt="quiz icon"
+                    class="library-container__icon"
+                  />
+                  <h3 class="heading-tertiary library-container__heading">
+                    Quiz
+                  </h3>
+                </div>
+                <div class="library-container__box--para-link">
+                  <p class="library-container__para">
+                    Check your child’s Prepration with our great quizes
+                  </p>
+                  <a href="#" class="btn-tertiary">Explore &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -212,13 +207,13 @@
                     <div class="form-overlay__link-container">
                         <h3 class="form-overlay__heading">Don't Have Account!</h3>
                         <button class="form-overlay__link form-overlay__link-signup u-margin-top-minus">
-								Sign-up &rarr;
-							</button>
+                Sign-up &rarr;
+              </button>
                     </div>
                 </div>
                 <button type="submit" class="login-form__submit btn-primary">
-						Log In &rarr;
-					</button>
+            Log In &rarr;
+          </button>
                 <div class="form-overlay__cross cross-login">
                     <span class="form-overlay__cross-span">&#10006;</span>
                 </div>
@@ -246,13 +241,13 @@
                     <div class="form-overlay__link-container">
                         <h3 class="form-overlay__heading">Already Have Account!</h3>
                         <button class="form-overlay__link form-overlay__link-login u-margin-top-minus">
-								Login &rarr;
-							</button>
+                Login &rarr;
+              </button>
                     </div>
                 </div>
                 <button type="submit" class="form-overlay__submit btn-primary">
-						Sign-up &rarr;
-					</button>
+            Sign-up &rarr;
+          </button>
                 <div class="form-overlay__cross cross-signup">
                     <span class="form-overlay__cross-span">&#10006;</span>
                 </div>
@@ -270,8 +265,6 @@
             </div>
         </div>
     </div>
-
-
 </body>
 
 </html>
