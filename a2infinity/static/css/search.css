@@ -314,3 +314,23 @@ html {
     .list__link:hover {
       color: var(--color-primary);
       border-bottom: 1px solid var(--color-primary); }
+
+/* ---------------------------------- alert --------------------------------- */
+.alert__heading {
+  font-size: 5rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  text-align: center; }
+
+/* ---------------------------------- sheets ---------------------------------- */
+.sheet-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap; }
+  .sheet-list__items {
+    margin: 0 4.5rem; }
+  .sheet-list__heading {
+    margin-top: -0.2rem;
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 1.5rem; }

@@ -4,12 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Search | A2INFINITE</title>
+		<title>A2INFINITE | Search</title>
 
 		<!-- ------------------------------- favicon ------------------------------- -->
-		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
-		<!-- --------------------------------- css --------------------------------- -->
+		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+		<!-- --------------------------------- Css --------------------------------- -->
 		<link rel="stylesheet" href="/static/css/search.css" />
 
 		<!-- ----------------------------- javascript ------------------------------ -->
@@ -23,15 +23,18 @@
 		></script>
 		{% endif %}
 	</head>
+	<style>
+		figure {
+			display: block;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			margin-left: 40px;
+			margin-right: 40px;
+		}
+	</style>
+
 	<body class="body">
 		<div class="container">
-			<!-- ------------------------------- header -------------------------------- -->
-			{% if messages %} {% for message in messages %}
-			<div class="alert alert-{{message}}">
-				<strong>{{message}}</strong>
-				<span class="alert__cross">&#10006;</span>
-			</div>
-			{% endfor %} {% endif %}
 			<header class="header u-border-bottom">
 				<a href="/">
 					<img
@@ -50,7 +53,7 @@
 						name="search"
 						id="search"
 					/>
-					<button class="search__button" type="submit">
+					<button class="search__button">
 						<svg class="search__icon">
 							<use
 								xlink:href="/static/Images/Icons/sprite.svg#icon-search"
@@ -59,6 +62,12 @@
 					</button>
 				</form>
 
+				<!-- <nav class="user-nav">
+                <div class="user-nav__user">
+                    <img src="../../Images/Ayush.jpg" alt="user photo" class="user-nav__user-photo" />
+                    <span class="user-nav__user-name">Ayush</span>
+                </div>
+            </nav> -->
 				<nav class="btn-nav">
 					{% if user.is_authenticated %}
 					<nav class="user-nav">
@@ -82,7 +91,7 @@
 						<a href="#" class="list__link">Quiz</a>
 					</li>
 					<li class="list__item">
-						<a href="/plans" class="list__link">Plans</a>
+						<a href="#" class="list__link">Plans</a>
 					</li>
 					<li class="list__item">
 						<a href="/contact" class="list__link">Contact us</a>
@@ -90,10 +99,34 @@
 				</ul>
 			</nav>
 
-			<!-- -------------------------------- main --------------------------------- -->
-         
+			<!-- ------------------------------- main ------------------------------- -->
 
-			<!-- ------------------------------- footer -------------------------------- -->
+			<main class="main">
+				<!-- Alert for no items -->
+				<div class="alert">
+					{% if messages %} {% for k in messages %}
+					<h1 class="alert__heading">{{ k }}</h1>
+					{%endfor%} {%endif%}
+				</div>
+
+				<ul class="sheet-list">
+					{%if search%} {%for k in search%}
+					<li class="sheet-list__items">
+						<!-- fetching sheets -->
+						<a href="{{k.image}}"
+							><img src="{{k.image}}" width="200" height="200"
+						/></a>
+						<!-- name of sheet -->
+						<h1 class="sheet-list__heading">{{k.name}}</h1>
+					</li>
+
+					<hr color="#dedcdc" />
+					{%endfor%} {%endif%}
+				</ul>
+			</main>
+
+			<!-- ------------------------------- footer ------------------------------- -->
+
 			<footer class="footer">
 				<h3 class="heading-tertiary footer__heading">
 					Copyright &copy; A2INFINITE
