@@ -4,9 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Plans | A2INFINITE</title>
+		<title>Checkout | A2INFINITE</title>
+
 		<!-- --------------------------------- css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/plans.css" />
+		<link rel="stylesheet" href="/static/css/checkout.css" />
 
 		<!-- ------------------------------- favicon ------------------------------- -->
 
@@ -26,12 +27,6 @@
 
 	<body class="body">
 		<div class="container">
-			{% if messages %} {% for message in messages %}
-			<div class="alert alert-{{message}}">
-				<strong>{{message}}</strong>
-				<span class="alert__cross">&#10006;</span>
-			</div>
-			{% endfor %} {% endif %}
 			<header class="header u-border-bottom">
 				<a href="/">
 					<img
@@ -41,8 +36,15 @@
 					/>
 				</a>
 
-				<form action="#" class="search">
-					<input type="text" placeholder="Search" class="search__input" />
+				<form method="POST" action="search" class="search">
+					{% csrf_token %}
+					<input
+						type="text"
+						placeholder="Search"
+						class="search__input"
+						name="search"
+						id="search"
+					/>
 					<button class="search__button">
 						<svg class="search__icon">
 							<use
@@ -52,6 +54,12 @@
 					</button>
 				</form>
 
+				<!-- <nav class="user-nav">
+             <div class="user-nav__user">
+                 <img src="../../Images/Ayush.jpg" alt="user photo" class="user-nav__user-photo" />
+                 <span class="user-nav__user-name">Ayush</span>
+             </div>
+         </nav> -->
 				<nav class="btn-nav">
 					{% if user.is_authenticated %}
 					<nav class="user-nav">
@@ -84,178 +92,89 @@
 			</nav>
 
 			<!-- -------------------------------- main --------------------------------- -->
+
 			<main class="main">
-				<h1 class="heading-primary heading-plans">Choose Your Plan</h1>
-
-				<div class="row">
-					<div class="col-1-of-3">
-						<div class="card">
-							<div class="card__side card__side--front">
-								<div class="card__picture card__picture--1">&nbsp;</div>
-
-								<h4 class="card__heading">
-									<span class="card__heading-span">Plan Heading Heading</span>
-								</h4>
-
-								<div class="card__details">
-									<ul>
-										<li>feature 1</li>
-										<li>feature 2</li>
-										<li>feature 3</li>
-										<li>feature 4</li>
-										<li>feature 5</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="card__side card__side--back">
-								<div class="card__cta">
-									<div class="card__price-box">
-										<p class="card__price-only">Only</p>
-										<p class="card__price-value">Rs. 2000</p>
-									</div>
-
-									<a href="/checkout" class="card__btn">Book Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-1-of-3">
-						<div class="card">
-							<div class="card__side card__side--front">
-								<div class="card__picture card__picture--1">&nbsp;</div>
-
-								<h4 class="card__heading">
-									<span class="card__heading-span">Plan Heading Heading</span>
-								</h4>
-
-								<div class="card__details">
-									<ul>
-										<li>feature 1</li>
-										<li>feature 2</li>
-										<li>feature 3</li>
-										<li>feature 4</li>
-										<li>feature 5</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="card__side card__side--back">
-								<div class="card__cta">
-									<div class="card__price-box">
-										<p class="card__price-only">Only</p>
-										<p class="card__price-value">Rs. 2000</p>
-									</div>
-
-									<a href="/checkout" class="card__btn">Book Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-1-of-3">
-						<div class="card">
-							<div class="card__side card__side--front">
-								<div class="card__picture card__picture--1">&nbsp;</div>
-
-								<h4 class="card__heading">
-									<span class="card__heading-span">Plan Heading Heading</span>
-								</h4>
-
-								<div class="card__details">
-									<ul>
-										<li>feature 1</li>
-										<li>feature 2</li>
-										<li>feature 3</li>
-										<li>feature 4</li>
-										<li>feature 5</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="card__side card__side--back">
-								<div class="card__cta">
-									<div class="card__price-box">
-										<p class="card__price-only">Only</p>
-										<p class="card__price-value">Rs. 2000</p>
-									</div>
-
-									<a href="/checkout" class="card__btn">Book Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-1-of-3 u-margin-left-large">
-						<div class="card">
-							<div class="card__side card__side--front">
-								<div class="card__picture card__picture--1">&nbsp;</div>
-
-								<h4 class="card__heading">
-									<span class="card__heading-span">Plan Heading Heading</span>
-								</h4>
-
-								<div class="card__details">
-									<ul>
-										<li>feature 1</li>
-										<li>feature 2</li>
-										<li>feature 3</li>
-										<li>feature 4</li>
-										<li>feature 5</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="card__side card__side--back">
-								<div class="card__cta">
-									<div class="card__price-box">
-										<p class="card__price-only">Only</p>
-										<p class="card__price-value">Rs. 2000</p>
-									</div>
-
-									<a href="/checkout" class="card__btn">Book Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-1-of-3">
-						<div class="card">
-							<div class="card__side card__side--front">
-								<div class="card__picture card__picture--1">&nbsp;</div>
-
-								<h4 class="card__heading">
-									<span class="card__heading-span">Plan Heading Heading</span>
-								</h4>
-
-								<div class="card__details">
-									<ul>
-										<li>feature 1</li>
-										<li>feature 2</li>
-										<li>feature 3</li>
-										<li>feature 4</li>
-										<li>feature 5</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="card__side card__side--back">
-								<div class="card__cta">
-									<div class="card__price-box">
-										<p class="card__price-only">Only</p>
-										<p class="card__price-value">Rs. 2000</p>
-									</div>
-
-									<a href="/checkout" class="card__btn">Book Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<h1 class="heading-primary heading">
+					Thank you for Trusting Us hope you will enjoy 'A2INFINITE'
+				</h1>
+				<!-- TODO: Change Url of Logo-->
+				<form action="success" method="POST">
+					<script
+						src="https://checkout.razorpay.com/v1/checkout.js"
+						data-key="rzp_test_Ac2g1pJT7D9c69"
+						Enter
+						the
+						Test
+						API
+						Key
+						id
+						generated
+						from
+						Dashboard
+						→
+						Settings
+						→
+						API
+						Keys
+						data-amount="50000"
+						Amount
+						is
+						in
+						currency
+						subunits.
+						Hence,
+						29935
+						refers
+						to
+						29935
+						paise
+						or
+						₹299.35.
+						data-currency="INR"
+						can
+						accept
+						international
+						payments
+						by
+						changing
+						the
+						currency
+						code.
+						Contact
+						our
+						Support
+						Team
+						to
+						enable
+						International
+						for
+						your
+						account
+						data-order_id="{{payment.id}}"
+						Replace
+						with
+						the
+						order_id
+						generated
+						by
+						you
+						in
+						the
+						backend.
+						data-buttontext="Pay Now"
+						data-name="A2INFINITE"
+						data-description="You are going to join A2INFINITE"
+						data-image="http://127.0.0.1:8000/static/Images/logo/logo_transparent-big.png"
+						data-prefill.name="pc"
+						data-prefill.email="example@gmail.com"
+						data-theme.color="#eb2f64"
+					></script>
+					<input type="hidden" custom="Hidden Element" name="hidden" />
+				</form>
 			</main>
 
-			<!-- ------------------------------- Footer -------------------------------- -->
+			<!-- ------------------------------- footer -------------------------------- -->
+
 			<footer class="footer">
 				<h3 class="heading-tertiary footer__heading">
 					Copyright &copy; A2INFINITE
@@ -304,7 +223,7 @@
 							</button>
 						</div>
 					</div>
-					<button type="submit" class="login-form__submit btn-primary">
+					<button type="submit" class="login-form__submit">
 						Log In &rarr;
 					</button>
 					<div class="form-overlay__cross cross-login">

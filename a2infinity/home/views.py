@@ -126,17 +126,17 @@ def plans(request):
     return render(request, "subject_class_nursery_worksheet.html")
     
 
-def payment(request):
+def checkout(request):
     if request.method == 'POST':
         amount = 50000
         order_currency = 'INR'
         client = razorpay.Client(
             auth=('rzp_test_Ac2g1pJT7D9c69', 'd87OjvZuXZMT6FppcevvzxXU'))
 
-        payment = client.order.create({'amount':amount, 'currency':currency,'payment_capture': '1'})   
+        checkout = client.order.create({'amount':amount, 'currency':currency,'payment_capture': '1'})   
     
    
-    return render(request, "payment.html")
+    return render(request, "checkout.html")
     
 @csrf_exempt    
 def success(request):
