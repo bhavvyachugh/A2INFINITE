@@ -14,7 +14,8 @@
         <!-- <p>Sheets</p> -->
         {% for sheet in sheet %}
         <h1>{{sheet.name}}</h1>
-        <img src="{{sheet.image.url}}" width="200" height="200" /> {% endfor %}
+        <a href="{{sheet.image.url}}"><img src="{{sheet.image.url}}" width="200" height="200" /></a>
+        {% endfor %}
     </div>
 </body>
 

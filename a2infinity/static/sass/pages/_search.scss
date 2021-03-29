@@ -1,0 +1,26 @@
+/* ---------------------------------- alert --------------------------------- */
+
+.alert__heading {
+	font-size: 5rem;
+	color: var(--color-primary);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+/* ---------------------------------- sheets ---------------------------------- */
+.sheet-list {
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+
+	&__items {
+		margin: 0 4.5rem;
+	}
+
+	&__heading {
+		margin-top: -0.2rem;
+		text-align: center;
+		color: var(--color-primary);
+		font-size: 1.5rem;
+	}
+}

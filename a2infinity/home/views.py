@@ -86,8 +86,9 @@ def contact(request):
     return render(request, 'contact.html')
  
 def sheet(request):
-    sheet = Sheet.objects.all()
-    return render(request,'sheet.html', {'sheet' : sheet})
+
+   sheet = Sheet.objects.all()
+   return render(request,'sheet.html', {'sheet' : sheet})
 
 
 
@@ -157,4 +158,4 @@ def search(request):
                 messages.error(request, 'no result found')
         else:
             return HttpResponseRedirect('/search')
-    return render(request,'search.html')  
+    return render(request,'search.html')           
