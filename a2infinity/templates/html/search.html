@@ -35,6 +35,13 @@
 
 	<body class="body">
 		<div class="container">
+			<!-- ------------------------------- header -------------------------------- -->
+			{% if messages %} {% for message in messages %}
+			<div class="alert alert-{{message}}">
+				<strong>{{message}}</strong>
+				<span class="alert__cross">&#10006;</span>
+			</div>
+			{% endfor %} {% endif %}
 			<header class="header u-border-bottom">
 				<a href="/">
 					<img
@@ -53,7 +60,7 @@
 						name="search"
 						id="search"
 					/>
-					<button class="search__button">
+					<button class="search__button" type="submit">
 						<svg class="search__icon">
 							<use
 								xlink:href="/static/Images/Icons/sprite.svg#icon-search"
@@ -63,11 +70,11 @@
 				</form>
 
 				<!-- <nav class="user-nav">
-                <div class="user-nav__user">
-                    <img src="../../Images/Ayush.jpg" alt="user photo" class="user-nav__user-photo" />
-                    <span class="user-nav__user-name">Ayush</span>
-                </div>
-            </nav> -->
+        <div class="user-nav__user">
+            <img src="../../Images/Ayush.jpg" alt="user photo" class="user-nav__user-photo" />
+            <span class="user-nav__user-name">Ayush</span>
+        </div>
+    </nav> -->
 				<nav class="btn-nav">
 					{% if user.is_authenticated %}
 					<nav class="user-nav">

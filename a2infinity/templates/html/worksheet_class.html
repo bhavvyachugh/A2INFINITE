@@ -42,9 +42,16 @@
 					/>
 				</a>
 
-				<form action="#" class="search">
-					<input type="text" placeholder="Search" class="search__input" />
-					<button class="search__button">
+				<form method="POST" action="search" class="search">
+					{% csrf_token %}
+					<input
+						type="text"
+						placeholder="Search"
+						class="search__input"
+						name="search"
+						id="search"
+					/>
+					<button class="search__button" type="submit">
 						<svg class="search__icon">
 							<use
 								xlink:href="/static/Images/Icons/sprite.svg#icon-search"
@@ -53,6 +60,12 @@
 					</button>
 				</form>
 
+				<!-- <nav class="user-nav">
+        <div class="user-nav__user">
+            <img src="../../Images/Ayush.jpg" alt="user photo" class="user-nav__user-photo" />
+            <span class="user-nav__user-name">Ayush</span>
+        </div>
+    </nav> -->
 				<nav class="btn-nav">
 					{% if user.is_authenticated %}
 					<nav class="user-nav">
