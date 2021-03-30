@@ -92,8 +92,8 @@ def sheet(request):
 
 
 
-def class_worksheet(request):
-    return render(request,"class_worksheet.html")
+def worksheet_class(request):
+    return render(request,"worksheet_class.html")
     
  
 def subject_class_2_worksheet(request):
