@@ -165,7 +165,145 @@
 				</h3>
 			</footer>
 
-			<!-- TODO: Add Login Sign-up forms-->
+			<!-- ----------------------------------------------------------------------- -->
+			<!-- ------------------------------ overlays ------------------------------- -->
+			<!-- ----------------------------------------------------------------------- -->
+
+			<!-- ----------------------------- login form ------------------------------ -->
+
+			<div class="form-container login-form-container u-invisible">
+				<form action="/login" method="POST" class="form-overlay">
+					{% csrf_token %}
+
+					<h1 class="heading-primary">Welcome Back</h1>
+					<input
+						type="text"
+						placeholder="User Name"
+						class="form-overlay__input"
+						required
+						id="loginusername"
+						name="loginusername"
+					/>
+					<input
+						type="password"
+						placeholder="Password"
+						class="form-overlay__input"
+						required
+						id="loginpassword"
+						name="loginpassword"
+					/>
+					<div class="form-overlay__checkbox-link">
+						<div class="form-overlay__checkbox-container">
+							<input type="checkbox" />
+							<h3 class="form-overlay__heading">Remember Me</h3>
+						</div>
+
+						<div class="form-overlay__link-container">
+							<h3 class="form-overlay__heading">Don't Have Account!</h3>
+							<button
+								class="form-overlay__link form-overlay__link-signup u-margin-top-minus"
+							>
+								Sign-up &rarr;
+							</button>
+						</div>
+					</div>
+					<button type="submit" class="login-form__submit btn-primary">
+						Log In &rarr;
+					</button>
+					<div class="form-overlay__cross cross-login">
+						<span class="form-overlay__cross-span">&#10006;</span>
+					</div>
+				</form>
+			</div>
+
+			<!-- ---------------------------- Sign-up form ----------------------------- -->
+
+			<div class="form-container signup-form-container u-invisible">
+				<form action="/signup" method="POST" class="form-overlay">
+					{% csrf_token %}
+					<h1 class="heading-primary">We Are Glad To See You Here</h1>
+					<input
+						type="text"
+						placeholder="User Name"
+						class="form-overlay__input"
+						required
+						id="username"
+						name="username"
+					/>
+					<input
+						type="text"
+						placeholder="School Name"
+						class="form-overlay__input"
+						required
+						id="school"
+						name="school"
+					/>
+					<input
+						type="email"
+						placeholder="Email"
+						class="form-overlay__input"
+						required
+						id="email"
+						name="email"
+					/>
+					<input
+						type="number"
+						name="phone"
+						id="phone"
+						placeholder="Mobile"
+						class="form-overlay__input"
+						required
+					/>
+					<input
+						type="password"
+						placeholder="Password"
+						class="form-overlay__input"
+						required
+						id="pass1"
+						name="pass1"
+					/>
+					<input
+						type="password"
+						placeholder="Confirm Password"
+						class="form-overlay__input"
+						required
+						id="pass2"
+						name="pass2"
+					/>
+					<div class="form-overlay__checkbox-link">
+						<div class="form-overlay__checkbox-container">
+							<input type="checkbox" />
+							<h3 class="form-overlay__heading">Remember Me</h3>
+						</div>
+
+						<div class="form-overlay__link-container">
+							<h3 class="form-overlay__heading">Already Have Account!</h3>
+							<button
+								class="form-overlay__link form-overlay__link-login u-margin-top-minus"
+							>
+								Login &rarr;
+							</button>
+						</div>
+					</div>
+					<button type="submit" class="form-overlay__submit btn-primary">
+						Sign-up &rarr;
+					</button>
+					<div class="form-overlay__cross cross-signup">
+						<span class="form-overlay__cross-span">&#10006;</span>
+					</div>
+				</form>
+			</div>
+
+			<!-- --------------------------- logout warning ---------------------------- -->
+			<div class="form-container logout-form-container u-invisible">
+				<div class="form-overlay">
+					<h1 class="heading-primary u-margin-top-minus">
+						Are You Sure To Logout ?
+					</h1>
+					<a href="/logout" class="btn-secondary">Yes</a>
+					<button class="logout-no btn-secondary">No</button>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
