@@ -26,6 +26,22 @@ $color-primary-dark: #ba265d;
 html {
 	font-size: 62.5%;
 	box-sizing: border-box; // 1rem = 10px
+
+	@media screen and (max-width: 1080px) {
+		font-size: 56%;
+	}
+
+	@media screen and (max-width: 962px) {
+		font-size: 50%;
+	}
+
+	@media screen and (max-width: 820px) {
+		font-size: 46%;
+	}
+
+	@media screen and (max-width: 600px) {
+		font-size: 37%;
+	}
 }
 
 *,
@@ -69,6 +85,19 @@ html {
 	background-color: #fff;
 	margin: 6rem;
 	box-shadow: 0 2rem 8rem 1rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+	max-width: 120rem;
+
+	@media screen and (max-width: 1285px) {
+		margin: 3rem;
+	}
+
+	@media screen and (max-width: 1229px) {
+		margin: 0rem;
+		box-shadow: none;
+		width: 100%;
+		max-width: 100%;
+	}
 }
 
 .hr {
