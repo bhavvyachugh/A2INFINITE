@@ -119,7 +119,7 @@ def topic_class_nursery_english_worksheet(request):
     return render(request, "topic_class_nursery_english_worksheet.html")
 
 def topic_class_nursery_maths_worksheet(request):
-    return render(request, "topic_class_nursery_maths_worksheet")
+    return render(request, "topic_class_nursery_maths_worksheet.html")
 
 def a_sound_lkg_english_worksheet(request):
     return render(request,"a_sound_lkg_english_worksheet.html")        
