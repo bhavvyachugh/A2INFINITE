@@ -4,12 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Subject | Worksheet</title>
+		<title>Topic | A2INFINITE</title>
+
 		<!-- --------------------------------- css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/subject_class_ukg_worksheet.css" />
+		<link rel="stylesheet" href="/static/css/topic_worksheet.css" />
 
 		<!-- ------------------------------- favicon ------------------------------- -->
-
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
 		<!-- ----------------------------- javascript ------------------------------ -->
@@ -22,10 +22,17 @@
 			defer
 		></script>
 		{% endif %}
+		<script type="text/javascript" src="/static/js/topic.js" defer></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
+
 	<body class="body">
 		<div class="container">
-			<!-- ------------------------------- header -------------------------------- -->
+			<!-- ----------------------------------------------------------------------- -->
+			<!--                                 header                                  -->
+			<!-- ----------------------------------------------------------------------- -->
+
 			{% if messages %} {% for message in messages %}
 			<div class="alert alert-{{message}}">
 				<strong>{{message}}</strong>
@@ -80,7 +87,9 @@
 				</nav>
 			</header>
 
-			<!-- ------------------------------- nav bar ------------------------------- -->
+			<!-- ----------------------------------------------------------------------- -->
+			<!--                                 navbar                                  -->
+			<!-- ----------------------------------------------------------------------- -->
 
 			<nav class="nav-bar">
 				<ul class="list">
@@ -96,92 +105,195 @@
 				</ul>
 			</nav>
 
-			<main class="main">
-				<!-- ---------------------------- img container ---------------------------- -->
+			<!-- ----------------------------------------------------------------------- -->
+			<!--                                  main                                   -->
+			<!-- ----------------------------------------------------------------------- -->
 
-				<section class="img-section">
-					<div class="img-container">
-						<a href="#subject-section">
-							<img
-								src="/static/Images/Background/subject_with_text.png"
-								alt="Choose Your Subject"
-								class="img-container__image"
-							/>
-						</a>
-					</div>
+			<main class="main">
+				<section class="section-headings">
+					<h1 class="section-headings__heading heading-primary">
+						L.K.G English
+					</h1>
+					<p class="section-headings__para">
+						Here is a list of all of the maths topics students learn in L.K.G!
+						These topics are organized into categories, and you can move your
+						mouse over any topic name to open the topic.
+					</p>
 				</section>
 
-				<!-- --------------------------- subject section --------------------------- -->
+				<!-- ------------------------------- topics -------------------------------- -->
 
-				<!-- TODO: Change Para-->
+				<section class="section-topics">
+					<ul class="section-topics__list">
+						<!-- ------------------------------ dropdown ------------------------------- -->
 
-				<section id="subject-section" class="subject-section">
-					<div class="subject-container">
-						<div class="subject-container__img-hed">
+						<li
+							class="section-topics__list-items section-topics__list-items--dropdown"
+						>
 							<img
-								src="/static/Images/Illustrations/subject_english.png"
-								alt="english logo"
-								class="subject-container__img"
+								class="section-topics__list-items__icon section-topics__list-items__icon--dropdown"
+								src="/static/Images/Icons/list arrow icon.png"
+								alt="list-icon"
 							/>
-							<h3 class="heading-tertiary subject-container__heading">
-								English
+							<h3 class="section-topics__list-items__heading dropdownHeading">
+								Alphabets
 							</h3>
-						</div>
-						<div class="subject-container__para-link">
-							<p class="subject-container__para">
-								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
-								More
-							</p>
-							<a
-								href="/topic_class_nursery_english_worksheet"
-								class="btn-tertiary"
-								>Next &rarr;</a
-							>
-						</div>
-					</div>
-					<div class="subject-container">
-						<div class="subject-container__img-hed">
+							<ol class="section-topics__list-items__dropdown-list">
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										ALPHABET ACTIVITY (A TO Z)
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										ALPHABET PRACTICE (A TO Z)
+									</a>
+								</li>
+							</ol>
+						</li>
+						<li
+							class="section-topics__list-items section-topics__list-items--dropdown"
+						>
 							<img
-								src="/static/Images/Illustrations/subject_maths.png"
-								alt="english logo"
-								class="subject-container__img"
+								class="section-topics__list-items__icon section-topics__list-items__icon--dropdown"
+								src="/static/Images/Icons/list arrow icon.png"
+								alt="list-icon"
 							/>
-							<h3 class="heading-tertiary subject-container__heading">Maths</h3>
-						</div>
-						<div class="subject-container__para-link">
-							<p class="subject-container__para">
-								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
-								More
-							</p>
-							<a href="#" class="btn-tertiary">Next &rarr;</a>
-						</div>
-					</div>
-					<div class="subject-container">
-						<div class="subject-container__img-hed">
+							<h3 class="section-topics__list-items__heading dropdownHeading">
+								Theme
+							</h3>
+							<ol class="section-topics__list-items__dropdown-list">
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										ANIMALS (LEVEL 01)
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										BIRDS (LEVEL 01)
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										BODY PARTS (LEVEL 01)
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										FRUITS (LEVEL 01)
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										MEANS OF TRANSPORT (LEVEL 01)
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										SHAPES (LEVEL 01)
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										VEGETABLE (LEVEL 01)
+									</a>
+								</li>
+							</ol>
+						</li>
+						<li
+							class="section-topics__list-items section-topics__list-items--dropdown"
+						>
 							<img
-								src="/static/Images/Illustrations/subject_hindi.png"
-								alt="english logo"
-								class="subject-container__img"
+								class="section-topics__list-items__icon section-topics__list-items__icon--dropdown"
+								src="/static/Images/Icons/list arrow icon.png"
+								alt="list-icon"
 							/>
-							<h3 class="heading-tertiary subject-container__heading">Hindi</h3>
-						</div>
-						<div class="subject-container__para-link">
-							<p class="subject-container__para">
-								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
-								More
-							</p>
-							<a href="#" class="btn-tertiary">Next &rarr;</a>
-						</div>
-					</div>
+							<h3 class="section-topics__list-items__heading dropdownHeading">
+								TRACING
+							</h3>
+							<ol class="section-topics__list-items__dropdown-list">
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										CIRCLE
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										CRESCENT
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										SLEEPING
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										STANDING
+									</a>
+								</li>
+								<li class="section-topics__list-items__dropdown-list-item">
+									<a
+										href="#"
+										class="section-topics__list-items__dropdown-list-item__link"
+									>
+										ZIG ZAG
+									</a>
+								</li>
+							</ol>
+						</li>
+					</ul>
 				</section>
 			</main>
+
+			<!-- ----------------------------------------------------------------------- -->
+			<!--                                 footer                                  -->
+			<!-- ----------------------------------------------------------------------- -->
 
 			<footer class="footer">
 				<h3 class="heading-tertiary footer__heading">
 					Copyright &copy; A2INFINITE
 				</h3>
 			</footer>
-
 			<!-- ----------------------------------------------------------------------- -->
 			<!-- ------------------------------ overlays ------------------------------- -->
 			<!-- ----------------------------------------------------------------------- -->
