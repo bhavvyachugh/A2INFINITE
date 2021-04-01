@@ -108,18 +108,18 @@ def subject_class_ukg_worksheet(request):
 def subject_class_lkg_worksheet(request):
     return render(request,"subject_class_lkg_worksheet.html")    
     
-def subject_class_nursery_worksheet(request):
-    return render(request,"subject_class_nursery_worksheet.html")    
+def subject_class_prenursery_worksheet(request):
+    return render(request,"subject_class_prenursery_worksheet.html")    
 
     
 def topic_class_lkg_english_worksheet(request):
     return render(request, "topic_class_lkg_english_worksheet.html")
 
-def topic_class_nursery_english_worksheet(request):
-    return render(request, "topic_class_nursery_english_worksheet.html")
+def topic_class_prenursery_english_worksheet(request):
+    return render(request, "topic_class_prenursery_english_worksheet.html")
 
-def topic_class_nursery_maths_worksheet(request):
-    return render(request, "topic_class_nursery_maths_worksheet.html")
+def topic_class_prenursery_maths_worksheet(request):
+    return render(request, "topic_class_prenursery_maths_worksheet.html")
 
 def a_sound_lkg_english_worksheet(request):
     return render(request,"a_sound_lkg_english_worksheet.html")        
@@ -129,7 +129,6 @@ def a_sound_lkg_english_worksheet(request):
 def plans(request):
     return render(request,"plans.html")    
 
-    return render(request, "subject_class_nursery_worksheet.html")
     
 
 def checkout(request):
