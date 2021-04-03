@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="{% static 'frontend/css/ClassView.css' %}" rel="stylesheet">
+        <title>A2Infinity</title>
+        <style>
+            @media only screen and (max-width:700px) {
+                .card{
+                    width: auto !important;
+                    height: auto !important;
+                }
+            }
+        </style>
+    </head>
+<body>
+<div class='container-fluid'>
+    {% include "frontend/navbar.html" %}
+    <div class='container'>
+        <div class='row'>
+            {% for class in classdata %}
+            <div class='col-md-auto'>
+                <div class="card" style="width: 500px; height: 300px;">
+                    <div class="card-header">
+                    <center>{{class.SubTopicName}}</center>
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title">{{class.subtopicTitle|slice:":60"}}</h5>
+                    <p class="card-text">{{class.remark|slice:":200"}}</p>
+                    <center><a href="/explain?name={{class.subtopicTitle}}&subtopic={{class.id}}" class="btn btn-primary">View</a></center>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

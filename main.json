@@ -1,0 +1,323 @@
+[
+{
+    "model": "home.classdetails",
+    "pk": 1,
+    "fields": {
+    	"className": "First Class",
+    	"classTitle": "1st class",
+    	"remark": "This is first class"
+    }
+},
+
+{
+    "model": "home.classdetails",
+    "pk": 2,
+    "fields": {
+    	"className": "Second Class",
+    	"classTitle": "2nd class",
+    	"remark": "This is second class"
+    }
+},
+
+{
+    "model": "home.classdetails",
+    "pk": 3,
+    "fields": {
+    	"className": "Third Class",
+    	"classTitle": "3rd class",
+    	"remark": "This is third class"
+    }
+},
+
+{
+    "model": "home.classdetails",
+    "pk": 4,
+    "fields": {
+    	"className": "Fourth Class",
+    	"classTitle": "4th class",
+    	"remark": "This is fourth class"
+    }
+},
+
+{
+    "model": "home.subject",
+    "pk": 1,
+    "fields": {
+    	"className": 1,
+    	"SubjectName": "English",
+    	"SubjectTitle": "English",
+    	"remark": "This is English subject from first class"
+    }
+},
+
+{
+    "model": "home.subject",
+    "pk": 2,
+    "fields": {
+    	"className": 1,
+    	"SubjectName": "Maths",
+    	"SubjectTitle": "Maths",
+    	"remark": "This is Maths subject from first class"
+    }
+},
+
+{
+    "model": "home.subject",
+    "pk": 3,
+    "fields": {
+    	"className": 2,
+    	"SubjectName": "English",
+    	"SubjectTitle": "English",
+    	"remark": "This is English subject from Second class"
+    }
+},
+
+{
+    "model": "home.subject",
+    "pk": 4,
+    "fields": {
+    	"className": 2,
+    	"SubjectName": "Maths",
+    	"SubjectTitle": "Maths",
+    	"remark": "This is Maths subject from second class"
+    }
+},
+
+{
+    "model": "home.subject",
+    "pk": 5,
+    "fields": {
+    	"className": 2,
+    	"SubjectName": "Science",
+    	"SubjectTitle": "Science",
+    	"remark": "This is Science subject from Second class"
+    }
+},
+
+{
+    "model": "home.subject",
+    "pk": 6,
+    "fields": {
+    	"className": 3,
+    	"SubjectName": "English",
+    	"SubjectTitle": "English",
+    	"remark": "This is English subject from Third class"
+    }
+},
+
+{
+    "model": "home.subject",
+    "pk": 7,
+    "fields": {
+    	"className": 3,
+    	"SubjectName": "Maths",
+    	"SubjectTitle": "Maths",
+    	"remark": "This is Maths subject from third class"
+    }
+},
+
+{
+    "model": "home.subject",
+    "pk": 8,
+    "fields": {
+    	"className": 3,
+    	"SubjectName": "Science",
+    	"SubjectTitle": "Science",
+    	"remark": "This is Science subject from third class"
+    }
+},
+
+{
+    "model": "home.topic",
+    "pk": 1,
+    "fields": {
+    	"Subject": 1,
+    	"TopicName": "Tenses",
+    	"topicTitle": "Tenses in English",
+    	"remark": "This is tenses."
+    }
+},
+
+{
+    "model": "home.topic",
+    "pk": 2,
+    "fields": {
+    	"Subject": 1,
+    	"TopicName": "Articles",
+    	"topicTitle": "Articles in English",
+    	"remark": "This is Articles."
+    }
+},
+
+{
+    "model": "home.topic",
+    "pk": 3,
+    "fields": {
+    	"Subject": 2,
+    	"TopicName": "Tables",
+    	"topicTitle": "Tables in Maths",
+    	"remark": "This is Tables."
+    }
+},
+
+{
+    "model": "home.topic",
+    "pk": 4,
+    "fields": {
+    	"Subject": 2,
+    	"TopicName": "Numbers",
+    	"topicTitle": "Numbers in Maths",
+    	"remark": "This is Numbers."
+    }
+},
+
+{
+    "model": "home.topic",
+    "pk": 5,
+    "fields": {
+    	"Subject": 3,
+    	"TopicName": "Plants",
+    	"topicTitle": "Plants in Science",
+    	"remark": "This is Plants."
+    }
+},
+
+{
+    "model": "home.topic",
+    "pk": 6,
+    "fields": {
+    	"Subject": 3,
+    	"TopicName": "Trees",
+    	"topicTitle": "Trees in Science",
+    	"remark": "This is Trees."
+    }
+},
+
+{
+    "model": "home.subtopic",
+    "pk":1,
+    "fields": {
+    	"topic": 1,
+    	"SubTopicName": "Present Tense",
+    	"subtopicTitle": "Present tense in first topic.",
+    	"remark": "Present tense in first topic."
+    }
+},
+
+{
+    "model": "home.subtopic",
+    "pk":2,
+    "fields": {
+    	"topic": 1,
+    	"SubTopicName": "Past Tense",
+    	"subtopicTitle": "Past tense in first topic.",
+    	"remark": "Past tense in first topic."
+    }
+},
+
+{
+    "model": "home.subtopic",
+    "pk":3,
+    "fields": {
+    	"topic": 1,
+    	"SubTopicName": "Future Tense",
+    	"subtopicTitle": "Future tense in first topic.",
+    	"remark": "Future tense in first topic."
+    }
+},
+
+{
+    "model": "home.subtopic",
+    "pk":4,
+    "fields": {
+    	"topic": 1,
+    	"SubTopicName": "Future Tense",
+    	"subtopicTitle": "Future tense in first topic.",
+    	"remark": "Future tense in first topic."
+    }
+},
+
+{
+    "model": "home.subtopic",
+    "pk":5,
+    "fields": {
+    	"topic": 2,
+    	"SubTopicName": "A article",
+    	"subtopicTitle": "A article from 2nd topic.",
+    	"remark": "A article from 2nd topic.."
+    }
+},
+
+{
+    "model": "home.subtopic",
+    "pk":6,
+    "fields": {
+    	"topic": 2,
+    	"SubTopicName": "An article",
+    	"subtopicTitle": "An article from 2nd topic.",
+    	"remark": "An article from 2nd topic.."
+    }
+},
+
+{
+    "model": "home.subtopic",
+    "pk":5,
+    "fields": {
+    	"topic": 2,
+    	"SubTopicName": "The article",
+    	"subtopicTitle": "The article from 2nd topic.",
+    	"remark": "the article from 2nd topic.."
+    }
+},
+
+{
+    "model": "home.subtopic",
+    "pk":6,
+    "fields": {
+    	"topic": 6,
+    	"SubTopicName": "Green Plants",
+    	"subtopicTitle": "Green plants from 6th topic.",
+    	"remark": "Green plants from 6th topic."
+    }
+},
+
+{
+    "model": "home.explain",
+    "pk":1,
+    "fields": {
+    	"SubTopic": 1,
+    	"explaintitle": "Present tense image",
+    	"body": "This is Present tense image.",
+    	"imgBlackWhite": "uploads/gallery/Black/WhatsApp_Image_2021-04-01_at_19.54.22.jpeg",
+    	"imgColor": "uploads/gallery/Color/WhatsApp_Image_2021-04-01_at_19.54.24.jpeg",
+    	"remark": "This is Present tense image."
+    }
+},
+
+{
+    "model": "home.explain",
+    "pk":2,
+    "fields": {
+    	"SubTopic": 5,
+    	"explaintitle": "Article image",
+    	"body": "This is Article image.",
+    	"imgBlackWhite": "uploads/gallery/Black/WhatsApp_Image_2021-04-01_at_19.54.25.jpeg",
+    	"imgColor": "uploads/gallery/Color/WhatsApp_Image_2021-04-01_at_19.54.23.jpeg",
+    	"remark": "This is Article image."
+    }
+},
+
+{
+    "model": "home.explain",
+    "pk":3,
+    "fields": {
+    	"SubTopic": 5,
+    	"explaintitle": "Image",
+    	"body": "This is Image.",
+    	"imgBlackWhite": "uploads/gallery/Black/WhatsApp_Image_2021-04-01_at_19.54.25.jpeg",
+    	"imgColor": "uploads/gallery/Color/WhatsApp_Image_2021-04-01_at_19.54.23.jpeg",
+    	"remark": "This is Image."
+    }
+}
+
+]

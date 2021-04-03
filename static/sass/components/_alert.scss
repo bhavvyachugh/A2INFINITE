@@ -1,0 +1,27 @@
+.alert {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	font-size: 1.6rem;
+	font-family: open-sans-light;
+
+	&__cross {
+		cursor: pointer;
+	}
+}
+
+.Loged-in {
+	background-color: rgba(153, 247, 153, 0.412);
+	color: #155724;
+}
+
+.Logged-out {
+	background-color: #f9a4a4;
+	color: #5f0000;
+}
+
+.successfully {
+	background-color: #ffffb9;
+	color: #7d7d01;
+}

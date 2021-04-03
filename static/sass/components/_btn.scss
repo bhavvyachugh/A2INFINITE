@@ -1,0 +1,61 @@
+.btn-primary,
+.btn-primary:link,
+.btn-primary:visited {
+	border-radius: 1rem;
+	border: none;
+	outline: none;
+	font-size: 2rem;
+	padding: 1.5rem 4rem;
+	background-image: linear-gradient(
+		to right bottom,
+		var(--color-grey-light-1),
+		var(--color-grey-light-5)
+	);
+	transition: all 0.1s;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 0 1rem 2rem rgba(#000, 0.1);
+		transform: translateY(-0.3rem);
+	}
+
+	&:active {
+		transform: translateY(-0.1rem);
+	}
+}
+
+.btn-secondary,
+.btn-secondary:active,
+.btn-secondary:visited,
+.btn-secondary:link {
+	outline: none;
+	border: none;
+	margin: 0 1rem;
+	padding: 1rem 3rem;
+	border-radius: 0.5rem;
+	background-color: rgba(#ffcc66, 0.95);
+	transition: all 0.1s;
+	color: var(--color-grey-dark-1);
+	cursor: pointer;
+
+	font-size: 1.25rem;
+
+	&:hover {
+		color: var(--color-primary-light);
+	}
+}
+
+.btn-tertiary,
+.btn-tertiary:active,
+.btn-tertiary:link,
+.btn-tertiary:visited {
+	font-size: 1.5rem;
+	color: var(--color-primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		color: #000;
+	}
+}
