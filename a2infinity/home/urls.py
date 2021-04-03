@@ -23,6 +23,7 @@ urlpatterns = [
     path("topic_class_prenursery_maths_worksheet", views.topic_class_prenursery_maths_worksheet, name='topic_class_prenursery_maths_worksheet'), 
     path("topic_class_nursery_english_worksheet", views.topic_class_nursery_english_worksheet, name='topic_class_nursery_english_worksheet'), 
     path("topic_class_lkg_maths_worksheet", views.topic_class_lkg_maths_worksheet, name='topic_class_lkg_maths_worksheet'), 
+    path("topic_class_lkg_hindi_worksheet", views.topic_class_lkg_hindi_worksheet, name='topic_class_lkg_hindi_worksheet'), 
 
     path("a_sound_lkg_english_worksheet", views.a_sound_lkg_english_worksheet, name='a_sound_lkg_english_worksheet'), 
 
