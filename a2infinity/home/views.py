@@ -9,6 +9,17 @@ import razorpay
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
 
+
+from django.views import View
+from .models import ClassDetails, Subject, Topic, SubTopic, Explain
+from django.core.paginator import Paginator
+import os
+from PIL import Image, ImageFont, ImageDraw, ImageEnhance
+import requests
+from io import StringIO
+from django.views.generic import View
+from django.http import HttpResponse
+
 # from blog.models import Post
 
 # Create your views here.
@@ -92,8 +103,8 @@ def sheet(request):
 
 
 
-def worksheet_class(request):
-    return render(request,"worksheet_class.html")
+# def worksheet_class(request):
+#     return render(request,"worksheet_class.html")
     
  
 def subject_class_2_worksheet(request):
@@ -179,3 +190,13 @@ def search(request):
         else:
             return HttpResponseRedirect('/search')
     return render(request,'search.html')           
+
+###-------------------------------------------------------------------------------------------------------------###
+
+
+class ClassView(View):
+    def get(self, request):
+        classdata = ClassDetails.objects.all()
+        return render(request, "frontend/ClassViewContainer.html",{
+            "classdata" : classdata
+        })  

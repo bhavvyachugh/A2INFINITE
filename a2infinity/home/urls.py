@@ -3,13 +3,17 @@ from django.urls import path, include
 from home import views
 
 
+from .views import ClassView
+
+
+
 urlpatterns = [
     path('', views.index, name="home"),
     path('signup', views.handleSignup, name="handleSignup"),
     path('login', views.handleLogin, name="handleLogin"),
     path('logout', views.handleLogout, name="handleLogout"),
     path("contact", views.contact, name='contact'), 
-    path("worksheet_class", views.worksheet_class, name='worksheet_class'), 
+   #  path("worksheet_class", views.worksheet_class, name='worksheet_class'), 
     path("subject_class_2_worksheet", views.subject_class_2_worksheet, name='subject_class_2_worksheet'), 
     path("subject_class_1_worksheet", views.subject_class_1_worksheet, name='subject_class_1_worksheet'), 
     path("subject_class_ukg_worksheet", views.subject_class_ukg_worksheet, name='subject_class_ukg_worksheet'), 
@@ -32,6 +36,10 @@ urlpatterns = [
     path("checkout", views.checkout, name='checkout'), 
     path("success", views.success, name='success'), 
     path("sheet", views.sheet, name='sheet'),
-    path("search", views.search, name='search'), 
+    path("search", views.search, name='search'),
+    
+
+   # path("ClassViewContainer", views.ClassViewContainer, name='ClassViewContainer'), 
+     path('class/',ClassView.as_view(), name='ClassView'),
  
 ]

@@ -116,6 +116,7 @@
 				<!-- TODO: Change Content of paras-->
 
 				<section id="class-section" class="class-section u-margin-top">
+					{% for class in classdata %}
 					<div class="class-container">
 						<div class="class-container__img-hed">
 							<img
@@ -124,29 +125,28 @@
 								class="class-container__img"
 							/>
 							<h3 class="heading-tertiary class-container__heading">
-								Pre Nursery
+								{{class.classTitle|slice:":30"}}
 							</h3>
 						</div>
 						<div class="class-container__para-link">
-							<p class="class-container__para">
-								Counting objects, inside and outside, longer and shorter, letter
-								names, rhyming words and more.
-							</p>
-							<a href="/subject_class_prenursery_worksheet" class="btn-tertiary"
+							<p class="class-container__para">{{class.remark|slice:":50"}}</p>
+							<a
+								href="/subject?name={{class.classTitle}}&class={{class.id}}"
+								class="btn-tertiary"
 								>Next &rarr;</a
 							>
 						</div>
 					</div>
-					<div class="class-container">
+					{% endfor %}
+
+					<!-- <div class="class-container">
 						<div class="class-container__img-hed">
 							<img
 								src="/static/Images/Illustrations/class_5.png"
 								alt="Child Standing"
 								class="class-container__img"
 							/>
-							<h3 class="heading-tertiary class-container__heading">
-								Nursery
-							</h3>
+							<h3 class="heading-tertiary class-container__heading">Nursery</h3>
 						</div>
 						<div class="class-container__para-link">
 							<p class="class-container__para">
@@ -214,7 +214,8 @@
 								>Next &rarr;</a
 							>
 						</div>
-					</div>
+					</div> -->
+				</section>
 			</main>
 
 			<footer class="footer">
