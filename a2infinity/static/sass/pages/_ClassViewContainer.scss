@@ -6,7 +6,7 @@
 }
 
 .img-section {
-	width: 100%;
+	width: 90%;
 }
 
 .img-container {
@@ -22,24 +22,24 @@
 
 /* ----------------------------- class-container ---------------------------- */
 
-.subject-section {
+.class-section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
 }
 
-.subject-container {
+.class-container {
 	background-color: var(--color-grey-light-2);
 	text-align: center;
 	padding: 2rem;
 	width: 26%;
-	margin: 3rem 4rem;
+	margin: 2rem;
 
 	&__img-hed {
 		display: flex;
 		align-items: center;
-		justify-content: space-evenly;
+		justify-content: center;
 	}
 
 	&__img {
@@ -53,7 +53,6 @@
 	}
 
 	&__heading {
-		margin-right: 7rem;
 		font-size: 2rem;
 	}
 }

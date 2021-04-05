@@ -4,12 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Subject | Worksheet</title>
+		<title>Subject | A2INFINITE</title>
+
 		<!-- --------------------------------- css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/subject_class_ukg_worksheet.css" />
+		<link rel="stylesheet" href="/static/css/SubjectViewContainer.css" />
 
 		<!-- ------------------------------- favicon ------------------------------- -->
-
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
 		<!-- ----------------------------- javascript ------------------------------ -->
@@ -23,7 +23,6 @@
 		></script>
 		{% endif %}
 	</head>
-
 	<body class="body">
 		<div class="container">
 			<!-- ------------------------------- header -------------------------------- -->
@@ -117,30 +116,31 @@
 				<!-- TODO: Change Para-->
 
 				<section id="subject-section" class="subject-section">
+					{% for class in classdata %}
 					<div class="subject-container">
 						<div class="subject-container__img-hed">
-							<img
+							<!-- <img
 								src="/static/Images/Illustrations/subject_english.png"
 								alt="english logo"
 								class="subject-container__img"
-							/>
+							/> -->
 							<h3 class="heading-tertiary subject-container__heading">
-								English
+								{{class.SubjectName}}
 							</h3>
 						</div>
 						<div class="subject-container__para-link">
 							<p class="subject-container__para">
-								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
-								More
+								{{class.remark|slice:":1000"}}
 							</p>
 							<a
-								href="/topic_class_nursery_english_worksheet"
+								href="/topic?name={{class.SubjectTitle|slice:':30'}}&subject={{class.id}}"
 								class="btn-tertiary"
 								>Next &rarr;</a
 							>
 						</div>
 					</div>
-					<div class="subject-container">
+					{% endfor %}
+					<!-- <div class="subject-container">
 						<div class="subject-container__img-hed">
 							<img
 								src="/static/Images/Illustrations/subject_maths.png"
@@ -154,13 +154,43 @@
 								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
 								More
 							</p>
-							<a
-								href="/topic_class_nursery_maths_worksheet"
-								class="btn-tertiary"
-								>Next &rarr;</a
-							>
+							<a href="#" class="btn-tertiary">Next &rarr;</a>
 						</div>
 					</div>
+					<div class="subject-container">
+						<div class="subject-container__img-hed">
+							<img
+								src="/static/Images/Illustrations/subject_evs.png"
+								alt="english logo"
+								class="subject-container__img"
+							/>
+							<h3 class="heading-tertiary subject-container__heading">E.V.S</h3>
+						</div>
+						<div class="subject-container__para-link">
+							<p class="subject-container__para">
+								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
+								More
+							</p>
+							<a href="#" class="btn-tertiary">Next &rarr;</a>
+						</div>
+					</div>
+					<div class="subject-container">
+						<div class="subject-container__img-hed">
+							<img
+								src="/static/Images/Illustrations/subject_hindi.png"
+								alt="english logo"
+								class="subject-container__img"
+							/>
+							<h3 class="heading-tertiary subject-container__heading">Hindi</h3>
+						</div>
+						<div class="subject-container__para-link">
+							<p class="subject-container__para">
+								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
+								More
+							</p>
+							<a href="#" class="btn-tertiary">Next &rarr;</a>
+						</div>
+					</div> -->
 				</section>
 			</main>
 

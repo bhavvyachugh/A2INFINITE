@@ -102,30 +102,6 @@ def sheet(request):
    return render(request,'sheet.html', {'sheet' : sheet})
 
 
-
-# def worksheet_class(request):
-#     return render(request,"worksheet_class.html")
-    
- 
-def subject_class_2_worksheet(request):
-    return render(request,"subject_class_2_worksheet.html")    
-    
-def subject_class_1_worksheet(request):
-    return render(request,"subject_class_1_worksheet.html")    
-    
-def subject_class_ukg_worksheet(request):
-    return render(request,"subject_class_ukg_worksheet.html")    
-    
-def subject_class_lkg_worksheet(request):
-    return render(request,"subject_class_lkg_worksheet.html")    
-    
-def subject_class_prenursery_worksheet(request):
-    return render(request,"subject_class_prenursery_worksheet.html")    
-
-def subject_class_nursery_worksheet(request):
-    return render(request,"subject_class_nursery_worksheet.html")    
-
-    
 def topic_class_lkg_english_worksheet(request):
     return render(request, "topic_class_lkg_english_worksheet.html")
 
@@ -145,12 +121,7 @@ def topic_class_lkg_maths_worksheet(request):
     return render(request, "topic_class_lkg_maths_worksheet.html")
 
 def topic_class_lkg_hindi_worksheet(request):
-    return render(request, "topic_class_lkg_hindi_worksheet.html")
-
-def a_sound_lkg_english_worksheet(request):
-    return render(request,"a_sound_lkg_english_worksheet.html")        
-    
-    
+    return render(request, "topic_class_lkg_hindi_worksheet.html")   
 
 def plans(request):
     return render(request,"plans.html")    
@@ -197,6 +168,20 @@ def search(request):
 class ClassView(View):
     def get(self, request):
         classdata = ClassDetails.objects.all()
-        return render(request, "frontend/ClassViewContainer.html",{
+        return render(request, "ClassViewContainer.html",{
             "classdata" : classdata
         })  
+
+class SubjectView(View):
+    def get(self, request):
+        classId = request.GET.get("class", None)
+        try:
+            data = ClassDetails.objects.get(id=classId)
+        except ClassDetails.DoesNotExist:
+            return redirect("ClassView")
+        if classId == None:
+            return redirect("ClassView")
+        Subjectsdata = Subject.objects.filter(className = data)
+        return render(request, "SubjectViewContainer.html",{
+            "classdata" : Subjectsdata
+        })

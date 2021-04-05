@@ -4,12 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Subject | A2INFINITE</title>
+		<title>Class | A2INFINITE</title>
 
 		<!-- --------------------------------- css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/subject_class_1_worksheet.css" />
+		<link rel="stylesheet" href="/static/css/ClassViewContainer.css" />
 
 		<!-- ------------------------------- favicon ------------------------------- -->
+
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
 		<!-- ----------------------------- javascript ------------------------------ -->
@@ -96,96 +97,49 @@
 				</ul>
 			</nav>
 
+			<!-- -------------------------------- main --------------------------------- -->
+
 			<main class="main">
-				<!-- ---------------------------- img container ---------------------------- -->
+				<section class="img-section"></section>
+				<div class="img-container">
+					<a href="#class-section">
+						<img
+							src="/static/Images/Background/class_with_text.png"
+							alt="Choose Your Class"
+							class="img-container__image"
+						/>
+					</a>
+				</div>
 
-				<section class="img-section">
-					<div class="img-container">
-						<a href="#subject-section">
-							<img
-								src="/static/Images/Background/subject_with_text.png"
-								alt="Choose Your Subject"
-								class="img-container__image"
-							/>
-						</a>
-					</div>
-				</section>
+				<!-- ---------------------------- class-section ---------------------------- -->
 
-				<!-- --------------------------- subject section --------------------------- -->
+				<!-- TODO: Change Content of paras-->
 
-				<!-- TODO: Change Para-->
-
-				<section id="subject-section" class="subject-section">
-					<div class="subject-container">
-						<div class="subject-container__img-hed">
-							<img
-								src="/static/Images/Illustrations/subject_english.png"
-								alt="english logo"
-								class="subject-container__img"
-							/>
-							<h3 class="heading-tertiary subject-container__heading">
-								English
+				<section id="class-section" class="class-section u-margin-top">
+					{% for class in classdata %}
+					<div class="class-container">
+						<div class="class-container__img-hed">
+							<!-- <img
+								src="/static/Images/Illustrations/class_1.png"
+								alt="Child Standing"
+								class="class-container__img"
+							/> -->
+							<h3 class="heading-tertiary class-container__heading">
+								{{class.classTitle|slice:":20"}}
 							</h3>
 						</div>
-						<div class="subject-container__para-link">
-							<p class="subject-container__para">
-								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
-								More
+						<div class="class-container__para-link">
+							<p class="class-container__para">
+								{{class.remark|slice:":100000"}}
 							</p>
-							<a href="#" class="btn-tertiary">Next &rarr;</a>
+							<a
+								href="/subject?name={{class.classTitle}}&class={{class.id}}"
+								class="btn-tertiary"
+								>Next &rarr;</a
+							>
 						</div>
 					</div>
-					<div class="subject-container">
-						<div class="subject-container__img-hed">
-							<img
-								src="/static/Images/Illustrations/subject_maths.png"
-								alt="english logo"
-								class="subject-container__img"
-							/>
-							<h3 class="heading-tertiary subject-container__heading">Maths</h3>
-						</div>
-						<div class="subject-container__para-link">
-							<p class="subject-container__para">
-								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
-								More
-							</p>
-							<a href="#" class="btn-tertiary">Next &rarr;</a>
-						</div>
-					</div>
-					<div class="subject-container">
-						<div class="subject-container__img-hed">
-							<img
-								src="/static/Images/Illustrations/subject_evs.png"
-								alt="english logo"
-								class="subject-container__img"
-							/>
-							<h3 class="heading-tertiary subject-container__heading">E.V.S</h3>
-						</div>
-						<div class="subject-container__para-link">
-							<p class="subject-container__para">
-								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
-								More
-							</p>
-							<a href="#" class="btn-tertiary">Next &rarr;</a>
-						</div>
-					</div>
-					<div class="subject-container">
-						<div class="subject-container__img-hed">
-							<img
-								src="/static/Images/Illustrations/subject_hindi.png"
-								alt="english logo"
-								class="subject-container__img"
-							/>
-							<h3 class="heading-tertiary subject-container__heading">Hindi</h3>
-						</div>
-						<div class="subject-container__para-link">
-							<p class="subject-container__para">
-								Vowels, Nouns, Pronouns, Alphabets, Body Parts, Color Name, And
-								More
-							</p>
-							<a href="#" class="btn-tertiary">Next &rarr;</a>
-						</div>
-					</div>
+					{% endfor %}
 				</section>
 			</main>
 
@@ -194,7 +148,6 @@
 					Copyright &copy; A2INFINITE
 				</h3>
 			</footer>
-
 			<!-- ----------------------------------------------------------------------- -->
 			<!-- ------------------------------ overlays ------------------------------- -->
 			<!-- ----------------------------------------------------------------------- -->
