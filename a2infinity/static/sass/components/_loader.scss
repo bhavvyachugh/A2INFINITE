@@ -1,0 +1,49 @@
+.spinner-wrapper {
+	width: 100%;
+	height: 100vh;
+	background-image: linear-gradient(
+		to right bottom,
+		var(--color-primary-light),
+		var(--color-primary-dark)
+	);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.spinner {
+	position: relative;
+	width: 8rem;
+	height: 8rem;
+	border-radius: 50%;
+}
+
+.spinner::before,
+.spinner:after {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+}
+
+.spinner:before {
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(
+		90deg,
+		var(--color-grey-dark-2) 0%,
+		var(--color-grey-dark-3) 100%
+	);
+	animation: spin 0.5s infinite linear;
+}
+.spinner:after {
+	width: 90%;
+	height: 90%;
+	background-color: var(--color-primary);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
