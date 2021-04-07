@@ -32,7 +32,7 @@ html {
 	}
 
 	@media screen and (max-width: 962px) {
-		font-size: 50%; 
+		font-size: 50%;
 	}
 
 	@media screen and (max-width: 820px) {
@@ -87,6 +87,7 @@ html {
 	box-shadow: 0 2rem 8rem 1rem rgba(0, 0, 0, 0.4);
 	overflow: hidden;
 	max-width: 120rem;
+	display: none;
 
 	@media screen and (max-width: 1285px) {
 		margin: 3rem;

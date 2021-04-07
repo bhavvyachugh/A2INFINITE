@@ -1,5 +1,7 @@
-let spinnerWrapper = document.querySelector('.spinner-wrapper');
+const spinnerWrapper = document.querySelector('.spinner-wrapper');
+const container = document.querySelector('.container');
 
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
 	spinnerWrapper.style.display = 'none';
+	container.style.display = 'block';
 });
