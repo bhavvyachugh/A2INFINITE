@@ -4,10 +4,10 @@
 	"description": "A website where you can get more than 30,000 worksheets and quizes for your child",
 	"main": "index.js",
 	"scripts": {   
-		"watch:sass": "node-sass a2infinity/static/sass/success.scss a2infinity/static/css/success.css -w",
-		"compile:sass": "node-sass a2infinity/static/sass/success.scss a2infinity/static/css/success.css",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  a2infinity/static/css/success.css -o  a2infinity/static/css/success.css ",
-		"compress:css": "node-sass a2infinity/static/css/success.css a2infinity/static/css/success.css --output-style compressed",
+		"watch:sass": "node-sass a2infinity/static/sass/cssNameOnImage.scss a2infinity/static/css/cssNameOnImage.css -w",
+		"compile:sass": "node-sass a2infinity/static/sass/cssNameOnImage.scss a2infinity/static/css/cssNameOnImage.css",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  a2infinity/static/css/cssNameOnImage.css -o  a2infinity/static/css/cssNameOnImage.css ",
+		"compress:css": "node-sass a2infinity/static/css/cssNameOnImage.css a2infinity/static/css/cssNameOnImage.css --output-style compressed",
 		"build:css": "npm-run-all compile:sass  prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",

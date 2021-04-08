@@ -126,6 +126,9 @@ def topic_class_lkg_hindi_worksheet(request):
 def plans(request):
     return render(request,"plans.html")    
 
+def cssNameOnImage(request):
+    return render(request,"cssNameOnImage.html")    
+
     
 
 def checkout(request):

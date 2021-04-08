@@ -21,6 +21,7 @@ urlpatterns = [
     path("topic_class_lkg_hindi_worksheet", views.topic_class_lkg_hindi_worksheet, name='topic_class_lkg_hindi_worksheet'), 
 
     path("plans", views.plans, name='plans'), 
+    path("cssNameOnImage", views.cssNameOnImage, name='cssNameOnImage'), 
 
     path("checkout", views.checkout, name='checkout'), 
     path("success", views.success, name='success'), 
