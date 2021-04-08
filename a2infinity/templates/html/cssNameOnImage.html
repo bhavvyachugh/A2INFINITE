@@ -6,19 +6,40 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Name on sheet Test</title>
 
-      <style>
-         .headings {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-         }
-      </style>
+		<style>
+			.headings {
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+			}
+
+			@media print {
+				button {
+					display: none;
+				}
+				img {
+					width: 100%;
+					height: 100%;
+				}
+				h1 {
+					font-size: 1rem;
+				}
+			}
+		</style>
+
+		<script defer>
+			const print = () => {
+				window.print();
+			};
+		</script>
 	</head>
 	<body>
-      <div class="headings">
-         <h1 class="heading">{{request.user}}</h1>
-         <h1 class="heading">{{request.user}}</h1>
-      </div>
+		<div class="headings">
+			<h1 class="heading">{{request.user}}</h1>
+			<h1 class="heading">{{request.user}}</h1>
+		</div>
 		<img src="/static/Images/testSheet.jpeg" alt="" />
+
+		<button onclick="print()" type="button">Print</button>
 	</body>
 </html>
