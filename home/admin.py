@@ -10,3 +10,8 @@ admin.site.register(Subject)
 admin.site.register(Topic)
 admin.site.register(SubTopic)
 admin.site.register(Explain)
+admin.site.register(Package)
+admin.site.register(Feature)
+admin.site.register(LoggedInUser)
+
+

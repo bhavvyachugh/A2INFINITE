@@ -27,29 +27,31 @@ SECRET_KEY = 'd)qx_w%-pbqhm04n$z(_wc%!!=u$&g2ht+3%*qb68ck(o6q_0w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.29.158", "127.0.0.1", "https://a2infinite.herokuapp.com/"]
+ALLOWED_HOSTS = ["192.168.29.158", "127.0.0.1", "https://a2infinite.herokuapp.com/", "localhost"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'home.apps.HomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'home.middlewares.SingleSessionPerUser',
 ]
 
 ROOT_URLCONF = 'a2infinity.urls'
@@ -140,4 +142,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = "home"
+LOGIN_URL = "/"
 

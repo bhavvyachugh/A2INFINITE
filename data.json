@@ -1,0 +1,222 @@
+[
+    {
+        "model": "home.classdetails",
+        "pk": 1,
+        "fields": {
+            "className": 1,
+            "classTitle": "title for 1"
+        }
+    },
+    {
+        "model": "home.subject",
+        "pk": 1,
+        "fields": {
+            "className": 1,
+            "SubjectName": "english",
+            "SubjectTitle": "title for english"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 1,
+        "fields": {
+            "Subject": 1,
+            "TopicName": "tenses",
+            "topicTitle": "title for tenses"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 1,
+        "fields": {
+            "topic": 1,
+            "SubTopicName": "present tense",
+            "subtopicTitle": "title for present tense"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 1,
+        "fields": {
+            "SubTopic": 1,
+            "explaintitle": "apple",
+            "imgBlack": "uploads/gallery/Black/appleb.jpeg",
+            "imgColor": "uploads/gallery/Color/apple.jpeg",
+            "body": " apple"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 2,
+        "fields": {
+            "SubTopic": 1,
+            "explaintitle": "rightnow",
+            "imgBlack": "uploads/gallery/Black/batb.jpeg",
+            "imgColor": "uploads/gallery/Color/bat.jpeg",
+            "body": " rightnow"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 3,
+        "fields": {
+            "SubTopic": 1,
+            "explaintitle": "at the moment",
+            "imgBlack": "uploads/gallery/Black/catb.jpeg",
+            "imgColor": "uploads/gallery/Color/cat.jpeg",
+            "body": " at the moment"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 2,
+        "fields": {
+            "Subject": 1,
+            "TopicName": "article",
+            "topicTitle": "title for article"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 2,
+        "fields": {
+            "topic": 2,
+            "SubTopicName": "present tense",
+            "subtopicTitle": "title for present tense"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 4,
+        "fields": {
+            "SubTopic": 2,
+            "explaintitle": "A",
+            "imgBlack": "uploads/gallery/Black/dogb.jpeg",
+            "imgColor": "uploads/gallery/Color/dog.jpeg",
+            "body": " A"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 5,
+        "fields": {
+            "SubTopic": 2,
+            "explaintitle": "an",
+            "imgBlack": "uploads/gallery/Black/eggb.jpeg",
+            "imgColor": "uploads/gallery/Color/egg.jpeg",
+            "body": " an"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 6,
+        "fields": {
+            "SubTopic": 2,
+            "explaintitle": "the",
+            "imgBlack": "uploads/gallery/Black/henb.jpeg",
+            "imgColor": "uploads/gallery/Color/hen.jpeg",
+            "body": " the"
+        }
+    },
+    {
+        "model": "home.classdetails",
+        "pk": 2,
+        "fields": {
+            "className": 2,
+            "classTitle": "title for 2"
+        }
+    },
+    {
+        "model": "home.subject",
+        "pk": 2,
+        "fields": {
+            "className": 2,
+            "SubjectName": "Maths",
+            "SubjectTitle": "title for Maths"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 3,
+        "fields": {
+            "Subject": 2,
+            "TopicName": "Tables",
+            "topicTitle": "title for Tables"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 3,
+        "fields": {
+            "topic": 3,
+            "SubTopicName": "present tense",
+            "subtopicTitle": "title for present tense"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 7,
+        "fields": {
+            "SubTopic": 3,
+            "explaintitle": "tomorrow",
+            "imgBlack": "uploads/gallery/Black/inkb.jpeg",
+            "imgColor": "uploads/gallery/Color/ink.jpeg",
+            "body": " tomorrow"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 8,
+        "fields": {
+            "SubTopic": 3,
+            "explaintitle": "next day",
+            "imgBlack": "uploads/gallery/Black/jacbjpeg",
+            "imgColor": "uploads/gallery/Color/jac.jpeg",
+            "body": " next day"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 9,
+        "fields": {
+            "SubTopic": 3,
+            "explaintitle": "Other day",
+            "imgBlack": "uploads/gallery/Black/kinb.jpeg",
+            "imgColor": "uploads/gallery/Color/kin.jpeg",
+            "body": " Other day"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 10,
+        "fields": {
+            "SubTopic": 3,
+            "explaintitle": "a",
+            "imgBlack": "uploads/gallery/Black/linb.jpeg",
+            "imgColor": "uploads/gallery/Color/lin.jpeg",
+            "body": " a"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 11,
+        "fields": {
+            "SubTopic": 3,
+            "explaintitle": "b",
+            "imgBlack": "uploads/gallery/Black/monb.jpeg",
+            "imgColor": "uploads/gallery/Color/mon.jpeg",
+            "body": " b"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 12,
+        "fields": {
+            "SubTopic": 3,
+            "explaintitle": "c",
+            "imgBlack": "uploads/gallery/Black/nonb.jpeg",
+            "imgColor": "uploads/gallery/Color/non.jpeg",
+            "body": " c"
+        }
+    }
+]

@@ -3,24 +3,25 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login ,logout
 from django.contrib.auth.models import User
 from home.models import Contact
+import json
 #from home.models import Sheet
 from datetime import datetime
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
-
+from .serializer import TopicSerializer
 ###-----------------------------------------------------###
 
 
 from django.views import View
-from .models import ClassDetails, Subject, Topic, SubTopic, Explain
+from .models import ClassDetails, Subject, Topic, SubTopic, Explain, Package, Feature
 from django.core.paginator import Paginator
 import os
 from PIL import Image, ImageFont, ImageDraw, ImageEnhance
 import requests
 from io import StringIO
 from django.views.generic import View
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 
 ###-------------------------------------------------------###
@@ -57,10 +58,11 @@ def handleSignup(request):
         return HttpResponse("404 page not founds")
         
 
-def handleLogin(request):
-    if request.method == 'POST':
-        loginusername = request.POST['loginusername']
-        loginpassword = request.POST['loginpassword']
+def handleLogin(request):    
+
+    if request.method == "POST":
+        loginusername = request.POST['loginusername'] 
+        loginpassword = request. POST['loginpassword']
         
 
         user = authenticate(username=loginusername, password=loginpassword)
@@ -68,20 +70,20 @@ def handleLogin(request):
     if user is not None:
         login(request, user)
         messages.success(request, "Successfully Loged-in")
-        return redirect('home')
+
+        if 'next' in request.POST:
+            return redirect(request.POST.get('next'))
+        
+        else:
+            return redirect('home')
         
 
     else:
-     messages.error(request, "try again")
-     return redirect('home')
-
-
-        
-
-       
-       
+        messages.error(request, "try again")
+        return redirect('home')
+                    
     return HttpResponse('login')
-
+ 
 
 def handleLogout(request):
     logout(request)
@@ -209,19 +211,22 @@ class SubjectView(View):
             "classdata" : Subjectsdata
         })
 
-
 class TopicView(View):
     def get(self, request):
         subjectId = request.GET.get("subject", None)
+        
         try:
             data = Subject.objects.get(id=subjectId)
         except Subject.DoesNotExist:
-            return redirect("ClassView")
+           return redirect("ClassView")
+        
         if subjectId == None:
             return redirect("ClassView")
+      
         Topicdata = Topic.objects.filter(Subject = data)
+        data1  = TopicSerializer(Topicdata, many=True)
         return render(request, "frontend/TopicViewContainer.html",{
-            "classdata" : Topicdata
+            "data" : data1.data
         })
 
 
@@ -240,7 +245,38 @@ class SubTopicView(View):
         })
 
 
-class explain(View):
+# class explain(View):
+#     def get(self, request):
+#         subtopicId = request.GET.get("subtopic", None)
+#         try:
+#             data = SubTopic.objects.get(id=subtopicId)
+#         except SubTopic.DoesNotExist:
+#             return redirect("ClassView")
+#         if subtopicId == None:
+#             return redirect("ClassView")
+#         explaindata = Explain.objects.filter(SubTopic = data)
+#         print(explaindata)
+#         page = request.GET.get('page', 1)
+#         paginator = Paginator(explaindata, 1)
+#         try:
+#             users = paginator.page(page)
+#         except PageNotAnInteger:
+#             users = paginator.page(1)
+#         except EmptyPage:
+#             users = paginator.page(paginator.num_pages)
+#         return render(request, "frontend/explainContainer.html",{
+#             "classdata" : users,
+#             "topicid" : subtopicId
+#         })
+
+
+def image(request, pk):
+    img_id = Explain.objects.get(pk=pk)
+    print(img_id)
+    return render(request, "frontend/image.html", {'class':img_id})
+
+
+class images_row(View):
     def get(self, request):
         subtopicId = request.GET.get("subtopic", None)
         try:
@@ -250,18 +286,7 @@ class explain(View):
         if subtopicId == None:
             return redirect("ClassView")
         explaindata = Explain.objects.filter(SubTopic = data)
-        page = request.GET.get('page', 1)
-        paginator = Paginator(explaindata, 1)
-        try:
-            users = paginator.page(page)
-        except PageNotAnInteger:
-            users = paginator.page(1)
-        except EmptyPage:
-            users = paginator.page(paginator.num_pages)
-        return render(request, "frontend/explainContainer.html",{
-            "classdata" : users,
-            "topicid" : subtopicId
-        })
+        return render(request, "frontend/images_row.html", {'explaindata':explaindata})
 
         
 class download(View):
@@ -290,3 +315,51 @@ class download(View):
             return response
         except:
             return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+
+class packages(View):
+    def get(self, request):
+        all_plans = Package.objects.all()
+        return render(request, "frontend/packages.html", {'all_plans':all_plans})
+
+
+class features(View):
+    def get(self, request):
+        feature_id = request.GET.get("feature", None)
+
+        try:
+            data = Package.objects.get(id=feature_id)
+        except Package.DoesNotExist:
+            return redirect("packages")
+
+        if feature_id == None:
+            return redirect("packages")
+
+        features_data = Feature.objects.filter(pkg_name=data)
+
+        print(features_data)
+
+        return render(request, "frontend/features.html", {'features_data':features_data})
+
+
+
+class payments(View):
+    def get(self, request):
+        try:
+            pkg_id = int(request.GET.get("pkg"))
+            package = Package.objects.get(id=pkg_id)
+        except (ValueError, TypeError, Package.DoesNotExist):
+            return redirect("packages")
+        client = razorpay.Client(
+            auth=('rzp_test_Ac2g1pJT7D9c69', 'd87OjvZuXZMT6FppcevvzxXU')
+        )
+        payment = client.order.create(
+            {
+            'amount': package.pkg_price * 100,
+            'currency': 'INR',
+            'payment_capture': '1'
+            }
+        )
+        return render(request, "frontend/payment.html", {'payment': payment})
+                
+

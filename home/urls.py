@@ -4,8 +4,8 @@ from home import views
 
 ###--------------------------------------###
 
-
-from .views import ClassView, SubjectView, TopicView, SubTopicView, explain, download
+from django.contrib.auth.decorators import login_required
+from .views import ClassView, SubjectView, TopicView, SubTopicView, download, packages, features, payments, images_row
 
 
 ###--------------------------------------###
@@ -41,12 +41,19 @@ urlpatterns = [
 
     ###----------------------------------------------###
 
-    path('class/',ClassView.as_view(), name='ClassView'),
-    path('subject/', SubjectView.as_view(), name='SubjectView'),
-    path('topic/', TopicView.as_view(), name='TopicView'),
-    path('subtopic/', SubTopicView.as_view(), name='SubTopicView'),
-    path('explain/', explain.as_view(), name='explain'),
-    path('download/', download.as_view(), name='donwload')
+    path('class/', login_required(ClassView.as_view()), name='ClassView'),
+    path('subject/', login_required(SubjectView.as_view()), name='SubjectView'),
+    path('topic/', login_required(TopicView.as_view()), name='TopicView'),
+    path('subtopic/', login_required(SubTopicView.as_view()), name='SubTopicView'),
+    #path('explain/', login_required(explain.as_view()), name='explain'),
+    path('download/', login_required(download.as_view()), name='donwload'),
+    path('packages/', login_required(packages.as_view()), name='packages'),
+    path('features/', login_required(features.as_view()), name='features'),
+    path('payment/', login_required(payments.as_view()), name='payment'),
+    path('images/', login_required(images_row.as_view()), name='payment'),
+    path('image/<int:pk>/', views.image, name='image'),
+
+
 
 
     ###----------------------------------------------###

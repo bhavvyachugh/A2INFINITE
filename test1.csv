@@ -1,0 +1,13 @@
+class,subject,topic,subtopic,explains,image,bimage
+1,english,tenses,present tense,now,uploads/gallery/Color/apple.jpeg,uploads/gallery/Black/appleb.jpeg
+1,english,tenses,present tense,rightnow,uploads/gallery/Color/bat.jpeg,uploads/gallery/Black/batb.jpeg
+1,english,tenses,present tense,at the moment,uploads/gallery/Color/cat.jpeg,uploads/gallery/Black/catb.jpeg
+1,english,article,present tense,A,uploads/gallery/Color/dog.jpeg,uploads/gallery/Black/dogb.jpeg
+1,english,article,present tense,an,uploads/gallery/Color/egg.jpeg,uploads/gallery/Black/eggb.jpeg
+1,english,article,present tense,the,uploads/gallery/Color/hen.jpeg,uploads/gallery/Black/henb.jpeg
+2,Maths,Tables,present tense,tomorrow,uploads/gallery/Color/ink.jpeg,uploads/gallery/Black/inkb.jpeg
+2,Maths,Tables,present tense,next day,uploads/gallery/Color/jac.jpeg,uploads/gallery/Black/jacbjpeg
+2,Maths,Tables,present tense,Other day,uploads/gallery/Color/kin.jpeg,uploads/gallery/Black/kinb.jpeg
+2,Maths,Tables,present tense,a,uploads/gallery/Color/lin.jpeg,uploads/gallery/Black/linb.jpeg
+2,Maths,Tables,present tense,b,uploads/gallery/Color/mon.jpeg,uploads/gallery/Black/monb.jpeg
+2,Maths,Tables,present tense,c,uploads/gallery/Color/non.jpeg,uploads/gallery/Black/nonb.jpeg

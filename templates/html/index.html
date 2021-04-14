@@ -211,6 +211,11 @@
               </button>
                     </div>
                 </div>
+
+                {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+                {% endif %}
+
                 <button type="submit" class="login-form__submit btn-primary">
             Log In &rarr;
           </button>
