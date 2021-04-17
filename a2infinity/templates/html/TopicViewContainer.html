@@ -7,7 +7,7 @@
 		<title>Topic | A2INFINITE</title>
 
 		<!-- --------------------------------- css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/topic_worksheet.css" />
+		<link rel="stylesheet" href="/static/css/TopicViewContainer.css" />
 
 		<!-- ------------------------------- favicon ------------------------------- -->
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
@@ -123,97 +123,23 @@
 
 				<section class="section-topics">
 					<ul class="topicList">
+						{% for class in data %}
 						<li class="topicList__items">
-							<h3 class="topicList__items-heading">Cursive Lowercase</h3>
+							<h3 class="topicList__items-heading">{{class.TopicName}}</h3>
 							<ol class="subtopicList">
+								{% for subtopic in class.subtopics %}
 								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
+									<a
+										class="subtopicList-item__link"
+										href="/images?name={{class.subtopicTitle}}&subtopic={{subtopic.id}}"
+										>{{subtopic.subtopicTitle}}</a
+									>
 								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
+
+								{% endfor %}
 							</ol>
 						</li>
-						<li class="topicList__items">
-							<h3 class="topicList__items-heading">Cursive Lowercase</h3>
-							<ol class="subtopicList">
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-							</ol>
-						</li>
-						<li class="topicList__items">
-							<h3 class="topicList__items-heading">Cursive Lowercase</h3>
-							<ol class="subtopicList">
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-							</ol>
-						</li>
-						<li class="topicList__items">
-							<h3 class="topicList__items-heading">Cursive Lowercase</h3>
-							<ol class="subtopicList">
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-							</ol>
-						</li>
-						<li class="topicList__items">
-							<h3 class="topicList__items-heading">Cursive Lowercase</h3>
-							<ol class="subtopicList">
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-								<li class="subtopicList-item">
-									<a href="#" class="subtopicList-item__link"> A TO F </a>
-								</li>
-							</ol>
-						</li>
+						{% endfor %}
 					</ul>
 				</section>
 			</main>

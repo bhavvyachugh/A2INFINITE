@@ -3,22 +3,24 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login ,logout
 from django.contrib.auth.models import User
 from home.models import Contact
-from home.models import Sheet
+import json
+#from home.models import Sheet
 from datetime import datetime
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
+from .serializer import TopicSerializer
 
 
 from django.views import View
-from .models import ClassDetails, Subject, Topic, SubTopic, Explain
+from .models import ClassDetails, Subject, Topic, SubTopic, Explain, Package, Feature
 from django.core.paginator import Paginator
 import os
 from PIL import Image, ImageFont, ImageDraw, ImageEnhance
 import requests
 from io import StringIO
 from django.views.generic import View
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 # from blog.models import Post
 
@@ -188,3 +190,129 @@ class SubjectView(View):
         return render(request, "SubjectViewContainer.html",{
             "classdata" : Subjectsdata
         })
+
+class TopicView(View):
+    def get(self, request):
+        subjectId = request.GET.get("subject", None)
+        
+        try:
+            data = Subject.objects.get(id=subjectId)
+        except Subject.DoesNotExist:
+           return redirect("ClassView")
+        
+        if subjectId == None:
+            return redirect("ClassView")
+      
+        Topicdata = Topic.objects.filter(Subject = data)
+        data1  = TopicSerializer(Topicdata, many=True)
+        return render(request, "TopicViewContainer.html",{
+            "data" : data1.data
+        })
+
+
+class SubTopicView(View):
+    def get(self, request):
+        topicId = request.GET.get("topic", None)
+        try:
+            data = Topic.objects.get(id=topicId)
+        except Topic.DoesNotExist:
+            return redirect("ClassView")
+        if topicId == None:
+            return redirect("ClassView")
+        SubtopicData = SubTopic.objects.filter(topic = data)
+        return render(request, "SubTopicViewContainer.html",{
+            "classdata" : SubtopicData
+        })        
+
+    def image(request, pk):
+      img_id = Explain.objects.get(pk=pk)
+      print(img_id)
+      return render(request, "image.html", {'class':img_id})
+
+
+class images_row(View):
+    def get(self, request):
+        subtopicId = request.GET.get("subtopic", None)
+        try:
+            data = SubTopic.objects.get(id=subtopicId)
+        except SubTopic.DoesNotExist:
+            return redirect("ClassView")
+        if subtopicId == None:
+            return redirect("ClassView")
+        explaindata = Explain.objects.filter(SubTopic = data)
+        return render(request, "images_row.html", {'explaindata':explaindata})
+
+        
+class download(View):
+    def get(self, request):
+        try:
+            downloadid = request.GET.get("id", None)
+            typedata = request.GET.get("type", None)
+            if downloadid == None or typedata == None:
+                return redirect("ClassView")
+            search_item = Explain.objects.get(id=downloadid)
+            if typedata == "black":
+                blackphoto =  Image.open(search_item.imgBlack)
+                filename = search_item.imgBlack.url.split("/")[-1]
+                filetype = search_item.imgBlack.url.split(".")[-1]
+            elif typedata == 'white':
+                blackphoto =  Image.open(search_item.imgWhite)
+                filename = search_item.imgWhite.url.split("/")[-1]
+                filetype = search_item.imgWhite.url.split(".")[-1]
+            else:
+                blackphoto =  Image.open(search_item.imgColor)
+                filename = search_item.imgColor.url.split("/")[-1]
+                filetype = search_item.imgColor.url.split(".")[-1]
+            response = HttpResponse(content_type="image/jpeg")
+            response['Content-Disposition'] = "attachment; filename=%s" % filename
+            blackphoto.save(response, "png")
+            return response
+        except:
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+
+class packages(View):
+    def get(self, request):
+        all_plans = Package.objects.all()
+        return render(request, "packages.html", {'all_plans':all_plans})
+
+
+class features(View):
+    def get(self, request):
+        feature_id = request.GET.get("feature", None)
+
+        try:
+            data = Package.objects.get(id=feature_id)
+        except Package.DoesNotExist:
+            return redirect("packages")
+
+        if feature_id == None:
+            return redirect("packages")
+
+        features_data = Feature.objects.filter(pkg_name=data)
+
+        print(features_data)
+
+        return render(request, "features.html", {'features_data':features_data})
+
+
+
+class payments(View):
+    def get(self, request):
+        try:
+            pkg_id = int(request.GET.get("pkg"))
+            package = Package.objects.get(id=pkg_id)
+        except (ValueError, TypeError, Package.DoesNotExist):
+            return redirect("packages")
+        client = razorpay.Client(
+            auth=('rzp_test_Ac2g1pJT7D9c69', 'd87OjvZuXZMT6FppcevvzxXU')
+        )
+        payment = client.order.create(
+            {
+            'amount': package.pkg_price * 100,
+            'currency': 'INR',
+            'payment_capture': '1'
+            }
+        )
+        return render(request, "payment.html", {'payment': payment})
+                
