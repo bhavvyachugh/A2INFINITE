@@ -10,6 +10,7 @@ import razorpay
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
 from .serializer import TopicSerializer
+###-----------------------------------------------------###
 
 
 from django.views import View
@@ -21,6 +22,9 @@ import requests
 from io import StringIO
 from django.views.generic import View
 from django.http import HttpResponse, JsonResponse
+
+
+###-------------------------------------------------------###
 
 # from blog.models import Post
 
@@ -54,10 +58,11 @@ def handleSignup(request):
         return HttpResponse("404 page not founds")
         
 
-def handleLogin(request):
-    if request.method == 'POST':
-        loginusername = request.POST['loginusername']
-        loginpassword = request.POST['loginpassword']
+def handleLogin(request):    
+
+    if request.method == "POST":
+        loginusername = request.POST['loginusername'] 
+        loginpassword = request. POST['loginpassword']
         
 
         user = authenticate(username=loginusername, password=loginpassword)
@@ -65,20 +70,20 @@ def handleLogin(request):
     if user is not None:
         login(request, user)
         messages.success(request, "Successfully Loged-in")
-        return redirect('home')
+
+        if 'next' in request.POST:
+            return redirect(request.POST.get('next'))
+        
+        else:
+            return redirect('home')
         
 
     else:
-     messages.error(request, "try again")
-     return redirect('home')
-
-
-        
-
-       
-       
+        messages.error(request, "try again")
+        return redirect('home')
+                    
     return HttpResponse('login')
-
+ 
 
 def handleLogout(request):
     logout(request)
@@ -96,41 +101,20 @@ def contact(request):
         contact = Contact(name=name, email=email, phone=phone, desc=desc, date = datetime.today())
         contact.save()
         messages.success(request, 'Your message has been sent !')
-    return render(request, 'contact.html')
+    return render(request, 'html/contact.html')
  
 def sheet(request):
-
    sheet = Sheet.objects.all()
-   return render(request,'sheet.html', {'sheet' : sheet})
+   return render(request,'html/sheet.html', {'sheet' : sheet})
 
-
-def topic_class_lkg_english_worksheet(request):
-    return render(request, "topic_class_lkg_english_worksheet.html")
-
-def topic_class_prenursery_english_worksheet(request):
-    return render(request, "topic_class_prenursery_english_worksheet.html")
-
-def topic_class_prenursery_maths_worksheet(request):
-    return render(request, "topic_class_prenursery_maths_worksheet.html")
-
-def topic_class_nursery_english_worksheet(request):
-    return render(request, "topic_class_nursery_english_worksheet.html")
-
-def topic_class_nursery_maths_worksheet(request):
-    return render(request, "topic_class_nursery_maths_worksheet.html")
-
-def topic_class_lkg_maths_worksheet(request):
-    return render(request, "topic_class_lkg_maths_worksheet.html")
-
-def topic_class_lkg_hindi_worksheet(request):
-    return render(request, "topic_class_lkg_hindi_worksheet.html")   
+def cssNameOnImage(request):
+   return render(request,'cssNameOnImage.html')
+      
 
 def plans(request):
     return render(request,"plans.html")    
 
-def cssNameOnImage(request):
-    return render(request,"cssNameOnImage.html")    
-
+    return render(request, "html/subject_class_nursery_worksheet.html")
     
 
 def checkout(request):
@@ -143,11 +127,11 @@ def checkout(request):
         checkout = client.order.create({'amount':amount, 'currency':currency,'payment_capture': '1'})   
     
    
-    return render(request, "checkout.html")
+    return render(request, "html/checkout.html")
     
 @csrf_exempt    
 def success(request):
-    return render(request, "success.html")   
+    return render(request, "html/success.html")   
 
 
 def search(request):
@@ -160,14 +144,16 @@ def search(request):
 
 
             if match:
-                return render(request, 'search.html', {'search': match})
+                return render(request, 'html/search.html', {'search': match})
             else:
                 messages.error(request, 'no result found')
         else:
             return HttpResponseRedirect('/search')
-    return render(request,'search.html')           
+    return render(request,'html/search.html')           
 
-###-------------------------------------------------------------------------------------------------------------###
+
+
+    ###-------------------------------------------------------------------------------------------------------------###
 
 
 class ClassView(View):
@@ -176,6 +162,7 @@ class ClassView(View):
         return render(request, "ClassViewContainer.html",{
             "classdata" : classdata
         })  
+
 
 class SubjectView(View):
     def get(self, request):
@@ -222,12 +209,38 @@ class SubTopicView(View):
         SubtopicData = SubTopic.objects.filter(topic = data)
         return render(request, "SubTopicViewContainer.html",{
             "classdata" : SubtopicData
-        })        
+        })
 
-    def image(request, pk):
-      img_id = Explain.objects.get(pk=pk)
-      print(img_id)
-      return render(request, "image.html", {'class':img_id})
+
+# class explain(View):
+#     def get(self, request):
+#         subtopicId = request.GET.get("subtopic", None)
+#         try:
+#             data = SubTopic.objects.get(id=subtopicId)
+#         except SubTopic.DoesNotExist:
+#             return redirect("ClassView")
+#         if subtopicId == None:
+#             return redirect("ClassView")
+#         explaindata = Explain.objects.filter(SubTopic = data)
+#         print(explaindata)
+#         page = request.GET.get('page', 1)
+#         paginator = Paginator(explaindata, 1)
+#         try:
+#             users = paginator.page(page)
+#         except PageNotAnInteger:
+#             users = paginator.page(1)
+#         except EmptyPage:
+#             users = paginator.page(paginator.num_pages)
+#         return render(request, "explainContainer.html",{
+#             "classdata" : users,
+#             "topicid" : subtopicId
+#         })
+
+
+def image(request, pk):
+    img_id = Explain.objects.get(pk=pk)
+    print(img_id)
+    return render(request, "image.html", {'class':img_id})
 
 
 class images_row(View):
@@ -315,4 +328,3 @@ class payments(View):
             }
         )
         return render(request, "payment.html", {'payment': payment})
-                

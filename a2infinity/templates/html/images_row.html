@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sheets | A2INFINITE</title>
+	</head>
+	<body>
+		{% for image in explaindata %}
+		<div class="images">
+			<div class="photo">
+				<a href="{% url 'image' image.pk %}" target="_blank">
+					<img
+						src="{{image.imgColor.url}}"
+						width="300"
+						height="300"
+						alt="photo"
+					/>
+				</a>
+			</div>
+		</div>
+		{% endfor %}
+	</body>
+</html>
