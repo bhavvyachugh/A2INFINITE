@@ -11,12 +11,5 @@
 		"build:css": "npm-run-all compile:sass  prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",
-	"license": "ISC",
-	"devDependencies": {
-		"autoprefixer": "^10.2.4",
-		"node-sass": "^5.0.0",
-		"npm-run-all": "^4.1.5",
-		"postcss": "^8.2.9",
-		"postcss-cli": "^8.3.1"
-	}
+	"license": "ISC"
 }
