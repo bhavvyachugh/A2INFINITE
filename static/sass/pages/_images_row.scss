@@ -1,0 +1,17 @@
+.sheet-list {
+   list-style: none;
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   padding: 0;
+   align-items: center;
+
+   &__item {
+      margin: 1rem 5rem;
+   }
+
+	&__sheet {
+		height: 30rem;
+		width: 30rem;
+	}
+}
