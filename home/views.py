@@ -328,3 +328,7 @@ class payments(View):
             }
         )
         return render(request, "payment.html", {'payment': payment})
+
+
+    ###----------------------------------Forgot password views---------------------------------------------------------------------------###
+           
