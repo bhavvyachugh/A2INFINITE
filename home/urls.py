@@ -50,7 +50,14 @@ from django.contrib.auth.decorators import login_required
 from .views import ClassView, SubjectView, TopicView, SubTopicView, download, packages, features, payments, images_row
 
 
-###--------------------------------------###
+# ###----------------Forgot Password-----------###
+# from django.contrib.auth import views as auth_views
+# ###--------------------------------------###
+
+
+
+
+
 
 
 urlpatterns = [
@@ -80,5 +87,15 @@ urlpatterns = [
     path('payment/', (payments.as_view()), name='payment'),
     path('images/', (images_row.as_view()), name='payment'),
     path('image/<int:pk>/', views.image, name='image'),
-    ###----------------------------------------------###
+
+    ###----------------------Forgot Password------------------------###
+
+    # path("password_reset/", auth_views.PasswordResetView.as_view(template_name='password_reset.html'), name="password_reset"),
+    # path("password_reset_/done/", auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name="password_reset_done"),
+    # path("password_reset_confirm/<uidb64>/<token>/", auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name="password_reset_confirm"),
+    # path("password_reset_complete/", auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name="password_reset_complete"),
+
+   ###----------------------------------------------###
+
+    
 ]
