@@ -24,7 +24,7 @@ class Sheet(models.Model):
 class ClassDetails(models.Model):
     className = models.CharField(verbose_name="ClassName", max_length=60, default=None, blank=True)
     classTitle = models.CharField(verbose_name="ClassTitle", max_length=200, default=None, blank=True)
-    remark = models.TextField(verbose_name="remark", max_length=600, default=None, blank=True)
+   #  remark = models.TextField(verbose_name="remark", max_length=600, default=None, blank=True)
     def __str__(self):
         return self.className + " | " + self.remark
 
@@ -33,7 +33,7 @@ class Subject(models.Model):
     className = models.ForeignKey(ClassDetails,on_delete=models.CASCADE, related_name="ClassDetails")
     SubjectName = models.CharField(verbose_name="SubjectName", max_length=60, default=None, blank=True)
     SubjectTitle = models.CharField(verbose_name="SubjectTitle", max_length=200, default=None, blank=True)
-    remark = models.TextField(verbose_name="remark", max_length=600, default=None, blank=True)
+   #  remark = models.TextField(verbose_name="remark", max_length=600, default=None, blank=True)
     def __str__(self):
         return self.SubjectName + " | " + self.className.className
 
