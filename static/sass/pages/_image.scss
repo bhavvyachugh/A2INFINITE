@@ -1,0 +1,62 @@
+.schoolName-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.img-container {
+	&__img {
+		height: 100%;
+		width: 100%;
+
+		&--black {
+			display: none;
+		}
+	}
+}
+
+.btn-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 2rem 0;
+}
+
+@page {
+	size: landscape;
+}
+
+@media print {
+	.container {
+		box-shadow: none !important;
+		margin: 0rem !important;
+		height: 99vh !important;
+		width: 100vw;
+	}
+
+	.img-container {
+		&__img {
+			&--colored {
+				height: 92.5vh !important;
+				width: 100vw;
+			}
+
+			&--black {
+				height: 92.5vh !important;
+				width: 100vw;
+			}
+		}
+	}
+
+	.header {
+		display: none;
+	}
+
+	.btn-container {
+		display: none;
+	}
+
+	.footer {
+		display: none;
+	}
+}
