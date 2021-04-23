@@ -68,6 +68,12 @@ class Explain(models.Model):
 class Package(models.Model):
     pkg_name = models.CharField(verbose_name="pkg_name", max_length=100, default=None, blank=True)
     pkg_price = models.IntegerField()
+    pkg_feature_1 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_2 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_3 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_4 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_5 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_6 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
 
     def __str__(self):
         return self.pkg_name

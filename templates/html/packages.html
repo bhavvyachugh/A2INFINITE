@@ -13,7 +13,7 @@
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
 		<!-- ----------------------------- javascript ------------------------------ -->
-      {% if user.is_authenticated %}
+		{% if user.is_authenticated %}
 		<!-- login form -->
 		<script type="text/javascript" src="/static/js/logout.js" defer></script>
 		{% else %}
@@ -107,7 +107,43 @@
 				<h1 class="heading-primary heading-plans">Choose Your Plan</h1>
 
 				<div class="row">
-					<div class="col-1-of-3">
+					{% for plan in all_plans %}
+					<div class="col">
+						<div class="card">
+							<div class="card__side card__side--front">
+								<div class="card__picture card__picture--1">&nbsp;</div>
+
+								<h4 class="card__heading">
+									<span class="card__heading-span">{{ plan.pkg_name }}</span>
+								</h4>
+
+								<div class="card__details">
+									<ul>
+										<li>{{ plan.pkg_feature_1 }}</li>
+										<li>{{ plan.pkg_feature_2 }}</li>
+										<li>{{ plan.pkg_feature_3 }}</li>
+										<li>{{ plan.pkg_feature_4 }}</li>
+										<li>{{ plan.pkg_feature_5 }}</li>
+										<li>{{ plan.pkg_feature_6 }}</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="card__side card__side--back">
+								<div class="card__cta">
+									<div class="card__price-box">
+										<p class="card__price-only">Only</p>
+										<p class="card__price-value">Rs. {{ plan.pkg_price }}</p>
+									</div>
+
+									<a href="/payment?pkg={{ plan.pk }}" class="card__btn"
+										>Book Now</a
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="col-1-of-3">
 						<div class="card">
 							<div class="card__side card__side--front">
 								<div class="card__picture card__picture--1">&nbsp;</div>
@@ -170,42 +206,11 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-1-of-3">
-						<div class="card">
-							<div class="card__side card__side--front">
-								<div class="card__picture card__picture--1">&nbsp;</div>
-
-								<h4 class="card__heading">
-									<span class="card__heading-span">Plan Heading Heading</span>
-								</h4>
-
-								<div class="card__details">
-									<ul>
-										<li>feature 1</li>
-										<li>feature 2</li>
-										<li>feature 3</li>
-										<li>feature 4</li>
-										<li>feature 5</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="card__side card__side--back">
-								<div class="card__cta">
-									<div class="card__price-box">
-										<p class="card__price-only">Only</p>
-										<p class="card__price-value">Rs. 2000</p>
-									</div>
-
-									<a href="/checkout" class="card__btn">Book Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					</div> -->
+					{% endfor %}
 				</div>
 
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-1-of-3 u-margin-left-large">
 						<div class="card">
 							<div class="card__side card__side--front">
@@ -271,7 +276,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</main>
 
 			<!-- ------------------------------- Footer -------------------------------- -->
