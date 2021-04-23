@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'home.apps.HomeConfig',
+    'user',
     # 'crispy_forms',
 ]
 
@@ -89,13 +90,15 @@ WSGI_APPLICATION = 'a2infinity.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'a2infinite',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
         
     }
 }
+
+AUTH_USER_MODEL = 'user.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
