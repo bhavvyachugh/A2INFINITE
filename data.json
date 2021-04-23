@@ -44,5 +44,78 @@
             "imgColor": "uploads/gallery/Color/testSheet.jpeg",
             "body": " now"
         }
+    },
+    {
+        "model": "home.explain",
+        "pk": 2,
+        "fields": {
+            "SubTopic": 1,
+            "explaintitle": "rightnow",
+            "imgBlack": "uploads/gallery/Black/testSheet.jpeg",
+            "imgColor": "uploads/gallery/Color/testSheet.jpeg",
+            "body": " rightnow"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 3,
+        "fields": {
+            "SubTopic": 1,
+            "explaintitle": "at the moment",
+            "imgBlack": "uploads/gallery/Black/testSheet.jpeg",
+            "imgColor": "uploads/gallery/Color/testSheet.jpeg",
+            "body": " at the moment"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 2,
+        "fields": {
+            "Subject": 1,
+            "TopicName": "article",
+            "topicTitle": "title for article"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 2,
+        "fields": {
+            "topic": 2,
+            "SubTopicName": "present tense",
+            "subtopicTitle": "title for present tense"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 4,
+        "fields": {
+            "SubTopic": 2,
+            "explaintitle": "A",
+            "imgBlack": "uploads/gallery/Black/testSheet.jpeg",
+            "imgColor": "uploads/gallery/Color/testSheet.jpeg",
+            "body": " A"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 5,
+        "fields": {
+            "SubTopic": 2,
+            "explaintitle": "an",
+            "imgBlack": "uploads/gallery/Black/testSheet.jpeg",
+            "imgColor": "uploads/gallery/Color/testSheet.jpeg",
+            "body": " an"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 6,
+        "fields": {
+            "SubTopic": 2,
+            "explaintitle": "the",
+            "imgBlack": "uploads/gallery/Black/testSheet.jpeg",
+            "imgColor": "uploads/gallery/Color/testSheet.jpeg",
+            "body": " the"
+        }
     }
 ]
