@@ -1,0 +1,42 @@
+<!-- ------------------------------- header -------------------------------- -->
+{% block content %}
+<header class="header u-border-bottom">
+	<a href="/">
+		<img
+			src="/static/Images/logo/logo_transparent.png"
+			alt="logo"
+			class="logo"
+		/>
+	</a>
+
+	<form method="POST" action="search" class="search">
+		{% csrf_token %}
+		<input
+			type="text"
+			placeholder="Search"
+			class="search__input"
+			name="search"
+			id="search"
+		/>
+		<button class="search__button" type="submit">
+			<svg class="search__icon">
+				<use xlink:href="/static/Images/Icons/sprite.svg#icon-search"></use>
+			</svg>
+		</button>
+	</form>
+
+	<nav class="btn-nav">
+		{% if user.is_authenticated %}
+		<nav class="user-nav">
+			<div class="user-nav__user">
+				<span class="user-nav__user-name">{{request.user}}</span>
+				<button class="btn-nav__logout btn-secondary">Logout</button>
+			</div>
+		</nav>
+		{% else %}
+		<button class="btn-nav__login btn-secondary">Login &rarr;</button>
+		<button class="btn-nav__signup btn-secondary">Sign-up &rarr;</button>
+		{% endif %}
+	</nav>
+</header>
+{% endblock content %}

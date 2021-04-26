@@ -588,5 +588,22 @@ class payments(View):
         return render(request, "payment.html", {'payment': payment})
 
 
-    ###----------------------------------Forgot password views---------------------------------------------------------------------------###
+# -------------------------------- base views -------------------------------- #
            
+def header(request):
+   return render(request, "base/header.html")
+
+def navbar(request):
+   return render(request, "base/navbar.html")
+
+def signin(request):
+   return render(request, "base/signin.html")
+
+def signout(request):
+   return render(request, "base/signout.html")
+
+def signup(request):
+   return render(request, "base/signup.html")
+
+def loader(request):
+   return render(request, "base/loader.html")

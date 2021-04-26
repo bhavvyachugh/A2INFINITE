@@ -425,7 +425,9 @@ html {
   max-width: 114rem;
   margin: 0 auto;
   display: flex !important;
-  flex-wrap: wrap !important; }
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: center; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
   .row .col {
