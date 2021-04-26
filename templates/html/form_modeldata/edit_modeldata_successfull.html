@@ -1,0 +1,36 @@
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Edited Successfully</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">Chiudi</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p class="alert alert-info">Edited Successfuly</p>
+        </div><!-- /.modal-body -->
+     </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+<script>
+    // close the modal after 3 seconds
+    setTimeout(function() {
+        $('#modaledit').modal('hide');
+    }, 1000);
+
+    data_row ={{ data|safe }}
+    console.log(data_row)
+
+    var table_devices = $('#table-ourbanks').DataTable();
+
+    // get the row 
+    row = $("#table-ourbanks .table-edit-outbanks[data-id='{{id}}']").closest('tr')
+
+    rowIndex = table_devices.row(row).index();
+    console.log(rowIndex)
+
+    table_devices.row(rowIndex).data(data_row).draw()
+
+
+</script>

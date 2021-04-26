@@ -56,10 +56,10 @@ signupBtn.addEventListener('click', showSighupForm);
 crossLogin.addEventListener('click', hideLoginForm);
 crossSignup.addEventListener('click', hideSignupForm);
 
-welcomeBtn.addEventListener('click', showSighupForm);
+welcomeBtn.addEventListener('click', showSighupForm);hideSignupForm
 footerBtn.addEventListener('click', showSighupForm);
 
-formOverlayLinkLogin.addEventListener('click', showHideSignup);
+//formOverlayLinkLogin.addEventListener('click', showHideSignup);
 formOverlayLinkSignup.addEventListener('click', showHideLogin);
 
 alertCross.addEventListener('click', hideAlertMessage);

@@ -99,6 +99,13 @@
 			</nav>
 
 			<main class="main">
+				{% if not subscribed %}
+					<h3> You are not Subscribed. Showing only Free Sheets</h3>
+					<h3> Showing {{countfree}} free sheet/sheets of {{totalcount}}. Please subscribe to view all sheets</h3>
+				{% else %}
+					<h3> You are Subscribed</h3>
+					<h3> Showing total {{totalcount}} sheets</h3>
+				{% endif %}
 				<ul class="sheet-list">
 				{% for image in explaindata %}
 					<li class="sheet-list__item">

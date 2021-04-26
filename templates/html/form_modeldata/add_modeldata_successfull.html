@@ -1,0 +1,11 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+<script>
+    const signupFormContainer2 = document.querySelector('.signup-form-container');
+    signupFormContainer2.classList.add('u-invisible');
+    const loginFormContainer2 = document.querySelector('.login-form-container');
+    loginFormContainer2.classList.remove('u-invisible');
+</script>
+
+{% bootstrap_form form layout="horizontal" %}

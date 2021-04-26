@@ -104,13 +104,13 @@
 					Thank you for Trusting Us hope you will enjoy 'A2INFINITE'
 				</h1>
 				<!-- TODO: Change Url of Logo-->
-				<form action="success" method="POST">
+				<form action="/success/" method="POST">
 					<script
 						src="https://checkout.razorpay.com/v1/checkout.js"
 						data-key="rzp_test_Ac2g1pJT7D9c69"
-						data-amount="50000"
+						data-amount={{ amount }}
 						data-currency="INR"
-						data-order_id="{{payment.id}}"
+						data-order_id="{{ order_id }}"
 						data-buttontext="Pay Now"
 						data-name="A2INFINITE"
 						data-description="You are going to join A2INFINITE"

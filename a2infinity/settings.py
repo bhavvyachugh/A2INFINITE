@@ -18,6 +18,24 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# for django ORM to work in jupyter
+# https://stackoverflow.com/a/62119475
+os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+
+# During launch jupyter notebook server will show the address and port and token
+# that you will need to use as URL to access it.
+
+NOTEBOOK_ARGUMENTS = [
+    '--ip', '0.0.0.0',
+    '--port', '8888'
+]
+
+BOOTSTRAP4 = {
+    'set_placeholder': False,
+    'required_css_class': 'required_fields',
+}
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -41,11 +59,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'home.apps.HomeConfig',
-    'user',
-    # 'crispy_forms',
+    'django_extensions',
+    'users',
+    'bootstrap4',
 ]
 
+AUTH_USER_MODEL = 'users.User'
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -87,18 +109,32 @@ WSGI_APPLICATION = 'a2infinity.wsgi.application'
 #     }
 # }
 
+# SECURITY WARNING: don't run with debug turned on in production!
+print(os.environ['POSTGRES_REMOTE'])
+try:
+    if os.environ['POSTGRES_REMOTE'] == "0":
+        HOST_PG = "postgresql"
+        print(os.environ['POSTGRES_REMOTE'])
+        print(HOST_PG)
+    else:
+        HOST_PG = "65.1.205.223"
+        print(os.environ['POSTGRES_REMOTE'])
+        print(HOST_PG)
+except:
+    HOST_PG = "65.1.205.223"
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'a2infinite',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres', # should also match MYSQL_DATABASE in dockercompose
+        'USER': 'admin',
+        'PASSWORD': 'secret',
+        'HOST': HOST_PG,   # Or an IP Address that your DB is hosted on
+        'PORT': '5432'
+    }    
 }
 
-AUTH_USER_MODEL = 'user.User'
+print(DATABASES)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -156,3 +192,9 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'test.otp37@gmail.com'
 EMAIL_HOST_PASSWORD = 'newschool'
 EMAIL_USE_TLS = True
+
+
+PROJECT_HOME = os.path.dirname(os.path.realpath(__file__))
+
+if os.path.exists(os.path.join(PROJECT_HOME, "external_config", "api_local_settings.py")):
+    from .external_config.api_local_settings import *

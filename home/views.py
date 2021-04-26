@@ -5,16 +5,18 @@ from django.contrib.auth.models import User
 from home.models import Contact
 import json
 #from home.models import Sheet
-from datetime import datetime
+from datetime import datetime,timedelta
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
 from .serializer import TopicSerializer
+from django.core import serializers
+from django.core.serializers.json import DjangoJSONEncoder
 ###-----------------------------------------------------###
 
 
 from django.views import View
-from .models import ClassDetails, Subject, Topic, SubTopic, Explain, Package, Feature
+from .models import ClassDetails, Subject, Topic, SubTopic, Explain, Feature, Package, Orders, Subscriptions
 from django.core.paginator import Paginator
 import os
 from PIL import Image, ImageFont, ImageDraw, ImageEnhance
@@ -22,7 +24,21 @@ import requests
 from io import StringIO
 from django.views.generic import View
 from django.http import HttpResponse, JsonResponse
+from .forms import UserSignUpForm 
+from bootstrap4.templatetags.bootstrap4 import bootstrap_form
+import hmac
+from django.utils import timezone
+import logging
 
+logger = logging.getLogger('custom_string')
+
+from django.contrib.auth.decorators import login_required, permission_required
+from django.urls import reverse_lazy
+
+from werkzeug.wrappers.json import _JSONModule
+dumps = _JSONModule.dumps
+
+from a2infinity.settings import pp_odir
 
 ###-------------------------------------------------------###
 
@@ -37,29 +53,20 @@ def index(request):
 
 def handleSignup(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        school = request.POST['school']
-        email = request.POST['email']
-        pass1 = request.POST['pass1']
-        pass2 = request.POST['pass2']
+        form = UserSignUpForm(request.POST)
+        if form.is_valid():
+            print(json.dumps(form.cleaned_data,indent=4,default=str))
+            obj2 = form.save()
+            formnew = UserSignUpForm()
+            messages.success(request, "Successfully Loged-in")
+            return render(request, 'form_modeldata/add_modeldata_successfull.html',dict(form=formnew))
+        else:
+            return render(request, 'form_modeldata/add_modeldata.html',dict(form=form))
 
-        myuser = User.objects.create_user(username, email, pass1)
-        myuser.school = school
-        myuser.save()
-        messages.success(request, "Your account has been created successfully")
-        return redirect('home')
-
-        #Password confirmation
-    if pass1 != pass2:
-        messages.error(request, "Passwords Do not Match")
-        return redirect('home')
-
-    else:
-        return HttpResponse("404 page not founds")
-        
 
 def handleLogin(request):    
 
+    user = None
     if request.method == "POST":
         loginusername = request.POST['loginusername'] 
         loginpassword = request. POST['loginpassword']
@@ -101,37 +108,114 @@ def contact(request):
         contact = Contact(name=name, email=email, phone=phone, desc=desc, date = datetime.today())
         contact.save()
         messages.success(request, 'Your message has been sent !')
-    return render(request, 'html/contact.html')
+    return render(request, 'contact.html')
  
 def sheet(request):
    sheet = Sheet.objects.all()
-   return render(request,'html/sheet.html', {'sheet' : sheet})
+   return render(request,'sheet.html', {'sheet' : sheet})
 
 def cssNameOnImage(request):
    return render(request,'cssNameOnImage.html')
       
 
 def plans(request):
-    return render(request,"plans.html")    
+    packages = Package.objects.all()
+    try:
+        current_subscription = Subscriptions.objects.filter(user=request.user).last()
+        subscription_end_data = current_subscription.created_at + timedelta(days = 365)
+        sub_package = current_subscription.package
 
-    return render(request, "html/subject_class_nursery_worksheet.html")
+        if timezone.now() < subscription_end_data:
+            subscribed = True
+            end_date = subscription_end_data
+
+        else:
+            subscribed = False
+            end_date = None
+
+    except:
+        logger.exception("Fatal error")
+        subscribed = False
+        sub_package = None
+        end_date = None
+
+    new_array = []
+    for package in packages:
+        if package == sub_package:
+            package.subscription = subscribed
+            package.end_date = subscription_end_data
+        else:
+            package.subscription = False
+            package.end_date = None
+        new_array.append(package)
+    return render(request,"plans.html",dict(plans = new_array))
     
 
-def checkout(request):
-    if request.method == 'POST':
-        amount = 50000
-        order_currency = 'INR'
-        client = razorpay.Client(
-            auth=('rzp_test_Ac2g1pJT7D9c69', 'd87OjvZuXZMT6FppcevvzxXU'))
+@login_required(login_url=reverse_lazy('home'))
+def checkout(request,plan_id):
+    plan = Package.objects.get(id=plan_id)
+    
+    order_amount = plan.pkg_price*100
+    order_currency = 'INR'
+    order_receipt = f'{request.user} :: {plan.id} - {plan.pkg_name}'
+    client = razorpay.Client(auth=('rzp_test_Ac2g1pJT7D9c69', 'd87OjvZuXZMT6FppcevvzxXU'))
+    response = client.order.create({'amount':order_amount, 'currency':order_currency,'receipt':order_receipt,'payment_capture': '1'})
 
-        checkout = client.order.create({'amount':amount, 'currency':currency,'payment_capture': '1'})   
-    
-   
-    return render(request, "html/checkout.html")
-    
+    Orders(
+            order_id = response['id'],
+            package = plan,
+            full_response = json.dumps(response,indent=4,default=str),
+            razorpay_payment_id = "",
+            razorpay_order_id = "",
+            razorpay_signature = "",
+            user = request.user,
+            status = "Pending",
+            amount = order_amount,
+        ).save()
+
+    context = dict(
+            amount = order_amount/100,
+            order_id = response['id'],
+        )
+
+    return render(request, "checkout.html",context)
+
+@login_required(login_url=reverse_lazy(''))
 @csrf_exempt    
 def success(request):
-    return render(request, "html/success.html")   
+    try:
+        response = request.POST
+
+        params_dict = {
+            'razorpay_payment_id' : response['razorpay_payment_id'],
+            'razorpay_order_id' : response['razorpay_order_id'],
+            'razorpay_signature' : response['razorpay_signature']
+        }
+
+        order = Orders.objects.get(order_id = params_dict['razorpay_order_id'])
+
+        client = razorpay.Client(auth=('rzp_test_Ac2g1pJT7D9c69', 'd87OjvZuXZMT6FppcevvzxXU'))
+
+        client.utility.verify_payment_signature(params_dict)
+
+        order.razorpay_payment_id = params_dict['razorpay_payment_id']
+        order.razorpay_order_id = params_dict['razorpay_order_id']
+        order.razorpay_signature = params_dict['razorpay_signature']
+        order.status = "Paid"
+        order.save()
+
+        Subscriptions(
+            package = order.package,
+            user = order.user,
+            amount = order.amount,
+            ).save()
+
+        return render(request, "success.html")
+    except Exception as e:
+        logger.exception("Fatal error")
+        return render(request, "unsuccess.html")
+
+
 
 
 def search(request):
@@ -144,57 +228,148 @@ def search(request):
 
 
             if match:
-                return render(request, 'html/search.html', {'search': match})
+                return render(request, 'search.html', {'search': match})
             else:
                 messages.error(request, 'no result found')
         else:
             return HttpResponseRedirect('/search')
-    return render(request,'html/search.html')           
+    return render(request,'search.html')           
 
 
 
     ###-------------------------------------------------------------------------------------------------------------###
 
+def check_user_subscription_status(request):
+    user_logged_in = False
+
+    # check user is logged in
+    if request.user.is_authenticated:
+        user_logged_in = True
+
+    package = None
+    end_date = None
+    subscribed = False
+    end_date = None
+    subscribed_classes = []
+    if user_logged_in:
+        # check user is subscribed
+        try:
+            current_subscription = Subscriptions.objects.filter(user=request.user).last()
+            subscription_end_data = current_subscription.created_at + timedelta(days = 365)
+            subscription_package = current_subscription.package
+            package = subscription_package
+
+            if timezone.now() < subscription_end_data:
+                subscribed = True
+                end_date = subscription_end_data
+                subscribed_classes = list(package.classes.all().values_list('id',flat=True))
+            else:
+                subscribed = False
+                end_date = None
+        except:
+            logger.exception("Failed No subscription")
+            subscribed = False
+            end_date = None
+
+    return request.user, user_logged_in, subscribed, package, end_date, subscribed_classes
+
+
 
 class ClassView(View):
     def get(self, request):
+        user, user_logged_in, subscribed, package, end_date, subscribed_classes = check_user_subscription_status(request)
         classdata = ClassDetails.objects.all()
+        for i in range(0,len(classdata)):
+            if subscribed and classdata[i].id in subscribed_classes:
+                classdata[i].susbscribed = True
+            else:
+                classdata[i].susbscribed = False
+
+        data = serializers.serialize("json", classdata)
         return render(request, "ClassViewContainer.html",{
             "classdata" : classdata
         })  
 
 
+
+
+
+
+
 class SubjectView(View):
     def get(self, request):
-        classId = request.GET.get("class", None)
+        user, user_logged_in, subscribed, package, end_date, subscribed_classes = check_user_subscription_status(request)
+
+        classId = int(request.GET.get("class", None))
         try:
             data = ClassDetails.objects.get(id=classId)
         except ClassDetails.DoesNotExist:
+            logger.exception()
             return redirect("ClassView")
         if classId == None:
+            logger.debug(f"class Id is None")
             return redirect("ClassView")
+
+
+
+        condition1 = not classId in subscribed_classes
+        condition2 = not data.freeForAll
+        condition1_2 = condition1 or condition2
+        data_dict = data.__dict__
+
+        logger.debug(pp_odir(locals()))
+
+        if condition1 and condition2:
+            logger.debug(f"not classId in subscribed_classes or not data.freeForAll")
+            return redirect("ClassView")
+
         Subjectsdata = Subject.objects.filter(className = data)
+
+        if classId in subscribed_classes:
+            sub_subscribed = True
+        else:
+            sub_subscribed = False
+
         return render(request, "SubjectViewContainer.html",{
-            "classdata" : Subjectsdata
+            "classdata" : Subjectsdata,"sub_subscribed": sub_subscribed
         })
 
 class TopicView(View):
     def get(self, request):
+        user, user_logged_in, subscribed, package, end_date, subscribed_classes = check_user_subscription_status(request)
+
         subjectId = request.GET.get("subject", None)
         
         try:
-            data = Subject.objects.get(id=subjectId)
-        except Subject.DoesNotExist:
+            subobj = Subject.objects.get(id=subjectId)
+        except subobj.DoesNotExist:
            return redirect("ClassView")
         
         if subjectId == None:
             return redirect("ClassView")
       
-        Topicdata = Topic.objects.filter(Subject = data)
-        data1  = TopicSerializer(Topicdata, many=True)
-        return render(request, "TopicViewContainer.html",{
-            "data" : data1.data
-        })
+        # CHeck w.r.t class
+
+        classobj = subobj.className
+        classobj_dict = classobj.__dict__
+
+        if classobj.id in subscribed_classes:
+            topicsobj = Topic.objects.filter(Subject = subobj)
+            return render(request, "TopicViewContainer.html",{
+                "data" : topicsobj, 'topic_subscribed':True, 'subobj': subobj, 'classobj': classobj
+            })
+        else:
+            if classobj.freeForAll:
+                if subobj.freeForAll:
+                    topicsobj = Topic.objects.filter(Subject = subobj)
+                    return render(request, "TopicViewContainer.html",{
+                        "data" : topicsobj, 'topic_subscribed':False, 'subobj': subobj, 'classobj':classobj
+                    })
+                else:
+                    return redirect("ClassView")
+            else:
+                return redirect("ClassView")
+
 
 
 class SubTopicView(View):
@@ -238,22 +413,105 @@ class SubTopicView(View):
 
 
 def image(request, pk):
-    img_id = Explain.objects.get(pk=pk)
-    print(img_id)
-    return render(request, "image.html", {'class':img_id})
+    user, user_logged_in, subscribed, package, end_date, subscribed_classes = check_user_subscription_status(request)
+
+    try:
+        explainObj = Explain.objects.get(pk=pk)
+    except explainObj.DoesNotExist:
+        return redirect("ClassView")
+    if pk == None:
+        return redirect("ClassView")
+
+    subtopicObj = explainObj.SubTopic
+    subtopicObj_dict = subtopicObj.__dict__
+
+    topicObj = subtopicObj.topic
+    topicObj_dict = topicObj.__dict__
+
+    subObj = topicObj.Subject
+    subObj_dict = subObj.__dict__
+
+    classObj = subObj.className
+    classObj_dict = classObj.__dict__
+
+    all_schools = False
+    if classObj.id in subscribed_classes:
+        if package.id == 5:
+            all_schools = True
+        return render(request, "image.html", {'class':explainObj,'subscribed':True,'all_schools': all_schools})
+    else:
+        if classObj.freeForAll:
+            if subObj.freeForAll:
+                if topicObj.freeForAll:
+                    if subtopicObj.freeForAll:
+                        if explainObj.freeForAll:
+                            return render(request, "image.html", {'class':explainObj,'subscribed':False})
+                        else:
+                            return redirect("ClassView")
+                    else:
+                        return redirect("ClassView")
+                else:
+                    return redirect("ClassView")
+            else:
+                return redirect("ClassView")
+
+        else:
+            return redirect("ClassView")
+
+
+
+
+    
 
 
 class images_row(View):
     def get(self, request):
+        user, user_logged_in, subscribed, package, end_date, subscribed_classes = check_user_subscription_status(request)
+
         subtopicId = request.GET.get("subtopic", None)
         try:
-            data = SubTopic.objects.get(id=subtopicId)
-        except SubTopic.DoesNotExist:
+            subtopicObj = SubTopic.objects.get(id=subtopicId)
+        except subtopicObj.DoesNotExist:
             return redirect("ClassView")
         if subtopicId == None:
             return redirect("ClassView")
-        explaindata = Explain.objects.filter(SubTopic = data)
-        return render(request, "images_row.html", {'explaindata':explaindata})
+
+
+
+        topicObj = subtopicObj.topic
+        topicObj_dict = topicObj.__dict__
+
+        subObj = topicObj.Subject
+        subObj_dict = subObj.__dict__
+
+
+        classObj = subObj.className
+        classObj_dict = classObj.__dict__
+
+        if classObj.id in subscribed_classes:
+            explaindata = Explain.objects.filter(SubTopic = subtopicObj)
+            totalcount = Explain.objects.filter(SubTopic = subtopicObj).count()
+
+            return render(request, "images_row.html", {'explaindata':explaindata,'totalcount':totalcount,'countfree': len(explaindata),'subscribed':True})
+        else:
+            if classObj.freeForAll:
+                if subObj.freeForAll:
+                    if topicObj.freeForAll:
+                        if subtopicObj.freeForAll:
+                            explaindata = Explain.objects.filter(SubTopic = subtopicObj).filter(freeForAll=True)
+                            totalcount = Explain.objects.filter(SubTopic = subtopicObj).count()
+                            return render(request, "images_row.html", {'explaindata':explaindata,'totalcount':totalcount,'countfree': len(explaindata),'subscribed':False})
+                        else:
+                            return redirect("ClassView")
+                    else:
+                        return redirect("ClassView")
+                else:
+                    return redirect("ClassView")
+
+            else:
+                return redirect("ClassView")
+
+
 
         
 class download(View):

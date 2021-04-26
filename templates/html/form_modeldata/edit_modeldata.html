@@ -1,0 +1,31 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+<div class="modal-dialog">
+    <div class="modal-content animated fadeIn">
+        <form class="form" action="{% url edit_url_name id=id %}" method="post" id="edit-ajax-form">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit {{title_form}} Data</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+			  {% csrf_token %}
+			  {% bootstrap_form form %}
+
+            </div>
+            <div class="modal-footer">
+			    {% buttons %}
+			      <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+			      <button type="submit" class="btn btn-primary">
+			        Submit
+			      </button>
+			    {% endbuttons %}
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    var form_options = { target: '#modaledit', success: function(response) {} };
+    $('#edit-ajax-form').ajaxForm(form_options);
+</script>
