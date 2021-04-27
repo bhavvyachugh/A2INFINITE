@@ -4,10 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Success | A2INFINITE</title>
+		<title>Checkout | A2INFINITE</title>
 
 		<!-- --------------------------------- css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/success.css" />
+		<link rel="stylesheet" href="/static/css/checkout.css" />
 
 		<!-- ------------------------------- favicon ------------------------------- -->
 
@@ -24,8 +24,6 @@
 			src="/static/js/sign_in_sign_up.js"
 			defer
 		></script>
-		<!-- popup -->
-		<script src="/static/js/popup.js" defer></script>
 		{% endif %}
 
 		<!-- loader -->
@@ -41,10 +39,29 @@
 			{% include "navbar.html" %}
 
 			<!-- -------------------------------- main --------------------------------- -->
+
 			<main class="main">
 				<h1 class="heading-primary heading">
-					Congrats ! You are now officially part of A2INFINITE's family
+					Thank you for Trusting Us hope you will enjoy 'A2INFINITE'
 				</h1>
+				<!-- TODO: Change Url of Logo-->
+				<form action="success" method="POST">
+					<script
+						src="https://checkout.razorpay.com/v1/checkout.js"
+						data-key="rzp_test_Ac2g1pJT7D9c69"
+						data-amount="50000"
+						data-currency="INR"
+						data-order_id="{{payment.id}}"
+						data-buttontext="Pay Now"
+						data-name="A2INFINITE"
+						data-description="You are going to join A2INFINITE"
+						data-image="http://127.0.0.1:8000/static/Images/logo/logo_transparent-big.png"
+						data-prefill.name="pc"
+						data-prefill.email="example@gmail.com"
+						data-theme.color="#eb2f64"
+					></script>
+					<input type="hidden" custom="Hidden Element" name="hidden" />
+				</form>
 			</main>
 
 			<!-- ------------------------------- footer -------------------------------- -->

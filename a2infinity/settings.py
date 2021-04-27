@@ -83,7 +83,7 @@ ROOT_URLCONF = 'a2infinity.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates/html/"],
+        'DIRS': [BASE_DIR / "templates/html/", BASE_DIR / "templates/base/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
