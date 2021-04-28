@@ -119,6 +119,8 @@
   size: landscape; }
 
 @media print {
+  @page {
+    margin: 0; }
   .container {
     box-shadow: none !important;
     margin: 0rem !important;
