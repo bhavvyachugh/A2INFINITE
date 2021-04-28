@@ -1,5 +1,4 @@
-{% load bootstrap4 %}
-{% load static %}
+{% load bootstrap4 %} {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,9 +7,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>A2INFINITE</title>
-		{# Load CSS and JavaScript #}
-		{% bootstrap_css %}
-		{% bootstrap_javascript jquery='full' %}
+		{# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript
+		jquery='full' %}
 
 		<!-- ------------------------------- favicon ------------------------------- -->
 
@@ -35,8 +33,8 @@
 
 		<!-- loader -->
 		<script src="/static/js/loader.js" defer></script>
-	    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-	    <script src="{% static 'vendor/jquery_form/js/jquery_form.js' %}"></script>
+		<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery_form/js/jquery_form.js' %}"></script>
 	</head>
 
 	<body class="body">
@@ -231,14 +229,139 @@
 					</footer>
 				</main>
 			</div>
-      <!-- ----------------------------- login form ------------------------------ -->
-      {% include "signin.html" %}
-      <!-- ---------------------------- Sign-up form ----------------------------- -->
-      {% include "signup.html" %}
-      <!-- --------------------------- logout warning ---------------------------- -->
-      {% include "signout.html" %}
-   </div>
-   <!-- ------------------------------- loader -------------------------------- -->
-   {% include "loader.html" %}
+			<!-- ----------------------------- login form ------------------------------ -->
+			{% include "signin.html" %}
+			<!-- ---------------------------- Sign-up form ----------------------------- -->
+			<!-- {% include "signup.html" %} -->
+
+			<!-- ---------------------------- Sign-up form ----------------------------- -->
+
+			<div
+				class="form-container signup-form-container u-invisible"
+				id="signup-form-container"
+			>
+				<form
+					action="/signup"
+					method="POST"
+					class="form-overlay"
+					id="add-ajax-form"
+				>
+					{% csrf_token %}
+					<h1 class="heading-primary">We Are Glad To See You Here</h1>
+					<!-- <style>
+						small {
+							font-size: 150% !important;
+						}
+						.col-form-label {
+							text-align: left !important;
+							font-size: 170% !important;
+						}
+						.form-control {
+							height: calc(1.5em + 1rem + 4px) !important;
+							font-size: 1.5rem !important;
+						}
+						.invalid-feedback {
+							font-size: 150% !important;
+						}
+					</style> -->
+
+					<input
+						type="text"
+						name="username"
+						maxlength="150"
+						autofocus
+						class="form-overlay__input"
+						title="Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+						required
+						id="id_username"
+						placeholder="User Name"
+					/>
+
+					<input
+						type="text"
+						name="school_name"
+						maxlength="200"
+						class="form-overlay__input"
+						required
+						id="id_school_name"
+						placeholder="School Name"
+					/>
+
+					<input
+						type="email"
+						name="email"
+						maxlength="254"
+						class="form-overlay__input"
+						required
+						id="id_email"
+						placeholder="Email"
+					/>
+
+					<input
+						type="number"
+						name="mobile"
+						maxlength="100"
+						class="form-overlay__input"
+						required
+						id="id_mobile"
+						placeholder="Mobile"
+					/>
+
+					<input
+						type="password"
+						name="password1"
+						autocomplete="new-password"
+						class="form-overlay__input"
+						required
+						id="id_password1"
+						placeholder="Password"
+					/>
+
+					<input
+						type="password"
+						name="password2"
+						autocomplete="new-password"
+						class="form-overlay__input"
+						required
+						id="id_password2"
+						placeholder="Confirm Password"
+					/>
+
+					<script>
+						var form_options = {
+							target: '#form-data-signup',
+							success: function (response) {},
+						};
+						$('#add-ajax-form').ajaxForm(form_options);
+					</script>
+
+					<div class="form-overlay__checkbox-link">
+						<div class="form-overlay__checkbox-container">
+							<input type="checkbox" />
+							<h3 class="form-overlay__heading">Remember Me</h3>
+						</div>
+
+						<div class="form-overlay__link-container">
+							<h3 class="form-overlay__heading">Already Have Account!</h3>
+							<button
+								class="form-overlay__link form-overlay__link-login u-margin-top-minus"
+							>
+								Login &rarr;
+							</button>
+						</div>
+					</div>
+					<button type="submit" class="form-overlay__submit btn-primary">
+						Sign-up &rarr;
+					</button>
+					<div class="form-overlay__cross cross-signup">
+						<span class="form-overlay__cross-span">&#10006;</span>
+					</div>
+				</form>
+			</div>
+			<!-- --------------------------- logout warning ---------------------------- -->
+			{% include "signout.html" %}
+		</div>
+		<!-- ------------------------------- loader -------------------------------- -->
+		{% include "loader.html" %}
 	</body>
 </html>

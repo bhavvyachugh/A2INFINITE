@@ -1,6 +1,6 @@
 {% block content %}
 <div class="form-container signup-form-container u-invisible">
-	<form action="/signup" method="POST" class="form-overlay">
+	<form action="/signup" method="POST" class="form-overlay" id="add-ajax-form">
 		{% csrf_token %}
 		<h1 class="heading-primary">We Are Glad To See You Here</h1>
 		<input
@@ -8,29 +8,32 @@
 			placeholder="User Name"
 			class="form-overlay__input"
 			required
-			id="username"
+			id="id_username"
 			name="username"
+			maxlength="150"
 		/>
 		<input
 			type="text"
 			placeholder="School Name"
 			class="form-overlay__input"
 			required
-			id="school"
-			name="school"
+			id="id_school_name"
+			name="school_name"
+			maxlength="200"
 		/>
 		<input
 			type="email"
 			placeholder="Email"
 			class="form-overlay__input"
 			required
-			id="email"
+			id="id_email"
 			name="email"
+			maxlength="100"
 		/>
 		<input
 			type="number"
-			name="phone"
-			id="phone"
+			name="mobile"
+			id="id_mobile"
 			placeholder="Mobile"
 			class="form-overlay__input"
 			required
@@ -40,17 +43,18 @@
 			placeholder="Password"
 			class="form-overlay__input"
 			required
-			id="pass1"
-			name="pass1"
+			id="id_password1"
+			name="password1"
 		/>
 		<input
 			type="password"
 			placeholder="Confirm Password"
 			class="form-overlay__input"
 			required
-			id="pass2"
-			name="pass2"
+			id="id_password2"
+			name="password2"
 		/>
+
 		<div class="form-overlay__checkbox-link">
 			<div class="form-overlay__checkbox-container">
 				<input type="checkbox" />
@@ -73,5 +77,13 @@
 			<span class="form-overlay__cross-span">&#10006;</span>
 		</div>
 	</form>
+	<script>
+		var form_options = {
+			target: '#form-data-signup',
+			success: function (response) {},
+		};
+		$('#add-ajax-form').ajaxForm(form_options);
+	</script>
 </div>
+
 {% endblock content %}
