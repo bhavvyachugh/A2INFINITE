@@ -44,16 +44,9 @@
 			<!-- -------------------------------- main --------------------------------- -->
 
 			<main class="main">
-				<div>
-				{% if not subscribed %}
-					<h1> You are not Subscribed. Showing only Free Content</h1>
-				{% else %}
-					<h1> You are Subscribed</h1>
-				{% endif %}
-				</div>
 				<div class="schoolName-container">
-					<h1 class="schoolName-container__name">{{request.user}} :: School - {{request.user.school_name}}</h1>
-					<h1 class="schoolName-container__name">{{request.user}} :: School - {{request.user.school_name}}</h1>
+					<h1 class="schoolName-container__name">{{request.school_name}}</h1>
+					<h1 class="schoolName-container__name">{{request.school_name}}</h1>
 				</div>
 				<div class="img-container">
 					<img
@@ -96,11 +89,6 @@
 					>
 						View Colored
 					</button>
-					{% if all_schools %}
-					<a href="https://api.whatsapp.com/send?text={{request.build_absolute_uri}}">
-						<img src="/static/Images/whatsapp-icon-new.png" alt="Share" class="copyprevention-processed">
-					</a>
-					{% endif %}
 				</div>
 			</main>
 

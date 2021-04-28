@@ -124,6 +124,8 @@
     margin: 0rem !important;
     height: 99vh !important;
     width: 100vw; }
+  .nav-bar {
+    display: none; }
   .img-container__img--colored {
     height: 92.5vh !important;
     width: 100vw; }
@@ -131,7 +133,7 @@
     height: 92.5vh !important;
     width: 100vw; }
   .header {
-    display: none; }
+    display: none !important; }
   .btn-container {
     display: none; }
   .footer {
