@@ -270,6 +270,7 @@ node_modules/
 # SageMath parsed files
 
 # Environments
+/venv
 
 # Spyder project settings
 

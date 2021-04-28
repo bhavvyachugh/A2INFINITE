@@ -30,14 +30,15 @@ import hmac
 from django.utils import timezone
 import logging
 
-logger = logging.getLogger()
+logger = logging.getLogger('custom_string')
 
 from django.contrib.auth.decorators import login_required, permission_required
 from django.urls import reverse_lazy
 
 from werkzeug.wrappers.json import _JSONModule
+dumps = _JSONModule.dumps
 
-#from a2infinity.settings import dumps
+from a2infinity.settings import pp_odir
 
 ###-------------------------------------------------------###
 
@@ -54,7 +55,7 @@ def handleSignup(request):
     if request.method == 'POST':
         form = UserSignUpForm(request.POST)
         if form.is_valid():
-            #print(json.dumps(form.cleaned_data,indent=4,default=str))
+            print(json.dumps(form.cleaned_data,indent=4,default=str))
             obj2 = form.save()
             formnew = UserSignUpForm()
             messages.success(request, "Successfully Loged-in")
@@ -65,7 +66,6 @@ def handleSignup(request):
 
 def handleLogin(request):    
 
-    user = None
     if request.method == "POST":
         loginusername = request.POST['loginusername'] 
         loginpassword = request. POST['loginpassword']
@@ -133,11 +133,10 @@ def plans(request):
             end_date = None
 
     except:
-        #logger.exception("Fatal error")
+        logger.exception("Fatal error")
         subscribed = False
         sub_package = None
         end_date = None
-        subscription_end_data = None
 
     new_array = []
     for package in packages:
@@ -148,8 +147,6 @@ def plans(request):
             package.subscription = False
             package.end_date = None
         new_array.append(package)
-
-    print(new_array)
     return render(request,"plans.html",dict(plans = new_array))
     
 
@@ -319,7 +316,7 @@ class SubjectView(View):
         condition1_2 = condition1 or condition2
         data_dict = data.__dict__
 
-        #logger.debug(dumps(locals()))
+        logger.debug(pp_odir(locals()))
 
         if condition1 and condition2:
             logger.debug(f"not classId in subscribed_classes or not data.freeForAll")
@@ -344,7 +341,7 @@ class TopicView(View):
         
         try:
             subobj = Subject.objects.get(id=subjectId)
-        except subobj.DoesNotExist:
+        except Subject.DoesNotExist:
            return redirect("ClassView")
         
         if subjectId == None:
@@ -415,105 +412,22 @@ class SubTopicView(View):
 
 
 def image(request, pk):
-    user, user_logged_in, subscribed, package, end_date, subscribed_classes = check_user_subscription_status(request)
-
-    try:
-        explainObj = Explain.objects.get(pk=pk)
-    except explainObj.DoesNotExist:
-        return redirect("ClassView")
-    if pk == None:
-        return redirect("ClassView")
-
-    subtopicObj = explainObj.SubTopic
-    subtopicObj_dict = subtopicObj.__dict__
-
-    topicObj = subtopicObj.topic
-    topicObj_dict = topicObj.__dict__
-
-    subObj = topicObj.Subject
-    subObj_dict = subObj.__dict__
-
-    classObj = subObj.className
-    classObj_dict = classObj.__dict__
-
-    all_schools = False
-    if classObj.id in subscribed_classes:
-        if package.id == 5:
-            all_schools = True
-        return render(request, "image.html", {'class':explainObj,'subscribed':True,'all_schools': all_schools})
-    else:
-        if classObj.freeForAll:
-            if subObj.freeForAll:
-                if topicObj.freeForAll:
-                    if subtopicObj.freeForAll:
-                        if explainObj.freeForAll:
-                            return render(request, "image.html", {'class':explainObj,'subscribed':False})
-                        else:
-                            return redirect("ClassView")
-                    else:
-                        return redirect("ClassView")
-                else:
-                    return redirect("ClassView")
-            else:
-                return redirect("ClassView")
-
-        else:
-            return redirect("ClassView")
-
-
-
-
-    
+    img_id = Explain.objects.get(pk=pk)
+    print(img_id)
+    return render(request, "image.html", {'class':img_id})
 
 
 class images_row(View):
     def get(self, request):
-        user, user_logged_in, subscribed, package, end_date, subscribed_classes = check_user_subscription_status(request)
-
         subtopicId = request.GET.get("subtopic", None)
         try:
-            subtopicObj = SubTopic.objects.get(id=subtopicId)
-        except subtopicObj.DoesNotExist:
+            data = SubTopic.objects.get(id=subtopicId)
+        except SubTopic.DoesNotExist:
             return redirect("ClassView")
         if subtopicId == None:
             return redirect("ClassView")
-
-
-
-        topicObj = subtopicObj.topic
-        topicObj_dict = topicObj.__dict__
-
-        subObj = topicObj.Subject
-        subObj_dict = subObj.__dict__
-
-
-        classObj = subObj.className
-        classObj_dict = classObj.__dict__
-
-        if classObj.id in subscribed_classes:
-            explaindata = Explain.objects.filter(SubTopic = subtopicObj)
-            totalcount = Explain.objects.filter(SubTopic = subtopicObj).count()
-
-            return render(request, "images_row.html", {'explaindata':explaindata,'totalcount':totalcount,'countfree': len(explaindata),'subscribed':True})
-        else:
-            if classObj.freeForAll:
-                if subObj.freeForAll:
-                    if topicObj.freeForAll:
-                        if subtopicObj.freeForAll:
-                            explaindata = Explain.objects.filter(SubTopic = subtopicObj).filter(freeForAll=True)
-                            totalcount = Explain.objects.filter(SubTopic = subtopicObj).count()
-                            return render(request, "images_row.html", {'explaindata':explaindata,'totalcount':totalcount,'countfree': len(explaindata),'subscribed':False})
-                        else:
-                            return redirect("ClassView")
-                    else:
-                        return redirect("ClassView")
-                else:
-                    return redirect("ClassView")
-
-            else:
-                return redirect("ClassView")
-
-
+        explaindata = Explain.objects.filter(SubTopic = data)
+        return render(request, "images_row.html", {'explaindata':explaindata})
 
         
 class download(View):
