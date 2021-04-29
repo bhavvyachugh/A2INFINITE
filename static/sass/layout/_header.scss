@@ -106,5 +106,9 @@
 	&__item {
 		transform: translate(1rem, 1rem);
 		width: 14rem;
+
+		a {
+			display: inline-block;
+		}
 	}
 }

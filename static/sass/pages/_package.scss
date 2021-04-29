@@ -3,147 +3,156 @@
 }
 
 .row {
-	max-width: $grid-width;
-	margin: 0 auto;
-	display: flex !important;
-	flex-wrap: wrap !important;
+	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
+}
 
-	.card {
-		perspective: 150rem;
-		position: relative;
+.col {
+	width: 32rem;
+	margin: 3rem;
+}
+
+.heading-plans {
+	font-size: 5rem;
+	color: var(--color-grey-dark-2);
+	font-weight: 200;
+}
+
+.card {
+	perspective: 150rem;
+	position: relative;
+	height: 50rem;
+
+	&__side {
+		color: #fff;
+		font-size: 2rem;
 		height: 50rem;
+		transition: all 0.8s ease;
+		position: absolute;
+		top: 0;
+		left: 0;
+		backface-visibility: hidden;
+		width: 100%;
+		border-radius: 5px;
+		box-shadow: 0 1.5rem 4rem rgba($color: #000, $alpha: 0.1);
+		overflow: hidden;
 
-		&__side {
-			color: #fff;
-			font-size: 2rem;
-			height: 50rem;
-			transition: all 0.8s ease;
-			position: absolute;
-			top: 0;
-			left: 0;
-			backface-visibility: hidden;
-			width: 100%;
-			border-radius: 5px;
-			box-shadow: 0 1.5rem 4rem rgba($color: #000, $alpha: 0.1);
-			overflow: hidden;
+		&--front {
+			background-color: #fff;
+			color: var(--color-grey-dark-3);
+		}
 
-			&--front {
-				background-color: #fff;
-				color: var(--color-grey-dark-3);
-			}
+		&--back {
+			background-image: linear-gradient(
+				to right bottom,
+				var(--color-primary-light),
+				var(--color-primary-dark)
+			);
+			transform: rotateY(180deg);
+		}
+	}
 
-			&--back {
-				background-image: linear-gradient(
+	&:hover &__side--front {
+		transform: rotateY(-180deg);
+	}
+
+	&:hover &__side--back {
+		transform: rotateY(0);
+	}
+
+	&__picture {
+		background-size: cover;
+		height: 23rem;
+		background-blend-mode: screen;
+		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+		&--1 {
+			background-image: linear-gradient(
 					to right bottom,
 					var(--color-primary-light),
 					var(--color-primary-dark)
-				);
-				transform: rotateY(180deg);
-			}
+				),
+				url(/static/Images/Background/wallpaperflare.com.jpg);
 		}
+	}
 
-		&:hover &__side--front {
-			transform: rotateY(-180deg);
-		}
+	&__heading {
+		font-size: 2.8rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		color: #fff;
+		position: absolute;
+		top: 12rem;
+		right: 2rem;
+		width: 75%;
+		text-align: right;
+	}
 
-		&:hover &__side--back {
-			transform: rotateY(0);
-		}
+	&__heading-span {
+		padding: 1rem 1.5rem;
+		box-decoration-break: clone;
+		background-image: linear-gradient(
+			to right bottom,
+			rgba($color-primary-light, 0.75),
+			rgba($color-primary-dark, 0.75)
+		);
+	}
 
-		&__picture {
-			background-size: cover;
-			height: 23rem;
-			background-blend-mode: screen;
-			clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+	&__details {
+		margin-top: 1rem;
 
-			&--1 {
-				background-image: linear-gradient(
-						to right bottom,
-						var(--color-primary-light),
-						var(--color-primary-dark)
-					),
-					url(/static/Images/Background/wallpaperflare.com.jpg);
-			}
-		}
+		ul {
+			list-style: none;
+			width: 80%;
 
-		&__heading {
-			font-size: 2.8rem;
-			font-weight: 300;
-			text-transform: uppercase;
-			color: #fff;
-			position: absolute;
-			top: 12rem;
-			right: 2rem;
-			width: 75%;
-			text-align: right;
-		}
+			li {
+				text-align: center;
+				font-size: 1.5rem;
+				padding: 1rem;
 
-		&__heading-span {
-			padding: 1rem 1.5rem;
-			box-decoration-break: clone;
-			background-image: linear-gradient(
-				to right bottom,
-				rgba($color-primary-light, 0.75),
-				rgba($color-primary-dark, 0.75)
-			);
-		}
-
-		&__details {
-			margin-top: 1rem;
-
-			ul {
-				list-style: none;
-				width: 80%;
-
-				li {
-					text-align: center;
-					font-size: 1.5rem;
-					padding: 1rem;
-
-					&:not(:last-child) {
-						border-bottom: 1px solid #eee;
-					}
+				&:not(:last-child) {
+					border-bottom: 1px solid #eee;
 				}
 			}
 		}
+	}
 
-		&__cta {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+	&__cta {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 
-		&__price-box {
-			text-align: center;
-			margin-bottom: 8rem;
-			color: #fff;
-		}
+	&__price-box {
+		text-align: center;
+		margin-bottom: 8rem;
+		color: #fff;
+	}
 
-		&__price-only {
-			font-size: 2rem;
-			text-transform: uppercase;
-		}
+	&__price-only {
+		font-size: 2rem;
+		text-transform: uppercase;
+	}
 
-		&__price-value {
-			font-size: 4rem;
-			font-family: open-sans-light;
-			font-weight: 200;
-		}
+	&__price-value {
+		font-size: 4rem;
+		font-family: open-sans-light;
+		font-weight: 200;
+	}
 
-		&__btn {
-			text-decoration: none;
-			background-color: var(--color-grey-light-1);
-			padding: 1rem 2rem;
-			color: var(--color-grey-dark-1);
-			border-radius: 1rem;
+	&__btn {
+		text-decoration: none;
+		background-color: var(--color-grey-light-1);
+		padding: 1rem 2rem;
+		color: var(--color-grey-dark-1);
+		border-radius: 1rem;
 
-			&:hover {
-				box-shadow: 0 1.5rem 4rem rgba($color: #000, $alpha: 0.1);
-				color: var(--color-grey-dark-2);
-			}
+		&:hover {
+			box-shadow: 0 1.5rem 4rem rgba($color: #000, $alpha: 0.1);
+			color: var(--color-grey-dark-2);
 		}
 	}
 }

@@ -42,14 +42,22 @@
 				<h1 class="heading-primary heading-plans">Choose Your Plan</h1>
 				<div class="row">
 					{% for plan in plans %}
-					<div class="col">
+
+					<div class="col" style="margin-top: 20px">
 						<div class="card">
 							<div class="card__side card__side--front">
 								<div class="card__picture card__picture--1">&nbsp;</div>
 
 								<h4 class="card__heading">
-									<span class="card__heading-span">{{ plan.pkg_name }}</span>
+									<span class="card__heading-span">{{plan.pkg_name}}</span>
 								</h4>
+
+								{% if plan.subscription %}
+								<h2 style="margin-left: 10px"><span>Subscribed</span></h2>
+								<h4 style="margin-left: 10px">
+									<span>Till {{ plan.end_date}}</span>
+								</h4>
+								{% endif %}
 
 								<div class="card__details">
 									<ul>
@@ -115,8 +123,7 @@
 			{% include "footer.html" %}
 			<!-- ----------------------------- login form ------------------------------ -->
 			{% include "signin.html" %}
-			<!-- ---------------------------- Sign-up form ----------------------------- -->
-			{% include "signup.html" %}
+
 			<!-- --------------------------- logout warning ---------------------------- -->
 			{% include "signout.html" %}
 		</div>

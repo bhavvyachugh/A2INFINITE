@@ -1,37 +1,40 @@
 .u-margin-top-large {
-	margin-top: 3.5rem;
+	margin-top: 3.5rem !important;
 }
 
 .u-margin-top {
-	margin-top: 2rem;
+	margin-top: 2rem !important;
 }
 
 .u-margin-top-small {
-	margin-top: 1rem;
+	margin-top: 1rem !important;
 }
 
 .u-margin-top-large-minus {
-	margin-top: -5rem;
+	margin-top: -5rem !important;
 }
 
 .u-margin-top-medium-minus {
-	margin-top: -2rem;
+	margin-top: -2rem !important;
 }
 
 .u-margin-top-minus {
-	margin-top: -1rem;
+	margin-top: -1rem !important;
 }
 
 .u-margin-bottom {
-	margin-bottom: 1rem;
+	margin-bottom: 1rem !important;
+}
+.u-margin-bottom-medium {
+	margin-bottom: 1rem !important;
 }
 
 .u-border-bottom {
-	border-bottom: 1px solid var(--color-grey-light-2);
+	border-bottom: 1px solid var(--color-grey-light-2) !important;
 }
 
 .u-margin-left-large {
-	margin-left: 18rem;
+	margin-left: 18rem !important;
 }
 
 .u-invisible {
@@ -40,5 +43,5 @@
 }
 
 .u-rotate-90 {
-	transform: rotate(90deg);
+	transform: rotate(90deg) !important;
 }

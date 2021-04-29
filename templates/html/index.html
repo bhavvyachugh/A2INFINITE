@@ -1,4 +1,5 @@
-{% load bootstrap4 %} {% load static %}
+{% load bootstrap4 %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,8 +8,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>A2INFINITE</title>
-		{# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript
-		jquery='full' %}
+		{# Load CSS and JavaScript #}
+		{% bootstrap_css %}
+		{% bootstrap_javascript jquery='full' %}
 
 		<!-- ------------------------------- favicon ------------------------------- -->
 
@@ -21,20 +23,15 @@
 		<!-- login form -->
 		<script type="text/javascript" src="/static/js/logout.js" defer></script>
 		{% else %}
-		<!-- sign-up form -->
-		<script
-			type="text/javascript"
-			src="/static/js/sign_in_sign_up.js"
-			defer
-		></script>
+
 		<!-- popup -->
 		<script src="/static/js/popup.js" defer></script>
 		{% endif %}
 
 		<!-- loader -->
 		<script src="/static/js/loader.js" defer></script>
-		<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-		<script src="{% static 'vendor/jquery_form/js/jquery_form.js' %}"></script>
+	    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+	    <script src="{% static 'vendor/jquery_form/js/jquery_form.js' %}"></script>
 	</head>
 
 	<body class="body">
@@ -229,167 +226,101 @@
 					</footer>
 				</main>
 			</div>
+
+			<!-- ----------------------------------------------------------------------- -->
+			<!-- ------------------------------ overlays ------------------------------- -->
+			<!-- ----------------------------------------------------------------------- -->
+
 			<!-- ----------------------------- login form ------------------------------ -->
-			{% include "signin.html" %}
-			<!-- ---------------------------- Sign-up form ----------------------------- -->
-			<!-- {% include "signup.html" %} -->
+
+			<div class="form-container login-form-container u-invisible">
+				<form action="/login" method="POST" class="form-overlay">
+					{% csrf_token %}
+
+					<h1 class="heading-primary">Welcome Back</h1>
+					<input
+						type="text"
+						placeholder="User Name"
+						class="form-overlay__input"
+						required
+						id="loginusername"
+						name="loginusername"
+					/>
+					<input
+						type="password"
+						placeholder="Password"
+						class="form-overlay__input"
+						required
+						id="loginpassword"
+						name="loginpassword"
+					/>
+					<div class="form-overlay__checkbox-link">
+						<div class="form-overlay__checkbox-container">
+							<input type="checkbox" />
+							<h3 class="form-overlay__heading">Remember Me</h3>
+						</div>
+
+						<div class="form-overlay__link-container">
+							<h3 class="form-overlay__heading">Don't Have Account!</h3>
+							<button
+								class="form-overlay__link form-overlay__link-signup u-margin-top-minus"
+							>
+								Sign-up &rarr;
+							</button>
+						</div>
+					</div>
+					<button type="submit" class="login-form__submit btn-primary">
+						Log In &rarr;
+					</button>
+					<div class="form-overlay__cross cross-login">
+						<span class="form-overlay__cross-span">&#10006;</span>
+					</div>
+				</form>
+			</div>
 
 			<!-- ---------------------------- Sign-up form ----------------------------- -->
 
-			<!-- ---------------------------- Sign-up form ----------------------------- -->
-
-			<div
-				class="form-container signup-form-container u-invisible"
-				id="signup-form-container"
-			>
-				<form
-					action="/signup"
-					method="POST"
-					class="form-overlay"
-					id="add-ajax-form"
-				>
+			<div class="form-container signup-form-container u-invisible" id="signup-form-container">
+				<form action="/signup" method="POST" class="form-overlay" id="add-ajax-form">
 					{% csrf_token %}
 					<h1 class="heading-primary">We Are Glad To See You Here</h1>
 					<style>
 						small {
-							font-size: 150% !important;
+					    	font-size:150% !important
 						}
-						.col-form-label {
-							text-align: left !important;
-							font-size: 170% !important;
+						.col-form-label{
+							text-align:left !important;
+							font-size:170% !important;
 						}
-						.form-control {
+						.form-control{
 							height: calc(1.5em + 1rem + 4px) !important;
 							font-size: 1.5rem !important;
 						}
-						.invalid-feedback {
-							font-size: 150% !important;
+						.invalid-feedback{
+							font-size:150% !important
 						}
 					</style>
 					<div id="form-data-signup">
-						<div class="form-group required_fields row">
-							<label class="col-md-3 col-form-label" for="id_username"
-								>Username</label
-							>
-							<div class="col-md-9">
-								<input
-									type="text"
-									name="username"
-									maxlength="150"
-									autofocus
-									class="form-control"
-									title="Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
-									required
-									id="id_username"
-								/>
-								<small class="form-text text-muted"
-									>Required. 150 characters or fewer. Letters, digits and
-									@/./+/-/_ only.</small
-								>
-							</div>
-						</div>
-						<div class="form-group required_fields row">
-							<label class="col-md-3 col-form-label" for="id_school_name"
-								>School name</label
-							>
-							<div class="col-md-9">
-								<input
-									type="text"
-									name="school_name"
-									maxlength="200"
-									class="form-control"
-									title=""
-									required
-									id="id_school_name"
-								/>
-							</div>
-						</div>
-						<div class="form-group required_fields row">
-							<label class="col-md-3 col-form-label" for="id_email"
-								>Email address</label
-							>
-							<div class="col-md-9">
-								<input
-									type="email"
-									name="email"
-									maxlength="254"
-									class="form-control"
-									title=""
-									required
-									id="id_email"
-								/>
-							</div>
-						</div>
-						<div class="form-group required_fields row">
-							<label class="col-md-3 col-form-label" for="id_mobile"
-								>Mobile</label
-							>
-							<div class="col-md-9">
-								<input
-									type="text"
-									name="mobile"
-									maxlength="100"
-									class="form-control"
-									title=""
-									required
-									id="id_mobile"
-								/>
-							</div>
-						</div>
-						<div class="form-group required_fields row">
-							<label class="col-md-3 col-form-label" for="id_password1"
-								>Password</label
-							>
-							<div class="col-md-9">
-								<input
-									type="password"
-									name="password1"
-									autocomplete="new-password"
-									class="form-control"
-									title="Your password can’t be too similar to your other personal information.Your password must contain at least 8 characters.Your password can’t be a commonly used password.Your password can’t be entirely numeric."
-									required
-									id="id_password1"
-								/>
-								<small class="form-text text-muted"
-									><ul>
-										<li>
-											Your password can’t be too similar to your other personal
-											information.
-										</li>
-										<li>Your password must contain at least 8 characters.</li>
-										<li>Your password can’t be a commonly used password.</li>
-										<li>Your password can’t be entirely numeric.</li>
-									</ul></small
-								>
-							</div>
-						</div>
-						<div class="form-group required_fields row">
-							<label class="col-md-3 col-form-label" for="id_password2"
-								>Password confirmation</label
-							>
-							<div class="col-md-9">
-								<input
-									type="password"
-									name="password2"
-									autocomplete="new-password"
-									class="form-control"
-									title="Enter the same password as before, for verification."
-									required
-									id="id_password2"
-								/>
-								<small class="form-text text-muted"
-									>Enter the same password as before, for verification.</small
-								>
-							</div>
-						</div>
+						<div class="form-group required_fields row"><label class="col-md-3 col-form-label" for="id_username">Username</label><div class="col-md-9"><input type="text" name="username" maxlength="150" autofocus class="form-control" title="Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only." required id="id_username">
+						    <small class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small>
+
+						</div></div>
+						<div class="form-group required_fields row"><label class="col-md-3 col-form-label" for="id_school_name">School name</label><div class="col-md-9"><input type="text" name="school_name" maxlength="200" class="form-control" title="" required id="id_school_name"></div></div>
+						<div class="form-group required_fields row"><label class="col-md-3 col-form-label" for="id_email">Email address</label><div class="col-md-9"><input type="email" name="email" maxlength="254" class="form-control" title="" required id="id_email"></div></div>
+						<div class="form-group required_fields row"><label class="col-md-3 col-form-label" for="id_mobile">Mobile</label><div class="col-md-9"><input type="text" name="mobile" maxlength="100" class="form-control" title="" required id="id_mobile"></div></div>
+						<div class="form-group required_fields row"><label class="col-md-3 col-form-label" for="id_password1">Password</label><div class="col-md-9"><input type="password" name="password1" autocomplete="new-password" class="form-control" title="Your password can’t be too similar to your other personal information.Your password must contain at least 8 characters.Your password can’t be a commonly used password.Your password can’t be entirely numeric." required id="id_password1">
+						    <small class="form-text text-muted"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></small>
+
+						</div></div>
+						<div class="form-group required_fields row"><label class="col-md-3 col-form-label" for="id_password2">Password confirmation</label><div class="col-md-9"><input type="password" name="password2" autocomplete="new-password" class="form-control" title="Enter the same password as before, for verification." required id="id_password2">
+						    <small class="form-text text-muted">Enter the same password as before, for verification.</small>
+
+						</div></div>
 					</div>
 
 					<script>
-						var form_options = {
-							target: '#form-data-signup',
-							success: function (response) {},
-						};
-						$('#add-ajax-form').ajaxForm(form_options);
+					    var form_options = { target: '#form-data-signup', success: function(response) {} };
+					    $('#add-ajax-form').ajaxForm(form_options);
 					</script>
 
 					<div class="form-overlay__checkbox-link">
@@ -415,10 +346,32 @@
 					</div>
 				</form>
 			</div>
+
 			<!-- --------------------------- logout warning ---------------------------- -->
-			{% include "signout.html" %}
+			<div class="form-container logout-form-container u-invisible">
+				<div class="form-overlay">
+					<h1 class="heading-primary u-margin-top-minus">
+						Are You Sure To Logout ?
+					</h1>
+					<a href="/logout" class="btn-secondary">Yes</a>
+					<button class="logout-no btn-secondary">No</button>
+				</div>
+			</div>
 		</div>
 		<!-- ------------------------------- loader -------------------------------- -->
-		{% include "loader.html" %}
+		<div class="spinner-wrapper">
+			<div class="spinner"></div>
+		</div>
+
+		<!-- sign-up form -->
+		<script
+			type="text/javascript"
+			src="/static/js/sign_in_sign_up.js"
+			defer
+		>
+
+		</script>
+
+
 	</body>
 </html>

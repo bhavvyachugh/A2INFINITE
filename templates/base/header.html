@@ -44,27 +44,16 @@
 
 				{% else %}
 				<li class="setting-dropdown__item">
-					<button class="btn-secondary">Login &rarr;</button>
+					<a href="#" class="btn-secondary u-margin-bottom-medium"
+						>Login &rarr;</a
+					>
 				</li>
 				<li class="setting-dropdown__item">
-					<button class="u-margin-top-small btn-secondary">
-						Sign-up &rarr;
-					</button>
+					<a href="/signup" class="btn-secondary">Sign-up</a>
 				</li>
 				{% endif %}
 			</ul>
 		</li>
-		<!-- {% if user.is_authenticated %}
-		<nav class="user-nav">
-			<div class="user-nav__user">
-				<span class="user-nav__user-name">{{request.user}}</span>
-				<button class="btn-nav__logout btn-secondary">Logout</button>
-			</div>
-		</nav>
-		{% else %}
-		<button class="btn-nav__login btn-secondary">Login &rarr;</button>
-		<button class="btn-nav__signup btn-secondary">Sign-up &rarr;</button>
-		{% endif %} -->
 	</ul>
 </header>
 {% endblock content %}
