@@ -26,6 +26,10 @@
 	</form>
 
 	<ul class="setting-list">
+		{% if user.is_authenticated %}
+		<span class="userName">{{request.user}}</span>
+		{% endif %}
+
 		<li class="setting-list__icon">
 			<img
 				src="/static/images/Icons/settings.svg"
@@ -33,12 +37,21 @@
 				class="setting-list__icon-img"
 			/>
 			<ul class="setting-dropdown">
+				{% if user.is_authenticated %}
+				<li class="setting-dropdown__item">
+					<button class="btn-secondary">Logout &rarr;</button>
+				</li>
+
+				{% else %}
 				<li class="setting-dropdown__item">
 					<button class="btn-secondary">Login &rarr;</button>
 				</li>
 				<li class="setting-dropdown__item">
-					<button class="u-margin-top-small btn-secondary">Sign-up &rarr;</button>
+					<button class="u-margin-top-small btn-secondary">
+						Sign-up &rarr;
+					</button>
 				</li>
+				{% endif %}
 			</ul>
 		</li>
 		<!-- {% if user.is_authenticated %}
