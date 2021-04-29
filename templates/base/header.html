@@ -25,8 +25,23 @@
 		</button>
 	</form>
 
-	<nav class="btn-nav">
-		{% if user.is_authenticated %}
+	<ul class="setting-list">
+		<li class="setting-list__icon">
+			<img
+				src="/static/images/Icons/settings.svg"
+				alt=""
+				class="setting-list__icon-img"
+			/>
+			<ul class="setting-dropdown">
+				<li class="setting-dropdown__item">
+					<button class="btn-secondary">Login &rarr;</button>
+				</li>
+				<li class="setting-dropdown__item">
+					<button class="u-margin-top-small btn-secondary">Sign-up &rarr;</button>
+				</li>
+			</ul>
+		</li>
+		<!-- {% if user.is_authenticated %}
 		<nav class="user-nav">
 			<div class="user-nav__user">
 				<span class="user-nav__user-name">{{request.user}}</span>
@@ -36,7 +51,7 @@
 		{% else %}
 		<button class="btn-nav__login btn-secondary">Login &rarr;</button>
 		<button class="btn-nav__signup btn-secondary">Sign-up &rarr;</button>
-		{% endif %}
-	</nav>
+		{% endif %} -->
+	</ul>
 </header>
 {% endblock content %}
