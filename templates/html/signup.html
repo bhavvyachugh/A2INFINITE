@@ -4,10 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sheets | A2INFINITE</title>
+		<title>Sign Up | A2INFINITE</title>
 
-		<!-- --------------------------------- css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/images_row.css" />
+		<link rel="stylesheet" href="/static/css/signup.css" />
 
 		<!-- ------------------------------- favicon ------------------------------- -->
 
@@ -25,7 +24,7 @@
 			defer
 		></script>
 		<!-- popup -->
-		<script src="/static/js/popup.js" defer></script>
+		<!-- <script src="/static/js/popup.js" defer></script> -->
 		{% endif %}
 
 		<!-- loader -->
@@ -39,36 +38,24 @@
 			<!-- ------------------------------- nav bar ------------------------------- -->
 			{% include "navbar.html" %}
 
+			<!-- -------------------------------- main --------------------------------- -->
 			<main class="main">
-				{% if not subscribed %}
-				<h3>You are not Subscribed. Showing only Free Sheets</h3>
-				<h3>
-					Showing {{countfree}} free sheet/sheets of {{totalcount}}. Please
-					subscribe to view all sheets
-				</h3>
-				{% else %}
-				<h3>You are Subscribed</h3>
-				<h3>Showing total {{totalcount}} sheets</h3>
-				{% endif %}
-				<ul class="sheet-list">
-					{% for image in explaindata %}
-					<li class="sheet-list__item">
-						<a
-							href="{% url 'image' image.pk %}"
-							class="sheet-list__link"
-							target="_blank"
-						>
-							<img
-								src="{{image.imgColor.url}}"
-								alt="Sheet"
-								class="sheet-list__sheet"
-							/>
-						</a>
-					</li>
-					{% endfor %}
-				</ul>
+				<h1 class="heading-primary">Glad To See You Here</h1>
+				<form action="" class="form">
+					<input type="text" placeholder="Username" required />
+					<input type="text" placeholder="School Name" required />
+					<input type="email" placeholder="Email" required />
+					<input type="number" placeholder="Mobile" required />
+					<input type="text" placeholder="Country" required />
+					<input type="text" placeholder="State" required />
+					<input type="text" placeholder="District" required />
+					<input type="text" placeholder="City" required />
+					<input type="text" placeholder="Postal" required />
+					<input type="password" placeholder="Password" required />
+					<input type="password" placeholder="Confirm Password" required />
+					<button type="submit" class="btn-secondary">Submit</button>
+				</form>
 			</main>
-
 			<!-- ------------------------------- footer -------------------------------- -->
 			{% include "footer.html" %}
 			<!-- ----------------------------- login form ------------------------------ -->

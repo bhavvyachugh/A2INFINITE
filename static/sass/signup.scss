@@ -1,14 +1,12 @@
 @import 'base/base';
 @import 'base/typography';
 @import 'base/utilities';
-@import 'base/animations';
 
 @import 'components/btn';
-@import 'components/form';
 @import 'components/loader';
 
+@import 'layout/footer';
 @import 'layout/header';
 @import 'layout/nav-bar';
-@import 'layout/footer';
 
-@import 'pages/SubjectViewContainer.scss';
+@import 'pages/signup';

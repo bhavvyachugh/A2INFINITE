@@ -76,6 +76,12 @@ class Package(models.Model):
     pkg_name = models.CharField(verbose_name="pkg_name", max_length=100, default=None, blank=True)
     pkg_price = models.IntegerField()
     classes = models.ManyToManyField(ClassDetails,related_name="%(app_label)s_%(class)s_classes",)
+    pkg_feature_1 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_2 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_3 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_4 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_5 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
+    pkg_feature_6 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
 
     def get_classes(self):
         return ",".join([str(p.className) for p in self.classes.all()])
@@ -87,6 +93,7 @@ class Package(models.Model):
 class Feature(models.Model):
     pkg_name = models.ForeignKey(Package,on_delete=models.CASCADE, related_name="Package")
     feature_name = models.CharField(verbose_name="pkg_name", max_length=100, default=None, blank=True, null=True)
+    
 
     def __str__(self):
         return self.feature_name

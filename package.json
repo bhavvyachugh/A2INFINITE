@@ -4,18 +4,19 @@
 	"description": "A website where you can get more than 30,000 worksheets and quizes for your child",
 	"main": "index.js",
 	"scripts": {
-		"watch:sass": "node-sass static/sass/package.scss static/css/package.css -w",
-		"compile:sass": "node-sass static/sass/package.scss static/css/package.css",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/package.css -o  static/css/package.css ",
-		"compress:css": "node-sass static/css/package.css static/css/package.css --output-style compressed",
+		"watch:sass": "node-sass static/sass/TopicViewContainer.scss static/css/TopicViewContainer.css -w",
+		"compile:sass": "node-sass static/sass/TopicViewContainer.scss static/css/TopicViewContainer.css",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/TopicViewContainer.css -o  static/css/TopicViewContainer.css ",
+		"compress:css": "node-sass static/css/TopicViewContainer.css static/css/TopicViewContainer.css --output-style compressed",
 		"build:css": "npm-run-all compile:sass  prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",
 	"license": "ISC",
 	"dependencies": {
+		"autoprefixer": "^10.2.5",
 		"node-sass": "^5.0.0",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.2.10",
+		"postcss": "^8.2.13",
 		"postcss-cli": "^8.3.1"
 	}
 }

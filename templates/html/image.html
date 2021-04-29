@@ -44,16 +44,13 @@
 			<!-- -------------------------------- main --------------------------------- -->
 
 			<main class="main">
-				<div>
-				{% if not subscribed %}
-					<h1> You are not Subscribed. Showing only Free Content</h1>
-				{% else %}
-					<h1> You are Subscribed</h1>
-				{% endif %}
-				</div>
 				<div class="schoolName-container">
-					<h1 class="schoolName-container__name">{{request.user}} :: School - {{request.user.school_name}}</h1>
-					<h1 class="schoolName-container__name">{{request.user}} :: School - {{request.user.school_name}}</h1>
+					<h1 class="schoolName-container__name">
+						{{request.user.school_name}}
+					</h1>
+					<h1 class="schoolName-container__name">
+						{{request.user.school_name}}
+					</h1>
 				</div>
 				<div class="img-container">
 					<img
@@ -96,20 +93,23 @@
 					>
 						View Colored
 					</button>
-					{% if all_schools %}
-					<a href="https://api.whatsapp.com/send?text={{request.build_absolute_uri}}">
-						<img src="/static/Images/whatsapp-icon-new.png" alt="Share" class="copyprevention-processed">
-					</a>
-					{% endif %}
 				</div>
+				<!-- AddToAny BEGIN -->
+				<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+					<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+					<a class="a2a_button_facebook"></a>
+					<a class="a2a_button_email"></a>
+					<a class="a2a_button_whatsapp"></a>
+				</div>
+				<script async src="https://static.addtoany.com/menu/page.js"></script>
+				<!-- AddToAny END -->
 			</main>
 
 			<!-- ------------------------------- footer -------------------------------- -->
 			{% include "footer.html" %}
 			<!-- ----------------------------- login form ------------------------------ -->
 			{% include "signin.html" %}
-			<!-- ---------------------------- Sign-up form ----------------------------- -->
-			{% include "signup.html" %}
+
 			<!-- --------------------------- logout warning ---------------------------- -->
 			{% include "signout.html" %}
 		</div>

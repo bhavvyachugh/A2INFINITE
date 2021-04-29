@@ -25,7 +25,7 @@
 			defer
 		></script>
 		<!-- popup -->
-		<script src="/static/js/popup.js" defer></script>
+		<!-- <script src="/static/js/popup.js" defer></script> -->
 		{% endif %}
 
 		<!-- loader -->
@@ -58,37 +58,37 @@
 
 				<section id="class-section" class="class-section u-margin-top">
 					{% for class in classdata %}
-						<div class="class-container">
-							<div class="class-container__img-hed">
-								<!-- <img
+					<div class="class-container">
+						<div class="class-container__img-hed">
+							<!-- <img
 									src="/static/Images/Illustrations/class_1.png"
 									alt="Child Standing"
 									class="class-container__img"
 								/> -->
-								<h3 class="heading-tertiary class-container__heading">
-									{{class.classTitle|slice:":20"}} 
-								</h3>
-							</div>
-								{% if not class.susbscribed %}
-									{% if not class.freeForAll %}
-										<h5>Not subscribed to this class<br>Content only for Subscrided</h5>
-									{% else %}
-										<h5>Not subscribed to this class<br>Showing only Free Content</h5>
-									{% endif %}
-								{% else %}
-									<h3>You are Subscribed to this class</h3>
-								{% endif %}
-							<div class="class-container__para-link">
-								<p class="class-container__para">
-									{{class.remark|slice:":100000"}}
-								</p>
-								<a
-									href="/subject?name={{class.classTitle}}&class={{class.id}}"
-									class="btn-tertiary"
-									>Next &rarr;</a
-								>
-							</div>
+							<h3 class="heading-tertiary class-container__heading">
+								{{class.classTitle|slice:":20"}}
+							</h3>
 						</div>
+						{% if not class.susbscribed %} {% if not class.freeForAll %}
+						<h5>
+							Not subscribed to this class<br />Content only for Subscrided
+						</h5>
+						{% else %}
+						<h5>Not subscribed to this class<br />Showing only Free Content</h5>
+						{% endif %} {% else %}
+						<h3>You are Subscribed to this class</h3>
+						{% endif %}
+						<div class="class-container__para-link">
+							<p class="class-container__para">
+								{{class.remark|slice:":100000"}}
+							</p>
+							<a
+								href="/subject?name={{class.classTitle}}&class={{class.id}}"
+								class="btn-tertiary"
+								>Next &rarr;</a
+							>
+						</div>
+					</div>
 					{% endfor %}
 				</section>
 			</main>
@@ -97,8 +97,7 @@
 			{% include "footer.html" %}
 			<!-- ----------------------------- login form ------------------------------ -->
 			{% include "signin.html" %}
-			<!-- ---------------------------- Sign-up form ----------------------------- -->
-			{% include "signup.html" %}
+	
 			<!-- --------------------------- logout warning ---------------------------- -->
 			{% include "signout.html" %}
 		</div>

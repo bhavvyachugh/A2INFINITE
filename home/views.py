@@ -50,17 +50,20 @@ from werkzeug.wrappers.json import _JSONModule
 def index(request):
     return render(request,"index.html")
 
-def handleSignup(request):
-    if request.method == 'POST':
-        form = UserSignUpForm(request.POST)
-        if form.is_valid():
-            #print(json.dumps(form.cleaned_data,indent=4,default=str))
-            obj2 = form.save()
-            formnew = UserSignUpForm()
-            messages.success(request, "Successfully Loged-in")
-            return render(request, 'form_modeldata/add_modeldata_successfull.html',dict(form=formnew))
-        else:
-            return render(request, 'form_modeldata/add_modeldata.html',dict(form=form))
+def signup(request):
+    return render(request,"signup.html")
+
+# def handleSignup(request):
+#     if request.method == 'POST':
+#         form = UserSignUpForm(request.POST)
+#         if form.is_valid():
+#             #print(json.dumps(form.cleaned_data,indent=4,default=str))
+#             obj2 = form.save()
+#             formnew = UserSignUpForm()
+#             messages.success(request, "Successfully Loged-in")
+#             return render(request, 'form_modeldata/add_modeldata_successfull.html',dict(form=formnew))
+#         else:
+#             return render(request, 'form_modeldata/add_modeldata.html',dict(form=form))
 
 
 def handleLogin(request):    
