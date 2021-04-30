@@ -5,14 +5,15 @@ window.addEventListener('load', function () {
 });
 
 function showPopup() {
-	const timeLimit = 7; // Seconds
+	const timeLimit = 15; // Seconds
 	let i = 0;
 	const timer = setInterval(() => {
 		i++;
 		console.log(i);
 		if (i == timeLimit) {
 			clearInterval(timer);
-			signupPopup.classList.remove('u-invisible');
+			window.location.href = "/signup"
+			//signupPopup.classList.remove('u-invisible');
 		}
 	}, 1000);
 }

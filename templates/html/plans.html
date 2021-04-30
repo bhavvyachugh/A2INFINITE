@@ -92,12 +92,7 @@
 									{% if user.is_authenticated %}
 									<a href="/checkout/{{plan.id}}" class="card__btn">Book Now</a>
 									{% else %}
-									<a
-										href="javascript:void(0)"
-										onclick="myFunc()"
-										class="card__btn"
-										>Book Now</a
-									>
+									<a href="/signup" class="card__btn">Book Now</a>
 									{% endif %}
 								</div>
 							</div>

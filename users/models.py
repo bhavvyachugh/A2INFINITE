@@ -9,6 +9,12 @@ class User(AbstractUser):
     school_name = models.CharField(max_length=200)
     mobile = models.CharField(max_length=15)
     email = models.EmailField('email address',unique=True)
+    phone = models.CharField(max_length=12)
+    country = models.CharField(max_length=12)
+    state = models.CharField(max_length=12)
+    district = models.CharField(max_length=12)
+    city =models.CharField(max_length=12)
+    pin_code = models.IntegerField(max_length=12)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):

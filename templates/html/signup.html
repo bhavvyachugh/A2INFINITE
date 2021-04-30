@@ -1,3 +1,6 @@
+{% load bootstrap4 %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,6 +8,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sign Up | A2INFINITE</title>
+		{# Load CSS and JavaScript #}
+		{% bootstrap_css %}
+		{% bootstrap_javascript jquery='full' %}
 
 		<link rel="stylesheet" href="/static/css/signup.css" />
 
@@ -39,23 +45,35 @@
 			{% include "navbar.html" %}
 
 			<!-- -------------------------------- main --------------------------------- -->
-			<main class="main">
+				{# Display django.contrib.messages as Bootstrap alerts #}
+				{% bootstrap_messages %}
 				<h1 class="heading-primary">Glad To See You Here</h1>
-				<form action="" class="form">
-					<input type="text" placeholder="Username" required />
-					<input type="text" placeholder="School Name" required />
-					<input type="email" placeholder="Email" required />
-					<input type="number" placeholder="Mobile" required />
-					<input type="text" placeholder="Country" required />
-					<input type="text" placeholder="State" required />
-					<input type="text" placeholder="District" required />
-					<input type="text" placeholder="City" required />
-					<input type="text" placeholder="Postal" required />
-					<input type="password" placeholder="Password" required />
-					<input type="password" placeholder="Confirm Password" required />
-					<button type="submit" class="btn-secondary">Submit</button>
+				<style>
+					small {
+				    	font-size:150% !important
+					}
+					.col-form-label{
+						text-align:left !important;
+						font-size:170% !important;
+					}
+					.form-control{
+						height: calc(1.5em + 1rem + 4px) !important;
+						font-size: 1.5rem !important;
+					}
+					.invalid-feedback{
+						font-size:150% !important
+					}
+				</style>
+				{# Display a form #}
+				<form action="/signup" method="post" class="form">
+				  {% csrf_token %}
+				  {% bootstrap_form form layout='horizontal' %}
+				  {% buttons %}
+				    <button type="submit" class="btn btn-primary">
+				      Submit
+				    </button>
+				  {% endbuttons %}
 				</form>
-			</main>
 			<!-- ------------------------------- footer -------------------------------- -->
 			{% include "footer.html" %}
 			<!-- ----------------------------- login form ------------------------------ -->

@@ -51,7 +51,20 @@ def index(request):
     return render(request,"index.html")
 
 def signup(request):
-    return render(request,"signup.html")
+    if request.method == 'POST':
+        form = UserSignUpForm(request.POST)
+        if form.is_valid():
+            #print(json.dumps(form.cleaned_data,indent=4,default=str))
+            obj2 = form.save()
+            formnew = UserSignUpForm()
+            messages.success(request, "Successfully Loged-in")
+            return redirect('home')
+        else:
+            return render(request, 'signup.html',dict(form=form))
+    else:
+        form = UserSignUpForm()
+        return render(request, 'signup.html',dict(form=form))
+    #return render(request,"signup.html")
 
 # def handleSignup(request):
 #     if request.method == 'POST':
