@@ -19,3 +19,39 @@
 		font-size: 2rem;
 	}
 }
+
+.container {
+	padding: 0;
+}
+
+small {
+	display: none !important;
+}
+.col-form-label {
+	text-align: left !important;
+	font-size: 170% !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 0 !important;
+}
+
+.col-md-9 {
+	padding: 0 !important;
+}
+
+.form-group {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+.form-control {
+	height: calc(1.5em + 1rem + 4px) !important;
+	font-size: 1.5rem !important;
+}
+.invalid-feedback {
+	font-size: 150% !important;
+}

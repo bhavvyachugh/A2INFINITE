@@ -3,86 +3,136 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sign Up | A2INFINITE</title>
-		{# Load CSS and JavaScript #}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | A2INFINITE</title>
+    {# Load CSS and JavaScript #}
 		{% bootstrap_css %}
 		{% bootstrap_javascript jquery='full' %}
 
-		<link rel="stylesheet" href="/static/css/signup.css" />
+    <link rel="stylesheet" href="/static/css/signup.css" />
 
-		<!-- ------------------------------- favicon ------------------------------- -->
+    <!-- ------------------------------- favicon ------------------------------- -->
 
-		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+    <link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
-		<!-- ----------------------------- javascript ------------------------------ -->
-		{% if user.is_authenticated %}
-		<!-- login form -->
-		<script type="text/javascript" src="/static/js/logout.js" defer></script>
-		{% else %}
-		<!-- sign-up form -->
-		<script
-			type="text/javascript"
-			src="/static/js/sign_in_sign_up.js"
-			defer
-		></script>
-		<!-- popup -->
-		<!-- <script src="/static/js/popup.js" defer></script> -->
-		{% endif %}
+    <!-- ----------------------------- javascript ------------------------------ -->
+    {% if user.is_authenticated %}
+    <!-- login form -->
+    <script type="text/javascript" src="/static/js/logout.js" defer></script>
+    {% else %}
+    <!-- sign-up form -->
+    <script
+      type="text/javascript"
+      src="/static/js/sign_in_sign_up.js"
+      defer
+    ></script>
+    <!-- popup -->
+    <!-- <script src="/static/js/popup.js" defer></script> -->
+    {% endif %}
 
-		<!-- loader -->
-		<script src="/static/js/loader.js" defer></script>
-	</head>
-	<body class="body">
-		<div class="container">
-			<!-- ------------------------------- header -------------------------------- -->
-			{% include "header.html" %}
+    <!-- loader -->
+    <script src="/static/js/loader.js" defer></script>
+  </head>
+  <body class="body">
+    <div class="container">
+      <!-- ------------------------------- header -------------------------------- -->
+      {% include "header.html" %}
 
-			<!-- ------------------------------- nav bar ------------------------------- -->
-			{% include "navbar.html" %}
+      <!-- ------------------------------- nav bar ------------------------------- -->
+      {% include "navbar.html" %}
 
-			<!-- -------------------------------- main --------------------------------- -->
-				{# Display django.contrib.messages as Bootstrap alerts #}
-				{% bootstrap_messages %}
-				<h1 class="heading-primary">Glad To See You Here</h1>
-				<style>
-					small {
-				    	font-size:150% !important
-					}
-					.col-form-label{
-						text-align:left !important;
-						font-size:170% !important;
-					}
-					.form-control{
-						height: calc(1.5em + 1rem + 4px) !important;
-						font-size: 1.5rem !important;
-					}
-					.invalid-feedback{
-						font-size:150% !important
-					}
-				</style>
-				{# Display a form #}
-				<form action="/signup" method="post" class="form">
-				  {% csrf_token %}
-				  {% bootstrap_form form layout='horizontal' %}
-				  {% buttons %}
-				    <button type="submit" class="btn btn-primary">
-				      Submit
-				    </button>
-				  {% endbuttons %}
-				</form>
-			<!-- ------------------------------- footer -------------------------------- -->
-			{% include "footer.html" %}
-			<!-- ----------------------------- login form ------------------------------ -->
-			{% include "signin.html" %}
+      <!-- -------------------------------- main --------------------------------- -->
+      {# Display django.contrib.messages as Bootstrap alerts #}
+			{% bootstrap_messages %}
+      <h1 class="heading-primary u-margin-top">Glad To See You Here</h1>
+      <style>
+        .container {
+          padding: 0;
+        }
 
-			<!-- --------------------------- logout warning ---------------------------- -->
-			{% include "signout.html" %}
-		</div>
-		<!-- ------------------------------- loader -------------------------------- -->
-		{% include "loader.html" %}
-	</body>
+				.list {
+					margin: 0.6rem;
+				}
+
+				.heading-primary {
+					font-size: 4rem;
+				}
+
+				.footer__heading {
+					margin: 0;
+					padding: 1.1rem;
+				}
+        small {
+          display: none !important;
+        }
+        .col-form-label {
+          text-align: left !important;
+          font-size: 170% !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          padding: 0 !important;
+        }
+
+        .col-md-9 {
+          padding: 0 !important;
+        }
+
+        .form-group {
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 0;
+        }
+
+        .form-control {
+          height: calc(1.5em + 1rem + 4px) !important;
+          font-size: 1.5rem !important;
+        }
+        .invalid-feedback {
+          font-size: 150% !important;
+        }
+
+				.form input:focus {
+					border: 2px solid var(--color-primary) !important;
+					box-shadow: none;
+				}
+
+				.btn:hover,
+				.btn:active {
+					background-color: #ffcc66;
+					border: none !important;
+					outline: none !important;
+					border: none !important;
+					border-radius: 0.5rem !important;
+					color: var(--color-primary) !important;
+					cursor: pointer !important;
+				}
+
+
+      </style>
+      {# Display a form #}
+      <form action="/signup" method="post" class="form">
+        {% csrf_token %} {% bootstrap_form form layout='horizontal' %}
+				{% buttons %}
+        <button type="submit" class="btn btn-secondary">
+          Submit
+        </button>
+        {% endbuttons %}
+      </form>
+      <!-- ------------------------------- footer -------------------------------- -->
+      {% include "footer.html" %}
+      <!-- ----------------------------- login form ------------------------------ -->
+      {% include "signin.html" %}
+
+      <!-- --------------------------- logout warning ---------------------------- -->
+      {% include "signout.html" %}
+    </div>
+    <!-- ------------------------------- loader -------------------------------- -->
+    {% include "loader.html" %}
+  </body>
 </html>
