@@ -1,5 +1,7 @@
 {% load bootstrap4 %}
 {% load static %}
+{% load crispy_forms_tags %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,31 +50,25 @@
 				{# Display django.contrib.messages as Bootstrap alerts #}
 				{% bootstrap_messages %}
 				<h1 class="heading-primary">Glad To See You Here</h1>
-				<style>
-					small {
-				    	font-size:150% !important
-					}
-					.col-form-label{
-						text-align:left !important;
-						font-size:170% !important;
-					}
-					.form-control{
-						height: calc(1.5em + 1rem + 4px) !important;
-						font-size: 1.5rem !important;
-					}
-					.invalid-feedback{
-						font-size:150% !important
-					}
-				</style>
-				{# Display a form #}
-				<form action="/signup" method="post" class="form">
-				  {% csrf_token %}
-				  {% bootstrap_form form layout='horizontal' %}
-				  {% buttons %}
-				    <button type="submit" class="btn btn-primary">
-				      Submit
-				    </button>
-				  {% endbuttons %}
+-				<style>
+-					small {
+-				    	font-size:150% !important
+-					}
+-					.col-form-label{
+-						text-align:left !important;
+-						font-size:170% !important;
+-					}
+-					.form-control{
+-						height: calc(1.5em + 1rem + 4px) !important;
+-						font-size: 1.5rem !important;
+-					}
+-					.invalid-feedback{
+-						font-size:150% !important
+-					}
+-				</style>
+
+				<form method="post" class="uniForm">
+				    {{ form|crispy }}
 				</form>
 			<!-- ------------------------------- footer -------------------------------- -->
 			{% include "footer.html" %}

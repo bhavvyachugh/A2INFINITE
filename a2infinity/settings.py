@@ -64,7 +64,10 @@ INSTALLED_APPS = [
     'django_extensions',
     'users',
     'bootstrap4',
+    'crispy_forms'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AUTH_USER_MODEL = 'users.User'
 
