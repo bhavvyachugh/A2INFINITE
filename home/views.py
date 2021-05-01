@@ -24,7 +24,7 @@ import requests
 from io import StringIO
 from django.views.generic import View
 from django.http import HttpResponse, JsonResponse
-from .forms import UserSignUpForm 
+from .forms import UserSignUpForm
 from bootstrap4.templatetags.bootstrap4 import bootstrap_form
 import hmac
 from django.utils import timezone
@@ -49,6 +49,9 @@ from werkzeug.wrappers.json import _JSONModule
 
 def index(request):
     return render(request,"index.html")
+
+def login(request):
+    return render(request,"login.html")
 
 def signup(request):
     if request.method == 'POST':
@@ -79,33 +82,33 @@ def signup(request):
 #             return render(request, 'form_modeldata/add_modeldata.html',dict(form=form))
 
 
-def handleLogin(request):    
+def handleLogin(request):
 
     user = None
     if request.method == "POST":
-        loginusername = request.POST['loginusername'] 
+        loginusername = request.POST['loginusername']
         loginpassword = request. POST['loginpassword']
-        
+
 
         user = authenticate(username=loginusername, password=loginpassword)
-        
+
     if user is not None:
         login(request, user)
         messages.success(request, "Successfully Loged-in")
 
         if 'next' in request.POST:
             return redirect(request.POST.get('next'))
-        
+
         else:
             return redirect('home')
-        
+
 
     else:
         messages.error(request, "try again")
         return redirect('home')
-                    
+
     return HttpResponse('login')
- 
+
 
 def handleLogout(request):
     logout(request)
@@ -124,14 +127,14 @@ def contact(request):
         contact.save()
         messages.success(request, 'Your message has been sent !')
     return render(request, 'contact.html')
- 
+
 def sheet(request):
    sheet = Sheet.objects.all()
    return render(request,'sheet.html', {'sheet' : sheet})
 
 def cssNameOnImage(request):
    return render(request,'cssNameOnImage.html')
-      
+
 
 def plans(request):
     packages = Package.objects.all()
@@ -167,12 +170,12 @@ def plans(request):
 
     print(new_array)
     return render(request,"plans.html",dict(plans = new_array))
-    
+
 
 @login_required(login_url=reverse_lazy('home'))
 def checkout(request,plan_id):
     plan = Package.objects.get(id=plan_id)
-    
+
     order_amount = plan.pkg_price*100
     order_currency = 'INR'
     order_receipt = f'{request.user} :: {plan.id} - {plan.pkg_name}'
@@ -199,7 +202,7 @@ def checkout(request,plan_id):
     return render(request, "checkout.html",context)
 
 @login_required(login_url=reverse_lazy(''))
-@csrf_exempt    
+@csrf_exempt
 def success(request):
     try:
         response = request.POST
@@ -251,7 +254,7 @@ def search(request):
                 messages.error(request, 'no result found')
         else:
             return HttpResponseRedirect('/search')
-    return render(request,'search.html')           
+    return render(request,'search.html')
 
 
 
@@ -306,7 +309,7 @@ class ClassView(View):
         data = serializers.serialize("json", classdata)
         return render(request, "ClassViewContainer.html",{
             "classdata" : classdata
-        })  
+        })
 
 
 
@@ -357,15 +360,15 @@ class TopicView(View):
         user, user_logged_in, subscribed, package, end_date, subscribed_classes = check_user_subscription_status(request)
 
         subjectId = request.GET.get("subject", None)
-        
+
         try:
             subobj = Subject.objects.get(id=subjectId)
         except subobj.DoesNotExist:
            return redirect("ClassView")
-        
+
         if subjectId == None:
             return redirect("ClassView")
-      
+
         # CHeck w.r.t class
 
         classobj = subobj.className
@@ -479,7 +482,7 @@ def image(request, pk):
 
 
 
-    
+
 
 
 class images_row(View):
@@ -531,7 +534,7 @@ class images_row(View):
 
 
 
-        
+
 class download(View):
     def get(self, request):
         try:
@@ -607,4 +610,3 @@ class payments(View):
 
 
     ###----------------------------------Forgot password views---------------------------------------------------------------------------###
-           

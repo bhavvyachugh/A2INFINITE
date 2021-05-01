@@ -12,19 +12,19 @@
 #     path('signup', views.handleSignup, name="handleSignup"),
 #     path('login', views.handleLogin, name="handleLogin"),
 #     path('logout', views.handleLogout, name="handleLogout"),
-#     path("contact", views.contact, name='contact'), 
+#     path("contact", views.contact, name='contact'),
 
 
-#     path("plans", views.plans, name='plans'), 
-#     path("cssNameOnImage", views.cssNameOnImage, name='cssNameOnImage'), 
+#     path("plans", views.plans, name='plans'),
+#     path("cssNameOnImage", views.cssNameOnImage, name='cssNameOnImage'),
 
-#     path("checkout", views.checkout, name='checkout'), 
-#     path("success", views.success, name='success'), 
+#     path("checkout", views.checkout, name='checkout'),
+#     path("success", views.success, name='success'),
 #     path("sheet", views.sheet, name='sheet'),
 #     path("search", views.search, name='search'),
-    
 
-#    #  path("ClassViewContainer", views.ClassViewContainer, name='ClassViewContainer'), 
+
+#    #  path("ClassViewContainer", views.ClassViewContainer, name='ClassViewContainer'),
 #     path('class/', (ClassView.as_view()), name='ClassView'),
 #     path('subject/', (SubjectView.as_view()), name='SubjectView'),
 #     path('topic/', (TopicView.as_view()), name='TopicView'),
@@ -37,7 +37,7 @@
 #     path('images/', (images_row.as_view()), name='payment'),
 #     path('image/<int:pk>/', views.image, name='image'),
 
- 
+
 # ]
 
 from django.contrib import admin
@@ -63,16 +63,17 @@ from .views import ClassView, SubjectView, TopicView, SubTopicView, download, pa
 urlpatterns = [
     path('', views.index, name="home"),
     path('signup', views.signup, name="signup"),
+    path('login', views.login, name="login"),
    #  path('signup', views.handleSignup, name="handleSignup"),
     path('login', views.handleLogin, name="handleLogin"),
     path('logout', views.handleLogout, name="handleLogout"),
-    path("contact", views.contact, name='contact'), 
-    path("plans", views.plans, name='plans'), 
-    path("checkout/<int:plan_id>", views.checkout, name='checkout'), 
+    path("contact", views.contact, name='contact'),
+    path("plans", views.plans, name='plans'),
+    path("checkout/<int:plan_id>", views.checkout, name='checkout'),
     path("success/", views.success, name='success'),
     path("sheet", views.sheet, name='sheet'),
-    path("search", views.search, name='search'), 
-    path("cssNameOnImage", views.cssNameOnImage, name='cssNameOnImage'), 
+    path("search", views.search, name='search'),
+    path("cssNameOnImage", views.cssNameOnImage, name='cssNameOnImage'),
 
 
     ###----------------------------------------------###
@@ -98,5 +99,5 @@ urlpatterns = [
 
    ###----------------------------------------------###
 
-    
+
 ]
