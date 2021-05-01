@@ -13,14 +13,14 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Sheet(models.Model):
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to="Sheet/images", default="")
-    
+
     def __str__(self):
-        return self.name                      
+        return self.name
 
 
 class ClassDetails(models.Model):
@@ -60,7 +60,7 @@ class SubTopic(models.Model):
     def __str__(self):
         return self.SubTopicName + " | " + self.topic.TopicName
 
-        
+
 class Explain(models.Model):
     SubTopic = models.ForeignKey(SubTopic,related_name="%(app_label)s_%(class)s_subtopic",on_delete=models.CASCADE)
     explaintitle = models.CharField(verbose_name="explaintitle", max_length=200, default=None, blank=True, null=True)
@@ -74,6 +74,7 @@ class Explain(models.Model):
 
 class Package(models.Model):
     pkg_name = models.CharField(verbose_name="pkg_name", max_length=100, default=None, blank=True)
+    pkg_price_disscount = models.IntegerField(default=None)
     pkg_price = models.IntegerField()
     classes = models.ManyToManyField(ClassDetails,related_name="%(app_label)s_%(class)s_classes",)
     pkg_feature_1 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
@@ -93,7 +94,7 @@ class Package(models.Model):
 class Feature(models.Model):
     pkg_name = models.ForeignKey(Package,on_delete=models.CASCADE, related_name="Package")
     feature_name = models.CharField(verbose_name="pkg_name", max_length=100, default=None, blank=True, null=True)
-    
+
 
     def __str__(self):
         return self.feature_name

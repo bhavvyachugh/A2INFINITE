@@ -4,10 +4,10 @@
 	"description": "A website where you can get more than 30,000 worksheets and quizes for your child",
 	"main": "index.js",
 	"scripts": {
-		"watch:sass": "node-sass static/sass/signup.scss static/css/signup.css -w",
-		"compile:sass": "node-sass static/sass/signup.scss static/css/signup.css",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/signup.css -o  static/css/signup.css ",
-		"compress:css": "node-sass static/css/signup.css static/css/signup.css --output-style compressed",
+		"watch:sass": "node-sass static/sass/plans.scss static/css/plans.css -w",
+		"compile:sass": "node-sass static/sass/plans.scss static/css/plans.css",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/plans.css -o  static/css/plans.css ",
+		"compress:css": "node-sass static/css/plans.css static/css/plans.css --output-style compressed",
 		"build:css": "npm-run-all compile:sass  prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",

@@ -137,6 +137,15 @@
 		text-transform: uppercase;
 	}
 
+	&__price-discount {
+		font-size: 2rem;
+		font-family: open-sans-light;
+		font-weight: 200;
+		text-decoration: line-through;
+		margin-bottom: -2rem;
+		margin-top: 6rem;
+	}
+
 	&__price-value {
 		font-size: 4rem;
 		font-family: open-sans-light;
