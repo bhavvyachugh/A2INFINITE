@@ -173,6 +173,8 @@
 		left: 11rem;
 		animation: moveInUp linear 0.5s;
 		animation-delay: 0.1s;
+		text-decoration: none;
+		color: #000;
 
 		@media screen and (max-width: 413px) {
 			top: 23rem;
@@ -315,6 +317,8 @@
 	}
 
 	&__btn {
+		text-decoration: none;
+		color: #000;
 		position: absolute;
 		top: 20rem;
 		left: 8rem;
