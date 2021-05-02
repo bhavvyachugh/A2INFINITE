@@ -13,20 +13,12 @@
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
 		<!-- ----------------------------- javascript ------------------------------ -->
-		{% if user.is_authenticated %}
-		<!-- login form -->
-		<script type="text/javascript" src="/static/js/logout.js" defer></script>
-		{% else %}
-		<!-- sign-up form -->
-		<script
-			type="text/javascript"
-			src="/static/js/sign_in_sign_up.js"
-			defer
-		></script>
-		{% endif %}
 
 		<!-- loader -->
 		<script src="/static/js/loader.js" defer></script>
+
+		<!-- plans -->
+		<script src="/static/js/plans.js" defer></script>
 	</head>
 
 	<body class="body">
@@ -60,13 +52,25 @@
 								{% endif %}
 
 								<div class="card__details">
-									<ul>
-										<li>{{ plan.pkg_feature_1 }}</li>
-										<li>{{ plan.pkg_feature_2 }}</li>
-										<li>{{ plan.pkg_feature_3 }}</li>
-										<li>{{ plan.pkg_feature_4 }}</li>
-										<li>{{ plan.pkg_feature_5 }}</li>
-										<li>{{ plan.pkg_feature_6 }}</li>
+									<ul class="detail-list">
+										<li class="detail-list__detail">
+											{{ plan.pkg_feature_1 }}
+										</li>
+										<li class="detail-list__detail">
+											{{ plan.pkg_feature_2 }}
+										</li>
+										<li class="detail-list__detail">
+											{{ plan.pkg_feature_3 }}
+										</li>
+										<li class="detail-list__detail">
+											{{ plan.pkg_feature_4 }}
+										</li>
+										<li class="detail-list__detail">
+											{{ plan.pkg_feature_5 }}
+										</li>
+										<li class="detail-list__detail">
+											{{ plan.pkg_feature_6 }}
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -76,11 +80,13 @@
 								<div class="card__cta">
 									<div class="card__price-box">
 										<p class="card__price-only">Only</p>
-										<p class="card__price-discount">Rs. {{plan.pkg_price_disscount}}</p>
+										<p class="card__price-discount">
+											Rs. {{plan.pkg_price_disscount}}
+										</p>
 										<p class="card__price-value">Rs. {{plan.pkg_price}}</p>
 									</div>
 
-										{% if user.is_authenticated %}
+									{% if user.is_authenticated %}
 									<a href="/checkout/{{plan.id}}" class="card__btn">Book Now</a>
 									{% else %}
 									<a href="/signup" class="card__btn">Book Now</a>
@@ -92,7 +98,9 @@
 								<div class="card__cta">
 									<div class="card__price-box">
 										<p class="card__price-only">Only</p>
-										<p class="card__price-discount">Rs. {{plan.pkg_price_disscount}}</p>
+										<p class="card__price-discount">
+											Rs. {{plan.pkg_price_disscount}}
+										</p>
 										<p class="card__price-value">Rs. {{plan.pkg_price}}</p>
 									</div>
 
