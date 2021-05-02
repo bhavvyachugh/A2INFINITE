@@ -63,8 +63,8 @@ from .views import ClassView, SubjectView, TopicView, SubTopicView, download, pa
 urlpatterns = [
     path('', views.index, name="home"),
     path('signup', views.signup, name="signup"),
-    path('login', views.login, name="login"),
-   #  path('signup', views.handleSignup, name="handleSignup"),
+    #path('login', views.login, name="login"),
+    #path('signup', views.handleSignup, name="handleSignup"),
     path('login', views.handleLogin, name="handleLogin"),
     path('logout', views.handleLogout, name="handleLogout"),
     path("contact", views.contact, name='contact'),

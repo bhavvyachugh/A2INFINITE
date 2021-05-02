@@ -50,8 +50,8 @@ from werkzeug.wrappers.json import _JSONModule
 def index(request):
     return render(request,"index.html")
 
-def login(request):
-    return render(request,"login.html")
+# def login(request):
+#     return render(request,"login.html")
 
 def signup(request):
     if request.method == 'POST':
@@ -83,31 +83,30 @@ def signup(request):
 
 
 def handleLogin(request):
-
     user = None
     if request.method == "POST":
-        loginusername = request.POST['loginusername']
-        loginpassword = request. POST['loginpassword']
+        loginusername = request.POST['username']
+        loginpassword = request. POST['password']
 
 
         user = authenticate(username=loginusername, password=loginpassword)
 
-    if user is not None:
-        login(request, user)
-        messages.success(request, "Successfully Loged-in")
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Successfully Loged-in")
 
-        if 'next' in request.POST:
-            return redirect(request.POST.get('next'))
+
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('home')
+
 
         else:
-            return redirect('home')
+            messages.error(request, "try again")
+            return render(request,"login.html")
 
-
-    else:
-        messages.error(request, "try again")
-        return redirect('home')
-
-    return HttpResponse('login')
+    return render(request,"login.html")
 
 
 def handleLogout(request):

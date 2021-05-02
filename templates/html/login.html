@@ -29,15 +29,16 @@
 
       <h1 class="heading-primary">Welcome Back!</h1>
 
-      <form action="" class="form">
+      <form action="/login" class="form"  method="post">
+        {% csrf_token %} 
         <div class="form__input-container">
           <label for="username" class="form__label">User name</label>
-          <input id="username" type="text" class="form__input" />
+          <input id="username" type="text" name="username" class="form__input" />
         </div>
 
         <div class="form__input-container">
           <label for="password" class="form__label">Password</label>
-          <input id="password" type="password" class="form__input" />
+          <input id="password" type="password" name="password"  class="form__input" />
         </div>
 
         <div class="form__link-container">
