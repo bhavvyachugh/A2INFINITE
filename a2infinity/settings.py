@@ -124,7 +124,7 @@ try:
         print(os.environ['POSTGRES_REMOTE'])
         print(HOST_PG)
     else:
-        HOST_PG = "65.1.205.223"
+        HOST_PG = "13.232.118.146"
         print(os.environ['POSTGRES_REMOTE'])
         print(HOST_PG)
 except:
