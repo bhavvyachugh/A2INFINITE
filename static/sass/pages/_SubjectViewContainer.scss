@@ -27,6 +27,7 @@
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
+	width: 100%;
 }
 
 .subject-container {
@@ -50,6 +51,7 @@
 
 	&__para {
 		font-size: 1.5rem;
+		margin-bottom: 3rem;
 	}
 
 	&__heading {
