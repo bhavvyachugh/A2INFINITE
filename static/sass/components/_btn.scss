@@ -11,11 +11,11 @@
 		var(--color-grey-light-1),
 		var(--color-grey-light-5)
 	);
-	transition: all 0.1s;
+	transition: all 0.3s;
 	cursor: pointer;
 
 	&:hover {
-		box-shadow: 0 1rem 2rem rgba(#000, 0.1);
+		box-shadow: 0 1rem 2rem rgba(#000, 0.43);
 		transform: translateY(-0.3rem);
 	}
 
@@ -57,6 +57,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition:  all 0.3s;
 
 	&:hover {
 		color: #000;
