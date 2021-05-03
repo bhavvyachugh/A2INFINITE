@@ -1,29 +1,19 @@
-.form {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	input {
-		display: block;
-		border: none;
-		width: 80%;
-		margin-top: 2rem;
-		background-color: var(--color-grey-light-2);
-		padding: 2rem;
-		font-size: 1.5rem;
-		border-radius: 0.5rem;
-	}
-	button {
-		margin: 2rem 0;
-		font-size: 2rem;
-	}
-}
-
 .container {
 	padding: 0;
 }
 
+.list {
+	margin: 0.6rem;
+}
+
+.heading-primary {
+	font-size: 4rem;
+}
+
+.footer__heading {
+	margin: 0;
+	padding: 1.1rem;
+}
 small {
 	display: none !important;
 }
@@ -54,4 +44,39 @@ small {
 }
 .invalid-feedback {
 	font-size: 150% !important;
+}
+
+.form input {
+	background-color: #eb2f6420;
+	display: block;
+	border: none;
+	width: 80%;
+	margin-top: 2rem;
+	padding: 2rem;
+	font-size: 1.5rem;
+	border-radius: 0.5rem;
+}
+
+.form input:focus {
+	border: 2px solid var(--color-primary) !important;
+	box-shadow: none;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+	background-color: #ffcc66 !important;
+	outline: 0 !important;
+	border: 0 !important;
+	border-radius: 0.5rem !important;
+	color: var(--color-primary) !important;
+	cursor: pointer !important;
+	font-size: 2rem !important;
+	margin: 2rem 0 !important;
+	box-shadow: none !important;
+}
+
+button {
+	margin: 2rem 0 !important;
+	font-size: 2rem !important;
 }

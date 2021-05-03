@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sign Up | A2INFINITE</title>
-		{# Load CSS and JavaScript #} {% bootstrap_css %} 
+		{# Load CSS and JavaScript #} {% bootstrap_css %}
       {% bootstrap_javascript	jquery='full' %}
 
 		<link rel="stylesheet" href="/static/css/signup.css" />
@@ -33,78 +33,7 @@
 			{# Display django.contrib.messages as Bootstrap alerts #}
          {% bootstrap_messages %}
 			<h1 class="heading-primary u-margin-top">Glad To See You Here</h1>
-			<style>
-				.container {
-					padding: 0;
-				}
 
-				.list {
-					margin: 0.6rem;
-				}
-
-				.heading-primary {
-					font-size: 4rem;
-				}
-
-				.footer__heading {
-					margin: 0;
-					padding: 1.1rem;
-				}
-				small {
-					display: none !important;
-				}
-				.col-form-label {
-					text-align: left !important;
-					font-size: 170% !important;
-					display: flex !important;
-					align-items: center !important;
-					justify-content: center !important;
-					padding: 0 !important;
-				}
-
-				.col-md-9 {
-					padding: 0 !important;
-				}
-
-				.form-group {
-					display: flex !important;
-					justify-content: center;
-					align-items: center;
-					width: 100%;
-					margin-bottom: 0;
-				}
-
-				.form-control {
-					height: calc(1.5em + 1rem + 4px) !important;
-					font-size: 1.5rem !important;
-				}
-				.invalid-feedback {
-					font-size: 150% !important;
-				}
-
-				.form input {
-					background-color: #eb2f6420;
-				}
-
-				.form input:focus {
-					border: 2px solid var(--color-primary) !important;
-					box-shadow: none;
-				}
-
-				.btn:hover,
-				.btn:active,
-				.btn:focus {
-					background-color: #ffcc66 !important;
-					outline: 0 !important;
-					border: 0 !important;
-					border-radius: 0.5rem !important;
-					color: var(--color-primary) !important;
-					cursor: pointer !important;
-					font-size: 2rem !important;
-					margin: 2rem 0 !important;
-					box-shadow: none !important;
-				}
-			</style>
 			{# Display a form #}
 			<form action="/signup" method="post" class="form">
 				{% csrf_token %} {% bootstrap_form form layout='horizontal' %}

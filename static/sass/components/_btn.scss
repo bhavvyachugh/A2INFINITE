@@ -28,20 +28,23 @@
 .btn-secondary:active,
 .btn-secondary:visited,
 .btn-secondary:link {
-	outline: none;
-	border: none;
+	outline: none !important;
+	border: none !important;
 	margin: 0 1rem;
 	padding: 1rem 3rem;
 	border-radius: 0.5rem;
-	background-color: rgba(#ffcc66, 0.95);
+	background-color: rgba(#ffcc66, 0.95) !important;
 	transition: all 0.1s;
 	color: var(--color-grey-dark-1);
 	cursor: pointer;
+	text-decoration: none;
+	box-shadow: none !important;
 
 	font-size: 1.25rem;
 
-	&:hover {
-		color: var(--color-primary-light);
+	&:hover,
+	&:active {
+		color: var(--color-primary-light) !important;
 	}
 }
 
