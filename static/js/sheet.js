@@ -33,7 +33,6 @@ const printColoredSheet = () => {
 
 /* --------------------------------- events --------------------------------- */
 
-document.addEventListener('contextmenu', (event) => event.preventDefault());
 viewBwBtn.addEventListener('click', viewBwSheet);
 viewColoredBtn.addEventListener('click', viewColoredSheet);
 printBwBtn.addEventListener('click', printBwSheet);
