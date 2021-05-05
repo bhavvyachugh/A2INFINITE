@@ -169,9 +169,6 @@ html {
   to {
     transform: rotate(360deg); } }
 
-.body {
-  height: 100vh; }
-
 .container {
   border-radius: 1rem;
   display: flex !important;
