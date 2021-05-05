@@ -31,8 +31,8 @@
 			{% include "navbar.html" %}
 
 			<!-- -------------------------------- main --------------------------------- -->
-
 			<main class="main">
+				{% if user.is_authenticated %}
 				<div class="schoolName-container">
 					<h1 class="schoolName-container__name">
 						{{request.user.school_name}}
@@ -95,6 +95,11 @@
 				</div>
 				<script async src="https://static.addtoany.com/menu/page.js"></script>
 				<!-- AddToAny END -->
+
+				{% else %}
+
+				<h1 class="heading-primary login-heading">Please Login to access this page</h1>
+				{% endif %}
 			</main>
 
 			<!-- ------------------------------- footer -------------------------------- -->
