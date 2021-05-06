@@ -50,6 +50,9 @@ from werkzeug.wrappers.json import _JSONModule
 def index(request):
     return render(request,"index.html")
 
+def quiz(request):
+    return render(request,"quiz.html")
+
 # def login(request):
 #     return render(request,"login.html")
 
