@@ -243,8 +243,8 @@ def search(request):
         searchh = request.POST['search']
 
         if searchh:
-            match = Sheet.objects.filter(Q(name__icontains=searchh) |
-                                        Q(image__icontains=searchh))
+            match = Explain.objects.filter(Q(explaintitle__icontains=searchh) |
+                                        Q(imgColor__icontains=searchh))
 
 
             if match:

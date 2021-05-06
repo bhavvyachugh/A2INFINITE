@@ -39,11 +39,11 @@
 					{%if search%} {%for k in search%}
 					<li class="sheet-list__items">
 						<!-- fetching sheets -->
-						<a href="{{k.image}}"
-							><img src="{{k.image}}" width="200" height="200"
+						<a href="{% url 'image' k.pk%}"
+							><img src="{{k.imgColor.url}}" width="200" height="200"
 						/></a>
 						<!-- name of sheet -->
-						<h1 class="sheet-list__heading">{{k.name}}</h1>
+						<h1 class="sheet-list__heading">{{explaintitle}}</h1>
 					</li>
 
 					{%endfor%} {%endif%}
