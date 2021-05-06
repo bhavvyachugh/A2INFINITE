@@ -153,7 +153,11 @@
   .btn-container {
     display: none; }
   .footer {
-    display: none; } }
+    display: none; }
+  .share-container {
+    display: none; }
+    .share-container__link {
+      display: none; } }
 
 .share-container {
   display: flex;

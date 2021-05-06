@@ -66,6 +66,14 @@
 	.footer {
 		display: none;
 	}
+
+	.share-container {
+		display: none;
+
+		&__link {
+			display: none;
+		}
+	}
 }
 
 .share-container {
