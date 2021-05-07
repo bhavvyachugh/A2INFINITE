@@ -1,13 +1,13 @@
 {
 	"name": "a2infinite",
 	"version": "1.0.0",
-	"description": "A website where you can get more than 30,000 worksheets and quizes for your child",
+	"description": "A website where you can get more than 30,000 worksheets and password_resetes for your child",
 	"main": "index.js",
 	"scripts": {
-		"watch:sass": "node-sass static/sass/quiz.scss static/css/quiz.css -w",
-		"compile:sass": "node-sass static/sass/quiz.scss static/css/quiz.css",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/quiz.css -o  static/css/quiz.css ",
-		"compress:css": "node-sass static/css/quiz.css static/css/quiz.css --output-style compressed",
+		"watch:sass": "node-sass static/sass/password_reset.scss static/css/password_reset.css -w",
+		"compile:sass": "node-sass static/sass/password_reset.scss static/css/password_reset.css",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/password_reset.css -o  static/css/password_reset.css ",
+		"compress:css": "node-sass static/css/password_reset.css static/css/password_reset.css --output-style compressed",
 		"build:css": "npm-run-all compile:sass  prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",

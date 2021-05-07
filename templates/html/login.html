@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Login | A2INFINITE</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Login | A2INFINITE</title>
 
-    <!-- ------------------------------- css ------------------------------- -->
-    <link rel="stylesheet" href="/static/css/login.css" />
+		<!-- ------------------------------- css ------------------------------- -->
+		<link rel="stylesheet" href="/static/css/login.css" />
 
-    <!-- ------------------------------- favicon ------------------------------- -->
+		<!-- ------------------------------- favicon ------------------------------- -->
 
-    <link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
-    <!-- ----------------------------- javascript ------------------------------ -->
+		<!-- ----------------------------- javascript ------------------------------ -->
 
-    <!-- loader -->
-    <script src="/static/js/loader.js" defer></script>
-  </head>
-  <body class="body">
-    <div class="container">
-      <!-- ------------------------------- header -------------------------------- -->
-      {% include "header.html" %}
+		<!-- loader -->
+		<script src="/static/js/loader.js" defer></script>
+	</head>
+	<body class="body">
+		<div class="container">
+			<!-- ------------------------------- header -------------------------------- -->
+			{% include "header.html" %}
 
-      <!-- ------------------------------- nav bar ------------------------------- -->
-      {% include "navbar.html" %}
-      <!-- -------------------------------- main --------------------------------- -->
+			<!-- ------------------------------- nav bar ------------------------------- -->
+			{% include "navbar.html" %}
+			<!-- -------------------------------- main --------------------------------- -->
 
-      <h1 class="heading-primary">Welcome Back!</h1>
+			<h1 class="heading-primary">Welcome Back!</h1>
 
-      <form action="/login" class="form"  method="post">
-        {% csrf_token %} 
-        <div class="form__input-container">
-          <label for="username" class="form__label">User name</label>
-          <input id="username" type="text" name="username" class="form__input" />
-        </div>
+			<form action="/login" class="form" method="post">
+				{% csrf_token %}
+				<div class="form__input-container">
+					<label for="username" class="form__label">User name</label>
+					<input
+						id="username"
+						type="text"
+						name="username"
+						class="form__input"
+					/>
+				</div>
 
-        <div class="form__input-container">
-          <label for="password" class="form__label">Password</label>
-          <input id="password" type="password" name="password"  class="form__input" />
-        </div>
+				<div class="form__input-container">
+					<label for="password" class="form__label">Password</label>
+					<input
+						id="password"
+						type="password"
+						name="password"
+						class="form__input"
+					/>
+				</div>
 
-        <div class="form__link-container">
-          <a href="#" class="form__link">Forgot Password ?</a>
-          <a href="/signup" class="form__link">Don't have account Sign Up &rarr;</a>
-        </div>
-        <button class="btn-secondary u-margin-bottom">Login &rarr;</button>
-      </form>
+				<div class="form__link-container">
+					<a href="/password_reset" class="form__link">Forgot Password ?</a>
+					<a href="/signup" class="form__link"
+						>Don't have account Sign Up &rarr;</a
+					>
+				</div>
+				<button class="btn-secondary u-margin-bottom">Login &rarr;</button>
+			</form>
 
-      <!-- ------------------------------- footer -------------------------------- -->
-      {% include "footer.html" %}
-    </div>
-    <!-- ------------------------------- loader -------------------------------- -->
-    {% include "loader.html" %}
-  </body>
+			<!-- ------------------------------- footer -------------------------------- -->
+			{% include "footer.html" %}
+		</div>
+		<!-- ------------------------------- loader -------------------------------- -->
+		{% include "loader.html" %}
+	</body>
 </html>

@@ -8,7 +8,7 @@
 	padding: 1.5rem 4rem;
 	background-image: linear-gradient(
 		to right bottom,
-		var(--color-grey-light-1),
+		#e9e9e9,
 		var(--color-grey-light-5)
 	);
 	transition: all 0.3s;
@@ -16,7 +16,7 @@
 
 	&:hover {
 		box-shadow: 0 1rem 2rem rgba(#000, 0.43);
-		transform: translateY(-0.3rem);
+		transform: translateY(-0.4rem);
 	}
 
 	&:active {
@@ -57,7 +57,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition:  all 0.3s;
+	transition: all 0.3s;
 
 	&:hover {
 		color: #000;
