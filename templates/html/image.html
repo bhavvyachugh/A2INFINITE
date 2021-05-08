@@ -52,6 +52,12 @@
 						class="img-container__img img-container__img--black"
 						id="blackwhite"
 					/>
+					<h1 class="img-container__watermark img-container__watermark--1">
+						{{request.user.school_name}}
+					</h1>
+					<h1 class="img-container__watermark img-container__watermark--2">
+						{{request.user.school_name}}
+					</h1>
 				</div>
 				<div class="btn-container">
 					<button
@@ -95,10 +101,12 @@
 				</div>
 				<script async src="https://static.addtoany.com/menu/page.js"></script>
 				<!-- AddToAny END -->
-
 				{% else %}
 
-				<h1 class="heading-primary login-heading">Please Login to access this page</h1>
+				<h1 class="heading-primary login-heading">
+					Please Login to access this page
+				</h1>
+
 				{% endif %}
 			</main>
 

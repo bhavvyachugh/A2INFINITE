@@ -5,12 +5,29 @@
 }
 
 .img-container {
+	position: relative;
 	&__img {
 		height: 100%;
 		width: 100%;
 
 		&--black {
 			display: none;
+		}
+	}
+
+	&__watermark {
+		opacity: 0.2;
+		position: absolute;
+		top: 35rem;
+		transform: rotate(-35deg);
+		font-size: 2.5rem;
+
+		&--1 {
+			left: 8rem;
+		}
+
+		&--2 {
+			right: 8rem;
 		}
 	}
 }
