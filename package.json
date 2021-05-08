@@ -1,13 +1,13 @@
 {
 	"name": "a2infinite",
 	"version": "1.0.0",
-	"description": "A website where you can get more than 30,000 worksheets and password_reset_confirmes for your child",
+	"description": "A website where you can get more than 30,000 worksheets and password_reset_completees for your child",
 	"main": "index.js",
 	"scripts": {
-		"watch:sass": "node-sass static/sass/password_reset_confirm.scss static/css/password_reset_confirm.css -w",
-		"compile:sass": "node-sass static/sass/password_reset_confirm.scss static/css/password_reset_confirm.css",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/password_reset_confirm.css -o  static/css/password_reset_confirm.css ",
-		"compress:css": "node-sass static/css/password_reset_confirm.css static/css/password_reset_confirm.css --output-style compressed",
+		"watch:sass": "node-sass static/sass/password_reset_complete.scss static/css/password_reset_complete.css -w",
+		"compile:sass": "node-sass static/sass/password_reset_complete.scss static/css/password_reset_complete.css",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/password_reset_complete.css -o  static/css/password_reset_complete.css ",
+		"compress:css": "node-sass static/css/password_reset_complete.css static/css/password_reset_complete.css --output-style compressed",
 		"build:css": "npm-run-all compile:sass  prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",
