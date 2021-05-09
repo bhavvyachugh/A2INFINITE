@@ -1,0 +1,68 @@
+.bodyHeight {
+	height: 100vh !important;
+
+	@media screen and (min-width: 1229px) {
+		height: auto !important;
+	}
+}
+
+.containerHeight {
+	height: 100vh !important;
+	position: relative;
+}
+
+.footerHeight {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+// class view container
+.classSectionHeight {
+	margin-top: 8rem !important;
+}
+
+// Subject view container
+.subjectSectionHeight {
+	@media screen and (max-height: 1024px) {
+		height: 64rem;
+	}
+}
+
+.subjectContainerHeight:not(:last-child) {
+	@media screen and (max-height: 823px) {
+		margin-bottom: 12rem;
+	}
+
+	@media screen and (max-height: 812px) {
+		margin-bottom: 3rem;
+	}
+
+	@media screen and (max-height: 736px) {
+		margin-bottom: 5rem;
+	}
+}
+
+.subjectContainerHeight:last-child {
+	@media screen and (max-height: 731px) {
+		margin-bottom: 9rem;
+	}
+	@media screen and (max-height: 720px) {
+		margin-bottom: 5rem;
+	}
+}
+
+// Topic view container
+.topicListItemsHeight:not(:last-child) {
+	@media screen and (max-height: 823px) {
+		margin-bottom: 5rem !important;
+	}
+
+	@media screen and (max-height: 731px) {
+		margin-bottom: 4rem !important;
+	}
+
+	@media screen and (max-height: 640px) {
+		margin-bottom: 3rem !important;
+	}
+}

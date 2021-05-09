@@ -39,17 +39,23 @@
 			<ul class="setting-dropdown">
 				{% if user.is_authenticated %}
 				<li class="setting-dropdown__item">
-					<a href="/logout" class="btn-secondary">Logout &rarr;</a>
+					<a href="/logout" class="btn-secondary setting-dropdown__btn"
+						>Logout &rarr;</a
+					>
 				</li>
 
 				{% else %}
 				<li class="setting-dropdown__item">
-					<a href="/login" class="btn-secondary u-margin-bottom-medium"
+					<a
+						href="/login"
+						class="btn-secondary setting-dropdown__btn u-margin-bottom-medium"
 						>Login &rarr;</a
 					>
 				</li>
 				<li class="setting-dropdown__item">
-					<a href="/signup" class="btn-secondary">Sign-up</a>
+					<a href="/signup" class="btn-secondary setting-dropdown__btn"
+						>Sign-up</a
+					>
 				</li>
 				{% endif %}
 			</ul>

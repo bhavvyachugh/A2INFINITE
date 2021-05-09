@@ -13,16 +13,12 @@
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 		
 		<!-- ----------------------------- javascript ------------------------------ -->
-		{% if user.is_authenticated %}
-		<script type="text/javascript" src="/static/js/logout.js" defer></script>
-		{% else %}
-		<script
-			type="text/javascript"
-			src="/static/js/sign_in_sign_up.js"
-			defer
-		></script>
-		{% endif %}
+		<!-- loader  -->
 		<script src="/static/js/loader.js" defer></script>
+
+		<!-- height corrector -->
+		<script src="/static/js/heightCorrecter.js" defer></script>
+
 	</head>
 
 	<body class="body">
@@ -65,7 +61,7 @@
 						{% if topic_subscribed %} {% for topic in data %}
 						<li class="topicList__items">
 							<h3 class="topicList__items-heading">{{topic.TopicName}}</h3>
-							<h5>You are Subscribed to this Topic</h5>
+							<!-- <h5>You are Subscribed to this Topic</h5> -->
 							<ol class="subtopicList">
 								{% for subtopic in topic.topic.all %}
 								<li class="subtopicList-item">
@@ -74,31 +70,31 @@
 										href="/images?name={{subtopic.subtopicTitle}}&subtopic={{subtopic.id}}"
 										>{{subtopic.subtopicTitle}}</a
 									>
-									<h5>You are Subscribed to this Sub Topic</h5>
+									<!-- <h5>You are Subscribed to this Sub Topic</h5> -->
 								</li>
 								{% endfor %}
 							</ol>
 						</li>
-						{% endfor %} {% else %} {% for topic in data %} 
-                  {% if	topic.freeForAll %}
+						{% endfor %} {% else %} {% for topic in data %}
+						<!-- {% if	topic.freeForAll %} -->
 						<li class="topicList__items">
 							<h3 class="topicList__items-heading">{{topic.TopicName}}</h3>
-							<h5>
+							<!-- <h5>
 								Not subscribed to this Topic<br />Showing only Free Content
-							</h5>
+							</h5> -->
 							<ol class="subtopicList">
-								{% for subtopic in topic.topic.all %} 
-                        {% if subtopic.freeForAll %}
+								{% for subtopic in topic.topic.all %}
+								<!-- {% if subtopic.freeForAll %} -->
 								<li class="subtopicList-item">
 									<a
 										class="subtopicList-item__link"
 										href="/images?name={{subtopic.subtopicTitle}}&subtopic={{subtopic.id}}"
 										>{{subtopic.subtopicTitle}}</a
 									>
-									<h6>
+									<!-- <h6>
 										Not subscribed to this Subtopic<br />Showing only Free
 										Content
-									</h6>
+									</h6> -->
 								</li>
 								{% else %}
 								<li class="subtopicList-item">
@@ -107,10 +103,10 @@
 										href="/images?name={{subtopic.subtopicTitle}}&subtopic={{subtopic.id}}"
 										>{{subtopic.subtopicTitle}}</a
 									>
-									<h6>
+									<!-- <h6>
 										Not subscribed to this SubTopic<br />Content only for
 										Subscrided
-									</h6>
+									</h6> -->
 								</li>
 								{% endif %} {% endfor %}
 							</ol>
@@ -118,9 +114,9 @@
 						{% else %}
 						<li class="topicList__items">
 							<h3 class="topicList__items-heading">{{topic.TopicName}}</h3>
-							<h5>
+							<!-- <h5>
 								Not subscribed to this Topic<br />Content only for Subscrided
-							</h5>
+							</h5> -->
 						</li>
 						{% endif %} {% endfor %} {% endif %}
 					</ul>

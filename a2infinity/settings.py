@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'livereload',
 ]
 
 SITE_ID = 1
@@ -89,6 +90,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'a2infinity.urls'
@@ -140,7 +142,7 @@ except:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres_bhavya', # should also match MYSQL_DATABASE in dockercompose
+        'NAME': 'postgres_bhav', # should also match MYSQL_DATABASE in dockercompose
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': HOST_PG,   # Or an IP Address that your DB is hosted on

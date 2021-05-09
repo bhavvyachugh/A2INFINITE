@@ -14,10 +14,12 @@
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
 		<!-- ----------------------------- javascript ------------------------------ -->
-		
 
 		<!-- loader -->
 		<script src="/static/js/loader.js" defer></script>
+
+		<!-- height corrector -->
+		<script src="/static/js/heightCorrecter.js" defer></script>
 	</head>
 	<body class="body">
 		<div class="container">
@@ -65,27 +67,16 @@
 								{{class.SubjectName}}
 							</h3>
 						</div>
-						{% if not sub_subscribed %} 
-							{% if not class.freeForAll %}
-								<h5>
-									Not subscribed to this Subject<br />Content only for Subscrided
-								</h5>
-							{% else %}
-								<h5>
-									Not subscribed to this Subject<br />Showing only Free Content
-								</h5>
-							{% endif %}
-						{% else %}
-							<h3>You are Subscribed to this Subject</h3>
-						{% endif %}
 						<div class="subject-container__para-link">
 							<p class="subject-container__para">
-								{{class.remark|slice:":1000"}}
+								Choose the subject of your convince and get read to explore the
+								world of infinite worksheets
 							</p>
 							<a
 								href="/topic?name={{class.SubjectTitle|slice:':30'}}&subject={{class.id}}"
-								class="btn-secondary"
-								>Next &rarr;</a
+								class="btn-secondary subject-container__link"
+							>
+								Next &rarr;</a
 							>
 						</div>
 					</div>

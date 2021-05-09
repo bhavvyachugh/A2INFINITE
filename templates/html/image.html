@@ -60,7 +60,7 @@
                 <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>{{class_name}}</a></li>
                 <li class="breadcrumb-item"><a href={% url 'TopicView' %}?subject={{subjectId}}>{{subject_name}}</a></li>
                 <li class="breadcrumb-item"><a href={% url 'images' %}?subtopic={{subtopicId}}>{{subtopic_name}}</a></li>
-                <li class="breadcrumb-item">Sheet: {{explain_name}}</li>
+                <li class="breadcrumb-item">{{explain_name}}</li>
             </ul>
             {% if user.is_authenticated %}
             <div class="schoolName-container">
