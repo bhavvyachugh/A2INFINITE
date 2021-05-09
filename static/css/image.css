@@ -131,9 +131,9 @@
     transform: rotate(-35deg);
     font-size: 2.5rem; }
     .img-container__watermark--1 {
-      left: 8rem; }
+      left: 20rem; }
     .img-container__watermark--2 {
-      right: 8rem; }
+      right: 20rem; }
 
 .btn-container {
   display: flex;
