@@ -4,8 +4,7 @@
         "pk": 1,
         "fields": {
             "className": "name for Pre Nursery",
-            "classTitle": "title for Pre Nursery",
-            "freeForAll": true
+            "classTitle": "title for Pre Nursery"
         }
     },
     {
@@ -14,8 +13,7 @@
         "fields": {
             "className": 1,
             "SubjectName": "English",
-            "SubjectTitle": "title for English",
-            "freeForAll": true
+            "SubjectTitle": "title for English"
         }
     },
     {
@@ -24,8 +22,7 @@
         "fields": {
             "Subject": 1,
             "TopicName": "Alphabet ",
-            "topicTitle": "title for Alphabet ",
-            "freeForAll": true
+            "topicTitle": "title for Alphabet "
         }
     },
     {
@@ -34,8 +31,7 @@
         "fields": {
             "topic": 1,
             "SubTopicName": "ALPHABET IDENTIFICATION FOR TODDLERS",
-            "subtopicTitle": "title for ALPHABET IDENTIFICATION FOR TODDLERS",
-            "freeForAll": true
+            "subtopicTitle": "title for ALPHABET IDENTIFICATION FOR TODDLERS"
         }
     },
     {
@@ -46,8 +42,7 @@
             "explaintitle": "ALPHABET IDENTIFICATION FOR TODDLERS - 1",
             "imgBlack": "uploads/gallery/Black/ALPHABET IDENTIFICATION FOR TODDLERS - B-1.jpg",
             "imgColor": "uploads/gallery/Color/ALPHABET IDENTIFICATION FOR TODDLERS-1.jpg",
-            "body": " ALPHABET IDENTIFICATION FOR TODDLERS - 1",
-            "freeForAll": true
+            "body": " ALPHABET IDENTIFICATION FOR TODDLERS - 1"
         }
     },
     {
@@ -58,8 +53,7 @@
             "explaintitle": "ALPHABET IDENTIFICATION FOR TODDLERS - 2",
             "imgBlack": "uploads/gallery/Black/ALPHABET IDENTIFICATION FOR TODDLERS - B-2.jpg",
             "imgColor": "uploads/gallery/Color/ALPHABET IDENTIFICATION FOR TODDLERS-2.jpg",
-            "body": " ALPHABET IDENTIFICATION FOR TODDLERS - 2",
-            "freeForAll": true
+            "body": " ALPHABET IDENTIFICATION FOR TODDLERS - 2"
         }
     },
     {
@@ -70,8 +64,7 @@
             "explaintitle": "ALPHABET IDENTIFICATION FOR TODDLERS - 3",
             "imgBlack": "uploads/gallery/Black/ALPHABET IDENTIFICATION FOR TODDLERS - B-3.jpg",
             "imgColor": "uploads/gallery/Color/ALPHABET IDENTIFICATION FOR TODDLERS-3.jpg",
-            "body": " ALPHABET IDENTIFICATION FOR TODDLERS - 3",
-            "freeForAll": true
+            "body": " ALPHABET IDENTIFICATION FOR TODDLERS - 3"
         }
     },
     {
@@ -80,8 +73,7 @@
         "fields": {
             "Subject": 1,
             "TopicName": "Tracing ",
-            "topicTitle": "title for Tracing ",
-            "freeForAll": true
+            "topicTitle": "title for Tracing "
         }
     },
     {
@@ -90,8 +82,7 @@
         "fields": {
             "topic": 2,
             "SubTopicName": "Tracing circle",
-            "subtopicTitle": "title for Tracing circle",
-            "freeForAll": true
+            "subtopicTitle": "title for Tracing circle"
         }
     },
     {
@@ -102,8 +93,7 @@
             "explaintitle": "Tracing circle -1",
             "imgBlack": "uploads/gallery/Black/TRACING CIRCLE - B-1.jpg",
             "imgColor": "uploads/gallery/Color/TRACING CIRCLE-1.jpg",
-            "body": " Tracing circle -1",
-            "freeForAll": true
+            "body": " Tracing circle -1"
         }
     },
     {
@@ -114,8 +104,7 @@
             "explaintitle": "Tracing circle -2",
             "imgBlack": "uploads/gallery/Black/TRACING CIRCLE - B-2.jpg",
             "imgColor": "uploads/gallery/Color/TRACING CIRCLE-2.jpg",
-            "body": " Tracing circle -2",
-            "freeForAll": true
+            "body": " Tracing circle -2"
         }
     },
     {
@@ -126,8 +115,7 @@
             "explaintitle": "Tracing circle -3",
             "imgBlack": "uploads/gallery/Black/TRACING CIRCLE - B-3.jpg",
             "imgColor": "uploads/gallery/Color/TRACING CIRCLE-3.jpg",
-            "body": " Tracing circle -3",
-            "freeForAll": true
+            "body": " Tracing circle -3"
         }
     },
     {
@@ -136,8 +124,7 @@
         "fields": {
             "className": 1,
             "SubjectName": "Maths",
-            "SubjectTitle": "title for Maths",
-            "freeForAll": true
+            "SubjectTitle": "title for Maths"
         }
     },
     {
@@ -146,8 +133,7 @@
         "fields": {
             "Subject": 2,
             "TopicName": "NUMBER IDENTIFICATION FOR TODDLERS ",
-            "topicTitle": "title for NUMBER IDENTIFICATION FOR TODDLERS ",
-            "freeForAll": true
+            "topicTitle": "title for NUMBER IDENTIFICATION FOR TODDLERS "
         }
     },
     {
@@ -156,8 +142,7 @@
         "fields": {
             "topic": 3,
             "SubTopicName": "NUMBER IDENTIFICATION FOR TODDLERS",
-            "subtopicTitle": "title for NUMBER IDENTIFICATION FOR TODDLERS",
-            "freeForAll": true
+            "subtopicTitle": "title for NUMBER IDENTIFICATION FOR TODDLERS"
         }
     },
     {
@@ -168,8 +153,7 @@
             "explaintitle": "NUMBER IDENTIFICATION FOR TODDLERS - 1",
             "imgBlack": "uploads/gallery/Black/NUMBER IDENTIFICATION FOR TODDLERS - B-1.jpg",
             "imgColor": "uploads/gallery/Color/NUMBER IDENTIFICATION FOR TODDLERS-1.jpg",
-            "body": " NUMBER IDENTIFICATION FOR TODDLERS - 1",
-            "freeForAll": true
+            "body": " NUMBER IDENTIFICATION FOR TODDLERS - 1"
         }
     },
     {
@@ -180,8 +164,7 @@
             "explaintitle": "NUMBER IDENTIFICATION FOR TODDLERS - 2",
             "imgBlack": "uploads/gallery/Black/NUMBER IDENTIFICATION FOR TODDLERS - B-2.jpg",
             "imgColor": "uploads/gallery/Color/NUMBER IDENTIFICATION FOR TODDLERS-2.jpg",
-            "body": " NUMBER IDENTIFICATION FOR TODDLERS - 2",
-            "freeForAll": true
+            "body": " NUMBER IDENTIFICATION FOR TODDLERS - 2"
         }
     },
     {
@@ -192,8 +175,7 @@
             "explaintitle": "NUMBER IDENTIFICATION FOR TODDLERS - 3",
             "imgBlack": "uploads/gallery/Black/NUMBER IDENTIFICATION FOR TODDLERS - B-3.jpg",
             "imgColor": "uploads/gallery/Color/NUMBER IDENTIFICATION FOR TODDLERS-3.jpg",
-            "body": " NUMBER IDENTIFICATION FOR TODDLERS - 3",
-            "freeForAll": true
+            "body": " NUMBER IDENTIFICATION FOR TODDLERS - 3"
         }
     },
     {
@@ -201,8 +183,7 @@
         "pk": 2,
         "fields": {
             "className": "name for  Nursery",
-            "classTitle": "title for  Nursery",
-            "freeForAll": true
+            "classTitle": "title for  Nursery"
         }
     },
     {
@@ -211,8 +192,7 @@
         "fields": {
             "className": 2,
             "SubjectName": "English",
-            "SubjectTitle": "title for English",
-            "freeForAll": true
+            "SubjectTitle": "title for English"
         }
     },
     {
@@ -221,8 +201,7 @@
         "fields": {
             "Subject": 3,
             "TopicName": "Alphabet",
-            "topicTitle": "title for Alphabet",
-            "freeForAll": true
+            "topicTitle": "title for Alphabet"
         }
     },
     {
@@ -231,8 +210,7 @@
         "fields": {
             "topic": 4,
             "SubTopicName": "A TO Z ACTIVITY",
-            "subtopicTitle": "title for A TO Z ACTIVITY",
-            "freeForAll": true
+            "subtopicTitle": "title for A TO Z ACTIVITY"
         }
     },
     {
@@ -243,8 +221,7 @@
             "explaintitle": "A TO Z ACTIVITY - 1",
             "imgBlack": "uploads/gallery/Black/A TO Z ACTIVITY - B - 2.jpg",
             "imgColor": "uploads/gallery/Color/A TO Z ACTIVITY - 1.jpg",
-            "body": " A TO Z ACTIVITY - 1",
-            "freeForAll": true
+            "body": " A TO Z ACTIVITY - 1"
         }
     },
     {
@@ -255,8 +232,7 @@
             "explaintitle": "A TO Z ACTIVITY - 2",
             "imgBlack": "uploads/gallery/Black/A TO Z ACTIVITY - B - 3.jpg",
             "imgColor": "uploads/gallery/Color/A TO Z ACTIVITY - 2.jpg",
-            "body": " A TO Z ACTIVITY - 2",
-            "freeForAll": true
+            "body": " A TO Z ACTIVITY - 2"
         }
     },
     {
@@ -267,8 +243,7 @@
             "explaintitle": "A TO Z ACTIVITY - 3",
             "imgBlack": "uploads/gallery/Black/A TO Z ACTIVITY - B - 4.jpg",
             "imgColor": "uploads/gallery/Color/A TO Z ACTIVITY - 3.jpg",
-            "body": " A TO Z ACTIVITY - 3",
-            "freeForAll": true
+            "body": " A TO Z ACTIVITY - 3"
         }
     },
     {
@@ -277,8 +252,7 @@
         "fields": {
             "className": 2,
             "SubjectName": "MATHS",
-            "SubjectTitle": "title for MATHS",
-            "freeForAll": true
+            "SubjectTitle": "title for MATHS"
         }
     },
     {
@@ -287,8 +261,7 @@
         "fields": {
             "Subject": 4,
             "TopicName": "Count and match",
-            "topicTitle": "title for Count and match",
-            "freeForAll": true
+            "topicTitle": "title for Count and match"
         }
     },
     {
@@ -297,8 +270,7 @@
         "fields": {
             "topic": 5,
             "SubTopicName": "COUNT AND MATCH UP TO 10",
-            "subtopicTitle": "title for COUNT AND MATCH UP TO 10",
-            "freeForAll": true
+            "subtopicTitle": "title for COUNT AND MATCH UP TO 10"
         }
     },
     {
@@ -309,8 +281,7 @@
             "explaintitle": "COUNT AND MATCH UP TO 10 - 1",
             "imgBlack": "uploads/gallery/Black/COUNT AND MATCH UP TO 10 - B-1.jpg",
             "imgColor": "uploads/gallery/Color/COUNT AND MATCH UP TO 10-1.jpg",
-            "body": " COUNT AND MATCH UP TO 10 - 1",
-            "freeForAll": true
+            "body": " COUNT AND MATCH UP TO 10 - 1"
         }
     },
     {
@@ -321,8 +292,7 @@
             "explaintitle": "COUNT AND MATCH UP TO 10 - 2",
             "imgBlack": "uploads/gallery/Black/COUNT AND MATCH UP TO 10 - B-2.jpg",
             "imgColor": "uploads/gallery/Color/COUNT AND MATCH UP TO 10-2.jpg",
-            "body": " COUNT AND MATCH UP TO 10 - 2",
-            "freeForAll": true
+            "body": " COUNT AND MATCH UP TO 10 - 2"
         }
     },
     {
@@ -333,8 +303,7 @@
             "explaintitle": "COUNT AND MATCH UP TO 10 - 3",
             "imgBlack": "uploads/gallery/Black/COUNT AND MATCH UP TO 10 - B-3.jpg",
             "imgColor": "uploads/gallery/Color/COUNT AND MATCH UP TO 10-3.jpg",
-            "body": " COUNT AND MATCH UP TO 10 - 3",
-            "freeForAll": true
+            "body": " COUNT AND MATCH UP TO 10 - 3"
         }
     },
     {
@@ -343,8 +312,7 @@
         "fields": {
             "Subject": 4,
             "TopicName": "Count and write",
-            "topicTitle": "title for Count and write",
-            "freeForAll": true
+            "topicTitle": "title for Count and write"
         }
     },
     {
@@ -353,8 +321,7 @@
         "fields": {
             "topic": 6,
             "SubTopicName": "COUNT AND WRITE UP TO 10",
-            "subtopicTitle": "title for COUNT AND WRITE UP TO 10",
-            "freeForAll": true
+            "subtopicTitle": "title for COUNT AND WRITE UP TO 10"
         }
     },
     {
@@ -365,8 +332,7 @@
             "explaintitle": "COUNT AND WRITE UP TO 10 - 1",
             "imgBlack": "uploads/gallery/Black/COUNT AND WRITE UP TO 10 - B-1.jpg",
             "imgColor": "uploads/gallery/Color/COUNT AND WRITE UP TO 10-1.jpg",
-            "body": " COUNT AND WRITE UP TO 10 - 1",
-            "freeForAll": true
+            "body": " COUNT AND WRITE UP TO 10 - 1"
         }
     },
     {
@@ -377,8 +343,7 @@
             "explaintitle": "COUNT AND WRITE UP TO 10 - 2",
             "imgBlack": "uploads/gallery/Black/COUNT AND WRITE UP TO 10 - B-2.jpg",
             "imgColor": "uploads/gallery/Color/COUNT AND WRITE UP TO 10-2.jpg",
-            "body": " COUNT AND WRITE UP TO 10 - 2",
-            "freeForAll": true
+            "body": " COUNT AND WRITE UP TO 10 - 2"
         }
     },
     {
@@ -389,8 +354,7 @@
             "explaintitle": "COUNT AND WRITE UP TO 10 - 3",
             "imgBlack": "uploads/gallery/Black/COUNT AND WRITE UP TO 10 - B-3.jpg",
             "imgColor": "uploads/gallery/Color/COUNT AND WRITE UP TO 10-3.jpg",
-            "body": " COUNT AND WRITE UP TO 10 - 3",
-            "freeForAll": true
+            "body": " COUNT AND WRITE UP TO 10 - 3"
         }
     },
     {
@@ -398,8 +362,7 @@
         "pk": 3,
         "fields": {
             "className": "name for LKG",
-            "classTitle": "title for LKG",
-            "freeForAll": true
+            "classTitle": "title for LKG"
         }
     },
     {
@@ -408,8 +371,7 @@
         "fields": {
             "className": 3,
             "SubjectName": "English",
-            "SubjectTitle": "title for English",
-            "freeForAll": true
+            "SubjectTitle": "title for English"
         }
     },
     {
@@ -418,8 +380,7 @@
         "fields": {
             "Subject": 5,
             "TopicName": "CURSIVE LOWERCASE PRACTIVE",
-            "topicTitle": "title for CURSIVE LOWERCASE PRACTIVE",
-            "freeForAll": true
+            "topicTitle": "title for CURSIVE LOWERCASE PRACTIVE"
         }
     },
     {
@@ -428,8 +389,7 @@
         "fields": {
             "topic": 7,
             "SubTopicName": "CURSIVE LOWERCASE PRACTIVE (A TO F)",
-            "subtopicTitle": "title for CURSIVE LOWERCASE PRACTIVE (A TO F)",
-            "freeForAll": true
+            "subtopicTitle": "title for CURSIVE LOWERCASE PRACTIVE (A TO F)"
         }
     },
     {
@@ -440,8 +400,7 @@
             "explaintitle": "CURSIVE LOWERCASE PRACTIVE (A TO F) - 1",
             "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE PRACTIVE (A TO F) - B-1.jpg",
             "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE PRACTIVE (A TO F)-1.jpg",
-            "body": " CURSIVE LOWERCASE PRACTIVE (A TO F) - 1",
-            "freeForAll": true
+            "body": " CURSIVE LOWERCASE PRACTIVE (A TO F) - 1"
         }
     },
     {
@@ -452,8 +411,7 @@
             "explaintitle": "CURSIVE LOWERCASE PRACTIVE (A TO F) - 2",
             "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE PRACTIVE (A TO F) - B-2.jpg",
             "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE PRACTIVE (A TO F)-2.jpg",
-            "body": " CURSIVE LOWERCASE PRACTIVE (A TO F) - 2",
-            "freeForAll": true
+            "body": " CURSIVE LOWERCASE PRACTIVE (A TO F) - 2"
         }
     },
     {
@@ -464,8 +422,7 @@
             "explaintitle": "CURSIVE LOWERCASE PRACTIVE (A TO F) - 3",
             "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE PRACTIVE (A TO F) - B-3.jpg",
             "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE PRACTIVE (A TO F)-3.jpg",
-            "body": " CURSIVE LOWERCASE PRACTIVE (A TO F) - 3",
-            "freeForAll": true
+            "body": " CURSIVE LOWERCASE PRACTIVE (A TO F) - 3"
         }
     },
     {
@@ -474,8 +431,7 @@
         "fields": {
             "Subject": 5,
             "TopicName": "CURSIVE LOWERCASE TRACING",
-            "topicTitle": "title for CURSIVE LOWERCASE TRACING",
-            "freeForAll": true
+            "topicTitle": "title for CURSIVE LOWERCASE TRACING"
         }
     },
     {
@@ -484,8 +440,7 @@
         "fields": {
             "topic": 8,
             "SubTopicName": "CURSIVE LOWERCASE TRACING",
-            "subtopicTitle": "title for CURSIVE LOWERCASE TRACING",
-            "freeForAll": true
+            "subtopicTitle": "title for CURSIVE LOWERCASE TRACING"
         }
     },
     {
@@ -496,8 +451,7 @@
             "explaintitle": "CURSIVE LOWERCASE TRACING - 1",
             "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE TRACING - B-1.jpg",
             "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE TRACING-1.jpg",
-            "body": " CURSIVE LOWERCASE TRACING - 1",
-            "freeForAll": true
+            "body": " CURSIVE LOWERCASE TRACING - 1"
         }
     },
     {
@@ -508,8 +462,7 @@
             "explaintitle": "CURSIVE LOWERCASE TRACING - 2",
             "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE TRACING - B-2.jpg",
             "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE TRACING-2.jpg",
-            "body": " CURSIVE LOWERCASE TRACING - 2",
-            "freeForAll": true
+            "body": " CURSIVE LOWERCASE TRACING - 2"
         }
     },
     {
@@ -520,8 +473,7 @@
             "explaintitle": "CURSIVE LOWERCASE TRACING - 3",
             "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE TRACING - B-3.jpg",
             "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE TRACING-3.jpg",
-            "body": " CURSIVE LOWERCASE TRACING - 3",
-            "freeForAll": true
+            "body": " CURSIVE LOWERCASE TRACING - 3"
         }
     },
     {
@@ -530,8 +482,7 @@
         "fields": {
             "Subject": 5,
             "TopicName": "SOUND",
-            "topicTitle": "title for SOUND",
-            "freeForAll": true
+            "topicTitle": "title for SOUND"
         }
     },
     {
@@ -540,8 +491,7 @@
         "fields": {
             "topic": 9,
             "SubTopicName": "A SOUND CURSIVE",
-            "subtopicTitle": "title for A SOUND CURSIVE",
-            "freeForAll": true
+            "subtopicTitle": "title for A SOUND CURSIVE"
         }
     },
     {
@@ -551,9 +501,8 @@
             "SubTopic": 9,
             "explaintitle": "A SOUND CURSIVE - 1",
             "imgBlack": "uploads/gallery/Black/A SOUND - B-1.jpg",
-            "imgColor": "uploads/gallery/Color/A SOUND CURSIVE-1.jpg",
-            "body": " A SOUND CURSIVE - 1",
-            "freeForAll": true
+            "imgColor": "uploads/gallery/Color/A SOUND CURSIVE-1.png",
+            "body": " A SOUND CURSIVE - 1"
         }
     },
     {
@@ -563,9 +512,8 @@
             "SubTopic": 9,
             "explaintitle": "A SOUND CURSIVE - 2",
             "imgBlack": "uploads/gallery/Black/A SOUND - B-2.jpg",
-            "imgColor": "uploads/gallery/Color/A SOUND CURSIVE-2.jpg",
-            "body": " A SOUND CURSIVE - 2",
-            "freeForAll": true
+            "imgColor": "uploads/gallery/Color/A SOUND CURSIVE-2.png",
+            "body": " A SOUND CURSIVE - 2"
         }
     },
     {
@@ -575,9 +523,8 @@
             "SubTopic": 9,
             "explaintitle": "A SOUND CURSIVE - 3",
             "imgBlack": "uploads/gallery/Black/A SOUND - B-3.jpg",
-            "imgColor": "uploads/gallery/Color/A SOUND CURSIVE-3.jpg",
-            "body": " A SOUND CURSIVE - 3",
-            "freeForAll": true
+            "imgColor": "uploads/gallery/Color/A SOUND CURSIVE-3.png",
+            "body": " A SOUND CURSIVE - 3"
         }
     },
     {
@@ -585,8 +532,7 @@
         "pk": 4,
         "fields": {
             "className": "name for UKG",
-            "classTitle": "title for UKG",
-            "freeForAll": true
+            "classTitle": "title for UKG"
         }
     },
     {
@@ -595,8 +541,7 @@
         "fields": {
             "className": 4,
             "SubjectName": "English",
-            "SubjectTitle": "title for English",
-            "freeForAll": true
+            "SubjectTitle": "title for English"
         }
     },
     {
@@ -605,8 +550,7 @@
         "fields": {
             "Subject": 6,
             "TopicName": "ACTION WORDS",
-            "topicTitle": "title for ACTION WORDS",
-            "freeForAll": true
+            "topicTitle": "title for ACTION WORDS"
         }
     },
     {
@@ -615,8 +559,7 @@
         "fields": {
             "topic": 10,
             "SubTopicName": "ACTION WORDS",
-            "subtopicTitle": "title for ACTION WORDS",
-            "freeForAll": true
+            "subtopicTitle": "title for ACTION WORDS"
         }
     },
     {
@@ -627,8 +570,7 @@
             "explaintitle": "ACTION WORDS - 1",
             "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-1.jpg",
             "imgColor": "uploads/gallery/Color/ACTION WORDS-1.jpg",
-            "body": " ACTION WORDS - 1",
-            "freeForAll": true
+            "body": " ACTION WORDS - 1"
         }
     },
     {
@@ -639,8 +581,7 @@
             "explaintitle": "ACTION WORDS - 2",
             "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-2.jpg",
             "imgColor": "uploads/gallery/Color/ACTION WORDS-2.jpg",
-            "body": " ACTION WORDS - 2",
-            "freeForAll": true
+            "body": " ACTION WORDS - 2"
         }
     },
     {
@@ -651,8 +592,7 @@
             "explaintitle": "ACTION WORDS - 3",
             "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-3.jpg",
             "imgColor": "uploads/gallery/Color/ACTION WORDS-3.jpg",
-            "body": " ACTION WORDS - 3",
-            "freeForAll": true
+            "body": " ACTION WORDS - 3"
         }
     },
     {
@@ -661,8 +601,7 @@
         "fields": {
             "Subject": 6,
             "TopicName": "ANIMALS  NAME",
-            "topicTitle": "title for ANIMALS  NAME",
-            "freeForAll": true
+            "topicTitle": "title for ANIMALS  NAME"
         }
     },
     {
@@ -671,8 +610,7 @@
         "fields": {
             "topic": 11,
             "SubTopicName": "ANIMALS  NAME",
-            "subtopicTitle": "title for ANIMALS  NAME",
-            "freeForAll": true
+            "subtopicTitle": "title for ANIMALS  NAME"
         }
     },
     {
@@ -683,8 +621,7 @@
             "explaintitle": "ANIMALS  NAME - 1",
             "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-1.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS  NAME-1.jpg",
-            "body": " ANIMALS  NAME - 1",
-            "freeForAll": true
+            "body": " ANIMALS  NAME - 1"
         }
     },
     {
@@ -695,8 +632,7 @@
             "explaintitle": "ANIMALS  NAME - 2",
             "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-2.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS  NAME-2.jpg",
-            "body": " ANIMALS  NAME - 2",
-            "freeForAll": true
+            "body": " ANIMALS  NAME - 2"
         }
     },
     {
@@ -707,8 +643,7 @@
             "explaintitle": "ANIMALS  NAME - 3",
             "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-3.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS  NAME-3.jpg",
-            "body": " ANIMALS  NAME - 3",
-            "freeForAll": true
+            "body": " ANIMALS  NAME - 3"
         }
     },
     {
@@ -717,8 +652,7 @@
         "fields": {
             "Subject": 6,
             "TopicName": "ANIMALS BABY",
-            "topicTitle": "title for ANIMALS BABY",
-            "freeForAll": true
+            "topicTitle": "title for ANIMALS BABY"
         }
     },
     {
@@ -727,8 +661,7 @@
         "fields": {
             "topic": 12,
             "SubTopicName": "ANIMALS BABY",
-            "subtopicTitle": "title for ANIMALS BABY",
-            "freeForAll": true
+            "subtopicTitle": "title for ANIMALS BABY"
         }
     },
     {
@@ -739,8 +672,7 @@
             "explaintitle": "ANIMALS BABY - 1",
             "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-1.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS BABY-1.jpg",
-            "body": " ANIMALS BABY - 1",
-            "freeForAll": true
+            "body": " ANIMALS BABY - 1"
         }
     },
     {
@@ -751,8 +683,7 @@
             "explaintitle": "ANIMALS BABY - 2",
             "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-2.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS BABY-2.jpg",
-            "body": " ANIMALS BABY - 2",
-            "freeForAll": true
+            "body": " ANIMALS BABY - 2"
         }
     },
     {
@@ -763,8 +694,177 @@
             "explaintitle": "ANIMALS BABY - 3",
             "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
-            "body": " ANIMALS BABY - 3",
-            "freeForAll": true
+            "body": " ANIMALS BABY - 3"
+        }
+    },
+    {
+        "model": "home.classdetails",
+        "pk": 5,
+        "fields": {
+            "className": "name for 1",
+            "classTitle": "title for 1"
+        }
+    },
+    {
+        "model": "home.subject",
+        "pk": 7,
+        "fields": {
+            "className": 5,
+            "SubjectName": "English",
+            "SubjectTitle": "title for English"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 13,
+        "fields": {
+            "Subject": 7,
+            "TopicName": "ACTION WORDS",
+            "topicTitle": "title for ACTION WORDS"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 13,
+        "fields": {
+            "topic": 13,
+            "SubTopicName": "ACTION WORDS",
+            "subtopicTitle": "title for ACTION WORDS"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 37,
+        "fields": {
+            "SubTopic": 13,
+            "explaintitle": "ACTION WORDS - 10",
+            "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-1.jpg",
+            "imgColor": "uploads/gallery/Color/ACTION WORDS-1.jpg",
+            "body": " ACTION WORDS - 10"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 38,
+        "fields": {
+            "SubTopic": 13,
+            "explaintitle": "ACTION WORDS - 11",
+            "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-2.jpg",
+            "imgColor": "uploads/gallery/Color/ACTION WORDS-2.jpg",
+            "body": " ACTION WORDS - 11"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 39,
+        "fields": {
+            "SubTopic": 13,
+            "explaintitle": "ACTION WORDS - 13",
+            "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ACTION WORDS-3.jpg",
+            "body": " ACTION WORDS - 13"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 14,
+        "fields": {
+            "Subject": 7,
+            "TopicName": "ANIMALS  NAME",
+            "topicTitle": "title for ANIMALS  NAME"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 14,
+        "fields": {
+            "topic": 14,
+            "SubTopicName": "ANIMALS  NAME",
+            "subtopicTitle": "title for ANIMALS  NAME"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 40,
+        "fields": {
+            "SubTopic": 14,
+            "explaintitle": "ANIMALS  NAME - 14",
+            "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-1.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS  NAME-1.jpg",
+            "body": " ANIMALS  NAME - 14"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 41,
+        "fields": {
+            "SubTopic": 14,
+            "explaintitle": "ANIMALS  NAME - 15",
+            "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-2.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS  NAME-2.jpg",
+            "body": " ANIMALS  NAME - 15"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 42,
+        "fields": {
+            "SubTopic": 14,
+            "explaintitle": "ANIMALS  NAME - 16",
+            "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS  NAME-3.jpg",
+            "body": " ANIMALS  NAME - 16"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 15,
+        "fields": {
+            "Subject": 7,
+            "TopicName": "ANIMALS BABY",
+            "topicTitle": "title for ANIMALS BABY"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 15,
+        "fields": {
+            "topic": 15,
+            "SubTopicName": "ANIMALS BABY",
+            "subtopicTitle": "title for ANIMALS BABY"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 43,
+        "fields": {
+            "SubTopic": 15,
+            "explaintitle": "ANIMALS BABY - 17",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-1.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-1.jpg",
+            "body": " ANIMALS BABY - 17"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 44,
+        "fields": {
+            "SubTopic": 15,
+            "explaintitle": "ANIMALS BABY - 18",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-2.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-2.jpg",
+            "body": " ANIMALS BABY - 18"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 45,
+        "fields": {
+            "SubTopic": 15,
+            "explaintitle": "ANIMALS BABY - 19",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 19"
         }
     }
 ]
