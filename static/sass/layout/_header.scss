@@ -32,6 +32,10 @@
 		transition: all 0.1s;
 		font-size: 1.5rem;
 
+		@media screen and (max-width: 500px) {
+			flex: 0 0 80%;
+		}
+
 		&::placeholder {
 			font-family: inherit;
 			color: var(--color-grey-dark-2);
@@ -73,6 +77,10 @@
 	align-items: center;
 	flex-wrap: wrap;
 	margin-right: 5rem;
+
+	@media screen and (max-width: 500px) {
+		flex-wrap: nowrap;
+	}
 
 	&__icon-img {
 		height: 4rem;
