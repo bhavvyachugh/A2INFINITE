@@ -574,28 +574,6 @@
         }
     },
     {
-        "model": "home.explain",
-        "pk": 29,
-        "fields": {
-            "SubTopic": 10,
-            "explaintitle": "ACTION WORDS - 2",
-            "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-2.jpg",
-            "imgColor": "uploads/gallery/Color/ACTION WORDS-2.jpg",
-            "body": " ACTION WORDS - 2"
-        }
-    },
-    {
-        "model": "home.explain",
-        "pk": 30,
-        "fields": {
-            "SubTopic": 10,
-            "explaintitle": "ACTION WORDS - 3",
-            "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-3.jpg",
-            "imgColor": "uploads/gallery/Color/ACTION WORDS-3.jpg",
-            "body": " ACTION WORDS - 3"
-        }
-    },
-    {
         "model": "home.topic",
         "pk": 11,
         "fields": {
@@ -615,18 +593,7 @@
     },
     {
         "model": "home.explain",
-        "pk": 31,
-        "fields": {
-            "SubTopic": 11,
-            "explaintitle": "ANIMALS  NAME - 1",
-            "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-1.jpg",
-            "imgColor": "uploads/gallery/Color/ANIMALS  NAME-1.jpg",
-            "body": " ANIMALS  NAME - 1"
-        }
-    },
-    {
-        "model": "home.explain",
-        "pk": 32,
+        "pk": 29,
         "fields": {
             "SubTopic": 11,
             "explaintitle": "ANIMALS  NAME - 2",
@@ -637,7 +604,7 @@
     },
     {
         "model": "home.explain",
-        "pk": 33,
+        "pk": 30,
         "fields": {
             "SubTopic": 11,
             "explaintitle": "ANIMALS  NAME - 3",
@@ -666,7 +633,7 @@
     },
     {
         "model": "home.explain",
-        "pk": 34,
+        "pk": 31,
         "fields": {
             "SubTopic": 12,
             "explaintitle": "ANIMALS BABY - 1",
@@ -677,7 +644,7 @@
     },
     {
         "model": "home.explain",
-        "pk": 35,
+        "pk": 32,
         "fields": {
             "SubTopic": 12,
             "explaintitle": "ANIMALS BABY - 2",
@@ -688,7 +655,7 @@
     },
     {
         "model": "home.explain",
-        "pk": 36,
+        "pk": 33,
         "fields": {
             "SubTopic": 12,
             "explaintitle": "ANIMALS BABY - 3",
@@ -698,20 +665,12 @@
         }
     },
     {
-        "model": "home.classdetails",
-        "pk": 5,
-        "fields": {
-            "className": "name for 1",
-            "classTitle": "title for 1"
-        }
-    },
-    {
         "model": "home.subject",
         "pk": 7,
         "fields": {
-            "className": 5,
-            "SubjectName": "English",
-            "SubjectTitle": "title for English"
+            "className": 4,
+            "SubjectName": "Maths",
+            "SubjectTitle": "title for Maths"
         }
     },
     {
@@ -734,44 +693,31 @@
     },
     {
         "model": "home.explain",
-        "pk": 37,
+        "pk": 34,
         "fields": {
             "SubTopic": 13,
-            "explaintitle": "ACTION WORDS - 10",
-            "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-1.jpg",
-            "imgColor": "uploads/gallery/Color/ACTION WORDS-1.jpg",
-            "body": " ACTION WORDS - 10"
-        }
-    },
-    {
-        "model": "home.explain",
-        "pk": 38,
-        "fields": {
-            "SubTopic": 13,
-            "explaintitle": "ACTION WORDS - 11",
+            "explaintitle": "ACTION WORDS - 2",
             "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-2.jpg",
             "imgColor": "uploads/gallery/Color/ACTION WORDS-2.jpg",
-            "body": " ACTION WORDS - 11"
+            "body": " ACTION WORDS - 2"
         }
     },
     {
-        "model": "home.explain",
-        "pk": 39,
+        "model": "home.subject",
+        "pk": 8,
         "fields": {
-            "SubTopic": 13,
-            "explaintitle": "ACTION WORDS - 13",
-            "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-3.jpg",
-            "imgColor": "uploads/gallery/Color/ACTION WORDS-3.jpg",
-            "body": " ACTION WORDS - 13"
+            "className": 4,
+            "SubjectName": "Hindi",
+            "SubjectTitle": "title for Hindi"
         }
     },
     {
         "model": "home.topic",
         "pk": 14,
         "fields": {
-            "Subject": 7,
-            "TopicName": "ANIMALS  NAME",
-            "topicTitle": "title for ANIMALS  NAME"
+            "Subject": 8,
+            "TopicName": "ACTION WORDS",
+            "topicTitle": "title for ACTION WORDS"
         }
     },
     {
@@ -779,50 +725,37 @@
         "pk": 14,
         "fields": {
             "topic": 14,
-            "SubTopicName": "ANIMALS  NAME",
-            "subtopicTitle": "title for ANIMALS  NAME"
+            "SubTopicName": "ACTION WORDS",
+            "subtopicTitle": "title for ACTION WORDS"
         }
     },
     {
         "model": "home.explain",
-        "pk": 40,
+        "pk": 35,
         "fields": {
             "SubTopic": 14,
-            "explaintitle": "ANIMALS  NAME - 14",
-            "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-1.jpg",
-            "imgColor": "uploads/gallery/Color/ANIMALS  NAME-1.jpg",
-            "body": " ANIMALS  NAME - 14"
+            "explaintitle": "ACTION WORDS - 3",
+            "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ACTION WORDS-3.jpg",
+            "body": " ACTION WORDS - 3"
         }
     },
     {
-        "model": "home.explain",
-        "pk": 41,
+        "model": "home.subject",
+        "pk": 9,
         "fields": {
-            "SubTopic": 14,
-            "explaintitle": "ANIMALS  NAME - 15",
-            "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-2.jpg",
-            "imgColor": "uploads/gallery/Color/ANIMALS  NAME-2.jpg",
-            "body": " ANIMALS  NAME - 15"
-        }
-    },
-    {
-        "model": "home.explain",
-        "pk": 42,
-        "fields": {
-            "SubTopic": 14,
-            "explaintitle": "ANIMALS  NAME - 16",
-            "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-3.jpg",
-            "imgColor": "uploads/gallery/Color/ANIMALS  NAME-3.jpg",
-            "body": " ANIMALS  NAME - 16"
+            "className": 4,
+            "SubjectName": "EVS",
+            "SubjectTitle": "title for EVS"
         }
     },
     {
         "model": "home.topic",
         "pk": 15,
         "fields": {
-            "Subject": 7,
-            "TopicName": "ANIMALS BABY",
-            "topicTitle": "title for ANIMALS BABY"
+            "Subject": 9,
+            "TopicName": "ANIMALS  NAME",
+            "topicTitle": "title for ANIMALS  NAME"
         }
     },
     {
@@ -830,41 +763,19 @@
         "pk": 15,
         "fields": {
             "topic": 15,
-            "SubTopicName": "ANIMALS BABY",
-            "subtopicTitle": "title for ANIMALS BABY"
+            "SubTopicName": "ANIMALS  NAME",
+            "subtopicTitle": "title for ANIMALS  NAME"
         }
     },
     {
         "model": "home.explain",
-        "pk": 43,
+        "pk": 36,
         "fields": {
             "SubTopic": 15,
-            "explaintitle": "ANIMALS BABY - 17",
-            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-1.jpg",
-            "imgColor": "uploads/gallery/Color/ANIMALS BABY-1.jpg",
-            "body": " ANIMALS BABY - 17"
-        }
-    },
-    {
-        "model": "home.explain",
-        "pk": 44,
-        "fields": {
-            "SubTopic": 15,
-            "explaintitle": "ANIMALS BABY - 18",
-            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-2.jpg",
-            "imgColor": "uploads/gallery/Color/ANIMALS BABY-2.jpg",
-            "body": " ANIMALS BABY - 18"
-        }
-    },
-    {
-        "model": "home.explain",
-        "pk": 45,
-        "fields": {
-            "SubTopic": 15,
-            "explaintitle": "ANIMALS BABY - 19",
-            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
-            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
-            "body": " ANIMALS BABY - 19"
+            "explaintitle": "ANIMALS  NAME - 1",
+            "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-1.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS  NAME-1.jpg",
+            "body": " ANIMALS  NAME - 1"
         }
     }
 ]
