@@ -4,10 +4,10 @@
 	"description": "A website where you can get more than 30,000 worksheets and imagees for your child",
 	"main": "index.js",
 	"scripts": {
-		"watch:sass": "node-sass static/sass/ClassViewContainer.scss static/css/ClassViewContainer.css -w",
-		"compile:sass": "node-sass static/sass/ClassViewContainer.scss static/css/ClassViewContainer.css",
-		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/ClassViewContainer.css -o  static/css/ClassViewContainer.css ",
-		"compress:css": "node-sass static/css/ClassViewContainer.css static/css/ClassViewContainer.css --output-style compressed",
+		"watch:sass": "node-sass static/sass/index.scss static/css/index.css -w",
+		"compile:sass": "node-sass static/sass/index.scss static/css/index.css",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/index.css -o  static/css/index.css ",
+		"compress:css": "node-sass static/css/index.css static/css/index.css --output-style compressed",
 		"build:css": "npm-run-all compile:sass  prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",

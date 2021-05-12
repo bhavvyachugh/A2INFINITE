@@ -36,6 +36,10 @@
 			flex: 0 0 80%;
 		}
 
+		@media screen and (max-width: 325px) {
+			flex: 0 0 70%;
+		}
+
 		&::placeholder {
 			font-family: inherit;
 			color: var(--color-grey-dark-2);
@@ -65,6 +69,10 @@
 .userName {
 	font-size: 2rem;
 	margin-right: 3rem;
+
+	@media screen and (max-width: 325px) {
+		margin-right: 1rem;
+	}
 }
 
 /* ------------------------------- setting list ------------------------------- */
@@ -80,6 +88,10 @@
 
 	@media screen and (max-width: 500px) {
 		flex-wrap: nowrap;
+	}
+
+	@media screen and (max-width: 325px) {
+		margin-right: 3rem;
 	}
 
 	&__icon-img {
