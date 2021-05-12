@@ -132,4 +132,10 @@
 			display: inline-block;
 		}
 	}
+
+	&__btn {
+		@media screen and (max-width: 600px) {
+			font-size: 1.2rem !important;
+		}
+	}
 }
