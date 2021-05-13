@@ -26,6 +26,7 @@ $color-primary-dark: #ba265d;
 html {
 	font-size: 62.5%;
 	box-sizing: border-box; // 1rem = 10px
+	-webkit-tap-highlight-color: #00000000;
 
 	@media screen and (max-width: 1080px) {
 		font-size: 56%;

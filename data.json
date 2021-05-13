@@ -574,21 +574,12 @@
         }
     },
     {
-        "model": "home.topic",
-        "pk": 11,
-        "fields": {
-            "Subject": 6,
-            "TopicName": "ANIMALS  NAME",
-            "topicTitle": "title for ANIMALS  NAME"
-        }
-    },
-    {
         "model": "home.subtopic",
         "pk": 11,
         "fields": {
-            "topic": 11,
-            "SubTopicName": "ANIMALS  NAME",
-            "subtopicTitle": "title for ANIMALS  NAME"
+            "topic": 10,
+            "SubTopicName": "ACTION WORDS (PRACTICE)",
+            "subtopicTitle": "title for ACTION WORDS (PRACTICE)"
         }
     },
     {
@@ -603,10 +594,19 @@
         }
     },
     {
+        "model": "home.subtopic",
+        "pk": 12,
+        "fields": {
+            "topic": 10,
+            "SubTopicName": " ACTION WORDS (REVISION)",
+            "subtopicTitle": "title for  ACTION WORDS (REVISION)"
+        }
+    },
+    {
         "model": "home.explain",
         "pk": 30,
         "fields": {
-            "SubTopic": 11,
+            "SubTopic": 12,
             "explaintitle": "ANIMALS  NAME - 3",
             "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-3.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS  NAME-3.jpg",
@@ -615,7 +615,7 @@
     },
     {
         "model": "home.topic",
-        "pk": 12,
+        "pk": 11,
         "fields": {
             "Subject": 6,
             "TopicName": "ANIMALS BABY",
@@ -624,18 +624,18 @@
     },
     {
         "model": "home.subtopic",
-        "pk": 12,
+        "pk": 13,
         "fields": {
-            "topic": 12,
-            "SubTopicName": "ANIMALS BABY",
-            "subtopicTitle": "title for ANIMALS BABY"
+            "topic": 11,
+            "SubTopicName": "ANIMAL BABY (PRACTICE)",
+            "subtopicTitle": "title for ANIMAL BABY (PRACTICE)"
         }
     },
     {
         "model": "home.explain",
         "pk": 31,
         "fields": {
-            "SubTopic": 12,
+            "SubTopic": 13,
             "explaintitle": "ANIMALS BABY - 1",
             "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-1.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS BABY-1.jpg",
@@ -643,10 +643,19 @@
         }
     },
     {
+        "model": "home.subtopic",
+        "pk": 14,
+        "fields": {
+            "topic": 11,
+            "SubTopicName": "ANIMAL BABY (REVISION)\t",
+            "subtopicTitle": "title for ANIMAL BABY (REVISION)\t"
+        }
+    },
+    {
         "model": "home.explain",
         "pk": 32,
         "fields": {
-            "SubTopic": 12,
+            "SubTopic": 14,
             "explaintitle": "ANIMALS BABY - 2",
             "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-2.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS BABY-2.jpg",
@@ -654,14 +663,326 @@
         }
     },
     {
+        "model": "home.topic",
+        "pk": 12,
+        "fields": {
+            "Subject": 6,
+            "TopicName": "ANIMALS ",
+            "topicTitle": "title for ANIMALS "
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 15,
+        "fields": {
+            "topic": 12,
+            "SubTopicName": " ANIMALS (PRACTICE)",
+            "subtopicTitle": "title for  ANIMALS (PRACTICE)"
+        }
+    },
+    {
         "model": "home.explain",
         "pk": 33,
         "fields": {
-            "SubTopic": 12,
+            "SubTopic": 15,
             "explaintitle": "ANIMALS BABY - 3",
             "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
             "body": " ANIMALS BABY - 3"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 16,
+        "fields": {
+            "topic": 12,
+            "SubTopicName": " ANIMALS (REVISION)",
+            "subtopicTitle": "title for  ANIMALS (REVISION)"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 34,
+        "fields": {
+            "SubTopic": 16,
+            "explaintitle": "ANIMALS BABY - 4",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 4"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 13,
+        "fields": {
+            "Subject": 6,
+            "TopicName": "ANIMALS SOUND",
+            "topicTitle": "title for ANIMALS SOUND"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 17,
+        "fields": {
+            "topic": 13,
+            "SubTopicName": " ANIMALS SOUND (PRACTICE)",
+            "subtopicTitle": "title for  ANIMALS SOUND (PRACTICE)"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 35,
+        "fields": {
+            "SubTopic": 17,
+            "explaintitle": "ANIMALS BABY - 5",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 5"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 18,
+        "fields": {
+            "topic": 13,
+            "SubTopicName": " ANIMALS SOUND (REVISION)\t",
+            "subtopicTitle": "title for  ANIMALS SOUND (REVISION)\t"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 36,
+        "fields": {
+            "SubTopic": 18,
+            "explaintitle": "ANIMALS BABY - 6",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 6"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 14,
+        "fields": {
+            "Subject": 6,
+            "TopicName": "BIRDS NAME ",
+            "topicTitle": "title for BIRDS NAME "
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 19,
+        "fields": {
+            "topic": 14,
+            "SubTopicName": " BIRDS NAME (PRACTICE)",
+            "subtopicTitle": "title for  BIRDS NAME (PRACTICE)"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 37,
+        "fields": {
+            "SubTopic": 19,
+            "explaintitle": "ANIMALS BABY - 7",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 7"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 20,
+        "fields": {
+            "topic": 14,
+            "SubTopicName": "BIRDS NAME (REVISION)\t",
+            "subtopicTitle": "title for BIRDS NAME (REVISION)\t"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 38,
+        "fields": {
+            "SubTopic": 20,
+            "explaintitle": "ANIMALS BABY - 8",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 8"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 15,
+        "fields": {
+            "Subject": 6,
+            "TopicName": "BODY PARTS",
+            "topicTitle": "title for BODY PARTS"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 21,
+        "fields": {
+            "topic": 15,
+            "SubTopicName": "BODY PARTS (PRACTICE)",
+            "subtopicTitle": "title for BODY PARTS (PRACTICE)"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 39,
+        "fields": {
+            "SubTopic": 21,
+            "explaintitle": "ANIMALS BABY - 9",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 9"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 22,
+        "fields": {
+            "topic": 15,
+            "SubTopicName": "BODY PARTS (REVISION)\t",
+            "subtopicTitle": "title for BODY PARTS (REVISION)\t"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 40,
+        "fields": {
+            "SubTopic": 22,
+            "explaintitle": "ANIMALS BABY - 10",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 10"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 16,
+        "fields": {
+            "Subject": 6,
+            "TopicName": "CURSIVE UPPERCASE",
+            "topicTitle": "title for CURSIVE UPPERCASE"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 23,
+        "fields": {
+            "topic": 16,
+            "SubTopicName": "CURSIVE UPPERCASE (A TO Z)",
+            "subtopicTitle": "title for CURSIVE UPPERCASE (A TO Z)"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 41,
+        "fields": {
+            "SubTopic": 23,
+            "explaintitle": "ANIMALS BABY - 11",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 11"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 17,
+        "fields": {
+            "Subject": 6,
+            "TopicName": "COLOURS NAME",
+            "topicTitle": "title for COLOURS NAME"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 24,
+        "fields": {
+            "topic": 17,
+            "SubTopicName": "COLOURS NAME (PRACTICE)",
+            "subtopicTitle": "title for COLOURS NAME (PRACTICE)"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 42,
+        "fields": {
+            "SubTopic": 24,
+            "explaintitle": "ANIMALS BABY - 12",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 12"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 25,
+        "fields": {
+            "topic": 17,
+            "SubTopicName": " COLOURS NAME (REVISION)\t",
+            "subtopicTitle": "title for  COLOURS NAME (REVISION)\t"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 43,
+        "fields": {
+            "SubTopic": 25,
+            "explaintitle": "ANIMALS BABY - 13",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 13"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 18,
+        "fields": {
+            "Subject": 6,
+            "TopicName": "FRUITS ",
+            "topicTitle": "title for FRUITS "
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 26,
+        "fields": {
+            "topic": 18,
+            "SubTopicName": "FRUITS (PRACTICE)",
+            "subtopicTitle": "title for FRUITS (PRACTICE)"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 44,
+        "fields": {
+            "SubTopic": 26,
+            "explaintitle": "ANIMALS BABY - 14",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 14"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 27,
+        "fields": {
+            "topic": 18,
+            "SubTopicName": "FRUITS (REVISION)\t",
+            "subtopicTitle": "title for FRUITS (REVISION)\t"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 45,
+        "fields": {
+            "SubTopic": 27,
+            "explaintitle": "ANIMALS BABY - 15",
+            "imgBlack": "uploads/gallery/Black/ANIMALS BABY - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/ANIMALS BABY-3.jpg",
+            "body": " ANIMALS BABY - 15"
         }
     },
     {
@@ -675,7 +996,7 @@
     },
     {
         "model": "home.topic",
-        "pk": 13,
+        "pk": 19,
         "fields": {
             "Subject": 7,
             "TopicName": "ACTION WORDS",
@@ -684,18 +1005,18 @@
     },
     {
         "model": "home.subtopic",
-        "pk": 13,
+        "pk": 28,
         "fields": {
-            "topic": 13,
+            "topic": 19,
             "SubTopicName": "ACTION WORDS",
             "subtopicTitle": "title for ACTION WORDS"
         }
     },
     {
         "model": "home.explain",
-        "pk": 34,
+        "pk": 46,
         "fields": {
-            "SubTopic": 13,
+            "SubTopic": 28,
             "explaintitle": "ACTION WORDS - 2",
             "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-2.jpg",
             "imgColor": "uploads/gallery/Color/ACTION WORDS-2.jpg",
@@ -713,7 +1034,7 @@
     },
     {
         "model": "home.topic",
-        "pk": 14,
+        "pk": 20,
         "fields": {
             "Subject": 8,
             "TopicName": "ACTION WORDS",
@@ -722,18 +1043,18 @@
     },
     {
         "model": "home.subtopic",
-        "pk": 14,
+        "pk": 29,
         "fields": {
-            "topic": 14,
+            "topic": 20,
             "SubTopicName": "ACTION WORDS",
             "subtopicTitle": "title for ACTION WORDS"
         }
     },
     {
         "model": "home.explain",
-        "pk": 35,
+        "pk": 47,
         "fields": {
-            "SubTopic": 14,
+            "SubTopic": 29,
             "explaintitle": "ACTION WORDS - 3",
             "imgBlack": "uploads/gallery/Black/ACTION WORDS - B-3.jpg",
             "imgColor": "uploads/gallery/Color/ACTION WORDS-3.jpg",
@@ -751,7 +1072,7 @@
     },
     {
         "model": "home.topic",
-        "pk": 15,
+        "pk": 21,
         "fields": {
             "Subject": 9,
             "TopicName": "ANIMALS  NAME",
@@ -760,18 +1081,18 @@
     },
     {
         "model": "home.subtopic",
-        "pk": 15,
+        "pk": 30,
         "fields": {
-            "topic": 15,
+            "topic": 21,
             "SubTopicName": "ANIMALS  NAME",
             "subtopicTitle": "title for ANIMALS  NAME"
         }
     },
     {
         "model": "home.explain",
-        "pk": 36,
+        "pk": 48,
         "fields": {
-            "SubTopic": 15,
+            "SubTopic": 30,
             "explaintitle": "ANIMALS  NAME - 1",
             "imgBlack": "uploads/gallery/Black/ANIMALS NAME - B-1.jpg",
             "imgColor": "uploads/gallery/Color/ANIMALS  NAME-1.jpg",
