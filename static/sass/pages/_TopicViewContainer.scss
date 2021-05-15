@@ -12,6 +12,14 @@
 		font-size: 1.6rem;
 		margin: 1.5rem 20rem;
 		color: var(--color-grey-dark-1);
+
+		@media screen and (max-width: 660px) {
+			margin: 1.5rem 10rem;
+		}
+
+		@media screen and (max-width: 410px) {
+			margin: 1.5rem 3rem;
+		}
 	}
 }
 
@@ -20,6 +28,7 @@
 	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 
 	&__items {
 		font-size: 2.5rem;
@@ -28,14 +37,37 @@
 		cursor: pointer;
 		width: 39rem;
 
+		@media screen and (max-width: 1320px) {
+			width: 33rem;
+		}
+
+		@media screen and (max-width: 830px) {
+			width: 49rem;
+		}
+
+		@media screen and (max-width: 760px) {
+			width: 45rem;
+		}
+
+		@media screen and (max-width: 700px) {
+			width: 40rem;
+		}
+
+		@media screen and (max-width: 630px) {
+			width: 36rem;
+		}
+
 		&-heading {
 			font-weight: 100;
 			margin-left: 0.5rem;
 			color: var(--color-primary-dark);
+
+			@media screen and (max-width: 470px) {
+				font-size: 3.2rem;
+			}
 		}
 	}
 }
-
 /* -------------------------------- sub topics -------------------------------- */
 
 .subtopicList {
@@ -48,6 +80,10 @@
 	&-item__link {
 		text-decoration: none;
 		color: var(--color-grey-dark-1);
+
+		@media screen and (max-width: 470px) {
+			font-size: 2.3rem;
+		}
 
 		&:hover {
 			transition: all 0.1s;
