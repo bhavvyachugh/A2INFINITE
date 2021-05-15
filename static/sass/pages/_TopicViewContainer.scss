@@ -1,3 +1,7 @@
+::marker {
+	color: var(--color-primary);
+}
+
 /* --------------------------------- heading -------------------------------- */
 
 .section-headings {
@@ -75,7 +79,7 @@
 	margin-top: -2rem;
 	margin-left: -2rem;
 	transition: all 0.5s;
-	list-style: decimal;
+	list-style: disc;
 
 	&-item__link {
 		text-decoration: none;
