@@ -64,7 +64,9 @@ INSTALLED_APPS = [
     'django_extensions',
     'users',
     'bootstrap4',
-    'crispy_forms'
+    'crispy_forms',
+
+    'storages',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -134,7 +136,7 @@ except:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres_bhav', # should also match MYSQL_DATABASE in dockercompose
+        'NAME': 'postgres_bhavya', # should also match MYSQL_DATABASE in dockercompose
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': HOST_PG,   # Or an IP Address that your DB is hosted on
@@ -206,3 +208,15 @@ PROJECT_HOME = os.path.dirname(os.path.realpath(__file__))
 
 if os.path.exists(os.path.join(PROJECT_HOME, "external_config", "api_local_settings.py")):
     from .external_config.api_local_settings import *
+
+#S3 BUCKETS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIAWTKYHWS2ZXTP744H'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'a2infinite'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+   
