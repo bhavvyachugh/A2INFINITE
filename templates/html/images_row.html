@@ -21,8 +21,8 @@
 		<!-- disable right click -->
 		<script src="/static/js/disableRightClick.js" defer></script>
 
-      <!-- overlay -->
-      <script src="/static/js/overlay.js" defer></script>
+		<!-- overlay -->
+		<script src="/static/js/overlay.js" defer></script>
 	</head>
 	<body class="body">
 		<div class="container">
@@ -69,14 +69,7 @@
 			{% include "footer.html" %}
 
 			<!-- ------------------------------- overlay ------------------------------- -->
-			<div class="overlay-container u-invisible">
-				<div class="overlay">
-					<h1 class="heading-primary overlay__heading">
-						Showing free Sheets Please subscribe to view all sheets
-					</h1>
-					<span class="overlay__cross">&Cross;</span>
-				</div>
-			</div>
+			{% include "subOverlay.html" %}
 		</div>
 		<!-- ------------------------------- loader -------------------------------- -->
 		{% include "loader.html" %}
