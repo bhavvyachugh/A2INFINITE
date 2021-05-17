@@ -41,36 +41,21 @@
 
 				<!-- ---------------------------- class-section ---------------------------- -->
 
-
 				<section id="class-section" class="class-section u-margin-top">
 					{% for class in classdata %}
 					<div class="class-container">
 						<div class="class-container__img-hed">
-							<!-- <img
-									src="/static/Images/Illustrations/class_1.png"
-									alt="Child Standing"
-									class="class-container__img"
-								/> -->
 							<h3 class="heading-tertiary class-container__heading">
 								{{class.classTitle|slice:":20"}}
 							</h3>
 						</div>
-						{% if not class.susbscribed %} {% if not class.freeForAll %}
-						<h5>
-							Not subscribed to this class<br />Content only for Subscrided
-						</h5>
-						{% else %}
-						<h5>Not subscribed to this class<br />Showing only Free Content</h5>
-						{% endif %} {% else %}
-						<h3>You are Subscribed to this class</h3>
-						{% endif %}
 						<div class="class-container__para-link">
 							<p class="class-container__para">
-								{{class.remark|slice:":100000"}}
+								Click next to choose your class
 							</p>
 							<a
 								href="/subject?name={{class.classTitle}}&class={{class.id}}"
-								class="btn-secondary"
+								class="btn-secondary class-container__link"
 								>Next &rarr;</a
 							>
 						</div>
@@ -81,7 +66,6 @@
 
 			<!-- ------------------------------- footer -------------------------------- -->
 			{% include "footer.html" %}
-
 		</div>
 		<!-- ------------------------------- loader -------------------------------- -->
 		{% include "loader.html" %}

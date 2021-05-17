@@ -32,6 +32,14 @@
 		transition: all 0.1s;
 		font-size: 1.5rem;
 
+		@media screen and (max-width: 500px) {
+			flex: 0 0 80%;
+		}
+
+		@media screen and (max-width: 325px) {
+			flex: 0 0 70%;
+		}
+
 		&::placeholder {
 			font-family: inherit;
 			color: var(--color-grey-dark-2);
@@ -61,6 +69,10 @@
 .userName {
 	font-size: 2rem;
 	margin-right: 3rem;
+
+	@media screen and (max-width: 325px) {
+		margin-right: 1rem;
+	}
 }
 
 /* ------------------------------- setting list ------------------------------- */
@@ -73,6 +85,14 @@
 	align-items: center;
 	flex-wrap: wrap;
 	margin-right: 5rem;
+
+	@media screen and (max-width: 500px) {
+		flex-wrap: nowrap;
+	}
+
+	@media screen and (max-width: 325px) {
+		margin-right: 3rem;
+	}
 
 	&__icon-img {
 		height: 4rem;
@@ -110,6 +130,12 @@
 
 		a {
 			display: inline-block;
+		}
+	}
+
+	&__btn {
+		@media screen and (max-width: 600px) {
+			font-size: 1.2rem !important;
 		}
 	}
 }

@@ -14,10 +14,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-
-	@media screen and (max-width: 750px) {
-		margin-bottom: -5rem;
-	}
 }
 
 .side-nav {
@@ -38,6 +34,7 @@
 			margin-bottom: 0.5rem;
 		}
 	}
+
 	&__item::before {
 		content: '';
 		height: 100%;
@@ -79,7 +76,7 @@
 		}
 
 		@media screen and (max-width: 520px) {
-			font-size: 1.5rem !important;
+			font-size: 1.8rem !important;
 		}
 
 		@media screen and (max-width: 450px) {
@@ -88,6 +85,11 @@
 
 		@media screen and (max-width: 390px) {
 			padding: 1.5rem 2.5rem;
+			font-size: 2rem !important;
+		}
+
+		@media screen and (max-width: 332px) {
+			font-size: 1.5rem !important;
 		}
 	}
 }
@@ -115,6 +117,7 @@
 	background-image: url('/static/Images/Background/Main_Welcome_home.jpg');
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 	height: 60rem;
 	position: relative;
 
@@ -123,11 +126,38 @@
 	}
 
 	@media screen and (max-width: 574px) {
-		background-position: 7rem;
+		background-position: 6rem;
 	}
 
-	@media screen and (max-width: 390px) {
-		background-position: -2rem;
+	@media screen and (max-width: 445px) {
+		background-position: 4rem;
+	}
+
+	@media screen and (max-width: 430px) {
+		background-position: 2rem;
+	}
+
+	@media screen and (max-width: 413px) {
+		background-size: 63rem;
+		background-position: 8rem;
+	}
+
+	@media screen and (max-width: 388px) {
+		background-position: 4rem;
+	}
+
+	@media screen and (max-width: 364px) {
+		background-position: 8rem;
+		background-size: 56rem;
+	}
+
+	@media screen and (max-width: 350px) {
+		background-position: 6rem;
+	}
+
+	@media screen and (max-width: 336px) {
+		background-position: 8rem;
+		background-size: 52rem;
 	}
 
 	&__heading {
@@ -158,6 +188,22 @@
 		left: 7rem;
 		animation: moveInRight linear 0.5s;
 
+		@media screen and (max-width: 886px) {
+			left: 5rem;
+		}
+
+		@media screen and (max-width: 838px) {
+			left: 3rem;
+		}
+
+		@media screen and (max-width: 595px) {
+			left: 8rem;
+		}
+
+		@media screen and (max-width: 445px) {
+			left: 4rem;
+		}
+
 		@media screen and (max-width: 413px) {
 			left: 5rem;
 		}
@@ -175,6 +221,14 @@
 		animation-delay: 0.1s;
 		text-decoration: none;
 		color: #000;
+
+		@media screen and (max-width: 838px) {
+			left: 7rem;
+		}
+
+		@media screen and (max-width: 445px) {
+			left: 4rem;
+		}
 
 		@media screen and (max-width: 413px) {
 			top: 23rem;
@@ -209,6 +263,10 @@
 		align-items: center;
 		justify-content: center;
 
+		@media screen and (max-width: 550px) {
+			background-color: #fff;
+		}
+
 		&--icon-text {
 			display: flex;
 			align-items: center;
@@ -231,6 +289,10 @@
 	&__para {
 		font-size: 1.5rem;
 		font-family: open-sans;
+
+		@media screen and (max-width: 420px) {
+			font-size: 2rem;
+		}
 	}
 }
 
@@ -300,7 +362,11 @@
 
 	@media screen and (max-width: 385px) {
 		background-position: 31rem;
-		// background-size: 26rem;
+	}
+
+	@media screen and (max-width: 321px) {
+		background-size: 23rem;
+		background-position: 30rem;
 	}
 
 	&__heading {

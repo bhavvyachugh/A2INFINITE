@@ -26,6 +26,7 @@ $color-primary-dark: #ba265d;
 html {
 	font-size: 62.5%;
 	box-sizing: border-box; // 1rem = 10px
+	-webkit-tap-highlight-color: #00000000;
 
 	@media screen and (max-width: 1080px) {
 		font-size: 56%;
@@ -87,7 +88,6 @@ html {
 	margin: 6rem;
 	box-shadow: 0 2rem 8rem 1rem rgba(0, 0, 0, 0.4);
 	overflow: hidden;
-	max-width: 120rem;
 	display: none;
 
 	@media screen and (max-width: 1285px) {
