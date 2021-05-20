@@ -11,7 +11,39 @@
 
 		<!-- ------------------------------- favicon ------------------------------- -->
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+		<style>
+			/* Style the list */
+			ul.breadcrumb {
+			  padding: 10px 16px;
+			  list-style: none;
+			  background-color: #eee;
+			}
 
+			/* Display list items side by side */
+			ul.breadcrumb li {
+			  display: inline;
+			  font-size: 18px;
+			}
+
+			/* Add a slash symbol (/) before/behind each list item */
+			ul.breadcrumb li+li:before {
+			  padding: 8px;
+			  color: black;
+			  content: "/\00a0";
+			}
+
+			/* Add a color to all links inside the list */
+			ul.breadcrumb li a {
+			  color: #0275d8;
+			  text-decoration: none;
+			}
+
+			/* Add a color on mouse-over */
+			ul.breadcrumb li a:hover {
+			  color: #01447e;
+			  text-decoration: underline;
+			}
+		</style>
 		<!-- ----------------------------- javascript ------------------------------ -->
 		{% if user.is_authenticated %}
 		<script type="text/javascript" src="/static/js/logout.js" defer></script>
@@ -37,13 +69,13 @@
 			<!--                                  main                                   -->
 			<!-- ----------------------------------------------------------------------- -->
 
-			<nav aria-label="breadcrumb">
-			  <ol class="breadcrumb">
+			
+			  <ul class="breadcrumb">
 			    <li class="breadcrumb-item"><a href={% url 'ClassView' %}>All Classes</a></li>
 			    <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>Subjects of Class: {{class_name}}</a></li>
 			    <li class="breadcrumb-item">Topics of Subject: {{subject_name}} and its Sub Topics</li>
-			  </ol>
-			</nav>
+			  </ul>
+			
 
 			<main class="main">
 				<section class="section-headings">
