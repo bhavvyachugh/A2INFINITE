@@ -56,50 +56,6 @@
 			  transform: rotateY(180deg);
 			}
 		</style>
-		<style>
-		.other {display: none;}
-		@media print {
-		  body * {
-		    display: none;
-		  }
-		  .printMe, .printMe * {
-		    display: block;
-		  }
-		}
-		</style>
-		<style>
-			/* Style the list */
-			ul.breadcrumb {
-			  padding: 10px 16px;
-			  list-style: none;
-			  background-color: #eee;
-			}
-
-			/* Display list items side by side */
-			ul.breadcrumb li {
-			  display: inline;
-			  font-size: 18px;
-			}
-
-			/* Add a slash symbol (/) before/behind each list item */
-			ul.breadcrumb li+li:before {
-			  padding: 8px;
-			  color: black;
-			  content: "/\00a0";
-			}
-
-			/* Add a color to all links inside the list */
-			ul.breadcrumb li a {
-			  color: #0275d8;
-			  text-decoration: none;
-			}
-
-			/* Add a color on mouse-over */
-			ul.breadcrumb li a:hover {
-			  color: #01447e;
-			  text-decoration: underline;
-			}
-		</style>
 	</head>
 	<body class="body">
 		<div class="container">
@@ -111,48 +67,25 @@
 
 			<!-- -------------------------------- main --------------------------------- -->
 
-			  <ul class="breadcrumb">
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb">
 			    <li class="breadcrumb-item"><a href={% url 'ClassView' %}>All Classes</a></li>
 			    <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>Subjects of Class: {{class_name}}</a></li>
 			    <li class="breadcrumb-item"><a href={% url 'TopicView' %}?subject={{subjectId}}>Topics of Subject: {{subject_name}} and its Sub Topics</a></li>
 			    <li class="breadcrumb-item"><a href={% url 'images' %}?subtopic={{subtopicId}}>Sheets of Sub Topic: {{subtopic_name}}</a></li>
 			    <li class="breadcrumb-item">Sheet: {{explain_name}}</li>
-			  </ul>
-
-		    <div class="other" id="colored_1">
-				<img
-					src="{{class.imgColor.url}}"
-					class="img-container__img"
-				/>
-		    </div>
-		    <div class="other" id="black_and_white_1">
-				<img
-					src="{{class.imgBlack.url}}"
-					class="img-container__img"
-				/>
-		    </div>
+			  </ol>
+			</nav>
 
 			<main class="main">
-				{% if user.is_authenticated %}
-					<div class="schoolName-container">
-						<h1 class="schoolName-container__name">
-							{{request.user.school_name}}
-						</h1>
-						<h1 class="schoolName-container__name">
-							{{request.user.school_name}}
-						</h1>
-					</div>
-				{% else %}
-					<div class="schoolName-container">
-						<h1 class="schoolName-container__name">
-							"Guest User"
-						</h1>
-						<h1 class="schoolName-container__name">
-							"Guest User"
-						</h1>
-					</div>
-				{% endif %}
-
+				<div class="schoolName-container">
+					<h1 class="schoolName-container__name">
+						{{request.user.school_name}}
+					</h1>
+					<h1 class="schoolName-container__name">
+						{{request.user.school_name}}
+					</h1>
+				</div>
 
 				<div class="flip-container">
 				  <div class="flipper">

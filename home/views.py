@@ -68,7 +68,24 @@ def signup(request):
         else:
             return render(request, 'signup.html',dict(form=form))
     else:
-        form = UserSignUpForm()
+        form = UserSignUpForm(initial={
+                'username' : "test",
+                'school_name' : "test_school",
+                'email' : "riverhill527@gmail.com",
+                'mobile' : "089898989",
+                'city' : "vrindavan",
+                'district' : "mathura",
+                'state' : "UP",
+                'country' : "india",
+                'pin_code' : 90909,
+                'password1': "krishna_108",
+                'password2': "krishna_108" 
+            })
+
+        # Assign render_value to True
+        form.fields['password1'].widget.render_value = True
+        form.fields['password2'].widget.render_value = True
+        
         return render(request, 'signup.html',dict(form=form))
     #return render(request,"signup.html")
 
@@ -333,8 +350,6 @@ class SubjectView(View):
             logger.debug(f"class Id is None")
             return redirect("ClassView")
 
-
-
         condition1 = not classId in subscribed_classes
         condition2 = not data.freeForAll
         condition1_2 = condition1 or condition2
@@ -354,7 +369,7 @@ class SubjectView(View):
             sub_subscribed = False
 
         return render(request, "SubjectViewContainer.html",{
-            "classdata" : Subjectsdata,"sub_subscribed": sub_subscribed
+            "classdata" : Subjectsdata,"sub_subscribed": sub_subscribed, "class_id":classId,"class_title":data.className
         })
 
 class TopicView(View):
@@ -379,14 +394,16 @@ class TopicView(View):
         if classobj.id in subscribed_classes:
             topicsobj = Topic.objects.filter(Subject = subobj)
             return render(request, "TopicViewContainer.html",{
-                "data" : topicsobj, 'topic_subscribed':True, 'subobj': subobj, 'classobj': classobj
+                "data" : topicsobj, 'topic_subscribed':True, 'subobj': subobj, 'classobj': classobj,
+                'classId':classobj.id,'class_name':classobj.className,'subject_name': subobj.SubjectName
             })
         else:
             if classobj.freeForAll:
                 if subobj.freeForAll:
                     topicsobj = Topic.objects.filter(Subject = subobj)
                     return render(request, "TopicViewContainer.html",{
-                        "data" : topicsobj, 'topic_subscribed':False, 'subobj': subobj, 'classobj':classobj
+                        "data" : topicsobj, 'topic_subscribed':False, 'subobj': subobj, 'classobj':classobj,
+                        'classId':classobj.id,'class_name':classobj.className,'subject_name': subobj.SubjectName
                     })
                 else:
                     return redirect("ClassView")
@@ -406,7 +423,7 @@ class SubTopicView(View):
             return redirect("ClassView")
         SubtopicData = SubTopic.objects.filter(topic = data)
         return render(request, "SubTopicViewContainer.html",{
-            "classdata" : SubtopicData
+            "classdata" : SubtopicData, 
         })
 
 
@@ -461,14 +478,18 @@ def image(request, pk):
     if classObj.id in subscribed_classes:
         if package.id == 5:
             all_schools = True
-        return render(request, "image.html", {'class':explainObj,'subscribed':True,'all_schools': all_schools})
+        return render(request, "image.html", {'class':explainObj,'subscribed':True,'all_schools': all_schools,
+                'classId':classObj.id,'class_name':classObj.className,'subjectId':subObj.id, 'subject_name': subObj.SubjectName, 'topic_name':topicObj.TopicName, 'topicId':topicObj.id,'subtopic_name':subtopicObj.SubTopicName,'subtopicId':subtopicObj.id,'explain_name':explainObj.explaintitle
+            })
     else:
         if classObj.freeForAll:
             if subObj.freeForAll:
                 if topicObj.freeForAll:
                     if subtopicObj.freeForAll:
                         if explainObj.freeForAll:
-                            return render(request, "image.html", {'class':explainObj,'subscribed':False})
+                            return render(request, "image.html", {'class':explainObj,'subscribed':False,
+                                    'classId':classObj.id,'class_name':classObj.className,'subjectId':subObj.id, 'subject_name': subObj.SubjectName, 'topic_name':topicObj.TopicName, 'topicId':topicObj.id,'subtopic_name':subtopicObj.SubTopicName,'subtopicId':subtopicObj.id,'explain_name':explainObj.explaintitle
+                                })
                         else:
                             return redirect("ClassView")
                     else:
@@ -515,7 +536,9 @@ class images_row(View):
             explaindata = Explain.objects.filter(SubTopic = subtopicObj)
             totalcount = Explain.objects.filter(SubTopic = subtopicObj).count()
 
-            return render(request, "images_row.html", {'explaindata':explaindata,'totalcount':totalcount,'countfree': len(explaindata),'subscribed':True})
+            return render(request, "images_row.html", {'explaindata':explaindata,'totalcount':totalcount,'countfree': len(explaindata),'subscribed':True,
+                                'classId':classObj.id,'class_name':classObj.className,'subjectId':subObj.id, 'subject_name': subObj.SubjectName, 'topic_name':topicObj.TopicName, 'topicId':topicObj.id,'subtopic_name':subtopicObj.SubTopicName
+                })
         else:
             if classObj.freeForAll:
                 if subObj.freeForAll:
@@ -523,7 +546,9 @@ class images_row(View):
                         if subtopicObj.freeForAll:
                             explaindata = Explain.objects.filter(SubTopic = subtopicObj).filter(freeForAll=True)
                             totalcount = Explain.objects.filter(SubTopic = subtopicObj).count()
-                            return render(request, "images_row.html", {'explaindata':explaindata,'totalcount':totalcount,'countfree': len(explaindata),'subscribed':False})
+                            return render(request, "images_row.html", {'explaindata':explaindata,'totalcount':totalcount,'countfree': len(explaindata),'subscribed':False,
+                                    'classId':classObj.id,'class_name':classObj.className,'subjectId':subObj.id, 'subject_name': subObj.SubjectName, 'topic_name':topicObj.TopicName, 'topicId':topicObj.id,'subtopic_name':subtopicObj.SubTopicName
+                                })
                         else:
                             return redirect("ClassView")
                     else:

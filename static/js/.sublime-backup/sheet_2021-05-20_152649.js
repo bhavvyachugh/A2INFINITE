@@ -13,14 +13,10 @@ const printColoredBtn = document.getElementById('printColoredBtn');
 
 const viewBwSheet = () => {
 	$('.flip-container').addClass('flipped');
-	$('#colored_1').removeClass('printMe');
-	$('#black_and_white_1').addClass('printMe');
 };
 
 const viewColoredSheet = () => {
 	$('.flip-container').removeClass('flipped');
-	$('#colored_1').addClass('printMe');
-	$('#black_and_white_1').removeClass('printMe');
 };
 
 const printBwSheet = () => {
