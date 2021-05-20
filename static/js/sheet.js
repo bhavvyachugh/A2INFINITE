@@ -12,13 +12,11 @@ const printColoredBtn = document.getElementById('printColoredBtn');
 /* -------------------------------- functions ------------------------------- */
 
 const viewBwSheet = () => {
-	bwSheet.style.display = 'block';
-	coloredSheet.style.display = 'none';
+	$('.flip-container').addClass('flipped');
 };
 
 const viewColoredSheet = () => {
-	coloredSheet.style.display = 'block';
-	bwSheet.style.display = 'none';
+	$('.flip-container').removeClass('flipped');
 };
 
 const printBwSheet = () => {
@@ -33,7 +31,7 @@ const printColoredSheet = () => {
 
 /* --------------------------------- events --------------------------------- */
 
-viewBwBtn.addEventListener('click', viewBwSheet);
-viewColoredBtn.addEventListener('click', viewColoredSheet);
+// viewBwBtn.addEventListener('click', viewBwSheet);
+// viewColoredBtn.addEventListener('click', viewColoredSheet);
 printBwBtn.addEventListener('click', printBwSheet);
 printColoredBtn.addEventListener('click', printColoredSheet);
