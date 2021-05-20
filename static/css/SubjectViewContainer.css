@@ -270,8 +270,42 @@ html {
   left: 50%;
   transform: translate(-50%, -50%); }
 
+.bodyHeight {
+  height: 100vh !important; }
+
+.containerHeight {
+  height: 100vh !important; }
+
 .footerHeight {
-  background-color: red !important; }
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
+.subjectSectionHeight {
+  height: 64rem; }
+
+@media screen and (max-height: 823px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 12rem; } }
+
+@media screen and (max-height: 812px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 3rem; } }
+
+@media screen and (max-height: 736px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 5rem; } }
+
+@media screen and (max-height: 731px) {
+  .subjectContainerHeight:last-child {
+    margin-bottom: 9rem; } }
+
+@media screen and (max-height: 720px) {
+  .subjectContainerHeight:last-child {
+    margin-bottom: 5rem; } }
+
+.topicListItemsHeight:not(:last-child) {
+  margin-bottom: 2rem !important; }
 
 .header {
   display: flex;
