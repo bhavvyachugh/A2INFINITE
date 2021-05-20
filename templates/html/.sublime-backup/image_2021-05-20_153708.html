@@ -17,10 +17,45 @@
 
 		<!-- loader -->
 		<script src="/static/js/loader.js" defer></script>
-		<!-- sheet -->
-		<script src="/static/js/sheet.js" defer></script>
 		<!-- disable right click -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="/static/js/disableRightClick.js" defer></script>
+		<style>
+			.flip-container {
+			  perspective: 1000px;
+			}
+			.flip-container.flipped .flipper {
+			  transform: rotateY(180deg);
+			}
+			.flip-container,
+			.front,
+			.back {
+			  width: 100%;
+			  height: 100%;
+			}
+			.flipper {
+			  transition: 0.6s;
+			  transform-style: preserve-3d;
+			  position: relative;
+			}
+			.front{
+			  backface-visibility: hidden;
+			  position: relative;
+			}
+			.back {
+			  backface-visibility: hidden;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			}
+			.front {
+			  z-index: 2;
+			  transform: rotateY(0deg);
+			}
+			.back {
+			  transform: rotateY(180deg);
+			}
+		</style>
 	</head>
 	<body class="body">
 		<div class="container">
@@ -51,17 +86,27 @@
 						{{request.user.school_name}}
 					</h1>
 				</div>
+
+				<div class="flip-container">
+				  <div class="flipper">
+				    <div class="front">
+						<img
+							src="{{class.imgColor.url}}"
+							class="img-container__img"
+							id="colored"
+						/>
+				    </div>
+				    <div class="back">
+						<img
+							src="{{class.imgBlack.url}}"
+							class="img-container__img"
+							id="blackwhite"
+						/>
+				    </div>
+				  </div>
+				</div>
+
 				<div class="img-container">
-					<img
-						src="{{class.imgColor.url}}"
-						class="img-container__img img-container__img--colored"
-						id="colored"
-					/>
-					<img
-						src="{{class.imgBlack.url}}"
-						class="img-container__img img-container__img--black"
-						id="blackwhite"
-					/>
 					<h1 class="img-container__watermark img-container__watermark--1">
 						{{request.user.school_name}}
 					</h1>
@@ -86,15 +131,15 @@
 					</button>
 					<button
 						type="button"
-						id="viewBwBtn"
 						class="btn-primary btn-container__btn"
+						onclick="myFunction1()"
 					>
 						View B&W
 					</button>
 					<button
 						type="button"
-						id="viewColoredBtn"
 						class="btn-primary btn-container__btn"
+						onclick="myFunction2()"
 					>
 						View Colored
 					</button>
@@ -125,5 +170,17 @@
 		</div>
 		<!-- ------------------------------- loader -------------------------------- -->
 		{% include "loader.html" %}
+		<script>
+		function myFunction1() {
+		  $('.flip-container').addClass('flipped');
+		}
+
+		function myFunction2() {
+		  $('.flip-container').removeClass('flipped');
+		}
+		</script>
+		<!-- sheet -->
+		<script src="/static/js/sheet.js" defer></script>
+
 	</body>
 </html>
