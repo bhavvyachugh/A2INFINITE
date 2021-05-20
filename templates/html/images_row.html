@@ -62,15 +62,17 @@
 			<!-- ------------------------------- nav bar ------------------------------- -->
 			{% include "navbar.html" %}
 
+
+
+			<main class="main">
+			
 			  <ul class="breadcrumb">
 			    <li class="breadcrumb-item"><a href={% url 'ClassView' %}>All Classes</a></li>
 			    <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>Subjects of Class: {{class_name}}</a></li>
 			    <li class="breadcrumb-item"><a href={% url 'TopicView' %}?subject={{subjectId}}>Topics of Subject: {{subject_name}} and its Sub Topics</a></li>
-			    <li class="breadcrumb-item">Sheets of Sub Topic: {{subtopic_name}}</li>
+			    <li class="breadcrumb-item"><a href={% url 'images' %}?subtopic={{subtopicId}}>Sheets of Sub Topic: {{subtopic_name}}</a></li>
 			  </ul>
 
-
-			<main class="main">
 				{% if not subscribed %}
 				<h3>You are not Subscribed. Showing only Free Sheets</h3>
 				<h3>
