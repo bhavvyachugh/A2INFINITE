@@ -3,15 +3,19 @@ window.addEventListener('load', () => {
 	const deviceHeight = window.innerHeight;
 	const bodyHeight = document.body.scrollHeight;
 
+	// base elements
 	const body = document.querySelector('.body');
 	const footer = document.querySelector('.footer');
 	const container = document.querySelector('.container');
 
-	//NOTE: subject view container elements
+	// class view container elements
+	const classSection = document.querySelector('.class-section');
+
+	// subject view container elements
 	const subjectSection = document.querySelector('.subject-section');
 	const subjectContainer = document.getElementsByClassName('subject-container');
 
-	//NOTE: topic view container elements
+	// topic view container elements
 	const topicListItems = document.getElementsByClassName('topicList__items');
 
 	if (bodyHeight < deviceHeight) {
@@ -20,7 +24,9 @@ window.addEventListener('load', () => {
 		container.classList.add('containerHeight');
 
 		//NOTE: To check if DOM element in variable is present or not
-		if (subjectSection) {
+		if (classSection) {
+			classSection.classList.add('classSectionHeight');
+		} else if (subjectSection) {
 			subjectSection.classList.add('subjectSectionHeight');
 
 			//NOTE: For looping over all DOM elements with same class

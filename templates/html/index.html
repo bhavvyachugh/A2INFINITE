@@ -63,9 +63,15 @@
 						<p class="welcome__para">
 							Join now for more than 20,000 Practice Worksheets and Quiz
 						</p>
+						{% if user.is_authenticated %}
+						<a href="/class" class="btn-primary welcome__btn"
+							>Get Started &rarr;</a
+						>
+						{% else %}
 						<a href="/signup" class="btn-primary welcome__btn"
 							>Get Started &rarr;</a
 						>
+						{% endif %}
 					</section>
 
 					<hr class="hr u-margin-top-large" />
@@ -165,9 +171,15 @@
 					<!-- ------------------------------- footer -------------------------------- -->
 					<footer class="footer">
 						<h1 class="heading-primary footer__heading">Ready To Join ?</h1>
+						{% if user.is_authenticated %}
+						<a href="/class" class="btn-primary footer__btn"
+							>Get Started &rarr;</a
+						>
+						{% else %}
 						<a href="/signup" class="btn-primary footer__btn"
 							>Get Started &rarr;</a
 						>
+						{% endif %}
 					</footer>
 				</main>
 			</div>
