@@ -141,7 +141,7 @@
 
 .schoolName-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center; }
 
 .img-container {
@@ -157,6 +157,9 @@
     top: 35rem;
     transform: rotate(-35deg);
     font-size: 2.5rem; }
+    @media screen and (min-width: 1800px) {
+      .img-container__watermark {
+        top: 60rem; } }
     @media screen and (max-width: 750px) {
       .img-container__watermark {
         top: 32rem; } }
@@ -171,6 +174,9 @@
         font-size: 2rem; } }
     .img-container__watermark--1 {
       left: 20rem; }
+      @media screen and (min-width: 1800px) {
+        .img-container__watermark--1 {
+          left: 9rem; } }
       @media screen and (max-width: 750px) {
         .img-container__watermark--1 {
           left: 13rem; } }

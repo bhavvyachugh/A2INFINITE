@@ -270,6 +270,36 @@ html {
   left: 50%;
   transform: translate(-50%, -50%); }
 
+.bodyHeight {
+  height: 100vh !important; }
+
+.containerHeight {
+  height: 100vh !important; }
+
+.footerHeight {
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
+@media screen and (max-height: 1024px) {
+  .subjectContainerHeight {
+    margin-bottom: 12rem !important; } }
+
+@media screen and (max-height: 823px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 12rem; } }
+
+@media screen and (max-height: 812px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 3rem; } }
+
+@media screen and (max-height: 736px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 5rem; } }
+
+.topicListItemsHeight:not(:last-child) {
+  margin-bottom: 2rem !important; }
+
 .footer {
   background-color: var(--color-grey-dark-1);
   color: #fff;
