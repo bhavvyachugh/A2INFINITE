@@ -121,6 +121,19 @@
 	height: 60rem;
 	position: relative;
 
+	@media screen and (min-width: 1480px) {
+		background-size: 100rem;
+		background-position: 20rem;
+	}
+	@media screen and (min-width: 1880px) {
+		background-size: 104rem;
+		background-position: 30rem;
+	}
+
+	// @media screen and (max-width: 1680px) {
+	// 	background-size: 100rem;
+	// 	background-position: 25rem;
+	// }
 	@media screen and (max-width: 654px) {
 		background-position: 2rem;
 	}
@@ -165,6 +178,10 @@
 		font-weight: 100;
 		animation: moveInLeft linear 0.5s;
 
+		@media screen and (min-width: 1418px) {
+			font-size: 4.5rem !important;
+		}
+
 		@media screen and (max-width: 864px) {
 			margin-right: 10rem;
 		}
@@ -187,6 +204,10 @@
 		top: 13rem;
 		left: 7rem;
 		animation: moveInRight linear 0.5s;
+
+		@media screen and (min-width: 1418px) {
+			left: 15%;
+		}
 
 		@media screen and (max-width: 886px) {
 			left: 5rem;
@@ -221,6 +242,10 @@
 		animation-delay: 0.1s;
 		text-decoration: none;
 		color: #000;
+
+		@media screen and (min-width: 1418px) {
+			left: 15%;
+		}
 
 		@media screen and (max-width: 838px) {
 			left: 7rem;
@@ -303,6 +328,9 @@
 	display: flex;
 	justify-content: space-around;
 
+	@media screen and (min-width: 1418px) {
+		margin-bottom: 5rem;
+	}
 	@media screen and (max-width: 550px) {
 		flex-direction: column;
 		align-items: center;
@@ -330,6 +358,12 @@
 	height: 40rem;
 	position: relative;
 
+	@media screen and (min-width: 1880px) {
+		background-position: 80rem;
+	}
+	@media screen and (max-width: 1600px) {
+		background-position: 50rem;
+	}
 	@media screen and (max-width: 950px) {
 		background-size: 35rem;
 	}
@@ -380,6 +414,9 @@
 		@media screen and (max-width: 390px) {
 			font-size: 4rem !important;
 		}
+		@media screen and (min-width: 1418px) {
+			left: 15rem;
+		}
 	}
 
 	&__btn {
@@ -388,6 +425,10 @@
 		position: absolute;
 		top: 20rem;
 		left: 8rem;
+
+		@media screen and (min-width: 1418px) {
+			left: 15rem;
+		}
 
 		@media screen and (max-width: 390px) {
 			top: 18rem;
