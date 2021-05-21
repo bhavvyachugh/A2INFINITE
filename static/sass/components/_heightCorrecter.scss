@@ -1,3 +1,50 @@
+.bodyHeight {
+	height: 100vh !important;
+}
+.containerHeight {
+	height: 100vh !important;
+}
+
 .footerHeight {
-	background-color: red !important;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+// class section
+.classSectionHeight {
+	margin-top: 8rem !important;
+}
+
+// Subject view container
+.subjectSectionHeight {
+	height: 64rem;
+}
+
+.subjectContainerHeight:not(:last-child) {
+	@media screen and (max-height: 823px) {
+		margin-bottom: 12rem;
+	}
+
+	@media screen and (max-height: 812px) {
+		margin-bottom: 3rem;
+	}
+
+	@media screen and (max-height: 736px) {
+		margin-bottom: 5rem;
+	}
+}
+
+.subjectContainerHeight:last-child {
+	@media screen and (max-height: 731px) {
+		margin-bottom: 9rem;
+	}
+	@media screen and (max-height: 720px) {
+		margin-bottom: 5rem;
+	}
+}
+
+// Topic view container
+.topicListItemsHeight:not(:last-child) {
+	margin-bottom: 2rem !important;
 }

@@ -2,7 +2,7 @@
 	"name": "a2infinite",
 	"version": "1.0.0",
 	"description": "A website where you can get more than 30,000 worksheets and imagees for your child",
-	"main": "index.js",
+	"main": "ClassViewContainer.js",
 	"scripts": {
 		"watch:sass": "node-sass static/sass/image.scss static/css/image.css -w",
 		"compile:sass": "node-sass static/sass/image.scss static/css/image.css",

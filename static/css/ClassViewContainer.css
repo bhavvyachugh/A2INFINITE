@@ -426,9 +426,6 @@ html {
 .img-container {
   width: 75%;
   height: 40rem; }
-  @media screen and (min-width: 1880px) {
-    .img-container {
-      height: 50rem; } }
   @media screen and (max-width: 450px) {
     .img-container {
       width: 100%; } }
@@ -481,3 +478,43 @@ html {
     @media screen and (max-width: 400px) {
       .class-container__heading {
         font-size: 2.5rem; } }
+
+.bodyHeight {
+  height: 100vh !important; }
+
+.containerHeight {
+  height: 100vh !important; }
+
+.footerHeight {
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
+.classSectionHeight {
+  margin-top: 8rem !important; }
+
+.subjectSectionHeight {
+  height: 64rem; }
+
+@media screen and (max-height: 823px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 12rem; } }
+
+@media screen and (max-height: 812px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 3rem; } }
+
+@media screen and (max-height: 736px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 5rem; } }
+
+@media screen and (max-height: 731px) {
+  .subjectContainerHeight:last-child {
+    margin-bottom: 9rem; } }
+
+@media screen and (max-height: 720px) {
+  .subjectContainerHeight:last-child {
+    margin-bottom: 5rem; } }
+
+.topicListItemsHeight:not(:last-child) {
+  margin-bottom: 2rem !important; }
