@@ -54,19 +54,21 @@ from .views import ClassView, SubjectView, TopicView, SubTopicView, download, pa
 # from django.contrib.auth import views as auth_views
 # ###--------------------------------------###
 
-
+from django_email_verification import urls as email_urls
 
 
 
 
 
 urlpatterns = [
+    path('email/', include(email_urls)),
     path('', views.index, name="home"),
     path('signup', views.signup, name="signup"),
     path('quiz', views.quiz, name="quiz"),
     #path('login', views.login, name="login"),
     #path('signup', views.handleSignup, name="handleSignup"),
-    path('login', views.handleLogin, name="handleLogin"),
+    path('login', views.LoginView.as_view(template_name='login.html'), name="handleLogin"),
+
     path('logout', views.handleLogout, name="handleLogout"),
     path("contact", views.contact, name='contact'),
     path("plans", views.plans, name='plans'),
@@ -75,6 +77,7 @@ urlpatterns = [
     path("sheet", views.sheet, name='sheet'),
     path("search", views.search, name='search'),
     path("cssNameOnImage", views.cssNameOnImage, name='cssNameOnImage'),
+    path("email_sent",views.email_sent, name='email_sent'),
 
 
     ###----------------------------------------------###

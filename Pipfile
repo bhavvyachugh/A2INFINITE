@@ -101,6 +101,7 @@ easy-thumbnails = "*"
 watchdog = {extras = ["watchmedo"], version = "*"}
 snoop = "*"
 sorcery = "*"
+django-email-verification = "*"
 
 [dev-packages]
 jupyter = "*"

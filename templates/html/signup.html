@@ -36,7 +36,7 @@
 
 			{# Display a form #}
 			<form action="/signup" method="post" class="form">
-				{% csrf_token %} {% bootstrap_form form layout='horizontal' %}
+				{% csrf_token %} {% bootstrap_form form layout='inline' %}
              {% buttons %}
 				<button type="submit" class="btn btn-secondary">Submit</button>
 				{% endbuttons %}
