@@ -56,10 +56,10 @@
         <!-- -------------------------------- main --------------------------------- -->
         <main class="main">
             <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href={% url 'ClassView' %}>All Classes</a></li>
-                <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>Subjects of Class: {{class_name}}</a></li>
-                <li class="breadcrumb-item"><a href={% url 'TopicView' %}?subject={{subjectId}}>Topics of Subject: {{subject_name}} and its Sub Topics</a></li>
-                <li class="breadcrumb-item"><a href={% url 'images' %}?subtopic={{subtopicId}}>Sheets of Sub Topic: {{subtopic_name}}</a></li>
+                <li class="breadcrumb-item"><a href={% url 'ClassView' %}>Classes</a></li>
+                <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>{{class_name}}</a></li>
+                <li class="breadcrumb-item"><a href={% url 'TopicView' %}?subject={{subjectId}}>{{subject_name}}</a></li>
+                <li class="breadcrumb-item"><a href={% url 'images' %}?subtopic={{subtopicId}}>{{subtopic_name}}</a></li>
                 <li class="breadcrumb-item">Sheet: {{explain_name}}</li>
             </ul>
             {% if user.is_authenticated %}
