@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>Sheet | A2INFINITE</title>
+		<!-- --------------------------------- css --------------------------------- -->
+		<link rel="stylesheet" href="/static/css/image.css" />
+
+		<!-- ------------------------------- favicon ------------------------------- -->
+
+		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+
+		<!-- ----------------------------- javascript ------------------------------ -->
+
+		<!-- loader -->
+		<script src="/static/js/loader.js" defer></script>
+		<!-- disable right click -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="/static/js/disableRightClick.js" defer></script>
+		<style>
+			.flip-container {
+			  perspective: 1000px;
+			}
+			.flip-container.flipped .flipper {
+			  transform: rotateY(180deg);
+			}
+			.flip-container,
+			.front,
+			.back {
+			  width: 100%;
+			  height: 100%;
+			}
+			.flipper {
+			  transition: 0.6s;
+			  transform-style: preserve-3d;
+			  position: relative;
+			}
+			.front{
+			  backface-visibility: hidden;
+			  position: relative;
+			}
+			.back {
+			  backface-visibility: hidden;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			}
+			.front {
+			  z-index: 2;
+			  transform: rotateY(0deg);
+			}
+			.back {
+			  transform: rotateY(180deg);
+			}
+		</style>
+		<style>
+		@media print {
+		  body * {
+		    visibility: hidden;
+		    height:0;
+		  }
+		  #section-to-print, #section-to-print * {
+		    visibility: visible;
+		    height:auto;
+		  }
+		  #section-to-print {
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		  }
+		}
+		</style>
+	</head>
+	<body class="body">
+		<div class="container">
+			<!-- ------------------------------- header -------------------------------- -->
+			{% include "header.html" %}
+
+			<!-- ------------------------------- nav bar ------------------------------- -->
+			{% include "navbar.html" %}
+
+			<!-- -------------------------------- main --------------------------------- -->
+
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb">
+			    <li class="breadcrumb-item"><a href={% url 'ClassView' %}>All Classes</a></li>
+			    <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>Subjects of Class: {{class_name}}</a></li>
+			    <li class="breadcrumb-item"><a href={% url 'TopicView' %}?subject={{subjectId}}>Topics of Subject: {{subject_name}} and its Sub Topics</a></li>
+			    <li class="breadcrumb-item"><a href={% url 'images' %}?subtopic={{subtopicId}}>Sheets of Sub Topic: {{subtopic_name}}</a></li>
+			    <li class="breadcrumb-item">Sheet: {{explain_name}}</li>
+			  </ol>
+			</nav>
+
+			<main class="main">
+				<div class="schoolName-container">
+					<h1 class="schoolName-container__name">
+						{{request.user.school_name}}
+					</h1>
+					<h1 class="schoolName-container__name">
+						{{request.user.school_name}}
+					</h1>
+				</div>
+
+				<div class="flip-container">
+				  <div class="flipper">
+				    <div class="front" id="section-to-print">
+						<img
+							src="{{class.imgColor.url}}"
+							class="img-container__img"
+							id="colored"
+						/>
+				    </div>
+				    <div class="back">
+						<img
+							src="{{class.imgBlack.url}}"
+							class="img-container__img"
+							id="blackwhite"
+						/>
+				    </div>
+				  </div>
+				</div>
+
+				<div class="img-container">
+					<h1 class="img-container__watermark img-container__watermark--1">
+						{{request.user.school_name}}
+					</h1>
+					<h1 class="img-container__watermark img-container__watermark--2">
+						{{request.user.school_name}}
+					</h1>
+				</div>
+				<div class="btn-container">
+					<button
+						type="button"
+						class="btn-primary btn-container__btn"
+						id="printBwBtn"
+					>
+						Print Sheet (B&W)
+					</button>
+					<button
+						type="button"
+						class="btn-primary btn-container__btn"
+						id="printColoredBtn"
+					>
+						Print Sheet (colored)
+					</button>
+					<button
+						type="button"
+						class="btn-primary btn-container__btn"
+						onclick="myFunction1()"
+					>
+						View B&W
+					</button>
+					<button
+						type="button"
+						class="btn-primary btn-container__btn"
+						onclick="myFunction2()"
+					>
+						View Colored
+					</button>
+				</div>
+				<!-- AddToAny BEGIN -->
+				<div class="a2a_kit a2a_kit_size_32 a2a_default_style share-container">
+					<a
+						class="a2a_dd share-container__link"
+						href="https://www.addtoany.com/share"
+					></a>
+					<a class="a2a_button_facebook share-container__link"></a>
+					<a class="a2a_button_email share-container__link"></a>
+					<a class="a2a_button_whatsapp share-container__link"></a>
+				</div>
+				<script async src="https://static.addtoany.com/menu/page.js"></script>
+				<!-- AddToAny END -->
+
+				{% comment %}
+				<h1 class="heading-primary login-heading">
+					Please Login to access this page
+				</h1>
+				{% endcomment %}
+
+			</main>
+
+			<!-- ------------------------------- footer -------------------------------- -->
+			{% include "footer.html" %}
+		</div>
+		<!-- ------------------------------- loader -------------------------------- -->
+		{% include "loader.html" %}
+		<script>
+		function myFunction1() {
+		  $('.flip-container').addClass('flipped');
+		}
+
+		function myFunction2() {
+		  $('.flip-container').removeClass('flipped');
+		}
+		</script>
+		<!-- sheet -->
+		<script src="/static/js/sheet.js" defer></script>
+
+	</body>
+</html>

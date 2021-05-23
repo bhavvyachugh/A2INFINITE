@@ -14,7 +14,7 @@ class User(AbstractUser):
     state = models.CharField(max_length=12)
     district = models.CharField(max_length=12)
     city =models.CharField(max_length=12)
-    pin_code = models.IntegerField(max_length=12)
+    pin_code = models.IntegerField()
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):

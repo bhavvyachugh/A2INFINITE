@@ -14,20 +14,11 @@
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
 		<!-- ----------------------------- javascript ------------------------------ -->
-      {% if user.is_authenticated %}
-		<!-- login form -->
-		<script type="text/javascript" src="/static/js/logout.js" defer></script>
-		{% else %}
-		<!-- sign-up form -->
-		<script
-			type="text/javascript"
-			src="/static/js/sign_in_sign_up.js"
-			defer
-		></script>
-		{% endif %}
-
 		<!-- loader -->
 		<script src="/static/js/loader.js" defer></script>
+
+		<!-- Setting dropdown effect -->
+		<script src="/static/js/settingDropdown.js" defer></script>
 	</head>
 
 	<body class="body">
@@ -108,7 +99,9 @@
 					<script
 						src="https://checkout.razorpay.com/v1/checkout.js"
 						data-key="rzp_test_Ac2g1pJT7D9c69"
-						data-amount={{ amount }}
+						data-amount="{{"
+						amount
+						}}
 						data-currency="INR"
 						data-order_id="{{ order_id }}"
 						data-buttontext="Pay Now"
@@ -167,7 +160,10 @@
 						<div class="form-overlay__link-container">
 							<h3 class="form-overlay__heading">Don't Have Account!</h3>
 							<button
-								class="form-overlay__link form-overlay__link-signup u-margin-top-minus"
+								class="
+									form-overlay__link form-overlay__link-signup
+									u-margin-top-minus
+								"
 							>
 								Sign-up &rarr;
 							</button>
@@ -245,7 +241,10 @@
 						<div class="form-overlay__link-container">
 							<h3 class="form-overlay__heading">Already Have Account!</h3>
 							<button
-								class="form-overlay__link form-overlay__link-login u-margin-top-minus"
+								class="
+									form-overlay__link form-overlay__link-login
+									u-margin-top-minus
+								"
 							>
 								Login &rarr;
 							</button>

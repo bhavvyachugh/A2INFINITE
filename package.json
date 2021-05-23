@@ -2,12 +2,19 @@
 	"name": "a2infinite",
 	"version": "1.0.0",
 	"description": "A website where you can get more than 30,000 worksheets and imagees for your child",
-	"main": "index.js",
+	"main": "ClassViewContainer.js",
 	"scripts": {
+<<<<<<< HEAD
 		"watch:sass": "node-sass static/sass/search.scss static/css/search.css -w",
 		"compile:sass": "node-sass static/sass/search.scss static/css/search.css",
 		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/search.css -o  static/css/search.css ",
 		"compress:css": "node-sass static/css/search.css static/css/search.css --output-style compressed",
+=======
+		"watch:sass": "node-sass static/sass/plans.scss static/css/plans.css -w",
+		"compile:sass": "node-sass static/sass/plans.scss static/css/plans.css",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions'  static/css/plans.css -o  static/css/plans.css ",
+		"compress:css": "node-sass static/css/plans.css static/css/plans.css --output-style compressed",
+>>>>>>> ecfc61761a16003f8b4ed3fe6bcb5406414d5fae
 		"build:css": "npm-run-all compile:sass  prefix:css compress:css"
 	},
 	"author": "Bhavy Chugh",

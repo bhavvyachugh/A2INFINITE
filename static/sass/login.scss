@@ -1,12 +1,12 @@
-@import 'base/base.scss';
-@import 'base/typography.scss';
-@import 'base/utilities.scss';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import 'components/btn.scss';
-@import 'components/loader.scss';
+@import 'components/btn';
+@import 'components/loader';
 
-@import 'layout/header.scss';
-@import 'layout/footer.scss';
-@import 'layout/nav-bar.scss';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/nav-bar';
 
-@import 'pages/login.scss';
+@import 'pages/login';

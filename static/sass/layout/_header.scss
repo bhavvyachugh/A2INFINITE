@@ -1,3 +1,5 @@
+//WARNING: Hover effect is with Js and Script is placed in header.html
+
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -97,27 +99,23 @@
 	&__icon-img {
 		height: 4rem;
 		width: 4rem;
-		transition: all 0.2s;
 	}
 
 	&__icon {
 		position: relative;
 	}
 
-	&__icon:hover &__icon-img {
-		transform: rotate(90deg);
-	}
-	&__icon:hover .setting-dropdown {
-		visibility: visible;
-		top: 3.9rem;
-		opacity: 1;
-	}
+	// &__icon:hover .setting-dropdown {
+	// 	visibility: visible;
+	// 	top: 3.9rem;
+	// 	opacity: 1;
+	// }
 }
 
 .setting-dropdown {
 	visibility: hidden;
 	position: absolute;
-	transition: all 0.8s;
+	transition: all 0.5s;
 	list-style: none;
 	top: 0;
 	right: -4.8rem;
@@ -138,4 +136,13 @@
 			font-size: 1.2rem !important;
 		}
 	}
+<<<<<<< HEAD
+=======
+}
+
+.visible-dropdown {
+	visibility: visible;
+	opacity: 1;
+	top: 3.9rem;
+>>>>>>> ecfc61761a16003f8b4ed3fe6bcb5406414d5fae
 }

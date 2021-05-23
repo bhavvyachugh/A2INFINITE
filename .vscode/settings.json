@@ -1,0 +1,17 @@
+{
+	// live sass compiler
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "compressed",
+			"extensionName": ".css",
+			"savePath": "/static/css/"
+		}
+	],
+	"liveSassCompile.settings.autoprefix": ["> 1%", "last 20 versions"],
+	"liveSassCompile.settings.generateMap": false,
+	"liveSassCompile.settings.excludeList": [
+		"/**/node_modules/**",
+		"/.vscode/**"
+	],
+	"liveSassCompile.settings.showOutputWindowOn": "None"
+}

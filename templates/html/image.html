@@ -1,119 +1,126 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<title>Sheet | A2INFINITE</title>
-		<!-- --------------------------------- css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/image.css" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<!-- ------------------------------- favicon ------------------------------- -->
+    <title>Sheet | A2INFINITE</title>
+    <!-- --------------------------------- css --------------------------------- -->
+    <link rel="stylesheet" href="/static/css/image.css" />
 
-		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+    <!-- ------------------------------- favicon ------------------------------- -->
 
-		<!-- ----------------------------- javascript ------------------------------ -->
+    <link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
-		<!-- loader -->
-		<script src="/static/js/loader.js" defer></script>
-		<!-- sheet -->
-		<script src="/static/js/sheet.js" defer></script>
-		<!-- disable right click -->
-		<script src="/static/js/disableRightClick.js" defer></script>
-	</head>
-	<body class="body">
-		<div class="container">
-			<!-- ------------------------------- header -------------------------------- -->
-			{% include "header.html" %}
+    <!-- ----------------------------- javascript ------------------------------ -->
 
-			<!-- ------------------------------- nav bar ------------------------------- -->
-			{% include "navbar.html" %}
+    <!-- loader -->
+    <script src="/static/js/loader.js" defer></script>
+    <!-- sheet -->
+    <script src="/static/js/sheet.js" defer></script>
+    <!-- disable right click -->
+    <script src="/static/js/disableRightClick.js" defer></script>
 
-			<!-- -------------------------------- main --------------------------------- -->
-			<main class="main">
-				{% if user.is_authenticated %}
-				<div class="schoolName-container">
-					<h1 class="schoolName-container__name">
-						{{request.user.school_name}}
-					</h1>
-					<h1 class="schoolName-container__name">
-						{{request.user.school_name}}
-					</h1>
-				</div>
-				<div class="img-container">
-					<img
-						src="{{class.imgColor.url}}"
-						class="img-container__img img-container__img--colored"
-						id="colored"
-					/>
-					<img
-						src="{{class.imgBlack.url}}"
-						class="img-container__img img-container__img--black"
-						id="blackwhite"
-					/>
-					<h1 class="img-container__watermark img-container__watermark--1">
-						{{request.user.school_name}}
-					</h1>
-					<h1 class="img-container__watermark img-container__watermark--2">
-						{{request.user.school_name}}
-					</h1>
-				</div>
-				<div class="btn-container">
-					<button
-						type="button"
-						class="btn-primary btn-container__btn"
-						id="printBwBtn"
-					>
+     <!-- Setting dropdown effect -->
+		<script src="/static/js/settingDropdown.js" defer></script>
+
+    <style>
+        @keyframes animationIn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: .5;
+            }
+            100% {
+                opacity: 1.5;
+            }
+        }
+        
+        .ani {
+            animation: animationIn .5s;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-font-smoothing: subpixel-antialiased;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <div class="container">
+        <!-- ------------------------------- header -------------------------------- -->
+        {% include "header.html" %}
+
+        <!-- ------------------------------- nav bar ------------------------------- -->
+        {% include "navbar.html" %}
+
+        <!-- -------------------------------- main --------------------------------- -->
+        <main class="main">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href={% url 'ClassView' %}>Classes</a></li>
+                <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>{{class_name}}</a></li>
+                <li class="breadcrumb-item"><a href={% url 'TopicView' %}?subject={{subjectId}}>{{subject_name}}</a></li>
+                <li class="breadcrumb-item"><a href={% url 'images' %}?subtopic={{subtopicId}}>{{subtopic_name}}</a></li>
+                <li class="breadcrumb-item">{{explain_name}}</li>
+            </ul>
+            {% if user.is_authenticated %}
+            <div class="schoolName-container">
+                <h1 class="schoolName-container__name">
+                    {{request.user.school_name}}
+                </h1>
+                <h1 class="schoolName-container__name">
+                    {{request.user.school_name}}
+                </h1>
+            </div>
+            <div class="img-container">
+                <img src="{{class.imgColor.url}}" class="img-container__img img-container__img--colored" id="colored" />
+                <img src="{{class.imgBlack.url}}" class="img-container__img img-container__img--black" id="blackwhite" />
+                <h1 class="img-container__watermark img-container__watermark--1">
+                    {{request.user.school_name}}
+                </h1>
+                <h1 class="img-container__watermark img-container__watermark--2">
+                    {{request.user.school_name}}
+                </h1>
+            </div>
+            <div class="btn-container">
+                <button type="button" class="btn-primary btn-container__btn" id="printBwBtn">
 						Print Sheet (B&W)
 					</button>
-					<button
-						type="button"
-						class="btn-primary btn-container__btn"
-						id="printColoredBtn"
-					>
+                <button type="button" class="btn-primary btn-container__btn" id="printColoredBtn">
 						Print Sheet (colored)
 					</button>
-					<button
-						type="button"
-						id="viewBwBtn"
-						class="btn-primary btn-container__btn"
-					>
+                <button type="button" id="viewBwBtn" class="btn-primary btn-container__btn">
 						View B&W
 					</button>
-					<button
-						type="button"
-						id="viewColoredBtn"
-						class="btn-primary btn-container__btn"
-					>
+                <button type="button" id="viewColoredBtn" class="btn-primary btn-container__btn">
 						View Colored
 					</button>
-				</div>
-				<!-- AddToAny BEGIN -->
-				<div class="a2a_kit a2a_kit_size_32 a2a_default_style share-container">
-					<a
-						class="a2a_dd share-container__link"
-						href="https://www.addtoany.com/share"
-					></a>
-					<a class="a2a_button_facebook share-container__link"></a>
-					<a class="a2a_button_email share-container__link"></a>
-					<a class="a2a_button_whatsapp share-container__link"></a>
-				</div>
-				<script async src="https://static.addtoany.com/menu/page.js"></script>
-				<!-- AddToAny END -->
-				{% else %}
+            </div>
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style share-container">
+                <a class="a2a_dd share-container__link" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_facebook share-container__link"></a>
+                <a class="a2a_button_email share-container__link"></a>
+                <a class="a2a_button_whatsapp share-container__link"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+            {% else %}
 
-				<h1 class="heading-primary login-heading">
-					Please Login to access this page
-				</h1>
+            <h1 class="heading-primary login-heading">
+                Please Login to access this page
+            </h1>
 
-				{% endif %}
-			</main>
+            {% endif %}
+        </main>
 
-			<!-- ------------------------------- footer -------------------------------- -->
-			{% include "footer.html" %}
-		</div>
-		<!-- ------------------------------- loader -------------------------------- -->
-		{% include "loader.html" %}
-	</body>
+        <!-- ------------------------------- footer -------------------------------- -->
+        {% include "footer.html" %}
+    </div>
+    <!-- ------------------------------- loader -------------------------------- -->
+    {% include "loader.html" %}
+</body>
+
 </html>
