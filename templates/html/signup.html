@@ -7,8 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sign Up | A2INFINITE</title>
-		{# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript
-		jquery='full' %}
+		{# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript jquery='full' %}
 
 		<link rel="stylesheet" href="/static/css/signup.css" />
 
@@ -33,14 +32,12 @@
 			{% include "navbar.html" %}
 
 			<!-- -------------------------------- main --------------------------------- -->
-			{# Display django.contrib.messages as Bootstrap alerts #} {%
-			bootstrap_messages %}
+			{# Display django.contrib.messages as Bootstrap alerts #} {% bootstrap_messages %}
 			<h1 class="heading-primary u-margin-top">Glad To See You Here</h1>
 
 			{# Display a form #}
 			<form action="/signup" method="post" class="form">
-				{% csrf_token %} {% bootstrap_form form layout='horizontal' %} {%
-				buttons %}
+				{% csrf_token %} {% bootstrap_form form layout='horizontal' %} {%	buttons %}
 				<button type="submit" class="btn btn-secondary">Submit</button>
 				{% endbuttons %}
 			</form>
