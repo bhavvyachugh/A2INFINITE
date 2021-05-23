@@ -20,7 +20,7 @@
 		<!-- plans -->
 		<script src="/static/js/plans.js" defer></script>
 
-      <!-- Setting dropdown effect -->
+		<!-- Setting dropdown effect -->
 		<script src="/static/js/settingDropdown.js" defer></script>
 	</head>
 
@@ -48,9 +48,9 @@
 								</h4>
 
 								{% if plan.subscription %}
-								<h2 style="margin-left: 10px"><span>Subscribed</span></h2>
-								<h4 style="margin-left: 10px">
-									<span>Till {{ plan.end_date}}</span>
+								<h2 class="card__subscribed">Subscribed</h2>
+								<h4 class="card__time">
+									Till {{ plan.end_date}}
 								</h4>
 								{% endif %}
 
