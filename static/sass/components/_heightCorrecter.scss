@@ -9,10 +9,6 @@
 .containerHeight {
 	height: 100vh !important;
 	position: relative;
-
-	@media screen and (min-width: 1229px) {
-		height: 81vh !important;
-	}
 }
 
 .footerHeight {
