@@ -8,6 +8,7 @@
 
 		<!-- --------------------------------- css --------------------------------- -->
 		<link rel="stylesheet" href="/static/css/SubjectViewContainer.css" />
+      
 
 		<!-- ------------------------------- favicon ------------------------------- -->
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
@@ -19,6 +20,10 @@
 
 		<!-- height corrector -->
 		<script src="/static/js/heightCorrecter.js" defer></script>
+
+       <!-- Setting dropdown effect -->
+		<script src="/static/js/settingDropdown.js" defer></script>
+
 	</head>
 	<body class="body">
 		<div class="container">
@@ -27,6 +32,12 @@
 
 			<!-- ------------------------------- nav bar ------------------------------- -->
 			{% include "navbar.html" %}
+
+			
+			  <ul class="breadcrumb">
+			    <li class="breadcrumb-item"><a href={% url 'ClassView' %}>Classes</a></li>
+			    <li class="breadcrumb-item">{{class_title}}</li>
+			  </ul>
 
 			<main class="main">
 				<!-- ---------------------------- img container ---------------------------- -->

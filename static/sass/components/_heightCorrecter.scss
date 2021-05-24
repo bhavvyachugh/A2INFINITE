@@ -1,8 +1,20 @@
 .bodyHeight {
 	height: 100vh !important;
+<<<<<<< HEAD
 }
 .containerHeight {
 	height: 100vh !important;
+=======
+
+	@media screen and (min-width: 1229px) {
+		height: auto !important;
+	}
+}
+
+.containerHeight {
+	height: 100vh !important;
+	position: relative;
+>>>>>>> 728b8c2294374ca15e7ac55ff19e315de6ea69bf
 }
 
 .footerHeight {
@@ -11,14 +23,24 @@
 	width: 100%;
 }
 
+<<<<<<< HEAD
 // class section
+=======
+// class view container
+>>>>>>> 728b8c2294374ca15e7ac55ff19e315de6ea69bf
 .classSectionHeight {
 	margin-top: 8rem !important;
 }
 
 // Subject view container
 .subjectSectionHeight {
+<<<<<<< HEAD
 	height: 64rem;
+=======
+	@media screen and (max-height: 1024px) {
+		height: 64rem;
+	}
+>>>>>>> 728b8c2294374ca15e7ac55ff19e315de6ea69bf
 }
 
 .subjectContainerHeight:not(:last-child) {
@@ -46,5 +68,27 @@
 
 // Topic view container
 .topicListItemsHeight:not(:last-child) {
+<<<<<<< HEAD
 	margin-bottom: 2rem !important;
+=======
+	@media screen and (max-height: 823px) {
+		margin-bottom: 5rem !important;
+	}
+
+	@media screen and (max-height: 731px) {
+		margin-bottom: 4rem !important;
+	}
+
+	@media screen and (max-height: 640px) {
+		margin-bottom: 3rem !important;
+	}
+}
+
+// heading
+.headingPrimaryHeight {
+	position: absolute !important;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+>>>>>>> 728b8c2294374ca15e7ac55ff19e315de6ea69bf
 }

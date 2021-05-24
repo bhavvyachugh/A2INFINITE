@@ -165,8 +165,30 @@
 		// }
 	}
 
+	// .img-container__watermark {
+	// 	@media screen and (min-width: 1880px) {
+	// 		top: 10rem !important;
+	// 		font-size: 1.5rem !important;
+	// 	}
+	// }
+	// .img-container__watermark--1 {
+	// 	@media screen and (max-width: 1880px) {
+	// 		left: 1rem !important;
+	// 	}
+	// }
+
+	// .img-container__watermark--2 {
+	// 	@media screen and (max-width: 1880px) {
+	// 		right: 5rem ;
+	// 	}
+	// }
+
 	.header {
 		display: none !important;
+	}
+
+	.breadcrumb {
+		display: none;
 	}
 
 	.btn-container {

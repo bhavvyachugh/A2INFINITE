@@ -30,6 +30,7 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('accounts/', include('allauth.urls')),
 
     path("password_reset/", auth_views.PasswordResetView.as_view(template_name='password_reset.html'), name="password_reset"),
     path("password_reset_/done/", auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name="password_reset_done"),

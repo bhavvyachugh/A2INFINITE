@@ -7,6 +7,7 @@ from django.contrib.auth import get_user_model
 class Contact(models.Model):
     name = models.CharField(max_length=122)
     email = models.CharField(max_length=122)
+    phone = models.CharField(max_length=12, default=0)
     desc = models.TextField()
     date = models.DateField()
 
@@ -74,7 +75,7 @@ class Explain(models.Model):
 
 class Package(models.Model):
     pkg_name = models.CharField(verbose_name="pkg_name", max_length=100, default=None, blank=True)
-    pkg_price_disscount = models.IntegerField(default=None)
+    pkg_price_disscount = models.IntegerField(null=True)
     pkg_price = models.IntegerField()
     classes = models.ManyToManyField(ClassDetails,related_name="%(app_label)s_%(class)s_classes",)
     pkg_feature_1 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)

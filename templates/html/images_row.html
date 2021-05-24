@@ -23,6 +23,12 @@
 
 		<!-- overlay -->
 		<script src="/static/js/overlay.js" defer></script>
+<<<<<<< HEAD
+=======
+
+       <!-- Setting dropdown effect -->
+		<script src="/static/js/settingDropdown.js" defer></script>
+>>>>>>> 728b8c2294374ca15e7ac55ff19e315de6ea69bf
 	</head>
 	<body class="body">
 		<div class="container">
@@ -32,7 +38,18 @@
 			<!-- ------------------------------- nav bar ------------------------------- -->
 			{% include "navbar.html" %}
 
+
+
 			<main class="main">
+			
+			  <ul class="breadcrumb">
+			    <li class="breadcrumb-item"><a href={% url 'ClassView' %}>Classes</a></li>
+			    <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>{{class_name}}</a></li>
+			    <li class="breadcrumb-item"><a href={% url 'TopicView' %}?subject={{subjectId}}>{{subject_name}}</a></li>
+			    <!-- <li class="breadcrumb-item"><a href={% url 'images' %}?subtopic={{subtopicId}}>{{subtopic_name}}</a></li> -->
+			    <li class="breadcrumb-item">{{subtopic_name}}</li>
+			  </ul>
+
 				{% if not subscribed %}
 				<h1 class="heading-primary">
 					You are not Subscribed! Showing only Free Sheets.Please subscribe to
@@ -69,7 +86,13 @@
 			{% include "footer.html" %}
 
 			<!-- ------------------------------- overlay ------------------------------- -->
+<<<<<<< HEAD
 			{% include "subOverlay.html" %}
+=======
+         {% if not subscribed %}
+			{% include "subOverlay.html" %}
+         {% endif %}
+>>>>>>> 728b8c2294374ca15e7ac55ff19e315de6ea69bf
 		</div>
 		<!-- ------------------------------- loader -------------------------------- -->
 		{% include "loader.html" %}

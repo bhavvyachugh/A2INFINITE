@@ -1,6 +1,7 @@
 @import 'layout/footer';
 @import 'layout/nav-bar';
 @import 'layout/header';
+@import 'layout/scrollbar';
 
 @import 'pages/image';
 
@@ -10,5 +11,5 @@
 
 @import 'components/btn';
 
-
 @import 'components/loader';
+@import 'layout/breadcrumb';

@@ -88,7 +88,7 @@ urlpatterns = [
     path('packages/', (packages.as_view()), name='packages'),
     path('features/', (features.as_view()), name='features'),
     path('payment/', (payments.as_view()), name='payment'),
-    path('images/', (images_row.as_view()), name='payment'),
+    path('images/', (images_row.as_view()), name='images'),
     path('image/<int:pk>/', views.image, name='image'),
 
     ###----------------------Forgot Password------------------------###
