@@ -4,11 +4,13 @@
 @import 'base/animations';
 
 @import 'components/btn';
-
 @import 'components/loader';
+@import 'components/heightCorrecter';
 
 @import 'layout/header';
 @import 'layout/nav-bar';
 @import 'layout/footer';
+@import 'layout/scrollbar';
 
-@import 'pages/SubjectViewContainer.scss';
+@import 'pages/SubjectViewContainer';
+@import 'layout/breadcrumb';

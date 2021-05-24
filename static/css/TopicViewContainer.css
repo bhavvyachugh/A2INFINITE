@@ -83,6 +83,7 @@ html {
   background-color: var(--color-primary);
   color: #fff; }
 
+/* ---------------------------- custom scrollbar ---------------------------- */
 .heading-primary {
   font-size: 3.5rem;
   font-family: open-sans-light;
@@ -270,6 +271,66 @@ html {
   left: 50%;
   transform: translate(-50%, -50%); }
 
+.bodyHeight {
+  height: 100vh !important; }
+  @media screen and (min-width: 1229px) {
+    .bodyHeight {
+      height: auto !important; } }
+
+.containerHeight {
+  height: 100vh !important;
+  position: relative; }
+
+.footerHeight {
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
+.classSectionHeight {
+  margin-top: 8rem !important; }
+
+@media screen and (max-height: 1024px) {
+  .subjectSectionHeight {
+    height: 64rem; } }
+
+@media screen and (max-height: 823px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 12rem; } }
+
+@media screen and (max-height: 812px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 3rem; } }
+
+@media screen and (max-height: 736px) {
+  .subjectContainerHeight:not(:last-child) {
+    margin-bottom: 5rem; } }
+
+@media screen and (max-height: 731px) {
+  .subjectContainerHeight:last-child {
+    margin-bottom: 9rem; } }
+
+@media screen and (max-height: 720px) {
+  .subjectContainerHeight:last-child {
+    margin-bottom: 5rem; } }
+
+@media screen and (max-height: 823px) {
+  .topicListItemsHeight:not(:last-child) {
+    margin-bottom: 5rem !important; } }
+
+@media screen and (max-height: 731px) {
+  .topicListItemsHeight:not(:last-child) {
+    margin-bottom: 4rem !important; } }
+
+@media screen and (max-height: 640px) {
+  .topicListItemsHeight:not(:last-child) {
+    margin-bottom: 3rem !important; } }
+
+.headingPrimaryHeight {
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
 .footer {
   background-color: var(--color-grey-dark-1);
   color: #fff;
@@ -352,21 +413,14 @@ html {
       margin-right: 3rem; } }
   .setting-list__icon-img {
     height: 4rem;
-    width: 4rem;
-    transition: all 0.2s; }
+    width: 4rem; }
   .setting-list__icon {
     position: relative; }
-  .setting-list__icon:hover .setting-list__icon-img {
-    transform: rotate(90deg); }
-  .setting-list__icon:hover .setting-dropdown {
-    visibility: visible;
-    top: 3.9rem;
-    opacity: 1; }
 
 .setting-dropdown {
   visibility: hidden;
   position: absolute;
-  transition: all 0.8s;
+  transition: all 0.5s;
   list-style: none;
   top: 0;
   right: -4.8rem;
@@ -380,6 +434,11 @@ html {
   @media screen and (max-width: 600px) {
     .setting-dropdown__btn {
       font-size: 1.2rem !important; } }
+
+.visible-dropdown {
+  visibility: visible;
+  opacity: 1;
+  top: 3.9rem; }
 
 /* --------------------------------- navbar --------------------------------- */
 .nav-bar {
@@ -411,6 +470,22 @@ html {
       color: var(--color-primary-light);
       text-decoration: none; }
 
+.moveLastChild {
+  margin-right: 7rem; }
+
+::-webkit-scrollbar {
+  width: 1rem; }
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-primary); }
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(222, 220, 220, 0.4);
+  border-radius: 0.5rem; }
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(222, 220, 220, 0.6); }
+
 ::marker {
   color: var(--color-primary); }
 
@@ -418,7 +493,8 @@ html {
 .section-headings__heading {
   color: var(--color-grey-dark-2);
   font-size: 3.5rem;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  margin-top: 0; }
 
 .section-headings__para {
   text-align: center;
@@ -437,13 +513,13 @@ html {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: start; }
   .topicList__items {
     font-size: 2.5rem;
     font-family: open-sans-light;
     font-weight: 100;
     cursor: pointer;
-    width: 39rem; }
+    width: 38rem; }
     @media screen and (max-width: 1320px) {
       .topicList__items {
         width: 33rem; } }
@@ -459,6 +535,9 @@ html {
     @media screen and (max-width: 630px) {
       .topicList__items {
         width: 36rem; } }
+    @media screen and (max-width: 465px) {
+      .topicList__items {
+        width: 100%; } }
     .topicList__items-heading {
       font-weight: 100;
       margin-left: 0.5rem;
@@ -483,3 +562,29 @@ html {
     .subtopicList-item__link:hover {
       transition: all 0.1s;
       color: var(--color-primary); }
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 1rem 1.6rem;
+  list-style: none; }
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 1.8rem; }
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li + li:before {
+  padding: 0.8rem;
+  color: black;
+  content: '/\00a0'; }
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: var(--color-primary);
+  text-decoration: none; }
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline; }

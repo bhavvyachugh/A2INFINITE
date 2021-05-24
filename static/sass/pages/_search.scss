@@ -5,16 +5,31 @@
 	color: var(--color-primary);
 	text-transform: uppercase;
 	text-align: center;
+	font-family: open-sans-light;
 }
 
 /* ---------------------------------- sheets ---------------------------------- */
 .sheet-list {
-	display: flex;
 	list-style: none;
+	display: flex;
 	flex-wrap: wrap;
+	width: 100%;
+	padding: 0;
+	align-items: center;
+	justify-content: start;
 
-	&__items {
-		margin: 0 4rem;
+	&__item {
+		margin: 1rem 5rem;
+		border: 2px solid var(--color-grey-light-5);
+
+		@media screen and (max-width: 1325px) {
+			margin: 1rem 2rem;
+		}
+	}
+
+	&__sheet {
+		height: 30rem !important;
+		width: 30rem !important;
 	}
 
 	&__heading {

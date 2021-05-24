@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='package',
             name='pkg_price_disscount',
-            field=models.IntegerField(default=None),
+            field=models.IntegerField(null=True),
         ),
     ]

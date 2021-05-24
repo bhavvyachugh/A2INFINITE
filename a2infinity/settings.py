@@ -18,19 +18,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 print(BASE_DIR)
 
-
-# for django ORM to work in jupyter
-# https://stackoverflow.com/a/62119475
-os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
-
-# During launch jupyter notebook server will show the address and port and token
-# that you will need to use as URL to access it.
-
-NOTEBOOK_ARGUMENTS = [
-    '--ip', '0.0.0.0',
-    '--port', '8888'
-]
-
 BOOTSTRAP4 = {
     'set_placeholder': False,
     'required_css_class': 'required_fields',
@@ -43,8 +30,22 @@ BOOTSTRAP4 = {
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'd)qx_w%-pbqhm04n$z(_wc%!!=u$&g2ht+3%*qb68ck(o6q_0w'
 
+
+ACCOUNT_FORMS = {'signup': 'home.forms.MyCustomSignupForm'}
+
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG=True
+
+# we will check the environ variable if defined
+try:
+    if os.environ['DEBUG'] == "1":
+        DEBUG = True
+    else:
+        DEBUG = False
+except:
+    pass
 
 #ALLOWED_HOSTS = ["https://a2infinte.herokuapp.com/","192.168.29.158", "127.0.0.1"]
 
@@ -53,6 +54,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,20 +62,25 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'home.apps.HomeConfig',
-    'django_extensions',
+    'home',
     'users',
     'bootstrap4',
-    'crispy_forms'
+    'crispy_forms',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'livereload',
 ]
+
+SITE_ID = 1
+
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
-    #'a2infinity.external_config.custom_middleware.request_exposure.RequestExposerMiddleware', #<--- will set the exposed_request  variable, initiall define it as None
-    #'a2infinity.external_config.custom_middleware.request_logging.middleware.LoggingMiddleware', #<--- Added install djang-request-logging
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -83,6 +90,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'a2infinity.urls'
@@ -201,8 +209,24 @@ EMAIL_HOST_USER = 'test.otp37@gmail.com'
 EMAIL_HOST_PASSWORD = 'newschool'
 EMAIL_USE_TLS = True
 
+# install snoop for this
+#https://github.com/alexmojaki/snoop
+import snoop
 
-PROJECT_HOME = os.path.dirname(os.path.realpath(__file__))
+def path(event):
+    return event.code.co_filename[-20:]
 
-if os.path.exists(os.path.join(PROJECT_HOME, "external_config", "api_local_settings.py")):
-    from .external_config.api_local_settings import *
+#But instead of [-20:] add your own logic to trim the starting folder.
+
+snoop.install(enabled=DEBUG,columns=[path, "function"])
+
+if DEBUG:
+
+    PROJECT_HOME = os.path.dirname(os.path.realpath(__file__))
+
+    if os.path.exists(os.path.join(PROJECT_HOME, "external_config", "api_local_settings_fixed.py")):
+        from .external_config.api_local_settings_fixed import *
+
+
+    if os.path.exists(os.path.join(PROJECT_HOME, "external_config", "api_local_settings_var.py")):
+        from .external_config.api_local_settings_var import *

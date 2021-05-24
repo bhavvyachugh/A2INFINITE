@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
 });
 
 const showOverlay = () => {
-	const timeLimit = 1; // seconds
+	const timeLimit = 3; // seconds
 	let i = 0;
 	const timer = setInterval(() => {
 		i++;

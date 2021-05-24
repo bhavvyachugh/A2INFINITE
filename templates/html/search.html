@@ -15,6 +15,12 @@
 		<!-- ----------------------------- javascript ------------------------------ -->
 		<!-- loader -->
 		<script src="/static/js/loader.js" defer></script>
+
+		<!-- height corrector -->
+		<script src="/static/js/heightCorrecter.js" defer></script>
+
+       <!-- Setting dropdown effect -->
+		<script src="/static/js/settingDropdown.js" defer></script>
 	</head>
 
 	<body class="body">
@@ -37,10 +43,10 @@
 
 				<ul class="sheet-list">
 					{%if search%} {%for k in search%}
-					<li class="sheet-list__items">
+					<li class="sheet-list__item">
 						<!-- fetching sheets -->
 						<a href="{% url 'image' k.pk%}"
-							><img src="{{k.imgColor.url}}" width="200" height="200"
+							><img src="{{k.imgColor.url}}" class="sheet-list__sheet"
 						/></a>
 						<!-- name of sheet -->
 						<h1 class="sheet-list__heading">{{explaintitle}}</h1>

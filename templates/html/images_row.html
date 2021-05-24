@@ -21,8 +21,11 @@
 		<!-- disable right click -->
 		<script src="/static/js/disableRightClick.js" defer></script>
 
-      <!-- overlay -->
-      <script src="/static/js/overlay.js" defer></script>
+		<!-- overlay -->
+		<script src="/static/js/overlay.js" defer></script>
+
+       <!-- Setting dropdown effect -->
+		<script src="/static/js/settingDropdown.js" defer></script>
 	</head>
 	<body class="body">
 		<div class="container">
@@ -32,7 +35,18 @@
 			<!-- ------------------------------- nav bar ------------------------------- -->
 			{% include "navbar.html" %}
 
+
+
 			<main class="main">
+			
+			  <ul class="breadcrumb">
+			    <li class="breadcrumb-item"><a href={% url 'ClassView' %}>Classes</a></li>
+			    <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>{{class_name}}</a></li>
+			    <li class="breadcrumb-item"><a href={% url 'TopicView' %}?subject={{subjectId}}>{{subject_name}}</a></li>
+			    <!-- <li class="breadcrumb-item"><a href={% url 'images' %}?subtopic={{subtopicId}}>{{subtopic_name}}</a></li> -->
+			    <li class="breadcrumb-item">{{subtopic_name}}</li>
+			  </ul>
+
 				{% if not subscribed %}
 				<h1 class="heading-primary">
 					You are not Subscribed! Showing only Free Sheets.Please subscribe to
@@ -69,14 +83,9 @@
 			{% include "footer.html" %}
 
 			<!-- ------------------------------- overlay ------------------------------- -->
-			<div class="overlay-container u-invisible">
-				<div class="overlay">
-					<h1 class="heading-primary overlay__heading">
-						Showing free Sheets Please subscribe to view all sheets
-					</h1>
-					<span class="overlay__cross">&Cross;</span>
-				</div>
-			</div>
+         {% if not subscribed %}
+			{% include "subOverlay.html" %}
+         {% endif %}
 		</div>
 		<!-- ------------------------------- loader -------------------------------- -->
 		{% include "loader.html" %}

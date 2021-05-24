@@ -11,9 +11,17 @@
 
 		<!-- ------------------------------- favicon ------------------------------- -->
 		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
-
+		
 		<!-- ----------------------------- javascript ------------------------------ -->
+		<!-- loader  -->
 		<script src="/static/js/loader.js" defer></script>
+
+		<!-- height corrector -->
+		<script src="/static/js/heightCorrecter.js" defer></script>
+
+       <!-- Setting dropdown effect -->
+		<script src="/static/js/settingDropdown.js" defer></script>
+
 	</head>
 
 	<body class="body">
@@ -27,6 +35,14 @@
 			<!-- ----------------------------------------------------------------------- -->
 			<!--                                  main                                   -->
 			<!-- ----------------------------------------------------------------------- -->
+
+			
+			  <ul class="breadcrumb">
+			    <li class="breadcrumb-item"><a href={% url 'ClassView' %}>Classes</a></li>
+			    <li class="breadcrumb-item"><a href={% url 'SubjectView' %}?class={{classId}}>{{class_name}}</a></li>
+			    <li class="breadcrumb-item">{{subject_name}}</li>
+			  </ul>
+			
 
 			<main class="main">
 				<section class="section-headings">

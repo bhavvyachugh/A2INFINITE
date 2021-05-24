@@ -12,23 +12,26 @@ const printColoredBtn = document.getElementById('printColoredBtn');
 /* -------------------------------- functions ------------------------------- */
 
 const viewBwSheet = () => {
-	bwSheet.style.display = 'block';
-	coloredSheet.style.display = 'none';
+    bwSheet.style.display = 'block';
+    coloredSheet.style.display = 'none';
+    bwSheet.classList.add('ani')
+
 };
 
 const viewColoredSheet = () => {
-	coloredSheet.style.display = 'block';
-	bwSheet.style.display = 'none';
+    coloredSheet.style.display = 'block';
+    bwSheet.style.display = 'none';
+    coloredSheet.classList.add('ani')
 };
 
 const printBwSheet = () => {
-	viewBwSheet();
-	window.print();
+    viewBwSheet();
+    window.print();
 };
 
 const printColoredSheet = () => {
-	viewColoredSheet();
-	window.print();
+    viewColoredSheet();
+    window.print();
 };
 
 /* --------------------------------- events --------------------------------- */
