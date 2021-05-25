@@ -162,6 +162,13 @@
       <form id="registration" action="/signup" method="post" class="form form-signin">
         {% csrf_token %} 
 		<div style="align:center;"><h3 >Sign Up</h3></div>
+			{% bootstrap_form form layout='horizontal' %}
+
+         	{% buttons %}
+			<button type="submit"  id="sign_up"  class="btn btn-secondary">Submit</button>
+			{% endbuttons %}
+
+			{% comment %}
 			<div class="form-group">
 				<input id="id_username" required="" class="form-control userLoginEmail" autofocus="" placeholder="Username *" name="username" type="text" value="" autocomplete="off">
 			</div>
@@ -224,8 +231,9 @@
 			
 			<div class="form-group text-center">
 				<button type="submit" id="sign_up" class="login-button btn btn-primary button_load_register">Sign Up <span class="load-btn load_register" style="display: none;"></span></button>
-
 			</div>
+			{% endcomment %}
+
 		<!-- {% buttons %}
           <button type="submit" class="btn btn-secondary">Submit</button>
         {% endbuttons %}  -->
