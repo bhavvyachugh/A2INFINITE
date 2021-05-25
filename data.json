@@ -158,54 +158,6 @@
     },
     {
         "model": "home.explain",
-        "pk": 8,
-        "fields": {
-            "SubTopic": 3,
-            "explaintitle": "NUMBER IDENTIFICATION FOR TODDLERS - 2",
-            "imgBlack": "uploads/gallery/Black/NUMBER IDENTIFICATION FOR TODDLERS - B-2.jpg",
-            "imgColor": "uploads/gallery/Color/NUMBER IDENTIFICATION FOR TODDLERS-2.jpg",
-            "body": " NUMBER IDENTIFICATION FOR TODDLERS - 2"
-        }
-    },
-    {
-        "model": "home.explain",
-        "pk": 9,
-        "fields": {
-            "SubTopic": 3,
-            "explaintitle": "NUMBER IDENTIFICATION FOR TODDLERS - 3",
-            "imgBlack": "uploads/gallery/Black/NUMBER IDENTIFICATION FOR TODDLERS - B-3.jpg",
-            "imgColor": "uploads/gallery/Color/NUMBER IDENTIFICATION FOR TODDLERS-3.jpg",
-            "body": " NUMBER IDENTIFICATION FOR TODDLERS - 3"
-        }
-    },
-    {
-        "model": "home.classdetails",
-        "pk": 2,
-        "fields": {
-            "className": "name for  Nursery",
-            "classTitle": "title for  Nursery"
-        }
-    },
-    {
-        "model": "home.subject",
-        "pk": 3,
-        "fields": {
-            "className": 2,
-            "SubjectName": "English",
-            "SubjectTitle": "title for English"
-        }
-    },
-    {
-        "model": "home.topic",
-        "pk": 4,
-        "fields": {
-            "Subject": 3,
-            "TopicName": "Alphabet",
-            "topicTitle": "title for Alphabet"
-        }
-    },
-    {
-        "model": "home.subtopic",
         "pk": 4,
         "fields": {
             "topic": 4,

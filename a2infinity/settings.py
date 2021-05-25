@@ -69,10 +69,28 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'livereload',
+    # 'livereload',
+    'django_email_verification',
 ]
 
 SITE_ID = 1
+
+
+# django-email-verification settings
+
+def verified_callback(user):
+    user.is_active = True
+    user.save()
+
+
+EMAIL_VERIFIED_CALLBACK = verified_callback
+EMAIL_FROM_ADDRESS = 'test.otp37@gmail.com'
+EMAIL_MAIL_SUBJECT = 'Confirm your email'
+EMAIL_MAIL_HTML = 'mail_body.html'
+EMAIL_MAIL_PLAIN = 'mail_body.txt'
+EMAIL_TOKEN_LIFE = 60 * 60
+EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
+EMAIL_PAGE_DOMAIN = 'http://A2INFINITE.COM/'
 
 
 
@@ -90,7 +108,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'livereload.middleware.LiveReloadScript',
+    # 'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'a2infinity.urls'
@@ -142,7 +160,7 @@ except:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres_bhav', # should also match MYSQL_DATABASE in dockercompose
+        'NAME': 'postgres_bhavya', # should also match MYSQL_DATABASE in dockercompose
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': HOST_PG,   # Or an IP Address that your DB is hosted on

@@ -4,16 +4,22 @@ from django.conf import settings
 
 # Create your models here.
 
+def validate_mobile(mobile_num):
+    mobile_num = mobile_num.replace(' ', '')
+
+    if len(mobile_num) < 10 or len(mobile_num) > 15:
+        raise ValidationError("Mobile number not valid")
+
 
 class User(AbstractUser):
     school_name = models.CharField(max_length=200)
     mobile = models.CharField(max_length=15)
     email = models.EmailField('email address',unique=True)
     phone = models.CharField(max_length=12)
-    country = models.CharField(max_length=12)
-    state = models.CharField(max_length=12)
-    district = models.CharField(max_length=12)
-    city =models.CharField(max_length=12)
+    country = models.CharField(max_length=120)
+    state = models.CharField(max_length=120)
+    district = models.CharField(max_length=120)
+    city =models.CharField(max_length=120)
     pin_code = models.IntegerField()
     updated_at = models.DateTimeField(auto_now=True)
 

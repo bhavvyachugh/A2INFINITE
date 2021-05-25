@@ -12,6 +12,7 @@ from django.db.models import Q
 from .serializer import TopicSerializer
 from django.core import serializers
 from django.core.serializers.json import DjangoJSONEncoder
+from django import forms
 ###-----------------------------------------------------###
 
 
@@ -37,7 +38,24 @@ from django.urls import reverse_lazy
 
 from werkzeug.wrappers.json import _JSONModule
 
-#from a2infinity.settings import dumps
+from a2infinity.pretty_printing import dumps
+
+from django_email_verification import send_email
+
+from django.contrib.auth.forms import AuthenticationForm
+from django.views.generic.edit import FormView
+
+from a2infinity.placeholderify import placeholderify
+
+from django.contrib.auth import (
+    REDIRECT_FIELD_NAME, get_user_model, login as auth_login,
+    logout as auth_logout, update_session_auth_hash,
+)
+
+from django.utils.decorators import method_decorator
+from django.views.decorators.debug import sensitive_post_parameters
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.cache import never_cache
 
 ###-------------------------------------------------------###
 
@@ -56,28 +74,29 @@ def quiz(request):
 # def login(request):
 #     return render(request,"login.html")
 
+def email_sent(request):
+    return render(request, 'email_sent.html')
+
+@snoop
 def signup(request):
     if request.method == 'POST':
+        logger.debug(dumps(request.POST))
         form = UserSignUpForm(request.POST)
+        logger.debug(dumps(form))
         if form.is_valid():
             #print(json.dumps(form.cleaned_data,indent=4,default=str))
-            obj2 = form.save()
-            formnew = UserSignUpForm()
-            messages.success(request, "Successfully Loged-in")
-            return redirect('home')
+            user = form.save()
+            user.is_active = False
+            user.save()
+            send_email(user)
+            return redirect('email_sent')
         else:
+            logger.debug(dumps(form))
             return render(request, 'signup.html',dict(form=form))
     else:
         form = UserSignUpForm(initial={
                 'username' : "test",
                 'school_name' : "test_school",
-                'email' : "riverhill527@gmail.com",
-                'mobile' : "089898989",
-                'city' : "vrindavan",
-                'district' : "mathura",
-                'state' : "UP",
-                'country' : "india",
-                'pin_code' : 90909,
                 'password1': "krishna_108",
                 'password2': "krishna_108" 
             })
@@ -100,6 +119,72 @@ def signup(request):
 #             return render(request, 'form_modeldata/add_modeldata_successfull.html',dict(form=formnew))
 #         else:
 #             return render(request, 'form_modeldata/add_modeldata.html',dict(form=form))
+
+
+#https://gist.github.com/bmispelon/c1cbf4de3c576fc21241
+@placeholderify
+class CustomAuthForm(AuthenticationForm):
+    @snoop
+    def clean(self):
+        username = self.cleaned_data.get('username')
+        password = self.cleaned_data.get('password')
+
+        if username is not None and password:
+            self.user_cache = authenticate(self.request, username=username, password=password)
+            if self.user_cache is None:
+                try:
+                    user_temp = UserModel.objects.get(username=username)
+                except:
+                    user_temp = None
+
+                if user_temp is not None:
+                    if not user_temp.is_active:
+                        send_email(user_temp)
+                        raise forms.ValidationError(f'Account is not active, your need to activate your account before login. An account activation link has been sent to your mailbox {user_temp.email}') 
+
+                else:
+                    raise forms.ValidationError(
+                        self.error_messages['invalid_login'],
+                        code='invalid_login',
+                        params={'username': self.username_field.verbose_name},
+                    )
+
+        return self.cleaned_data
+
+
+class SuccessURLAllowedHostsMixin:
+    success_url_allowed_hosts = set()
+
+    def get_success_url_allowed_hosts(self):
+        return {self.request.get_host(), *self.success_url_allowed_hosts}
+
+# ALLOWED FOR EVERYONE
+class LoginView(SuccessURLAllowedHostsMixin, FormView):
+    form_class = CustomAuthForm
+    authentication_form = None
+    redirect_field_name = REDIRECT_FIELD_NAME
+    template_name = "login.html"
+    redirect_authenticated_user = False
+    extra_context = None
+    
+    @method_decorator(sensitive_post_parameters())
+    @method_decorator(csrf_protect)
+    @method_decorator(never_cache)
+    def dispatch(self, request, *args, **kwargs):
+        if self.redirect_authenticated_user and self.request.user.is_authenticated:
+            return HttpResponseRedirect(self.get_success_url())
+        else:
+            return super(LoginView, self).dispatch(request, *args, **kwargs)
+
+    def get_success_url(self):
+        return reverse_lazy("home")
+
+    def get_form_class(self):
+        return self.authentication_form or self.form_class
+
+    def form_valid(self, form):
+        auth_login(self.request, form.get_user())
+        return super(LoginView, self).form_valid(form)
 
 
 def handleLogin(request):
