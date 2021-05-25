@@ -97,7 +97,6 @@ def signup(request):
         form = UserSignUpForm(initial={
                 'username' : "test",
                 'school_name' : "test_school",
-                'email' : "riverhill527@gmail.com",
                 'password1': "krishna_108",
                 'password2': "krishna_108" 
             })
