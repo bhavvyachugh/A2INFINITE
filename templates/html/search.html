@@ -46,6 +46,10 @@
 					<li class="sheet-list__item">
 						<!-- fetching sheets -->
 						<a href="{% url 'image' k.pk%}"
+							><img
+								src="{{k.imgColor.url}}"
+								class="sheet-list__sheet"
+								
 							><img src="{{k.imgColor.url}}" class="sheet-list__sheet"
 						/></a>
 						<!-- name of sheet -->

@@ -160,7 +160,7 @@ except:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres_bhav', # should also match MYSQL_DATABASE in dockercompose
+        'NAME': 'postgres_bhavya', # should also match MYSQL_DATABASE in dockercompose
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': HOST_PG,   # Or an IP Address that your DB is hosted on
