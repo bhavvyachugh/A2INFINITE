@@ -1,69 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>A2INFINITE | Search</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2INFINITE | Search</title>
 
-		<!-- ------------------------------- favicon ------------------------------- -->
+    <!-- ------------------------------- favicon ------------------------------- -->
 
-		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
-		<!-- --------------------------------- Css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/search.css" />
+    <link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+    <!-- --------------------------------- Css --------------------------------- -->
+    <link rel="stylesheet" href="/static/css/search.css" />
 
-		<!-- ----------------------------- javascript ------------------------------ -->
-		<!-- loader -->
-		<script src="/static/js/loader.js" defer></script>
+    <!-- ----------------------------- javascript ------------------------------ -->
+    <!-- loader -->
+    <script src="/static/js/loader.js" defer></script>
 
-		<!-- height corrector -->
-		<script src="/static/js/heightCorrecter.js" defer></script>
+    <!-- height corrector -->
+    <script src="/static/js/heightCorrecter.js" defer></script>
 
-       <!-- Setting dropdown effect -->
-		<script src="/static/js/settingDropdown.js" defer></script>
-	</head>
+    <!-- Setting dropdown effect -->
+    <script src="/static/js/settingDropdown.js" defer></script>
+  </head>
 
-	<body class="body">
-		<div class="container">
-			<!-- ------------------------------- header -------------------------------- -->
-			{% include "header.html" %}
+  <body class="body">
+    <div class="container">
+      <!-- ------------------------------- header -------------------------------- -->
+      {% include "header.html" %}
 
-			<!-- ------------------------------- nav bar ------------------------------- -->
-			{% include "navbar.html" %}
+      <!-- ------------------------------- nav bar ------------------------------- -->
+      {% include "navbar.html" %}
 
-			<!-- ------------------------------- main ------------------------------- -->
+      <!-- ------------------------------- main ------------------------------- -->
 
-			<main class="main">
-				<!-- Alert for no items -->
-				<div class="alert">
-					{% if messages %} {% for k in messages %}
-					<h1 class="alert__heading">{{ k }}</h1>
-					{%endfor%} {%endif%}
-				</div>
+      <main class="main">
+        <!-- Alert for no items -->
+        <div class="alert">
+          {% if messages %} {% for k in messages %}
+          <h1 class="alert__heading">{{ k }}</h1>
+          {%endfor%} {%endif%}
+        </div>
 
-				<ul class="sheet-list">
-					{%if search%} {%for k in search%}
-					<li class="sheet-list__item">
-						<!-- fetching sheets -->
-						<a href="{% url 'image' k.pk%}"
-							><img
-								src="{{k.imgColor.url}}"
-								class="sheet-list__sheet"
-								
-							><img src="{{k.imgColor.url}}" class="sheet-list__sheet"
-						/></a>
-						<!-- name of sheet -->
-						<h1 class="sheet-list__heading">{{explaintitle}}</h1>
-					</li>
+        <ul class="sheet-list">
+          {%if search%} {%for k in search%}
+          <li class="sheet-list__item">
+            <!-- fetching sheets -->
+            <a href="{% url 'image' k.pk%}"
+              ><img src="{{k.imgColor.url}}" class="sheet-list__sheet"
+            /></a>
+            <!-- name of sheet -->
+            <h1 class="sheet-list__heading">{{explaintitle}}</h1>
+          </li>
 
-					{%endfor%} {%endif%}
-				</ul>
-			</main>
+          {%endfor%} {%endif%}
+        </ul>
+      </main>
 
-			<!-- ------------------------------- footer -------------------------------- -->
-			{% include "footer.html" %}
-		</div>
-		<!-- ------------------------------- loader -------------------------------- -->
-		{% include "loader.html" %}
-	</body>
+      <!-- ------------------------------- footer -------------------------------- -->
+      {% include "footer.html" %}
+    </div>
+    <!-- ------------------------------- loader -------------------------------- -->
+    {% include "loader.html" %}
+  </body>
 </html>
