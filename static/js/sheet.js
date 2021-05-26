@@ -11,20 +11,35 @@ const printColoredBtn = document.getElementById("printColoredBtn");
 
 const loginWarning = document.querySelector(".login-heading");
 
+/* -------------------------------- otg tags -------------------------------- */
+
+const imageColored = document.querySelector(".img-container__img--colored").src;
+const imageBw = document.querySelector(".img-container__img--black").src;
+
+let urlOtg = document.createElement("meta");
+urlOtg.setAttribute("property", "og:url");
+urlOtg.content = document.location;
+document.getElementsByTagName("head")[0].appendChild(urlOtg);
+
+let imgOtg = document.createElement("meta");
+imgOtg.setAttribute("property", "og:image");
+imgOtg.content = imageColored;
+document.getElementsByTagName("head")[0].appendChild(imgOtg);
+
 /* -------------------------------- functions ------------------------------- */
 
 const viewBwSheet = () => {
   bwSheet.style.display = "block";
   coloredSheet.style.display = "none";
   bwSheet.classList.add("ani");
-  console.log(coloredSheet.style.display);
-  console.log(bwSheet.style.display);
+  imgOtg.content = imageBw;
 };
 
 const viewColoredSheet = () => {
   coloredSheet.style.display = "block";
   bwSheet.style.display = "none";
   coloredSheet.classList.add("ani");
+  imgOtg.content = imageColored;
 };
 
 const printBwSheet = () => {
