@@ -113,6 +113,196 @@
     },
     {
         "model": "home.explain",
+        "pk": 12,
+        "fields": {
+            "SubTopic": 4,
+            "explaintitle": "A TO Z ACTIVITY - 3",
+            "imgBlack": "uploads/gallery/Black/A TO Z ACTIVITY - B - 4.jpg",
+            "imgColor": "uploads/gallery/Color/A TO Z ACTIVITY - 3.jpg",
+            "body": " A TO Z ACTIVITY - 3"
+        }
+    },
+    {
+        "model": "home.subject",
+        "pk": 4,
+        "fields": {
+            "className": 2,
+            "SubjectName": "MATHS",
+            "SubjectTitle": "title for MATHS"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 5,
+        "fields": {
+            "Subject": 4,
+            "TopicName": "Count and match",
+            "topicTitle": "title for Count and match"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 5,
+        "fields": {
+            "topic": 5,
+            "SubTopicName": "COUNT AND MATCH UP TO 10",
+            "subtopicTitle": "title for COUNT AND MATCH UP TO 10"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 13,
+        "fields": {
+            "SubTopic": 5,
+            "explaintitle": "COUNT AND MATCH UP TO 10 - 1",
+            "imgBlack": "uploads/gallery/Black/COUNT AND MATCH UP TO 10 - B-1.jpg",
+            "imgColor": "uploads/gallery/Color/COUNT AND MATCH UP TO 10-1.jpg",
+            "body": " COUNT AND MATCH UP TO 10 - 1"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 14,
+        "fields": {
+            "SubTopic": 5,
+            "explaintitle": "COUNT AND MATCH UP TO 10 - 2",
+            "imgBlack": "uploads/gallery/Black/COUNT AND MATCH UP TO 10 - B-2.jpg",
+            "imgColor": "uploads/gallery/Color/COUNT AND MATCH UP TO 10-2.jpg",
+            "body": " COUNT AND MATCH UP TO 10 - 2"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 15,
+        "fields": {
+            "SubTopic": 5,
+            "explaintitle": "COUNT AND MATCH UP TO 10 - 3",
+            "imgBlack": "uploads/gallery/Black/COUNT AND MATCH UP TO 10 - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/COUNT AND MATCH UP TO 10-3.jpg",
+            "body": " COUNT AND MATCH UP TO 10 - 3"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 6,
+        "fields": {
+            "Subject": 4,
+            "TopicName": "Count and write",
+            "topicTitle": "title for Count and write"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 6,
+        "fields": {
+            "topic": 6,
+            "SubTopicName": "COUNT AND WRITE UP TO 10",
+            "subtopicTitle": "title for COUNT AND WRITE UP TO 10"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 16,
+        "fields": {
+            "SubTopic": 6,
+            "explaintitle": "COUNT AND WRITE UP TO 10 - 1",
+            "imgBlack": "uploads/gallery/Black/COUNT AND WRITE UP TO 10 - B-1.jpg",
+            "imgColor": "uploads/gallery/Color/COUNT AND WRITE UP TO 10-1.jpg",
+            "body": " COUNT AND WRITE UP TO 10 - 1"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 17,
+        "fields": {
+            "SubTopic": 6,
+            "explaintitle": "COUNT AND WRITE UP TO 10 - 2",
+            "imgBlack": "uploads/gallery/Black/COUNT AND WRITE UP TO 10 - B-2.jpg",
+            "imgColor": "uploads/gallery/Color/COUNT AND WRITE UP TO 10-2.jpg",
+            "body": " COUNT AND WRITE UP TO 10 - 2"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 18,
+        "fields": {
+            "SubTopic": 6,
+            "explaintitle": "COUNT AND WRITE UP TO 10 - 3",
+            "imgBlack": "uploads/gallery/Black/COUNT AND WRITE UP TO 10 - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/COUNT AND WRITE UP TO 10-3.jpg",
+            "body": " COUNT AND WRITE UP TO 10 - 3"
+        }
+    },
+    {
+        "model": "home.classdetails",
+        "pk": 3,
+        "fields": {
+            "className": "name for LKG",
+            "classTitle": "title for LKG"
+        }
+    },
+    {
+        "model": "home.subject",
+        "pk": 5,
+        "fields": {
+            "className": 3,
+            "SubjectName": "English",
+            "SubjectTitle": "title for English"
+        }
+    },
+    {
+        "model": "home.topic",
+        "pk": 7,
+        "fields": {
+            "Subject": 5,
+            "TopicName": "CURSIVE LOWERCASE PRACTIVE",
+            "topicTitle": "title for CURSIVE LOWERCASE PRACTIVE"
+        }
+    },
+    {
+        "model": "home.subtopic",
+        "pk": 7,
+        "fields": {
+            "topic": 7,
+            "SubTopicName": "CURSIVE LOWERCASE PRACTIVE (A TO F)",
+            "subtopicTitle": "title for CURSIVE LOWERCASE PRACTIVE (A TO F)"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 19,
+        "fields": {
+            "SubTopic": 7,
+            "explaintitle": "CURSIVE LOWERCASE PRACTIVE (A TO F) - 1",
+            "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE PRACTIVE (A TO F) - B-1.jpg",
+            "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE PRACTIVE (A TO F)-1.jpg",
+            "body": " CURSIVE LOWERCASE PRACTIVE (A TO F) - 1"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 20,
+        "fields": {
+            "SubTopic": 7,
+            "explaintitle": "CURSIVE LOWERCASE PRACTIVE (A TO F) - 2",
+            "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE PRACTIVE (A TO F) - B-2.jpg",
+            "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE PRACTIVE (A TO F)-2.jpg",
+            "body": " CURSIVE LOWERCASE PRACTIVE (A TO F) - 2"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 21,
+        "fields": {
+            "SubTopic": 7,
+            "explaintitle": "CURSIVE LOWERCASE PRACTIVE (A TO F) - 3",
+            "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE PRACTIVE (A TO F) - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE PRACTIVE (A TO F)-3.jpg",
+            "body": " CURSIVE LOWERCASE PRACTIVE (A TO F) - 3"
+        }
+    },
+    {
+        "model": "home.topic",
         "pk": 8,
         "fields": {
             "SubTopic": 1,
@@ -124,6 +314,28 @@
     },
     {
         "model": "home.explain",
+        "pk": 23,
+        "fields": {
+            "SubTopic": 8,
+            "explaintitle": "CURSIVE LOWERCASE TRACING - 2",
+            "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE TRACING - B-2.jpg",
+            "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE TRACING-2.jpg",
+            "body": " CURSIVE LOWERCASE TRACING - 2"
+        }
+    },
+    {
+        "model": "home.explain",
+        "pk": 24,
+        "fields": {
+            "SubTopic": 8,
+            "explaintitle": "CURSIVE LOWERCASE TRACING - 3",
+            "imgBlack": "uploads/gallery/Black/CURSIVE LOWERCASE TRACING - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/CURSIVE LOWERCASE TRACING-3.jpg",
+            "body": " CURSIVE LOWERCASE TRACING - 3"
+        }
+    },
+    {
+        "model": "home.topic",
         "pk": 9,
         "fields": {
             "SubTopic": 1,
@@ -135,6 +347,34 @@
     },
     {
         "model": "home.explain",
+        "pk": 27,
+        "fields": {
+            "SubTopic": 9,
+            "explaintitle": "A SOUND CURSIVE - 3",
+            "imgBlack": "uploads/gallery/Black/A SOUND - B-3.jpg",
+            "imgColor": "uploads/gallery/Color/A SOUND CURSIVE-3.png",
+            "body": " A SOUND CURSIVE - 3"
+        }
+    },
+    {
+        "model": "home.classdetails",
+        "pk": 4,
+        "fields": {
+            "className": "name for UKG",
+            "classTitle": "title for UKG"
+        }
+    },
+    {
+        "model": "home.subject",
+        "pk": 6,
+        "fields": {
+            "className": 4,
+            "SubjectName": "English",
+            "SubjectTitle": "title for English"
+        }
+    },
+    {
+        "model": "home.topic",
         "pk": 10,
         "fields": {
             "SubTopic": 1,
