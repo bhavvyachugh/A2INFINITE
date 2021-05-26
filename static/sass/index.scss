@@ -1,15 +1,14 @@
-@import 'layout/header';
-@import 'layout/scrollbar';
+@import "layout/header";
+@import "layout/scrollbar";
 
-@import 'pages/index';
+@import "pages/index";
 
-@import 'base/base';
-@import 'base/typography';
-@import 'base/animations';
-@import 'base/utilities';
+@import "base/base";
+@import "base/typography";
+@import "base/animations";
+@import "base/utilities";
 
-@import 'components/btn';
+@import "components/btn";
 
-
-@import 'components/alert';
-@import 'components/loader';
+@import "components/alert";
+@import "components/loader";
