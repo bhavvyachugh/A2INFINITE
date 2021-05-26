@@ -9,7 +9,7 @@ const coloredSheet = document.querySelector(".img-container__img--colored");
 const printBwBtn = document.getElementById("printBwBtn");
 const printColoredBtn = document.getElementById("printColoredBtn");
 
-console.log(bwSheet.style.display);
+const loginWarning = document.querySelector(".login-heading");
 
 /* -------------------------------- functions ------------------------------- */
 
@@ -50,7 +50,9 @@ const printColoredSheet = () => {
 
 /* --------------------------------- events --------------------------------- */
 
-viewBwBtn.addEventListener("click", viewBwSheet);
-viewColoredBtn.addEventListener("click", viewColoredSheet);
-printBwBtn.addEventListener("click", printBwSheet);
-printColoredBtn.addEventListener("click", printColoredSheet);
+if (!loginWarning) {
+  viewBwBtn.addEventListener("click", viewBwSheet);
+  viewColoredBtn.addEventListener("click", viewColoredSheet);
+  printBwBtn.addEventListener("click", printBwSheet);
+  printColoredBtn.addEventListener("click", printColoredSheet);
+}

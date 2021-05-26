@@ -5,6 +5,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="{{explain_name}}" />
+<meta property="og:description" content="Test your Skills With this Worksheet" />
+<meta property="og:image" content="{{class.imgColor.url}}" />
 
     <title>Sheet | A2INFINITE</title>
     <!-- --------------------------------- css --------------------------------- -->
@@ -23,29 +26,19 @@
     <!-- disable right click -->
     <script src="/static/js/disableRightClick.js" defer></script>
 
-     <!-- Setting dropdown effect -->
+    <!-- Setting dropdown effect -->
 		<script src="/static/js/settingDropdown.js" defer></script>
 
-    <style>
-        @keyframes animationIn {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: .5;
-            }
-            100% {
-                opacity: 1.5;
-            }
-        }
-        
-        .ani {
-            animation: animationIn .5s;
-            backface-visibility: hidden;
-            transform: translateZ(0);
-            -webkit-font-smoothing: subpixel-antialiased;
-        }
-    </style>
+    <!-- height corrector -->
+    <script src="/static/js/heightCorrecter.js" defer></script>
+
+<script defer>
+  var link = document.createElement('meta');
+  link.setAttribute('property', 'og:url');
+  link.content = document.location;
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
 </head>
 
 <body class="body">

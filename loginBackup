@@ -4,52 +4,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Login | A2INFINITE</title>
     {# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript jquery='full' %}
-
-    <link rel="stylesheet" href="/static/css/newsignup.css" />
-    <link rel="stylesheet" href="/static/css/signup.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <!-- ------------------------------- css ------------------------------- -->
+    <link rel="stylesheet" href="/static/css/login.css" />
 
     <!-- ------------------------------- favicon ------------------------------- -->
 
     <link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
-    />
-
-    <style>
-      .ajs-message {
-        font-size: 12px;
-      }
-
-      body {
-        background-image: none !important;
-      }
-    </style>
 
     <!-- ----------------------------- javascript ------------------------------ -->
-    <!-- loader -->
 
+    <!-- loader -->
     <script src="/static/js/loader.js" defer></script>
-    <script src="/static/js/settingDropdown.js" defer></script>
   </head>
   <body class="body">
-    <div>
+    <div class="container">
       <!-- ------------------------------- header -------------------------------- -->
       {% include "header.html" %}
 
       <!-- ------------------------------- nav bar ------------------------------- -->
       {% include "navbar.html" %}
-
       <!-- -------------------------------- main --------------------------------- -->
+
+      {% bootstrap_messages %}
+
+      <!-- <form action="/login" class="form" method="post">
+				{% csrf_token %} {% bootstrap_form form layout="inline"%}
+
+				<div class="form__link-container">
+					<a href="/password_reset" class="form__link">Forgot Password ?</a>
+					<a href="/signup" class="form__link"
+						>Don't have account Sign Up &rarr;</a
+					>
+				</div>
+				{% buttons %}
+					<button class="btn-secondary u-margin-bottom" type="submit">Login &rarr;</button>
+				{% endbuttons %}
+			</form> -->
+
       {# Display django.contrib.messages as Bootstrap alerts #} {% bootstrap_messages %}
 
       <div class="inner-login login-form login-section">
@@ -57,7 +52,7 @@
           {# Display a form #}
           <form
             id="registration"
-            action="/login"
+            action="/signup"
             method="post"
             class="form form-signin"
           >
