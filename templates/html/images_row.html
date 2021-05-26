@@ -23,12 +23,9 @@
 
 		<!-- overlay -->
 		<script src="/static/js/overlay.js" defer></script>
-<<<<<<< HEAD
-=======
 
        <!-- Setting dropdown effect -->
 		<script src="/static/js/settingDropdown.js" defer></script>
->>>>>>> 728b8c2294374ca15e7ac55ff19e315de6ea69bf
 	</head>
 	<body class="body">
 		<div class="container">
@@ -50,19 +47,6 @@
 			    <li class="breadcrumb-item">{{subtopic_name}}</li>
 			  </ul>
 
-				{% if not subscribed %}
-				<h1 class="heading-primary">
-					You are not Subscribed! Showing only Free Sheets.Please subscribe to
-					view all sheets
-				</h1>
-				<!-- <h3>
-					Showing {{countfree}} free sheet/sheets of {{totalcount}}. Please
-					subscribe to view all sheets
-				</h3> -->
-				{% else %}
-				<!-- <h3>You are Subscribed</h3>
-				<h3>Showing total {{totalcount}} sheets</h3> -->
-				{% endif %}
 				<ul class="sheet-list">
 					{% for image in explaindata %}
 					<li class="sheet-list__item">
