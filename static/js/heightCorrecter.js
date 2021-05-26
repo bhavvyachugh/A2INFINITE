@@ -18,6 +18,9 @@ window.addEventListener("load", () => {
   // search
   const searchNoResult = document.querySelector(".alert__heading");
 
+  // Image
+  const ImageLoginWarning = document.querySelector(".login-heading");
+
   if (bodyHeight < deviceHeight) {
     footer.classList.add("footerHeight");
     body.classList.add("bodyHeight");
@@ -34,6 +37,8 @@ window.addEventListener("load", () => {
       }
     } else if (searchNoResult) {
       searchNoResult.classList.add("headingPrimaryHeight");
+    } else if (ImageLoginWarning) {
+      ImageLoginWarning.classList.add("headingPrimaryHeight");
     }
   } else {
     footer.classList.remove("footerHeight");
@@ -47,6 +52,8 @@ window.addEventListener("load", () => {
       subjectContainer.classList.remove("subjectContainerHeight");
     } else if (searchNoResult) {
       searchNoResult.classList.remove("headingPrimaryHeight");
+    } else if (ImageLoginWarning) {
+      ImageLoginWarning.classList.remove("headingPrimaryHeight");
     }
   }
 });
