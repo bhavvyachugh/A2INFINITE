@@ -5,6 +5,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="{{explain_name}}" />
+<meta property="og:description" content="Test your Skills With this Worksheet" />
+<meta property="og:image" content="{{class.imgColor.url}}" />
 
     <title>Sheet | A2INFINITE</title>
     <!-- --------------------------------- css --------------------------------- -->
@@ -28,6 +31,13 @@
 
     <!-- height corrector -->
     <script src="/static/js/heightCorrecter.js" defer></script>
+
+<script defer>
+  var link = document.createElement('meta');
+  link.setAttribute('property', 'og:url');
+  link.content = document.location;
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
 
 </head>
 
