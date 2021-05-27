@@ -1,23 +1,27 @@
 .sheet-list {
-	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	padding: 0;
-	align-items: center;
-	justify-content: start;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0;
+  align-items: center;
+  justify-content: start;
 
-	&__item {
-		margin: 1rem 5rem;
-		border: 2px solid var(--color-grey-light-5);
+  @media screen and (max-width: 760px) {
+    justify-content: center;
+  }
 
-		@media screen and (max-width: 1325px) {
-			margin: 1rem 2rem;
-		}
-	}
+  &__item {
+    margin: 1rem 5rem;
+    border: 2px solid var(--color-grey-light-5);
 
-	&__sheet {
-		height: 30rem;
-		width: 30rem;
-	}
+    @media screen and (max-width: 1325px) {
+      margin: 1rem 2rem;
+    }
+  }
+
+  &__sheet {
+    height: 30rem;
+    width: 30rem;
+  }
 }

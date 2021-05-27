@@ -1,37 +1,41 @@
+{% load bootstrap4 %}
 {% load bootstrap4 %} {% load static %} {% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Login | A2INFINITE</title>
-    {# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript jquery='full' %}
-    <!-- ------------------------------- css ------------------------------- -->
-    <link rel="stylesheet" href="/static/css/login.css" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Login | A2INFINITE</title>
+		{% bootstrap_javascript	jquery='full' %}
+		 {% bootstrap_css %}
+		<!-- ------------------------------- css ------------------------------- -->
+		<link rel="stylesheet" href="/static/css/login.css" />
 
-    <!-- ------------------------------- favicon ------------------------------- -->
+		<!-- ------------------------------- favicon ------------------------------- -->
 
-    <link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
-    <!-- ----------------------------- javascript ------------------------------ -->
+		<!-- ----------------------------- javascript ------------------------------ -->
 
-    <!-- loader -->
-    <script src="/static/js/loader.js" defer></script>
-  </head>
-  <body class="body">
-    <div class="container">
-      <!-- ------------------------------- header -------------------------------- -->
-      {% include "header.html" %}
+		<!-- loader -->
+		<script src="/static/js/loader.js" defer></script>
+	</head>
+	<body class="body">
+		<div class="container">
+			<!-- ------------------------------- header -------------------------------- -->
+			{% include "header.html" %}
 
-      <!-- ------------------------------- nav bar ------------------------------- -->
-      {% include "navbar.html" %}
-      <!-- -------------------------------- main --------------------------------- -->
+			<!-- ------------------------------- nav bar ------------------------------- -->
+			{% include "navbar.html" %}
+			<!-- -------------------------------- main --------------------------------- -->
 
-      {% bootstrap_messages %}
+			<h1 class="heading-primary">Welcome Back!</h1>
 
-      <!-- <form action="/login" class="form" method="post">
+			{% bootstrap_messages %}
+
+			<form action="/login" class="form" method="post">
 				{% csrf_token %} {% bootstrap_form form layout="inline"%}
 
 				<div class="form__link-container">
@@ -43,237 +47,12 @@
 				{% buttons %}
 					<button class="btn-secondary u-margin-bottom" type="submit">Login &rarr;</button>
 				{% endbuttons %}
-			</form> -->
+			</form>
 
-      {# Display django.contrib.messages as Bootstrap alerts #} {% bootstrap_messages %}
-
-      <div class="inner-login login-form login-section">
-        <div class="container_form">
-          {# Display a form #}
-          <form
-            id="registration"
-            action="/signup"
-            method="post"
-            class="form form-signin"
-          >
-            {% csrf_token %}
-            <div style="align: center"><h3>Login</h3></div>
-            {% bootstrap_form form layout='horizontal' %} {% buttons %}
-            <button type="submit" id="sign_up" class="btn btn-secondary">
-              Submit
-            </button>
-            {% endbuttons %} {% comment %}
-            <div class="form-group">
-              <input
-                id="id_username"
-                required=""
-                class="form-control userLoginEmail"
-                autofocus=""
-                placeholder="Username *"
-                name="username"
-                type="text"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group">
-              <input
-                id="id_school_name"
-                required
-                class="form-control userLoginEmail"
-                placeholder="School Name *"
-                name="school_name"
-                type="text"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group pos_rel">
-              <input
-                id="id_pin_code"
-                required=""
-                class="form-control"
-                placeholder="Pincode *"
-                name="pin_code"
-                type="text"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group pos_rel">
-              <input
-                id="id_country"
-                required=""
-                class="form-control"
-                placeholder="Country *"
-                name="country"
-                type="text"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group pos_rel">
-              <input
-                id="id_state"
-                required=""
-                class="form-control"
-                placeholder="State *"
-                name="state"
-                type="text"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group pos_rel">
-              <input
-                id="id_city"
-                required=""
-                class="form-control"
-                placeholder="City *"
-                name="city"
-                type="text"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group pos_rel">
-              <input
-                id="id_district"
-                required=""
-                class="form-control"
-                placeholder="District *"
-                name="district"
-                type="text"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group">
-              <input
-                id="id_email"
-                required
-                class="form-control userLoginEmail"
-                placeholder="Email *"
-                name="email"
-                type="email"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group">
-              <input
-                id="id_mobile"
-                maxlength="15"
-                required=""
-                class="form-control userLoginEmail phone-format"
-                onkeypress="return /[0-9 ]/i.test(event.key)"
-                placeholder="Mobile Number *"
-                name="mobile"
-                type="tel"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group pos_rel">
-              <input
-                id="id_password1"
-                required=""
-                class="form-control"
-                placeholder="Password *"
-                name="password1"
-                type="password"
-                value=""
-                autocomplete="off"
-              />
-              <!-- <i toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></i> -->
-            </div>
-
-            <div class="form-group pos_rel">
-              <input
-                id="id_password2"
-                required=""
-                class="form-control"
-                placeholder="Confirm Password *"
-                name="password2"
-                type="password"
-                value=""
-                autocomplete="off"
-              />
-            </div>
-
-            <div class="form-group">
-              <div class="styled-selectors">
-                <div>
-                  <input
-                    class="termsncond"
-                    id="parent_termsncond"
-                    name="parent_termsncond"
-                    type="checkbox"
-                    required=""
-                    value=""
-                  />
-                  <label for="parent_termsncond"
-                    >By clicking, you are indicating that you have read and
-                    agree to the
-                    <a
-                      target="_blank"
-                      href="https://www.schoolathome.mittsure.com/terms-and-condition.pdf"
-                      >Terms Of Use</a
-                    >
-                    and
-                    <a
-                      target="_blank"
-                      href="https://www.schoolathome.mittsure.com/privacy-policy.pdf"
-                      >Privacy Policy</a
-                    ></label
-                  >
-                  <span
-                    class="
-                      error
-                      help-inline
-                      termsncond
-                      parent_signup_termsncond_error
-                    "
-                  >
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group text-center">
-              <button
-                type="submit"
-                id="sign_up"
-                class="login-button btn btn-primary button_load_register"
-              >
-                Sign Up
-                <span
-                  class="load-btn load_register"
-                  style="display: none"
-                ></span>
-              </button>
-            </div>
-            {% endcomment %}
-
-            <!-- {% buttons %}
-          <button type="submit" class="btn btn-secondary">Submit</button>
-        {% endbuttons %}  -->
-          </form>
-        </div>
-      </div>
-      <!-- ------------------------------- footer -------------------------------- -->
-      {% include "footer.html" %}
-    </div>
-    <!-- ------------------------------- loader -------------------------------- -->
-    {% include "loader.html" %}
-  </body>
-</html>
+			<!-- ------------------------------- footer -------------------------------- -->
+			{% include "footer.html" %}
+		</div>
+		<!-- ------------------------------- loader -------------------------------- -->
+		{% include "loader.html" %}
+	</body>
+</html> 

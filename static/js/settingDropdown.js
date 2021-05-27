@@ -12,6 +12,8 @@ const indexNav = document.getElementsByClassName("side-nav__item");
 const indexNavLast = indexNav[indexNav.length - 1];
 const indexLink = document.querySelectorAll(".side-nav__link");
 
+// clicking on setting icon
+
 settingIcon.addEventListener("click", () => {
   dropdownList.classList.toggle("visible-dropdown");
   if (navListLastElement) {
@@ -29,6 +31,8 @@ const closeDropdown = () => {
   dropdownList.classList.remove("visible-dropdown");
 };
 
+// closing on clicking  in body
+
 body.addEventListener("click", (e) => {
   const settings = e.target.closest(".setting-list__icon");
   if (settings) return;
@@ -36,6 +40,8 @@ body.addEventListener("click", (e) => {
     closeDropdown();
   }
 });
+
+// closing on escape key
 
 document.addEventListener("keydown", (e) => {
   if (

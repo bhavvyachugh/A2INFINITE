@@ -362,3 +362,25 @@
     font-size: 15px !important;
   }
 }
+
+.form {
+  &__link-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    // width: 50%;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: var(--color-grey-dark-1);
+    font-size: 1.5rem;
+    transition: all 0.3s;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--color-primary);
+    }
+  }
+}
