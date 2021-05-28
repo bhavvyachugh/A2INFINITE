@@ -77,6 +77,7 @@ class Package(models.Model):
     pkg_name = models.CharField(verbose_name="pkg_name", max_length=100, default=None, blank=True)
     pkg_price_disscount = models.IntegerField(null=True)
     pkg_price = models.IntegerField()
+    pkg_price_percentage = models.IntegerField(null=True)
     classes = models.ManyToManyField(ClassDetails,related_name="%(app_label)s_%(class)s_classes",)
     pkg_feature_1 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
     pkg_feature_2 = models.CharField(verbose_name="feature", max_length=100, default=None, blank=True, null=True)
