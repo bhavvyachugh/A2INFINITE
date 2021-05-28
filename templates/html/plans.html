@@ -1,127 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Plans | A2INFINITE</title>
-		<!-- --------------------------------- css --------------------------------- -->
-		<link rel="stylesheet" href="/static/css/plans.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plans | A2INFINITE</title>
+    <!-- --------------------------------- css --------------------------------- -->
+    <link rel="stylesheet" href="/static/css/plans.css" />
 
-		<!-- ------------------------------- favicon ------------------------------- -->
+    <!-- ------------------------------- favicon ------------------------------- -->
 
-		<link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
+    <link rel="icon" href="../../static/Images/favicon.png" type="image/png" />
 
-		<!-- ----------------------------- javascript ------------------------------ -->
+    <!-- ----------------------------- javascript ------------------------------ -->
 
-		<!-- loader -->
-		<script src="/static/js/loader.js" defer></script>
+    <!-- loader -->
+    <script src="/static/js/loader.js" defer></script>
 
-		<!-- plans -->
-		<script src="/static/js/plans.js" defer></script>
+    <!-- plans -->
+    <script src="/static/js/plans.js" defer></script>
 
-		<!-- Setting dropdown effect -->
-		<script src="/static/js/settingDropdown.js" defer></script>
-	</head>
+    <!-- Setting dropdown effect -->
+    <script src="/static/js/settingDropdown.js" defer></script>
+  </head>
 
-	<body class="body">
-		<div class="container">
-			<!-- ------------------------------- header -------------------------------- -->
-			{% include "header.html" %}
+  <body class="body">
+    <div class="container">
+      <!-- ------------------------------- header -------------------------------- -->
+      {% include "header.html" %}
 
-			<!-- ------------------------------- nav bar ------------------------------- -->
-			{% include "navbar.html" %}
+      <!-- ------------------------------- nav bar ------------------------------- -->
+      {% include "navbar.html" %}
 
-			<!-- -------------------------------- main --------------------------------- -->
-			<main class="main">
-				<h1 class="heading-primary heading-plans">Choose Your Plan</h1>
-				<div class="row">
-					{% for plan in plans %}
+      <!-- -------------------------------- main --------------------------------- -->
+      <main class="main">
+        <h1 class="heading-primary heading-plans">Choose Your Plan</h1>
+        <div class="row">
+          {% for plan in plans %}
 
-					<div class="col" style="margin-top: 20px">
-						<div class="card">
-							<div class="card__side card__side--front">
-								<div class="card__picture card__picture--1">&nbsp;</div>
+          <div class="col" style="margin-top: 20px">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--1">&nbsp;</div>
 
-								<h4 class="card__heading">
-									<span class="card__heading-span">{{plan.pkg_name}}</span>
-								</h4>
+                <h4 class="card__heading">
+                  <span class="card__heading-span">{{plan.pkg_name}}</span>
+                </h4>
 
-								{% if plan.subscription %}
-								<h2 class="card__subscribed">Subscribed</h2>
-								<h4 class="card__time">
-									Till {{ plan.end_date}}
-								</h4>
-								{% endif %}
+                {% if plan.subscription %}
+                <h2 class="card__subscribed">Subscribed</h2>
+                <h4 class="card__time">Till {{ plan.end_date}}</h4>
+                {% endif %}
 
-								<div class="card__details">
-									<ul class="detail-list">
-										<li class="detail-list__detail">
-											{{ plan.pkg_feature_1 }}
-										</li>
-										<li class="detail-list__detail">
-											{{ plan.pkg_feature_2 }}
-										</li>
-										<li class="detail-list__detail">
-											{{ plan.pkg_feature_3 }}
-										</li>
-										<li class="detail-list__detail">
-											{{ plan.pkg_feature_4 }}
-										</li>
-										<li class="detail-list__detail">
-											{{ plan.pkg_feature_5 }}
-										</li>
-										<li class="detail-list__detail">
-											{{ plan.pkg_feature_6 }}
-										</li>
-									</ul>
-								</div>
-							</div>
+                <div class="card__details">
+                  <ul class="detail-list">
+                    <li class="detail-list__detail">
+                      {{ plan.pkg_feature_1 }}
+                    </li>
+                    <li class="detail-list__detail">
+                      {{ plan.pkg_feature_2 }}
+                    </li>
+                    <li class="detail-list__detail">
+                      {{ plan.pkg_feature_3 }}
+                    </li>
+                    <li class="detail-list__detail">
+                      {{ plan.pkg_feature_4 }}
+                    </li>
+                    <li class="detail-list__detail">
+                      {{ plan.pkg_feature_5 }}
+                    </li>
+                    <li class="detail-list__detail">
+                      {{ plan.pkg_feature_6 }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-							{% if not plan.subscription %}
-							<div class="card__side card__side--back">
-								<div class="card__cta">
-									<div class="card__price-box">
-										<p class="card__price-only">Only</p>
-										<p class="card__price-percentage"> {{pkg_price_percentage}}% OFF</p>
-										<p class="card__price-discount">
-											Rs. {{plan.pkg_price_disscount}}
-										</p>
-										<p class="card__price-value">Rs. {{plan.pkg_price}}</p>
-									</div>
+              {% if not plan.subscription %}
+              <div class="card__side card__side--back">
+                <div class="card__cta">
+                  <div class="card__price-box">
+                    <p class="card__price-only">Only</p>
+                    <p class="card__price-percentage">
+                      {{plan.pkg_price_percentage}}% OFF
+                    </p>
+                    <p class="card__price-discount">
+                      Rs. {{plan.pkg_price_disscount}}
+                    </p>
+                    <p class="card__price-value">Rs. {{plan.pkg_price}}</p>
+                  </div>
 
-									{% if user.is_authenticated %}
-									<a href="/checkout/{{plan.id}}" class="card__btn">Book Now</a>
-									{% else %}
-									<a href="/signup" class="card__btn">Book Now</a>
-									{% endif %}
-								</div>
-							</div>
-							{% else %}
-							<div class="card__side card__side--back">
-								<div class="card__cta">
-									<div class="card__price-box">
-										<p class="card__price-only">Only</p>
-										<p class="card__price-discount">
-											Rs. {{plan.pkg_price_disscount}}
-										</p>
-										<p class="card__price-value">Rs. {{plan.pkg_price}}</p>
-									</div>
+                  {% if user.is_authenticated %}
+                  <a href="/checkout/{{plan.id}}" class="card__btn">Book Now</a>
+                  {% else %}
+                  <a href="/signup" class="card__btn">Book Now</a>
+                  {% endif %}
+                </div>
+              </div>
+              {% else %}
+              <div class="card__side card__side--back">
+                <div class="card__cta">
+                  <div class="card__price-box">
+                    <p class="card__price-only">Only</p>
+                    <p class="card__price-discount">
+                      Rs. {{plan.pkg_price_disscount}}
+                    </p>
+                    <p class="card__price-value">Rs. {{plan.pkg_price}}</p>
+                  </div>
 
-									<a class="card__btn">PAID</a>
-								</div>
-							</div>
-							{% endif %}
-						</div>
-					</div>
-					{% endfor %}
-				</div>
-			</main>
+                  <a class="card__btn">PAID</a>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </main>
 
-			<!-- ------------------------------- footer -------------------------------- -->
-			{% include "footer.html" %}
-		</div>
-		<!-- ------------------------------- loader -------------------------------- -->
-		{% include "loader.html" %}
-	</body>
+      <!-- ------------------------------- footer -------------------------------- -->
+      {% include "footer.html" %}
+    </div>
+    <!-- ------------------------------- loader -------------------------------- -->
+    {% include "loader.html" %}
+  </body>
 </html>
