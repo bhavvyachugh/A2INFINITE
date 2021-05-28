@@ -1,6 +1,5 @@
 document.addEventListener("contextmenu", (event) => event.preventDefault());
 
-TODO: Enable;
 
 document.onkeydown = function (e) {
   if (event.keyCode == 123) {
