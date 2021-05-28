@@ -1,4 +1,6 @@
-{% load bootstrap4 %} {% load static %} {% load crispy_forms_tags %}
+{% load bootstrap4 %} 
+{% load static %} 
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,8 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up | A2INFINITE</title>
-    {# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript
-    jquery='full' %}
+    {# Load CSS and JavaScript #} 
+    {% bootstrap_css %} 
+    {% bootstrap_javascript jquery='full' %}
 
     <link rel="stylesheet" href="/static/css/signup.css" />
     <link rel="stylesheet" href="/static/css/newsignup.css" />
@@ -48,11 +51,6 @@
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     <script>
-      <<<<<<< HEAD
-            //update this
-
-      =======
-      >>>>>>> 139986ce6b28602b4f2a099f61c83d70dd0904da
             var cntry_code = [
               { name: "Israel", dial_code: "+972", code: "IL" },
               { name: "Afghanistan", dial_code: "+93", code: "AF" },
@@ -450,8 +448,8 @@
       {% include "navbar.html" %}
 
       <!-- -------------------------------- main --------------------------------- -->
-      {# Display django.contrib.messages as Bootstrap alerts #} {%
-      bootstrap_messages %}
+      {# Display django.contrib.messages as Bootstrap alerts #} 
+      {% bootstrap_messages %}
       <h1 class="heading-primary u-margin-top">Glad To See You Here</h1>
 
       <div class="inner-login login-form login-section">
@@ -469,7 +467,8 @@
             <button type="submit" id="sign_up" class="btn btn-secondary">
               Submit
             </button>
-            {% endbuttons %} {% comment %}
+            {% endbuttons %} 
+            {% comment %}
             <div class="form-group">
               <input
                 id="id_username"
